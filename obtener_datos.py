@@ -11,7 +11,8 @@ def scraping_congreso():
     
     urls = {
         "Diputados": "https://www.diputados.gov.ar/diputados/",
-        "Senado": "https://www.senado.gob.ar/senadores/listados/listaSenadoResumida"
+        # Cambiamos a la versión del listado de autoridades o datos abiertos
+        "Senado": "https://www.senado.gob.ar/senadores/listados/listaSenadoResumida" 
     }
 
     for camara, url in urls.items():

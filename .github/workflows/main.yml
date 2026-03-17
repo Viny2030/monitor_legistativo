@@ -5,13 +5,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Instalar Chrome y Selenium
+          
+      - name: Instalar Dependencias
         run: |
-          pip install selenium beautifulsoup4 webdriver-manager
-      - name: Correr Scraper Pro
+          pip install selenium beautifulsoup4 webdriver-manager pandas
+          
+      - name: Correr Scraper Senado
         run: python scraper_senado.py
+        
+      - name: Verificar si se generó el CSV
+        run: |
+          if [ -f "nomina_senadores.csv" ]; then
+            echo "✅ El archivo CSV fue creado exitosamente."
+            ls -l nomina_senadores.csv
+          else
+            echo "❌ El archivo CSV no se generó."
+          fi

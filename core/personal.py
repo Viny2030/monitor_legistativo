@@ -24,8 +24,15 @@ DATA_DIR = "data"
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # Valor del módulo salarial en pesos (actualizar según paritaria vigente)
-# Fuente: Resolución de Mesa Directiva HCDN - valor aproximado 2024
-VALOR_MODULO = 55_000
+# Fuente: Comisión Negociadora del Valor del Módulo - Ley 24.600
+# Historial confirmado por fuentes periodísticas:
+#   Abril 2025:    $2,285.73  (APL, Parlamentario.com)
+#   Mayo 2025:     $2,376.04  (La Nación, 03/06/2025)
+#   Nov 2025:      $2,554.72  (+7.52% paritaria semestral, La Nación 22/08/2025)
+#   Marzo 2026:    $2,729.72  (+6.85% acum: 2%+2.2%+2.5%, iProfesional 12/03/2026)
+# Verificación: 4000 módulos × $2,729 = $10,918,866 ≈ dieta senadores $11M (✓)
+# Última actualización: Marzo 2026
+VALOR_MODULO = 2_730
 
 
 def extraer_numero_escalafon(escalafon: str) -> int:
@@ -182,14 +189,21 @@ def enriquecer_centro_costos(guardar: bool = True) -> pd.DataFrame:
         return pd.DataFrame()
 
     df_cc = pd.read_csv(ruta_cc)
+
+    # Limpiar columnas de corridas anteriores para evitar duplicados
+    cols_limpiar = ["Costo_personal_mensual", "Asesores_contados",
+                    "Total_con_personal", "Nombre_norm"]
+    df_cc.drop(columns=[c for c in cols_limpiar if c in df_cc.columns],
+               inplace=True)
     df_personal = calcular_costo_personal_por_bloque()
 
-    # Merge
+    # Merge — solo columnas necesarias, sin duplicar Nombre
     df_personal_merge = df_personal[["Nombre", "Asesores_por_diputado", "Costo_personal_mensual"]].copy()
-    df_personal_merge["Nombre_norm"] = df_personal_merge["Nombre"].str.strip()
+    df_personal_merge = df_personal_merge.rename(columns={"Nombre": "Nombre_norm"})
+    df_personal_merge["Nombre_norm"] = df_personal_merge["Nombre_norm"].str.strip()
     df_cc["Nombre_norm"] = df_cc["Nombre"].str.strip()
 
-    df_cc = df_cc.merge(df_personal_merge, on="Nombre_norm", how="left", suffixes=("", "_new"))
+    df_cc = df_cc.merge(df_personal_merge, on="Nombre_norm", how="left")
 
     # Actualizar columnas
     if "Asesores_por_diputado" in df_cc.columns:

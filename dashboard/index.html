@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monitor de Eficiencia Legislativa – Argentina</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 14px; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem; line-height: 1.55;
+    background: #f0f2f5; color: #1a1a2e;
+  }
+
+  header {
+    background: linear-gradient(135deg, #003087 0%, #0057b7 60%, #005f6b 100%);
+    color: #fff; padding: 1.4rem 2rem;
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  header .escudo { font-size: 2.4rem; }
+  header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; }
+  header p  { font-size: .875rem; opacity: .85; margin-top: .2rem; }
+  header nav { margin-left: auto; }
+  header nav a {
+    color: #fff; text-decoration: none;
+    background: rgba(255,255,255,.18);
+    padding: .4rem 1rem; border-radius: 20px;
+    font-size: .82rem; font-weight: 600;
+  }
+  header nav a:hover { background: rgba(255,255,255,.3); }
+
+  .leyenda {
+    display: flex; gap: 1.2rem; align-items: center;
+    padding: .6rem 1.5rem; background: #fff;
+    border-bottom: 1px solid #dde2ec; flex-wrap: wrap;
+    font-size: .78rem; color: #444;
+  }
+  .leyenda span { display: flex; align-items: center; gap: .3rem; font-weight: 600; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot-g { background: #22c55e; }
+  .dot-y { background: #f59e0b; }
+  .dot-r { background: #ef4444; }
+
+  .container { padding: 1rem 1.5rem 2.5rem; }
+  .dimension { margin-bottom: 2rem; }
+  .dimension-title {
+    font-size: 1rem; font-weight: 700; color: #003087;
+    text-transform: uppercase; letter-spacing: .05em;
+    border-bottom: 2px solid #003087;
+    padding-bottom: .35rem; margin-bottom: 1rem;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    padding: 1rem 1.1rem;
+    border-top: 4px solid #ccc;
+    transition: box-shadow .15s, transform .1s;
+  }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,48,135,.16); transform: translateY(-1px); }
+  .card.verde    { border-top-color: #22c55e; }
+  .card.amarillo { border-top-color: #f59e0b; }
+  .card.rojo     { border-top-color: #ef4444; }
+
+  .card-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: .5rem; margin-bottom: .45rem;
+  }
+  .card-id {
+    background: #003087; color: #fff;
+    font-size: .72rem; font-weight: 700;
+    padding: .2rem .55rem; border-radius: 20px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .card-name { font-size: .88rem; font-weight: 600; line-height: 1.3; }
+  .card-value { font-size: 1.7rem; font-weight: 800; color: #003087; margin: .35rem 0 .1rem; }
+  .card-unit  { font-size: .75rem; color: #666; margin-bottom: .5rem; }
+  .card-formula {
+    font-family: 'Courier New', monospace; font-size: .75rem;
+    background: #f4f6fa; padding: .3rem .5rem;
+    border-radius: 4px; margin-bottom: .5rem; word-break: break-all;
+  }
+  .card-interp { font-size: .78rem; color: #444; line-height: 1.45; margin-bottom: .65rem; }
+
+  .estado-badge {
+    display: inline-flex; align-items: center; gap: .3rem;
+    font-size: .72rem; font-weight: 700;
+    padding: .2rem .6rem; border-radius: 20px; margin-bottom: .5rem;
+  }
+  .badge-verde    { background: #dcfce7; color: #15803d; }
+  .badge-amarillo { background: #fef9c3; color: #92400e; }
+  .badge-rojo     { background: #fee2e2; color: #991b1b; }
+
+  .bench-wrap { margin-top: .4rem; }
+  .bench-label {
+    font-size: .68rem; color: #888; margin-bottom: .25rem;
+    display: flex; justify-content: space-between;
+  }
+  .bench-track {
+    height: 8px; border-radius: 4px;
+    position: relative; overflow: visible;
+    background: linear-gradient(90deg, #22c55e 0%, #f59e0b 50%, #ef4444 100%);
+  }
+  .bench-track.inv {
+    background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #22c55e 100%);
+  }
+  .bench-marker {
+    position: absolute; top: -4px;
+    width: 4px; height: 16px;
+    background: #003087; border-radius: 2px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 2px #fff;
+  }
+  .bench-zones {
+    display: flex; font-size: .65rem; margin-top: .3rem; gap: .2rem;
+  }
+  .bz { flex: 1; text-align: center; color: #777; }
+
+  footer {
+    text-align: center; font-size: .8rem; color: #888;
+    padding: 1rem; border-top: 1px solid #ddd; background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="escudo">🏛️</span>
+  <div>
+    <h1>Monitor de Eficiencia Legislativa – República Argentina</h1>
+    <p>12 Indicadores de Desempeño del Congreso Nacional · Datos de referencia 2024</p>
+  </div>
+  <nav>
+    <a href="indicadores.html">📊 Indicadores &amp; Bibliografía</a>
+  </nav>
+</header>
+
+<div class="leyenda">
+  <strong>Benchmarks internacionales (IPU · OCDE · CEPAL · OGP):</strong>
+  <span><span class="dot dot-g"></span> Bueno</span>
+  <span><span class="dot dot-y"></span> Regular</span>
+  <span><span class="dot dot-r"></span> Crítico</span>
+  <span style="margin-left:auto; color:#aaa; font-weight:400;">La barra ▌azul marca el valor actual de Argentina</span>
+</div>
+
+<div class="container">
+
+<!-- ══ DIM I ══ -->
+<div class="dimension">
+  <div class="dimension-title">Dimensión I – Costos e Insumos (Finanzas Legislativas)</div>
+  <div class="cards">
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">CPR</span><span class="card-name">Costo Per Cápita de Representación</span></div>
+      <div class="card-value">$3.966</div>
+      <div class="card-unit">ARS por habitante · año (≈ USD 4)</div>
+      <div class="card-formula">CPR = P_total / Pop_total</div>
+      <div class="card-interp">Mayor valor = mayor costo por ciudadano para sostener el Congreso.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Bajo costo</span><span>Alto costo</span></div>
+        <!-- escala 0–25 USD; ARG ≈ 4 → 16% -->
+        <div class="bench-track inv"><div class="bench-marker" style="left:16%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🟢 &lt;USD 8/hab.</span>
+          <span class="bz">🟡 USD 8–20</span>
+          <span class="bz">🔴 &gt;USD 20<br><small>(OCDE promedio)</small></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card verde">
+      <div class="card-header"><span class="card-id">TPS</span><span class="card-name">Tasa de Profesionalización del Staff</span></div>
+      <div class="card-value">76.0%</div>
+      <div class="card-unit">% planta permanente sobre total</div>
+      <div class="card-formula">TPS = (S_perm / (S_perm + S_temp)) × 100</div>
+      <div class="card-interp">Mayor % = personal más estable y profesionalizado en la carrera.</div>
+      <span class="estado-badge badge-verde">🟢 Bueno</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Baja profesionalización</span><span>Alta</span></div>
+        <!-- escala 0–100%; ARG 76% -->
+        <div class="bench-track"><div class="bench-marker" style="left:76%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;50%</span>
+          <span class="bz">🟡 50–70%</span>
+          <span class="bz">🟢 &gt;70%<br><small>(Ref. AL)</small></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">CAF</span><span class="card-name">Coeficiente de Autonomía Fiscal</span></div>
+      <div class="card-value">0.962</div>
+      <div class="card-unit">ratio devengado / solicitado (0 – 1+)</div>
+      <div class="card-formula">CAF = P_devengado / P_solicitado</div>
+      <div class="card-interp">CAF &lt; 1: el Ejecutivo recortó el presupuesto pedido por el Congreso.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Recorte severo</span><span>Plena autonomía</span></div>
+        <!-- escala 0.7–1.0; ARG 0.962 → ~87% -->
+        <div class="bench-track"><div class="bench-marker" style="left:87%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;0.85</span>
+          <span class="bz">🟡 0.85–0.95</span>
+          <span class="bz">🟢 &gt;0.95<br><small>(Ref. OCDE)</small></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ DIM II ══ -->
+<div class="dimension">
+  <div class="dimension-title">Dimensión II – Eficiencia en el Proceso (Productividad)</div>
+  <div class="cards">
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">TMM</span><span class="card-name">Tiempo Medio de Maduración Legislativa</span></div>
+      <div class="card-value">70.3</div>
+      <div class="card-unit">días promedio hasta dictamen de comisión</div>
+      <div class="card-formula">TMM = Σ(F_dictamen − F_ingreso) / n</div>
+      <div class="card-interp">Menor valor = mayor agilidad en el proceso de comisión.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Ágil</span><span>Lento</span></div>
+        <!-- escala 0–180 días; ARG 70 → 39%; barra invertida (verde izq) -->
+        <div class="bench-track inv"><div class="bench-marker" style="left:39%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🟢 &lt;45 días<br><small>(Congreso UK/NZ)</small></span>
+          <span class="bz">🟡 45–90 días<br><small>(Ref. AL)</small></span>
+          <span class="bz">🔴 &gt;90 días</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card verde">
+      <div class="card-header"><span class="card-id">ITT</span><span class="card-name">Intensidad de Trabajo Técnico</span></div>
+      <div class="card-value">3.875</div>
+      <div class="card-unit">ratio horas comisión / horas pleno</div>
+      <div class="card-formula">ITT = ΣH_com / ΣH_pleno</div>
+      <div class="card-interp">ITT &gt; 2: elaboración técnica sólida antes del debate plenario.</div>
+      <span class="estado-badge badge-verde">🟢 Bueno</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Débil técnica</span><span>Fuerte técnica</span></div>
+        <!-- escala 0–6; ARG 3.875 → 65% -->
+        <div class="bench-track"><div class="bench-marker" style="left:65%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;1.0</span>
+          <span class="bz">🟡 1.0–2.0<br><small>(Ref. OCDE: ≥2)</small></span>
+          <span class="bz">🟢 &gt;2.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card verde">
+      <div class="card-header"><span class="card-id">IQP</span><span class="card-name">Índice de Quórum y Permanencia</span></div>
+      <div class="card-value">0.821</div>
+      <div class="card-unit">ratio promedio de asistencia en votaciones (0–1)</div>
+      <div class="card-formula">IQP = [Σ(L_presentes / L_totales)] / V</div>
+      <div class="card-interp">Mayor valor = mayor asistencia y compromiso en votaciones nominales.</div>
+      <span class="estado-badge badge-verde">🟢 Bueno</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Baja asistencia</span><span>Alta asistencia</span></div>
+        <!-- escala 0–1; ARG 0.821 → 82% -->
+        <div class="bench-track"><div class="bench-marker" style="left:82%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;0.60<br><small>(AL promedio)</small></span>
+          <span class="bz">🟡 0.60–0.75</span>
+          <span class="bz">🟢 &gt;0.75<br><small>(Ref. IPU)</small></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ DIM III ══ -->
+<div class="dimension">
+  <div class="dimension-title">Dimensión III – Desempeño y Calidad (Impacto)</div>
+  <div class="cards">
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">CUN</span><span class="card-name">Costo Unitario por Norma Sancionada</span></div>
+      <div class="card-value">$2.202 M</div>
+      <div class="card-unit">millones ARS por ley (≈ USD 2.4 M)</div>
+      <div class="card-formula">CUN = P_total / L_sancionadas</div>
+      <div class="card-interp">Costo promedio de producir una ley. Útil para comparación interanual e intercameral.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Eficiente</span><span>Costoso</span></div>
+        <!-- escala 0–12 M USD; ARG ~2.4 → 20% -->
+        <div class="bench-track inv"><div class="bench-marker" style="left:20%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🟢 &lt;USD 2M<br><small>(Chile, Uruguay)</small></span>
+          <span class="bz">🟡 USD 2–5M<br><small>(Ref. AL)</small></span>
+          <span class="bz">🔴 &gt;USD 5M</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rojo">
+      <div class="card-header"><span class="card-id">CLS</span><span class="card-name">Calidad Legislativa Sustantiva</span></div>
+      <div class="card-value">36.9%</div>
+      <div class="card-unit">% leyes de fondo sobre total sancionado</div>
+      <div class="card-formula">CLS = (L_sust / L_total) × 100</div>
+      <div class="card-interp">Menos de 4 de cada 10 leyes modifican el cuerpo normativo de fondo.</div>
+      <span class="estado-badge badge-rojo">🔴 Crítico</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Baja calidad</span><span>Alta calidad</span></div>
+        <!-- escala 0–100%; ARG 37% -->
+        <div class="bench-track"><div class="bench-marker" style="left:37%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;40%<br><small>(ARG actual)</small></span>
+          <span class="bz">🟡 40–55%</span>
+          <span class="bz">🟢 &gt;55%<br><small>(Ref. CEPAL)</small></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rojo">
+      <div class="card-header"><span class="card-id">TEF</span><span class="card-name">Tasa de Efectividad de Fiscalización</span></div>
+      <div class="card-value">0.429</div>
+      <div class="card-unit">ratio informes resueltos / recibidos (0–1)</div>
+      <div class="card-formula">TEF = IC_resueltos / IF_recibidos</div>
+      <div class="card-interp">Menos del 43% de controles generaron seguimiento efectivo.</div>
+      <span class="estado-badge badge-rojo">🔴 Crítico</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Inefectivo</span><span>Efectivo</span></div>
+        <!-- escala 0–1; ARG 0.429 → 43% -->
+        <div class="bench-track"><div class="bench-marker" style="left:43%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;0.40</span>
+          <span class="bz">🟡 0.40–0.60<br><small>(Ref. IPU)</small></span>
+          <span class="bz">🟢 &gt;0.60<br><small>(UK, Canadá)</small></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ DIM IV ══ -->
+<div class="dimension">
+  <div class="dimension-title">Dimensión IV – Transparencia y Datos (Tecnología)</div>
+  <div class="cards">
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">CAD</span><span class="card-name">Coeficiente de Apertura de Datos</span></div>
+      <div class="card-value">0.484</div>
+      <div class="card-unit">ratio ponderado formato × demora (0–1)</div>
+      <div class="card-formula">CAD = Σ(V_formato × W_tiempo) / Max_Score</div>
+      <div class="card-interp">Mayor valor = datos más abiertos, en mejor formato y sin demoras.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Cerrado</span><span>Totalmente abierto</span></div>
+        <!-- escala 0–1; ARG 0.484 → 48% -->
+        <div class="bench-track"><div class="bench-marker" style="left:48%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;0.35</span>
+          <span class="bz">🟡 0.35–0.65<br><small>(Ref. OGP: ≥0.65)</small></span>
+          <span class="bz">🟢 &gt;0.65<br><small>(NZ, Estonia)</small></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card verde">
+      <div class="card-header"><span class="card-id">EVD</span><span class="card-name">Error de Veracidad de Datos</span></div>
+      <div class="card-value">0.070</div>
+      <div class="card-unit">ratio errores / datos verificados (0 = perfecto)</div>
+      <div class="card-formula">EVD = D_erroneos / D_verificables</div>
+      <div class="card-interp">7% de datos auditados no coincide con SIL/Boletín Oficial.</div>
+      <span class="estado-badge badge-verde">🟢 Bueno</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Sin errores</span><span>Muchos errores</span></div>
+        <!-- escala 0–0.30; ARG 0.07 → 23%; barra invertida -->
+        <div class="bench-track inv"><div class="bench-marker" style="left:23%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🟢 &lt;5%<br><small>(Ref. estándar auditoría)</small></span>
+          <span class="bz">🟡 5–15%</span>
+          <span class="bz">🔴 &gt;15%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card amarillo">
+      <div class="card-header"><span class="card-id">TCI</span><span class="card-name">Tasa de Conversión de Interacción Ciudadana</span></div>
+      <div class="card-value">6.67%</div>
+      <div class="card-unit">% sesiones con interacción activa</div>
+      <div class="card-formula">TCI = (U_activos / U_totales) × 100</div>
+      <div class="card-interp">Mayor % = más ciudadanos participan activamente en el monitor.</div>
+      <span class="estado-badge badge-amarillo">🟡 Regular</span>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Baja participación</span><span>Alta participación</span></div>
+        <!-- escala 0–25%; ARG 6.67 → 27% -->
+        <div class="bench-track"><div class="bench-marker" style="left:27%"></div></div>
+        <div class="bench-zones">
+          <span class="bz">🔴 &lt;3%</span>
+          <span class="bz">🟡 3–10%<br><small>(Ref. OGP: ≥10%)</small></span>
+          <span class="bz">🟢 &gt;10%<br><small>(Mejores prácticas)</small></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  Monitor Legislativo · Datos de referencia 2024 · Fuentes: HCDN · INDEC · Presupuesto Abierto · Boletín Oficial<br>
+  Benchmarks: IPU Parliamentary Indicators · OCDE Government at a Glance 2023 · CEPAL · Open Government Partnership
+</footer>
+
+</body>
+</html>

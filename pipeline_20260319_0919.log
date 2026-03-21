@@ -1,0 +1,35 @@
+
+══════════════════════════════════════════════════
+MEL-TP Pipeline — 19/03/2026 09:19
+══════════════════════════════════════════════════
+
+──────────────────────────────────────────────────
+▶ Nómina de diputados
+  ✅ Completado
+
+──────────────────────────────────────────────────
+▶ Asistencia a sesiones
+  ✅ Completado
+
+──────────────────────────────────────────────────
+▶ Tasa de Éxito Legislativo (TEL)
+  ✅ Completado
+
+──────────────────────────────────────────────────
+▶ Monitoreo del Módulo
+
+── Calculando SFE Final ──
+  📋 Nómina: 257 diputados
+  ⚠  Asistencia: usando proxy (ejecutar scraper_asistencia.py)
+  ⚠  TEL: usando proxy (ejecutar scripts/actualizar_tel.py)
+
+  ✅ ranking_sfe.csv generado — 257 diputados
+  📈 SFE promedio: 53.3%
+  🏆 Top 3: Picón Martínez, Nancy Viviana, Monzón, Roxana, de Andreis, Fernando
+  💰 Costo total estimado: $1.58B ARS/mes
+  📊 TEL: proxy
+
+══════════════════════════════════════════════════
+✅ Pipeline completado — log: pipeline_20260319_0919.log
+══════════════════════════════════════════════════
+

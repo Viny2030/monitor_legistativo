@@ -1,0 +1,31 @@
+{
+  "costo_banca": {
+    "presupuesto_total_ars": 315000000,
+    "bancas": 257,
+    "costo_banca_ars_anual": 1365700389,
+    "costo_banca_usd_anual": 963,
+    "costo_banca_ars_mensual": 137808042,
+    "costo_banca_usd_mensual": 97391,
+    "tipo_cambio_usado": 1415.0,
+    "benchmark_ocde": {
+      "min": 90000,
+      "promedio": 150000,
+      "max": 280000,
+      "moneda": "USD",
+      "fuente": "OCDE/IPU Parliamentary Finance 2023 (promedio cámaras bajas)"
+    },
+    "ratio_vs_ocde_promedio": 7.791,
+    "interpretacion_ocde": "por encima del rango OCDE",
+    "anio": 2026,
+    "fuente": "Ley 27.798 — Presupuesto 2025 (último crédito aprobado por el Congreso) · usado como base para 2026 (sin Ley de Presupuesto aprobada)",
+    "nota": "Costo por banca incluye personal, bienes/servicios y transferencias de toda la Cámara de Diputados. No incluye Senado ni AGN."
+  },
+  "fuentes_consultadas": {
+    "api_respondio": false,
+    "csv_respondio": false,
+    "api_endpoint": null,
+    "csv_url": null,
+    "dato_base": "Ley 27.798 — Presupuesto 2025 (último crédito aprobado por el Congreso) · usado como base para 2026 (sin Ley de Presupuesto aprobada)"
+  },
+  "partidas_presupuestarias": []
+}

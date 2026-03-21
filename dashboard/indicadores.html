@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Indicadores & Bibliografía – Monitor Legislativo</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 14px; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: #f0f2f5;
+    color: #1a1a2e;
+  }
+
+  /* ── NAV ── */
+  header {
+    background: linear-gradient(135deg, #003087 0%, #0057b7 60%, #005f6b 100%);
+    color: #fff;
+    padding: 1.2rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: .8rem;
+  }
+  .header-left { display: flex; align-items: center; gap: .8rem; }
+  .header-left .escudo { font-size: 2rem; }
+  header h1 { font-size: 1.2rem; font-weight: 700; }
+  header p  { font-size: .82rem; opacity: .85; margin-top: .1rem; }
+  nav a {
+    color: #fff; text-decoration: none;
+    background: rgba(255,255,255,.15);
+    padding: .4rem .9rem; border-radius: 20px;
+    font-size: .82rem; font-weight: 600;
+    transition: background .15s;
+  }
+  nav a:hover { background: rgba(255,255,255,.3); }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex; gap: 0;
+    background: #fff;
+    border-bottom: 2px solid #dde2ec;
+    padding: 0 2rem;
+    position: sticky; top: 0; z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07);
+  }
+  .tab-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: .9rem; font-weight: 600; color: #666;
+    padding: .85rem 1.4rem;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn.active { color: #003087; border-bottom-color: #003087; }
+  .tab-btn:hover  { color: #003087; }
+
+  /* ── CONTENT ── */
+  .tab-content { display: none; padding: 1.8rem 2rem 3rem; }
+  .tab-content.active { display: block; }
+
+  /* ── DIMENSIÓN HEADER ── */
+  .dim-header {
+    display: flex; align-items: center; gap: .7rem;
+    margin: 1.6rem 0 1rem;
+  }
+  .dim-badge {
+    background: #003087; color: #fff;
+    font-size: .72rem; font-weight: 700;
+    padding: .25rem .7rem; border-radius: 20px;
+    white-space: nowrap;
+  }
+  .dim-title {
+    font-size: 1rem; font-weight: 700; color: #003087;
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+
+  /* ── INDICADOR CARD ── */
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1rem; margin-bottom: .5rem;
+  }
+  .ind-card {
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.09);
+    padding: 1.1rem 1.2rem;
+    border-left: 4px solid #003087;
+    transition: box-shadow .15s, transform .1s;
+  }
+  .ind-card:hover { box-shadow: 0 4px 16px rgba(0,48,135,.15); transform: translateY(-1px); }
+  .ind-top { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: .5rem; }
+  .ind-id {
+    background: #003087; color: #fff;
+    font-size: .72rem; font-weight: 800;
+    padding: .2rem .55rem; border-radius: 20px;
+    flex-shrink: 0; margin-top: .1rem;
+  }
+  .ind-name { font-size: .92rem; font-weight: 700; line-height: 1.3; }
+  .ind-formula {
+    font-family: 'Courier New', monospace; font-size: .8rem;
+    background: #f0f4ff; border: 1px solid #d0d8f0;
+    padding: .4rem .6rem; border-radius: 5px;
+    margin: .5rem 0; word-break: break-all;
+  }
+  .ind-vars { font-size: .8rem; color: #444; margin-bottom: .5rem; }
+  .ind-vars li { margin-left: 1.2rem; margin-bottom: .15rem; }
+  .ind-source {
+    font-size: .75rem; color: #666;
+    border-top: 1px solid #eee; padding-top: .4rem; margin-top: .4rem;
+  }
+  .ind-source a { color: #0057b7; text-decoration: none; }
+  .ind-source a:hover { text-decoration: underline; }
+
+  /* ── DDJJ SECTION ── */
+  .ddjj-box {
+    background: #fff8e1; border: 1.5px solid #f0b429;
+    border-radius: 8px; padding: 1.3rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .ddjj-box h3 { font-size: 1rem; font-weight: 700; color: #7a5000; margin-bottom: .5rem; }
+  .ddjj-box p  { font-size: .88rem; color: #555; margin-bottom: .8rem; }
+  .link-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+  .link-list li a {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: #003087; color: #fff;
+    padding: .45rem 1rem; border-radius: 5px;
+    font-size: .82rem; font-weight: 600; text-decoration: none;
+    transition: background .15s;
+  }
+  .link-list li a:hover { background: #0057b7; }
+  .link-list li .desc { font-size: .78rem; color: #666; margin-top: .15rem; }
+
+  /* ── BIBLIOGRAFÍA ── */
+  .biblio-section { margin-bottom: 2rem; }
+  .biblio-section h3 {
+    font-size: .92rem; font-weight: 700; color: #003087;
+    text-transform: uppercase; letter-spacing: .04em;
+    border-bottom: 2px solid #003087; padding-bottom: .3rem;
+    margin-bottom: .9rem;
+  }
+  .biblio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: .75rem;
+  }
+  .biblio-card {
+    background: #fff; border-radius: 7px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    padding: .9rem 1rem;
+    border-top: 3px solid #0057b7;
+  }
+  .biblio-card .btype {
+    font-size: .68rem; font-weight: 700; color: #0057b7;
+    text-transform: uppercase; letter-spacing: .06em;
+    margin-bottom: .3rem;
+  }
+  .biblio-card .btitle {
+    font-size: .88rem; font-weight: 600;
+    color: #1a1a2e; margin-bottom: .2rem; line-height: 1.35;
+  }
+  .biblio-card .bauthor { font-size: .78rem; color: #555; margin-bottom: .3rem; }
+  .biblio-card .blink a {
+    font-size: .78rem; color: #0057b7; text-decoration: none;
+    word-break: break-all;
+  }
+  .biblio-card .blink a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; font-size: .8rem; color: #888;
+    padding: 1rem; border-top: 1px solid #ddd;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <span class="escudo">🏛️</span>
+    <div>
+      <h1>Monitor de Eficiencia Legislativa – República Argentina</h1>
+      <p>Indicadores, Metodología y Bibliografía</p>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html">← Dashboard</a>
+  </nav>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('indicadores')">📊 Los 12 Indicadores</button>
+  <button class="tab-btn" onclick="showTab('ddjj')">📋 DDJJ Legisladores</button>
+  <button class="tab-btn" onclick="showTab('bibliografia')">📚 Bibliografía</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TAB 1 – INDICADORES                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="tab-indicadores" class="tab-content active">
+
+  <!-- DIMENSIÓN I -->
+  <div class="dim-header">
+    <span class="dim-badge">I</span>
+    <span class="dim-title">Costos e Insumos — Finanzas Legislativas</span>
+  </div>
+  <div class="ind-grid">
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">CPR</span><span class="ind-name">Costo Per Cápita de Representación</span></div>
+      <div class="ind-formula">CPR = P_total / Pop_total</div>
+      <ul class="ind-vars">
+        <li><strong>P_total</strong>: Presupuesto total anual ejecutado (Jurisdicción 01)</li>
+        <li><strong>Pop_total</strong>: Población total (Censo INDEC 2022)</li>
+      </ul>
+      <div class="ind-source">
+        Fuentes: <a href="https://www.presupuestoabierto.gob.ar/sici/datos-abiertos" target="_blank">Presupuesto Abierto</a> ·
+        <a href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-135" target="_blank">INDEC Censo 2022</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">TPS</span><span class="ind-name">Tasa de Profesionalización del Staff</span></div>
+      <div class="ind-formula">TPS = (S_perm / (S_perm + S_temp)) × 100</div>
+      <ul class="ind-vars">
+        <li><strong>S_perm</strong>: Agentes en Planta Permanente (Carrera)</li>
+        <li><strong>S_temp</strong>: Agentes en Planta Temporaria (Asesores políticos)</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://datos.hcdn.gob.ar/dataset?groups=nomina-de-personal" target="_blank">Nómina de Personal HCDN</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">CAF</span><span class="ind-name">Coeficiente de Autonomía Fiscal</span></div>
+      <div class="ind-formula">CAF = P_devengado / P_solicitado</div>
+      <ul class="ind-vars">
+        <li><strong>P_devengado</strong>: Presupuesto final que recibió el Congreso</li>
+        <li><strong>P_solicitado</strong>: Presupuesto pedido en el anteproyecto</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.presupuestoabierto.gob.ar/sici/datos-abiertos" target="_blank">Presupuesto Abierto – Crédito vs Devengado</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIMENSIÓN II -->
+  <div class="dim-header">
+    <span class="dim-badge">II</span>
+    <span class="dim-title">Eficiencia en el Proceso — Productividad</span>
+  </div>
+  <div class="ind-grid">
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">TMM</span><span class="ind-name">Tiempo Medio de Maduración Legislativa</span></div>
+      <div class="ind-formula">TMM = Σ(F_dictamen − F_ingreso) / n</div>
+      <ul class="ind-vars">
+        <li><strong>F_dictamen</strong>: Fecha de despacho de comisión</li>
+        <li><strong>F_ingreso</strong>: Fecha de entrada por mesa de entradas</li>
+        <li><strong>n</strong>: Total de proyectos dictaminados en el período</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.diputados.gov.ar/proyectos/" target="_blank">SIL – Proyectos HCDN</a> ·
+        <a href="https://datos.hcdn.gob.ar/" target="_blank">datos.hcdn.gob.ar</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">ITT</span><span class="ind-name">Intensidad de Trabajo Técnico</span></div>
+      <div class="ind-formula">ITT = ΣH_com / ΣH_pleno</div>
+      <ul class="ind-vars">
+        <li><strong>H_com</strong>: Horas totales de reuniones de comisión</li>
+        <li><strong>H_pleno</strong>: Horas totales de sesiones en el recinto</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.hcdn.gob.ar/comisiones/" target="_blank">Actas de Comisión HCDN</a> ·
+        <a href="https://www2.hcdn.gob.ar/secparl/dsecretaria/s_t_parlamentario/2025/index.html" target="_blank">Diario de Sesiones</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">IQP</span><span class="ind-name">Índice de Quórum y Permanencia</span></div>
+      <div class="ind-formula">IQP = [Σ(L_presentes / L_totales)] / V</div>
+      <ul class="ind-vars">
+        <li><strong>L_presentes</strong>: Legisladores que emitieron voto</li>
+        <li><strong>L_totales</strong>: Total de escaños (257 Diputados / 72 Senado)</li>
+        <li><strong>V</strong>: Número total de votaciones nominales en el año</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://votaciones.hcdn.gob.ar/" target="_blank">Votaciones Nominales HCDN</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIMENSIÓN III -->
+  <div class="dim-header">
+    <span class="dim-badge">III</span>
+    <span class="dim-title">Desempeño y Calidad — Impacto</span>
+  </div>
+  <div class="ind-grid">
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">CUN</span><span class="ind-name">Costo Unitario por Norma Sancionada</span></div>
+      <div class="ind-formula">CUN = P_total / L_sancionadas</div>
+      <ul class="ind-vars">
+        <li><strong>L_sancionadas</strong>: Proyectos sancionados con fuerza de Ley (Boletín Oficial)</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.boletinoficial.gob.ar/" target="_blank">Boletín Oficial</a> ·
+        <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/estadisticas_parlamentarias/index.html" target="_blank">Estadísticas Parlamentarias HCDN</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">CLS</span><span class="ind-name">Calidad Legislativa Sustantiva</span></div>
+      <div class="ind-formula">CLS = (L_sust / L_total) × 100</div>
+      <ul class="ind-vars">
+        <li><strong>L_sust</strong>: Leyes que modifican cuerpo normativo de fondo</li>
+        <li><strong>L_total</strong>: Total de leyes (incluye declaraciones, días nacionales, etc.)</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.infoleg.gob.ar/" target="_blank">InfoLEG – Sistema de Información Legislativa</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">TEF</span><span class="ind-name">Tasa de Efectividad de Fiscalización</span></div>
+      <div class="ind-formula">TEF = IC_resueltos / IF_recibidos</div>
+      <ul class="ind-vars">
+        <li><strong>IC_resueltos</strong>: Informes AGN / pedidos respondidos con seguimiento</li>
+        <li><strong>IF_recibidos</strong>: Total de informes o pedidos de control ingresados</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: <a href="https://www.agn.gob.ar/informes" target="_blank">AGN – Informes de Auditoría</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIMENSIÓN IV -->
+  <div class="dim-header">
+    <span class="dim-badge">IV</span>
+    <span class="dim-title">Transparencia y Datos — Tecnología</span>
+  </div>
+  <div class="ind-grid">
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">CAD</span><span class="ind-name">Coeficiente de Apertura de Datos</span></div>
+      <div class="ind-formula">CAD = Σ(V_formato × W_tiempo) / Max_Score</div>
+      <ul class="ind-vars">
+        <li><strong>V_formato</strong>: PDF=1 · Excel=3 · JSON/API=5</li>
+        <li><strong>W_tiempo</strong>: Inmediato=1.0 · +1 semana=0.5 · +1 mes=0.1</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: Auditoría propia del monitor sobre portales oficiales
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">EVD</span><span class="ind-name">Error de Veracidad de Datos</span></div>
+      <div class="ind-formula">EVD = D_erroneos / D_verificables</div>
+      <ul class="ind-vars">
+        <li><strong>D_erroneos</strong>: Datos del monitor que no coinciden con la fuente primaria</li>
+        <li><strong>D_verificables</strong>: Total de puntos de datos auditados</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: Comparación cruzada SIL / <a href="https://www.boletinoficial.gob.ar/" target="_blank">Boletín Oficial</a>
+      </div>
+    </div>
+
+    <div class="ind-card">
+      <div class="ind-top"><span class="ind-id">TCI</span><span class="ind-name">Tasa de Conversión de Interacción Ciudadana</span></div>
+      <div class="ind-formula">TCI = (U_activos / U_totales) × 100</div>
+      <ul class="ind-vars">
+        <li><strong>U_activos</strong>: Usuarios que clicaron en Comentar / Votar / Descargar</li>
+        <li><strong>U_totales</strong>: Sesiones totales en el sitio del monitor</li>
+      </ul>
+      <div class="ind-source">
+        Fuente: Google Analytics del monitor
+      </div>
+    </div>
+
+  </div>
+</div><!-- /tab-indicadores -->
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TAB 2 – DDJJ                                           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="tab-ddjj" class="tab-content">
+
+  <div class="ddjj-box">
+    <h3>⚠️ Sobre el acceso a las DDJJ de Diputados</h3>
+    <p>
+      El portal <strong>ddjj.diputados.gov.ar</strong> no ofrece descarga programática de datos:
+      requiere navegación manual y no expone una API pública accesible.
+      Por esa razón, este monitor <strong>no extrae DDJJ directamente</strong> de ese sitio.
+    </p>
+    <p>
+      Las Declaraciones Juradas Patrimoniales Integrales (DJPI) de los legisladores nacionales
+      son administradas por la <strong>Oficina Anticorrupción (OA)</strong> en el marco de la
+      Ley N° 25.188 de Ética en el Ejercicio de la Función Pública y su modificatoria Ley N° 26.857.
+      La parte pública puede ser consultada de forma gratuita por cualquier ciudadano en los
+      siguientes portales oficiales:
+    </p>
+  </div>
+
+  <h3 style="font-size:.95rem; font-weight:700; color:#003087; margin-bottom:1rem;">
+    🔗 Portales oficiales para consultar DDJJ de Legisladores
+  </h3>
+
+  <ul class="link-list">
+    <li>
+      <a href="https://www.argentina.gob.ar/servicio/consultar-declaraciones-juradas-de-funcionarios-publicos" target="_blank">
+        🏛️ Consultar DDJJ – Oficina Anticorrupción (OA)
+      </a>
+      <div class="desc">Portal oficial de la OA para consulta ciudadana de DJPI de funcionarios públicos, incluyendo legisladores. Búsqueda por nombre y cargo.</div>
+    </li>
+    <li>
+      <a href="https://www.hcdn.gob.ar/institucional/transparencia/declaraciones_juradas/index.html" target="_blank">
+        📋 DDJJ – Cámara de Diputados (HCDN)
+      </a>
+      <div class="desc">Página de transparencia de la HCDN con información sobre el procedimiento y acceso a las DJPI de los diputados nacionales (Disposición Administrativa N° 545/2025).</div>
+    </li>
+    <li>
+      <a href="https://datos.gob.ar/dataset/justicia-declaraciones-juradas-patrimoniales-integrales-caracter-publico" target="_blank">
+        📂 Dataset DDJJ en formato abierto – datos.gob.ar
+      </a>
+      <div class="desc">Las DJPI del Poder Ejecutivo Nacional en formato abierto desde 2012. Algunos legisladores que usan la plataforma OA también aparecen aquí.</div>
+    </li>
+    <li>
+      <a href="https://www.argentina.gob.ar/anticorrupcion" target="_blank">
+        🔍 Oficina Anticorrupción – Portal principal
+      </a>
+      <div class="desc">Organismo responsable del Sistema DJPI. Incluye listados de cumplidores e incumplidores en la presentación.</div>
+    </li>
+  </ul>
+
+  <div style="margin-top:1.5rem; background:#e8f5e9; border-left:4px solid #2e7d32; padding:.9rem 1.2rem; border-radius:5px; font-size:.85rem;">
+    <strong>📌 Dato clave:</strong> Según la Ley N° 26.857, la parte pública de las DJPI
+    debe ser publicada por la OA dentro de los <strong>10 días hábiles</strong> desde su presentación.
+    El vencimiento anual opera el <strong>30 de mayo</strong> de cada año (sujeto a posibles prórrogas de la OA).
+  </div>
+
+</div><!-- /tab-ddjj -->
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TAB 3 – BIBLIOGRAFÍA                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="tab-bibliografia" class="tab-content">
+
+  <!-- FUENTES DE DATOS OFICIALES -->
+  <div class="biblio-section">
+    <h3>📡 Fuentes de Datos Oficiales</h3>
+    <div class="biblio-grid">
+
+      <div class="biblio-card">
+        <div class="btype">Portal de Datos</div>
+        <div class="btitle">Datos Abiertos – Cámara de Diputados (HCDN)</div>
+        <div class="bauthor">Honorable Cámara de Diputados de la Nación</div>
+        <div class="blink"><a href="https://datos.hcdn.gob.ar/" target="_blank">datos.hcdn.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Sistema Legislativo</div>
+        <div class="btitle">Sistema de Información Legislativa (InfoLEG)</div>
+        <div class="bauthor">Ministerio de Justicia de la Nación</div>
+        <div class="blink"><a href="https://www.infoleg.gob.ar/" target="_blank">infoleg.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Presupuesto</div>
+        <div class="btitle">Portal Presupuesto Abierto – Ejecución Presupuestaria</div>
+        <div class="bauthor">Secretaría de Hacienda – Ministerio de Economía</div>
+        <div class="blink"><a href="https://www.presupuestoabierto.gob.ar/sici/datos-abiertos" target="_blank">presupuestoabierto.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Estadísticas</div>
+        <div class="btitle">Censo Nacional de Población 2022</div>
+        <div class="bauthor">Instituto Nacional de Estadística y Censos (INDEC)</div>
+        <div class="blink"><a href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-41-135" target="_blank">indec.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Auditoría</div>
+        <div class="btitle">Informes de Auditoría – AGN</div>
+        <div class="bauthor">Auditoría General de la Nación</div>
+        <div class="blink"><a href="https://www.agn.gob.ar/informes" target="_blank">agn.gob.ar/informes</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Normas</div>
+        <div class="btitle">Boletín Oficial de la República Argentina</div>
+        <div class="bauthor">Secretaría Legal y Técnica de la Presidencia</div>
+        <div class="blink"><a href="https://www.boletinoficial.gob.ar/" target="_blank">boletinoficial.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Votaciones</div>
+        <div class="btitle">Sistema de Votaciones Nominales HCDN</div>
+        <div class="bauthor">Honorable Cámara de Diputados de la Nación</div>
+        <div class="blink"><a href="https://votaciones.hcdn.gob.ar/" target="_blank">votaciones.hcdn.gob.ar</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Estadísticas Parlamentarias</div>
+        <div class="btitle">Estadísticas Parlamentarias – Períodos 101 a 143</div>
+        <div class="bauthor">Dirección General de Información Parlamentaria, HCDN</div>
+        <div class="blink"><a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/estadisticas_parlamentarias/index.html" target="_blank">hcdn.gob.ar – Estadísticas</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MARCO NORMATIVO -->
+  <div class="biblio-section">
+    <h3>⚖️ Marco Normativo</h3>
+    <div class="biblio-grid">
+
+      <div class="biblio-card">
+        <div class="btype">Ley Nacional</div>
+        <div class="btitle">Ley N° 25.188 – Ética en el Ejercicio de la Función Pública</div>
+        <div class="bauthor">Honorable Congreso de la Nación Argentina, 1999</div>
+        <div class="blink"><a href="https://www.infoleg.gob.ar/infolegInternet/anexos/60000-64999/60847/norma.htm" target="_blank">InfoLEG – Ley 25.188</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Ley Nacional</div>
+        <div class="btitle">Ley N° 26.857 – Publicidad de DDJJ Patrimoniales</div>
+        <div class="bauthor">Honorable Congreso de la Nación Argentina, 2013</div>
+        <div class="blink"><a href="https://www.infoleg.gob.ar/infolegInternet/anexos/210000-214999/212411/norma.htm" target="_blank">InfoLEG – Ley 26.857</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Ley Nacional</div>
+        <div class="btitle">Ley N° 27.275 – Derecho de Acceso a la Información Pública</div>
+        <div class="bauthor">Honorable Congreso de la Nación Argentina, 2016</div>
+        <div class="blink"><a href="https://www.infoleg.gob.ar/infolegInternet/anexos/265000-269999/265949/norma.htm" target="_blank">InfoLEG – Ley 27.275</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Reglamento</div>
+        <div class="btitle">Reglamento de la H. Cámara de Diputados de la Nación</div>
+        <div class="bauthor">Honorable Cámara de Diputados de la Nación</div>
+        <div class="blink"><a href="https://www.hcdn.gob.ar/institucional/reglamento/index.html" target="_blank">hcdn.gob.ar – Reglamento</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LITERATURA ACADÉMICA -->
+  <div class="biblio-section">
+    <h3>📖 Literatura Académica y de Referencia</h3>
+    <div class="biblio-grid">
+
+      <div class="biblio-card">
+        <div class="btype">Libro</div>
+        <div class="btitle">Legislative Performance: An Index of Effectiveness</div>
+        <div class="bauthor">Inter-Parliamentary Union (IPU), 2022</div>
+        <div class="blink"><a href="https://www.ipu.org" target="_blank">ipu.org</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Informe</div>
+        <div class="btitle">Índices de Desempeño Parlamentario en América Latina</div>
+        <div class="bauthor">PNUD – Programa de Naciones Unidas para el Desarrollo, 2021</div>
+        <div class="blink"><a href="https://www.undp.org/latin-america" target="_blank">undp.org</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Paper</div>
+        <div class="btitle">Measuring Legislative Productivity and Quality</div>
+        <div class="bauthor">Rueda, D. & Stegmueller, D. – Comparative Political Studies, 2019</div>
+        <div class="blink"><a href="https://journals.sagepub.com/home/cps" target="_blank">Comparative Political Studies</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Informe</div>
+        <div class="btitle">Open Government Data: The Book</div>
+        <div class="bauthor">Tauberer, J., 2014 (Ed. actualizada 2023)</div>
+        <div class="blink"><a href="https://opengovdata.io/" target="_blank">opengovdata.io</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Informe</div>
+        <div class="btitle">Transparencia Legislativa en Argentina: Estado de Situación</div>
+        <div class="bauthor">Poder Ciudadano / ACIJ, 2023</div>
+        <div class="blink"><a href="https://poderciudadano.org/" target="_blank">poderciudadano.org</a></div>
+      </div>
+
+      <div class="biblio-card">
+        <div class="btype">Paper</div>
+        <div class="btitle">Costs of Legislation: A Framework for Analysis</div>
+        <div class="bauthor">Huber, J. & Shipan, C. – Legislative Studies Quarterly, 2002</div>
+        <div class="blink"><a href="https://doi.org/10.1111/j.1939-9162.2002.tb00493.x" target="_blank">DOI: 10.1111/j.1939-9162</a></div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-bibliografia -->
+
+<footer>
+  Monitor Legislativo · República Argentina · Datos de referencia 2024–2025<br>
+  Fuentes: HCDN · INDEC · Presupuesto Abierto · Boletín Oficial · AGN · Oficina Anticorrupción
+</footer>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>

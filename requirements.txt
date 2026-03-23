@@ -18,3 +18,5 @@ httpx==0.27.0
 # ── Navegador headless (solo necesario para DDJJ anti-bot) ────────────────
 playwright==1.44.0
 # Después de instalar: playwright install chromium
+# ── Calendario y Feriados ──────────────────────────────────────────────────
+holidays==0.47

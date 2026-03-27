@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Indicadores – Monitor Legislativo Diputados Argentina</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.55; background: #f0f2f5; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #0A2463 0%, #1a3a7c 50%, #061440 100%); color: #fff; padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+header .escudo { font-size: 2.4rem; }
+header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; }
+header p  { font-size: .875rem; opacity: .85; margin-top: .2rem; }
+header nav { margin-left: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; transition: background .15s; }
+header nav a:hover { background: rgba(255,255,255,.35); }
+header nav a.active { background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.6); }
+.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; gap: 0; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
+.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); transition: background .12s, color .12s; white-space: nowrap; }
+.nav-interna a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-interna a.activo { background: rgba(255,255,255,.18); color: #fff; border-bottom: 3px solid #C9A84C; }
+.disclaimer { background: #fffbeb; border-left: 4px solid #C9A84C; padding: .75rem 1.5rem; font-size: .78rem; color: #5a4a00; border-bottom: 1px solid #f0e0a0; line-height: 1.55; }
+.kpi-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .75rem; padding: 1.25rem 1.5rem; background: #fff; border-bottom: 1px solid #dde2ec; }
+.kpi-card { background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0; padding: .9rem 1rem; text-align: center; }
+.kpi-card .kv { font-size: 1.75rem; font-weight: 800; color: #0A2463; line-height: 1; }
+.kpi-card .kl { font-size: .72rem; color: #64748b; margin-top: .3rem; text-transform: uppercase; letter-spacing: .04em; }
+.kpi-card .ks { font-size: .8rem; color: #475569; margin-top: .15rem; }
+.seccion { padding: 1.25rem 1.5rem; }
+.seccion h2 { font-size: 1rem; font-weight: 700; color: #0A2463; margin-bottom: .9rem; padding-bottom: .4rem; border-bottom: 2px solid #d0daf0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+@media(max-width:800px){ .grid-2 { grid-template-columns: 1fr; } }
+.panel { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1rem 1.1rem; overflow: hidden; }
+.panel h3 { font-size: .88rem; font-weight: 700; color: #334155; margin-bottom: .75rem; }
+.tbl { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.tbl th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .45rem .6rem; text-align: left; border-bottom: 2px solid #c5d0e8; position: sticky; top: 0; }
+.tbl th.num, .tbl td.num { text-align: right; }
+.tbl tr:nth-child(even) { background: #fafbff; }
+.tbl td { padding: .38rem .6rem; border-bottom: 1px solid #f0f0f0; }
+.tbl tr:hover td { background: #f0f4ff; }
+.bar-wrap { display: flex; align-items: center; gap: .5rem; }
+.bar-bg { flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; min-width: 60px; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width .3s; }
+.bar-label { font-size: .75rem; font-weight: 700; min-width: 38px; text-align: right; }
+.pill { display: inline-block; padding: .15rem .55rem; border-radius: 12px; font-size: .7rem; font-weight: 700; color: #fff; }
+.ranking-row { display: flex; align-items: center; gap: .6rem; padding: .4rem 0; border-bottom: 1px solid #f0f0f0; }
+.ranking-row:last-child { border-bottom: none; }
+.rk-num { font-size: .75rem; font-weight: 700; color: #94a3b8; min-width: 22px; }
+.rk-nombre { flex: 1; font-size: .8rem; font-weight: 600; }
+.rk-dist { font-size: .7rem; color: #64748b; }
+.rk-val { font-size: .85rem; font-weight: 800; min-width: 48px; text-align: right; }
+.panel-scroll { max-height: 400px; overflow-y: auto; }
+.ind-formula-box { background: #1e293b; color: #e2e8f0; border-radius: 8px; padding: .9rem 1.2rem; font-family: 'Courier New', monospace; font-size: .88rem; margin: .75rem 0; border-left: 4px solid #C9A84C; line-height: 1.9; }
+.ind-formula-box .var { color: #93c5fd; }
+.ind-formula-box .op  { color: #C9A84C; }
+.ind-formula-box .num { color: #86efac; }
+.ind-formula-box .comm{ color: #64748b; font-style: italic; }
+.ind-card { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1.1rem 1.4rem; margin-bottom: .9rem; border-left: 4px solid #0A2463; }
+.ind-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .6rem; flex-wrap: wrap; }
+.ind-badge { background: #0A2463; color: #fff; border-radius: 6px; padding: .2rem .6rem; font-size: .75rem; font-weight: 800; font-family: monospace; white-space: nowrap; }
+.ind-nombre { font-size: .95rem; font-weight: 700; color: #1e293b; }
+.ind-desc { font-size: .83rem; color: #475569; line-height: 1.55; }
+footer { text-align: center; padding: 1rem; font-size: .75rem; color: #94a3b8; border-top: 1px solid #dde2ec; margin-top: 1rem; }
+footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="escudo">🏛️</span>
+  <div>
+    <h1>Monitor Legislativo · Indicadores — Cámara de Diputados</h1>
+    <p>Indicadores de composición y representatividad — datos al 27 de marzo de 2026</p>
+  </div>
+  <nav>
+    <a href="indicadores_diputados.html">🏛️ Nómina</a>
+    <a href="indicadores2_diputados.html" class="active">📊 Indicadores</a>
+    <a href="metodologia_diputados.html">📚 Metodología</a>
+  </nav>
+</header>
+
+<div class="nav-interna">
+  <a href="#resumen" class="activo">📋 Resumen</a>
+  <a href="#bloques">🎯 Por Bloque</a>
+  <a href="#distritos">🗺️ Por Distrito</a>
+  <a href="#ranking-mayor">🏆 Mayor bloque</a>
+  <a href="#ranking-menor">📉 Menor bloque</a>
+  <a href="#formulas">📐 Fórmulas</a>
+  <a href="metodologia_diputados.html">📚 Metodología</a>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Nota:</strong> Esta herramienta es de carácter experimental y académico. Los datos provienen de fuentes públicas oficiales del Estado argentino. Los resultados son indicadores algorítmicos — no implican juicio de valor, acusación ni determinación de responsabilidad sobre ninguna empresa, organismo o persona. El objetivo es promover la transparencia y el debate informado sobre la composición legislativa.
+</div>
+
+<!-- KPIs -->
+<div class="kpi-bar" id="resumen">
+  <div class="kpi-card"><div class="kv" id="kpi-total">257</div><div class="kl">Diputados</div><div class="ks">en ejercicio</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-nep">—</div><div class="kl">NEP</div><div class="ks">Laakso-Taagepera</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-frag">—</div><div class="kl">Fragmentación</div><div class="ks">Índice de Rae</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-irb">—</div><div class="kl">Tasa renovación</div><div class="ks">bienal dic. 2025</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-bloques">—</div><div class="kl">Bloques</div><div class="ks">activos</div></div>
+  <div class="kpi-card"><div class="kv">129</div><div class="kl">Quórum</div><div class="ks">Art. 64 CN</div></div>
+</div>
+
+<!-- Bloques -->
+<div class="seccion" id="bloques">
+  <h2>🎯 Composición por Bloque</h2>
+  <div class="panel">
+    <div class="panel-scroll">
+      <table class="tbl" id="tbl-bloques">
+        <thead><tr>
+          <th>Bloque parlamentario</th>
+          <th class="num">Bancas</th>
+          <th style="min-width:180px">Representación</th>
+          <th class="num">% Cámara</th>
+          <th class="num">Mandato 25-29</th>
+          <th class="num">Mandato 23-27</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Distritos -->
+<div class="seccion" id="distritos">
+  <h2>🗺️ Composición por Distrito</h2>
+  <div class="panel">
+    <div class="panel-scroll">
+      <table class="tbl" id="tbl-distritos">
+        <thead><tr>
+          <th>Distrito</th>
+          <th class="num">Bancas</th>
+          <th style="min-width:180px">Representación</th>
+          <th>Bloques presentes</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Rankings -->
+<div class="seccion">
+  <div class="grid-2">
+    <div id="ranking-mayor">
+      <h2>🏆 Bloques con más bancas</h2>
+      <div class="panel"><div class="panel-scroll" id="list-mayor"></div></div>
+    </div>
+    <div id="ranking-menor">
+      <h2>📉 Bloques con menos bancas</h2>
+      <div class="panel"><div class="panel-scroll" id="list-menor"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Fórmulas -->
+<div class="seccion" id="formulas">
+  <h2>📐 Indicadores y fórmulas de composición</h2>
+
+  <div class="ind-card">
+    <div class="ind-header">
+      <span class="ind-badge">NEP</span>
+      <span class="ind-nombre">Número Efectivo de Partidos (Laakso-Taagepera)</span>
+    </div>
+    <p class="ind-desc">Mide cuántos partidos "efectivos" existen ponderando su tamaño. Un NEP alto indica alta fragmentación. Un valor cercano a 1 indica dominancia de un solo bloque.</p>
+    <div class="ind-formula-box">
+      <span class="var">NEP</span> <span class="op">=</span> <span class="num">1</span> <span class="op">/</span> Σ <span class="var">pᵢ²</span><br>
+      <span class="comm">-- pᵢ: proporción de bancas del bloque i sobre el total de la Cámara</span>
+    </div>
+  </div>
+
+  <div class="ind-card">
+    <div class="ind-header">
+      <span class="ind-badge">IF</span>
+      <span class="ind-nombre">Índice de Fragmentación (Rae, 1967)</span>
+    </div>
+    <p class="ind-desc">Mide la dispersión del poder entre bloques. Varía entre 0 (un solo bloque) y 1 (máxima fragmentación). Complementa al NEP.</p>
+    <div class="ind-formula-box">
+      <span class="var">IF</span> <span class="op">=</span> <span class="num">1</span> <span class="op">-</span> Σ <span class="var">pᵢ²</span><br>
+      <span class="comm">-- pᵢ: proporción de bancas del bloque i</span>
+    </div>
+  </div>
+
+  <div class="ind-card">
+    <div class="ind-header">
+      <span class="ind-badge">IRB</span>
+      <span class="ind-nombre">Tasa de Renovación Bienal</span>
+    </div>
+    <p class="ind-desc">Proporción de bancas renovadas en la última elección legislativa (diciembre 2025). La CN establece renovación por mitades cada 2 años (Art. 50).</p>
+    <div class="ind-formula-box">
+      <span class="var">IRB</span> <span class="op">=</span> <span class="var">bancas_cohorte_nueva</span> <span class="op">/</span> <span class="var">total_bancas</span> <span class="op">×</span> <span class="num">100</span><br>
+      <span class="comm">-- cohorte nueva: mandato 2025-2029 (ingresaron en dic. 2025)</span>
+    </div>
+  </div>
+
+  <div class="ind-card">
+    <div class="ind-header">
+      <span class="ind-badge">IRG</span>
+      <span class="ind-nombre">Índice de Representación Geográfica</span>
+    </div>
+    <p class="ind-desc">Mide la representación per cápita de cada distrito. Buenos Aires (70 bancas, ~39% de la población) es el distrito más representado en términos absolutos, aunque el mínimo constitucional de 5 bancas favorece relativamente a las provincias menos pobladas.</p>
+    <div class="ind-formula-box">
+      <span class="var">IRG</span> <span class="op">=</span> (<span class="var">bancas_distrito</span> <span class="op">/</span> <span class="var">total_bancas</span>) <span class="op">/</span> (<span class="var">población_distrito</span> <span class="op">/</span> <span class="var">población_total</span>)<br>
+      <span class="comm">-- IRG > 1: sobre-representado | IRG &lt; 1: sub-representado</span>
+    </div>
+  </div>
+</div>
+
+<!-- Link metodología -->
+<div class="seccion" style="margin-top:.5rem">
+  <div class="panel" style="background:linear-gradient(135deg,#f0f4ff,#fff8e8);border-left:4px solid #0A2463">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div style="font-size:.95rem;font-weight:700;color:#0A2463;margin-bottom:.3rem">📚 Metodología completa</div>
+        <div style="font-size:.82rem;color:#475569;max-width:680px">Consultá el marco conceptual, glosario, fuentes de datos y bibliografía académica completa del monitor.</div>
+      </div>
+      <a href="metodologia_diputados.html" style="display:inline-block;background:#0A2463;color:#fff;text-decoration:none;padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:700;white-space:nowrap">Ver metodología →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Fuente: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a> · 27-03-2026 · Monitor Legislativo ·
+  <a href="indicadores_diputados.html">🏛️ Nómina</a> · <a href="metodologia_diputados.html">📚 Metodología</a>
+</footer>
+
+<script>
+const DIPUTADOS = [
+  {nombre:"Agüero, Guillermo César",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
+  {nombre:"Aguirre, Hilda",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Ajmechet, Sabrina",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Alí, Ernesto Pipi",distrito:"SAN LUIS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Almena, Carlos Alberto",distrito:"SAN LUIS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Almirón, Lisandro",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Álvarez, Claudio",distrito:"SAN LUIS",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Andino, Cristian",distrito:"SAN JUAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Andrade, Javier",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Andreussi, Barbara",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Ansaloni, Pablo",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Arabia, Damián",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Araujo Hernández, Jorge Neri",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Ardohain, Martín",distrito:"LA PAMPA",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"Arrieta, Lourdes Micaela",distrito:"MENDOZA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Arrúa, Alberto",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Aveiro, Martín",distrito:"MENDOZA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Avico, Belén",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Avila, Fernanda",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2023-2027"},
+  {nombre:"Avila, Jorge Antonio",distrito:"CHUBUT",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Banfi, Karina",distrito:"BUENOS AIRES",bloque:"ADELANTE BUENOS AIRES",mandato:"2023-2027"},
+  {nombre:"Barbur, Marcelo",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Basterra, Luis Eugenio",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Basualdo, Atilio",distrito:"FORMOSA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Basualdo, Carolina",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Becerra, Mónica",distrito:"SAN LUIS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Benedit, Beltrán",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Benegas Lynch, Bertie",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Bianchetti, Emmanuel",distrito:"MISIONES",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"Biella, Bernardo",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2025-2029"},
+  {nombre:"Bonacci, Rocío",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Bongiovanni, Alejandro",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Bordet, Gustavo",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Borgatta, Alejandrina",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Bornoroni, Gabriel",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Bregman, Myriam",distrito:"CIUDAD DE BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029"},
+  {nombre:"Brizuela, Adrián",distrito:"CATAMARCA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Brügge, Juan Fernando",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Bruno, Eliana",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Cafiero, Santiago",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Campero, Mariano",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Campitelli, Celia",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Campo, Julieta Marisol",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Cámpora, Lucía",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Capozzi, Sergio Eduardo",distrito:"RIO NEGRO",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Carignano, Florencia",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Carrancio, Alejandro",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Casas, Sergio Guillermo",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Castagneto, Carlos Daniel",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Castelnuovo, Giselle",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Chica, Jorge",distrito:"SAN JUAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Chiconi, Abel",distrito:"SAN JUAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Cipolini, Gerardo",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2023-2027"},
+  {nombre:"Cisneros, Carlos",distrito:"TUCUMAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Coletta, Mariela",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Correa Llano, Facundo",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Daives, Ricardo",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"de Andreis, Fernando",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"de la Rosa, María Graciela",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"de la Sota, Natalia",distrito:"CORDOBA",bloque:"DEFENDAMOS CÓRDOBA",mandato:"2025-2029"},
+  {nombre:"De Sensi, María Florencia",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"del Caño, Nicolás",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029"},
+  {nombre:"Del Plá, Romina",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029"},
+  {nombre:"Díaz, Fernanda",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Diez, Romina",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Dolce, Sergio",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Emma, Nicolás",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Estévez, Gabriela Beatriz",distrito:"CORDOBA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Falcone, Eduardo",distrito:"BUENOS AIRES",bloque:"MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",mandato:"2023-2027"},
+  {nombre:"Fargosi, Alejandro",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Farías, Pablo",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Félix, Emir",distrito:"MENDOZA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Fernández, Jorge",distrito:"SAN LUIS",bloque:"PRIMERO SAN LUIS",mandato:"2025-2029"},
+  {nombre:"Fernández, Elia Marina",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2023-2027"},
+  {nombre:"Fernández Molero, Daiana",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"Ferrán, Abelardo",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Ferraro, Maximiliano",distrito:"CIUDAD DE BUENOS AIRES",bloque:"COALICION CIVICA",mandato:"2023-2027"},
+  {nombre:"Ferreyra, Alida",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Figliuolo, Sergio",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Finocchiaro, Alejandro",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"Flores, Maria Gabriela",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Frade, Mónica",distrito:"BUENOS AIRES",bloque:"COALICION CIVICA",mandato:"2023-2027"},
+  {nombre:"Fregonese, Alicia",distrito:"ENTRE RIOS",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"Freites, Andrea",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Frias, Maira",distrito:"CHUBUT",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Gallardo, María Virginia",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Galmarini, Sebastián",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"García, Álvaro",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"García, María Teresa",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"García, Carlos",distrito:"CHACO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"García Aresca, Ignacio",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Garrido, José Luis",distrito:"SANTA CRUZ",bloque:"POR SANTA CRUZ",mandato:"2023-2027"},
+  {nombre:"Giampieri, Antonela",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"Giudici, Silvana",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Giuliano, Diego A.",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Glinski, José",distrito:"CHUBUT",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Goitia, Rosario",distrito:"CHACO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Gomez, José",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Gonzales, Alfredo",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"González, Diógenes Ignacio",distrito:"CORRIENTES",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
+  {nombre:"González, Álvaro",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"González, Gerardo Gustavo",distrito:"FORMOSA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"González Estevarena, María Luisa",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Grabois, Juan",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Gruber, Maura",distrito:"MISIONES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Gutiérrez, Ramiro",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Gutiérrez, Carlos",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Guzmán, Jairo",distrito:"SANTA CRUZ",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Hadad, Raúl",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Hagman, Itai",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Hartfield, Diego",distrito:"MISIONES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Herrera, Oscar",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2025-2029"},
+  {nombre:"Holzman, Patricia",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Huesen, Gerardo",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Humenuk, Gladys",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Ianni, Ana María",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Ibañez, María Cecilia",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Jaime Quiroga, Carlos Gustavo",distrito:"SAN JUAN",bloque:"PRODUCCION Y TRABAJO",mandato:"2025-2029"},
+  {nombre:"Juliano, Pablo",distrito:"BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Kirchner, Máximo Carlos",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Lanesan Sancho, Moira",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Laumann, Andrés Ariel",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Leiva, Aldo",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Lemoine, Lilia",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Leone, Andrés",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Llano, Mercedes",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Lluch, Enrique",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Longo, Johanna Sabrina",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"López, Jimena",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"López Pasquali, Cecilia",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Lousteau, Martín",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Luque, Juan Pablo",distrito:"CHUBUT",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Macyszyn, Lorena",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Mango, Marcelo",distrito:"RIO NEGRO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Manrique, Mario",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Marclay, Marianela",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Marín, Varinia Lis",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Marino, Juan",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Martínez, Álvaro",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Martínez, Germán Pedro",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Massot, Nicolás",distrito:"BUENOS AIRES",bloque:"ENCUENTRO FEDERAL",mandato:"2023-2027"},
+  {nombre:"Maureira, Karina",distrito:"NEUQUEN",bloque:"LA NEUQUINIDAD",mandato:"2025-2029"},
+  {nombre:"Mayoraz, Nicolás",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Medina, Gladys",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2025-2029"},
+  {nombre:"Menem, Martín",distrito:"LA RIOJA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Metral Asensio, Julieta",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Michel, Guillermo",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Miño, Fernanda",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Molina, Juan Carlos",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Molinuevo, Soledad",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Molle, Matías",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Mondaca, Soledad",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Monguillot, Fernando",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2025-2029"},
+  {nombre:"Montenegro, Juan Pablo",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Montenegro, Guillermo",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Monzón, Roxana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Morchio, Francisco",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Moreau, Cecilia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Moreno Ovalle, Julio",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Moyano, Hugo Antonio",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Mukdise, Jorge",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Muñoz, Gabriela Luciana",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Neder, Estela Mary",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Nieri, Lisandro",distrito:"MENDOZA",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2023-2027"},
+  {nombre:"Niveyro, Miriam",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Nóblega, Sebastián",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2023-2027"},
+  {nombre:"Noguera, Javier",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2025-2029"},
+  {nombre:"Nuñez, José",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Ojeda, Joaquín",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Olmos, Kelly",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Osuna, Blanca Inés",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Outes, Pablo",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Pagano, Marcela Marina",distrito:"BUENOS AIRES",bloque:"COHERENCIA",mandato:"2023-2027"},
+  {nombre:"Palazzo, Sergio Omar",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Palladino, Claudia María",distrito:"CATAMARCA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Pareja, Sebastián",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Parola, María Graciela",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Patiño Brizuela, Marcos",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Pauli, Santiago",distrito:"TIERRA DEL FUEGO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Paulón, Esteban",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Pedrali, Gabriela",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Pellegrini, Agustín",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Pelli, Federico Agustín",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Peluc, José",distrito:"SAN JUAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Penacca, Paula Andrea",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Petri, Luis",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Petrovich, María Lorena",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Picat, Luis Albino",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Pichetto, Miguel Ángel",distrito:"BUENOS AIRES",bloque:"ENCUENTRO FEDERAL",mandato:"2023-2027"},
+  {nombre:"Picón Martínez, Nancy Viviana",distrito:"SAN JUAN",bloque:"PRODUCCION Y TRABAJO",mandato:"2023-2027"},
+  {nombre:"Pietragalla Corti, Horacio",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Pitrola, Nestor",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2023-2027"},
+  {nombre:"Pokoik, Lorena",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Ponce, María Celeste",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Potenza, Luciana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Propato, Agustina Lucrecia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Quintar, Manuel",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Rauschenberger, Ariel",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Ravera, Valentina",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Ravier, Adrián",distrito:"LA PAMPA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Razzini, Verónica",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Reichardt, Karen",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Riesco, Gastón",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Ritondo, Cristian A.",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"Rizzotti, Jorge",distrito:"JUJUY",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Roberto, Santiago Luis",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Roca, Gonzalo",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Rodríguez, Miguel",distrito:"TIERRA DEL FUEGO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Rodríguez Machado, Laura Elena",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Rossi, Agustín Oscar",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Ruíz, Yamila",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Salzmann, Marina Dorotea",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Sánchez Wrba, Javier",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029"},
+  {nombre:"Sand, Nancy",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Santillán Juárez Brahim, Juliana",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Santurio, Santiago",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Scaglia, Gisela",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Schiaretti, Juan",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Schneider, Darío",distrito:"ENTRE RIOS",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
+  {nombre:"Selva, Sabrina",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Serquis, Adriana Cristina",distrito:"RIO NEGRO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Siley, Vanesa Raquel",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Snopek, Guillermo",distrito:"JUJUY",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Soldano, Laura",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Strada, Julia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Taiana, Jorge",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Tailhade, Rodolfo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Tepp, Caren",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Tita, Paulo Agustín",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Todero, Pablo",distrito:"NEUQUEN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Tolosa Paz, Victoria",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Tomassoni, Yamile",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Torres, Rubén Darío",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Torres, Alejandra",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027"},
+  {nombre:"Tortoriello, Aníbal",distrito:"RIO NEGRO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Tournier, José Federico",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Treffinger, César",distrito:"CHUBUT",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Trotta, Nicolás Alfredo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Urien, Hernán",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Valdés, Eduardo Félix",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Vancsik, Daniel",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Vásquez, Patricia",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Vega, Yolanda",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027"},
+  {nombre:"Velázquez, M. Elena",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Vera, Andrea Fernanda",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Verasay, Pamela Fernanda",distrito:"MENDOZA",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
+  {nombre:"Villaverde, Lorena",distrito:"RIO NEGRO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027"},
+  {nombre:"Visconti, Gino",distrito:"LA RIOJA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Volnovich, Luana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Yasky, Hugo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029"},
+  {nombre:"Yedlin, Pablo Raúl",distrito:"TUCUMAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Yeza, Martín",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2023-2027"},
+  {nombre:"Zago, Oscar",distrito:"CIUDAD DE BUENOS AIRES",bloque:"MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",mandato:"2023-2027"},
+  {nombre:"Zapata, Carlos Raúl",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
+  {nombre:"Zaracho, Natalia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
+  {nombre:"Zigarán, María Inés",distrito:"JUJUY",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029"},
+  {nombre:"Zulli, Christian Alejandro",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"}
+];
+
+function colorBloque(b) {
+  if (!b) return '#64748b';
+  const bl = b.toLowerCase();
+  if (bl.includes('libertad avanza')) return '#7c3aed';
+  if (bl.includes('patria'))          return '#2563eb';
+  if (bl.includes('pro') && !bl.includes('produccion')) return '#d97706';
+  if (bl.includes('radical') || bl.includes('ucr')) return '#e74c3c';
+  if (bl.includes('provincias unidas')) return '#0891b2';
+  if (bl.includes('izquierda') || bl.includes('fit')) return '#991b1b';
+  if (bl.includes('innovación')) return '#059669';
+  if (bl.includes('encuentro')) return '#ea580c';
+  if (bl.includes('coalicion')) return '#6b21a8';
+  return '#64748b';
+}
+
+function barHtml(pct, max) {
+  const w = (pct / max * 100).toFixed(0);
+  const col = colorBloque('');
+  return `<div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:#0A2463"></div></div><span class="bar-label" style="color:#0A2463">${pct}</span></div>`;
+}
+
+// Calcular
+const total = DIPUTADOS.length;
+const bloques = {}, distritos = {};
+DIPUTADOS.forEach(d => {
+  bloques[d.bloque] = (bloques[d.bloque]||0)+1;
+  distritos[d.distrito] = (distritos[d.distrito]||0)+1;
+});
+
+const m2529 = DIPUTADOS.filter(d=>d.mandato==='2025-2029').length;
+const m2327 = DIPUTADOS.filter(d=>d.mandato==='2023-2027').length;
+const sumPi2 = Object.values(bloques).reduce((s,n)=>s+(n/total)**2,0);
+const nep  = (1/sumPi2).toFixed(2);
+const frag = (1-sumPi2).toFixed(4);
+const irb  = (m2529/total*100).toFixed(1)+'%';
+const nb   = Object.keys(bloques).length;
+
+document.getElementById('kpi-total').textContent  = total;
+document.getElementById('kpi-nep').textContent    = nep;
+document.getElementById('kpi-frag').textContent   = frag;
+document.getElementById('kpi-irb').textContent    = irb;
+document.getElementById('kpi-bloques').textContent = nb;
+
+// Tabla bloques
+const bloquesSorted = Object.entries(bloques).sort((a,b)=>b[1]-a[1]);
+const maxB = bloquesSorted[0][1];
+document.querySelector('#tbl-bloques tbody').innerHTML = bloquesSorted.map(([b,n])=>{
+  const pct=(n/total*100).toFixed(1);
+  const w=(n/maxB*100).toFixed(0);
+  const col=colorBloque(b);
+  const m29=DIPUTADOS.filter(d=>d.bloque===b&&d.mandato==='2025-2029').length;
+  const m27=DIPUTADOS.filter(d=>d.bloque===b&&d.mandato==='2023-2027').length;
+  return `<tr>
+    <td><span class="pill" style="background:${col}">${b}</span></td>
+    <td class="num" style="font-weight:800">${n}</td>
+    <td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:${col}"></div></div><span class="bar-label" style="color:${col}">${pct}%</span></div></td>
+    <td class="num">${pct}%</td>
+    <td class="num">${m29}</td>
+    <td class="num">${m27}</td>
+  </tr>`;
+}).join('');
+
+// Tabla distritos
+const distSorted = Object.entries(distritos).sort((a,b)=>b[1]-a[1]);
+const maxD = distSorted[0][1];
+document.querySelector('#tbl-distritos tbody').innerHTML = distSorted.map(([d,n])=>{
+  const pct=(n/total*100).toFixed(1), w=(n/maxD*100).toFixed(0);
+  const blqsDist=[...new Set(DIPUTADOS.filter(x=>x.distrito===d).map(x=>x.bloque))].join(', ');
+  return `<tr>
+    <td><strong>${d}</strong></td>
+    <td class="num" style="font-weight:800">${n}</td>
+    <td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:#0A2463"></div></div><span class="bar-label" style="color:#0A2463">${pct}%</span></div></td>
+    <td style="font-size:.72rem;color:#475569">${blqsDist.length>80?blqsDist.slice(0,78)+'…':blqsDist}</td>
+  </tr>`;
+}).join('');
+
+// Rankings bloques
+function rHtml(b, n, rank) {
+  const col = colorBloque(b);
+  const pct = (n/total*100).toFixed(1);
+  return `<div class="ranking-row">
+    <span class="rk-num">${rank}</span>
+    <div style="flex:1;min-width:0">
+      <div class="rk-nombre">${b}</div>
+      <div class="rk-dist">${n} diputados · ${pct}% de la Cámara</div>
+    </div>
+    <span class="rk-val" style="color:${col}">${n}</span>
+  </div>`;
+}
+
+const top = bloquesSorted.slice(0,10);
+const bottom = [...bloquesSorted].reverse().slice(0,10);
+document.getElementById('list-mayor').innerHTML = top.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+document.getElementById('list-menor').innerHTML = bottom.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+</script>
+</body>
+</html>

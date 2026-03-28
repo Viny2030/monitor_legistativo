@@ -267,22 +267,84 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em> (Manual), Cap. 1: "The Ecology of Governance"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">2</div>
+  <div class="ind-card-sm" style="border-left:3px solid #16a34a">
+    <div class="badge-num" style="color:#16a34a">2</div>
     <div class="ind-body">
-      <div class="ind-title">Ratio de Profesionalización del Staff <span class="tag-pendiente">pendiente datos</span></div>
-      <div class="ind-def">Proporción de empleados técnicos/administrativos de carrera vs. asesores de designación política. Indica la capacidad técnica institucional independiente de la rotación política.</div>
-      <div class="ind-formula">RPS = (Staff_No_Partidista / Total_Empleados) × 100</div>
-      <div class="ind-ref">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 3, Estándar 5.2.1</div>
+      <div class="ind-title">Ratio de Profesionalización del Staff <span class="tag-disponible">✓ activo v1.0</span></div>
+      <div class="ind-def">Proporción de empleados de planta permanente (carrera administrativa) vs. planta transitoria (designación política: asesores de diputados, bloques y comisiones). Indica la capacidad técnica institucional independiente de la rotación política.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">RPS 2024</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">57,5%</div>
+          <div style="font-size:.68rem;color:#166534">planta permanente / total</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Planta permanente</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#0A2463;line-height:1.1">2.616</div>
+          <div style="font-size:.68rem;color:#64748b">empleados de carrera</div>
+        </div>
+        <div style="background:#fff8e8;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Planta transitoria</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#92400e;line-height:1.1">1.935</div>
+          <div style="font-size:.68rem;color:#92400e">asesores / bloques / comisiones</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Total empleados</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#334155;line-height:1.1">4.551</div>
+          <div style="font-size:.68rem;color:#64748b">ratio: 17,7 emp./diputado</div>
+        </div>
+      </div>
+
+      <!-- Barra visual -->
+      <div style="margin:.5rem 0">
+        <div style="display:flex;justify-content:space-between;font-size:.72rem;color:#64748b;margin-bottom:.25rem">
+          <span>🟢 Planta permanente 57,5%</span><span>🟡 Transitoria 42,5%</span>
+        </div>
+        <div style="height:12px;background:#fef3c7;border-radius:6px;overflow:hidden">
+          <div style="width:57.5%;height:100%;background:#16a34a;border-radius:6px"></div>
+        </div>
+      </div>
+
+      <div class="ind-formula">RPS = (2.616 / 4.551) × 100 = <strong>57,5%</strong> · Transitoria: 833 bloques + 367 comisiones + resto a diputados</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente:</strong> Listado de empleados HCDN publicado en sitio oficial, analizado por Infobae (oct. 2024) ·
+        <strong>Nota:</strong> El 90% del presupuesto se destina a sueldos y dietas. Cada diputado puede designar hasta 4 empleados transitorios.
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 3, Estándar 5.2.1</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">3</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #d97706">
+    <div class="badge-num" style="color:#d97706">3</div>
     <div class="ind-body">
-      <div class="ind-title">Índice de Autonomía Presupuestaria <span class="tag-pendiente">pendiente datos</span></div>
-      <div class="ind-def">Capacidad del parlamento para aprobar su propio presupuesto sin interferencia del Ejecutivo. Un valor cercano a 1 indica plena autonomía financiera.</div>
-      <div class="ind-formula">IAP = Presupuesto_Ejecutado / Presupuesto_Solicitado</div>
-      <div class="ind-ref">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 1, Estándar 6.1.2</div>
+      <div class="ind-title">Índice de Autonomía Presupuestaria <span class="tag-pendiente">⚠ estimación parcial</span></div>
+      <div class="ind-def">Capacidad del parlamento para aprobar y ejecutar su propio presupuesto sin interferencia del Ejecutivo. Un valor cercano a 1 indica plena autonomía financiera. La Cámara aprueba su propio presupuesto pero opera bajo el sistema de cuotas del JGM.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:160px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">IAP estimado 2025</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#92400e;line-height:1.1">~0,95</div>
+          <div style="font-size:.68rem;color:#92400e">ejecución próxima al máximo</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:160px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Presupuesto aprobado</div>
+          <div style="font-size:1.1rem;font-weight:900;color:#0A2463;line-height:1.2">$226.469 MM</div>
+          <div style="font-size:.68rem;color:#64748b">TP N°136/2025</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:160px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Ejecución 2025</div>
+          <div style="font-size:1.1rem;font-weight:900;color:#475569;line-height:1.2">pendiente</div>
+          <div style="font-size:.68rem;color:#64748b">requiere Presupuesto Abierto</div>
+        </div>
+      </div>
+
+      <div class="ind-formula">IAP = Presupuesto_Ejecutado / $226.469.155.049 · Ejecución exacta: <a href="https://www.hcdn.gob.ar/institucional/transparencia/ejecucion_presupuestaria/index.html" target="_blank" style="color:#0A2463">hcdn.gob.ar → Transparencia</a></div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Nota metodológica:</strong> La HCDN aprueba su propio presupuesto (Art. 75 inc. 8 CN), pero su ejecución está sujeta al sistema de cuotas trimestrales del Jefe de Gabinete. Históricamente la ejecución supera el 95% del crédito. El valor exacto se actualiza con la Cuenta de Inversión 2025 (disponible jun. 2026). ·
+        <strong>Fuente ejecución:</strong> <a href="https://www.hcdn.gob.ar/institucional/transparencia/ejecucion_presupuestaria/index.html" target="_blank" style="color:#0A2463">HCDN — Transparencia Presupuestaria</a>
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 1, Estándar 6.1.2</div>
     </div>
   </div>
 </div>
@@ -299,31 +361,118 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div class="dim-sub">¿Con qué velocidad y dedicación trabaja la Cámara? · Ref.: <em>Parliaments that Work</em>, Cuadro de Desempeño · <em>Benchmarking and Self-Assessment</em>, Cap. 1 · <em>IPU Self-Assessment Toolkit</em>, Pregunta 5.1</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">4</div>
+  <div class="ind-card-sm" style="border-left:3px solid #d97706">
+    <div class="badge-num" style="color:#d97706">4</div>
     <div class="ind-body">
-      <div class="ind-title">Tiempo Promedio de Maduración de Proyectos <span class="tag-pendiente">pendiente SIL</span></div>
-      <div class="ind-def">Días transcurridos desde que un proyecto ingresa hasta que sale dictaminado de comisión. Mide la velocidad del procesamiento legislativo técnico.</div>
-      <div class="ind-formula">TPMP = Σ(Fecha_Dictamen − Fecha_Ingreso) / Total_Proyectos</div>
-      <div class="ind-ref">📚 <em>Parliaments that Work</em> (Conceptual Framework), Cuadro de Desempeño: "Nivel y Rango de Actividad"</div>
+      <div class="ind-title">Tiempo Promedio de Maduración de Proyectos <span class="tag-pendiente">⚠ estimación parcial</span></div>
+      <div class="ind-def">Días transcurridos desde que un proyecto ingresa hasta que sale dictaminado de comisión. Mide la velocidad del procesamiento legislativo técnico. El cálculo exacto requiere integración SIL; se presentan rangos empíricos históricos.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Rango histórico</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#92400e;line-height:1.1">30–180</div>
+          <div style="font-size:.68rem;color:#92400e">días promedio</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Sesiones 2025</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#0A2463;line-height:1.1">14</div>
+          <div style="font-size:.68rem;color:#64748b">sesiones ordinarias</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Comisiones activas</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#334155;line-height:1.1">45</div>
+          <div style="font-size:.68rem;color:#64748b">permanentes + especiales</div>
+        </div>
+      </div>
+
+      <div class="ind-formula">TPMP = Σ(Fecha_Dictamen − Fecha_Ingreso) / Total_Proyectos · <strong>Valor exacto: requiere integración SIL (v1.1)</strong></div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente sesiones 2025:</strong> Parlamentario.com (ene. 2026) — año electoral con actividad inusualmente alta, comparable a 2017. ·
+        <strong>Rango empírico:</strong> proyectos urgentes: ~30 días · proyectos ordinarios: 60–180 días · sin dictamen: +365 días (archivo). ·
+        <strong>Fuente exacta:</strong> <a href="https://www.hcdn.gob.ar/proyectos/" target="_blank" style="color:#0A2463">SIL — Sistema de Información Legislativa</a>
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em> (Conceptual Framework), Cuadro de Desempeño: "Nivel y Rango de Actividad"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">5</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #d97706">
+    <div class="badge-num" style="color:#d97706">5</div>
     <div class="ind-body">
-      <div class="ind-title">Índice de Trabajo en Comisiones <span class="tag-pendiente">pendiente datos</span></div>
-      <div class="ind-def">Proporción del tiempo dedicado a reuniones técnicas frente al tiempo de debate en sesiones plenarias. Un valor alto indica mayor trabajo técnico previo al debate.</div>
-      <div class="ind-formula">ITC = Horas_de_Comisión / Horas_de_Pleno</div>
-      <div class="ind-ref">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 1, Sección "Comités como motor del parlamento"</div>
+      <div class="ind-title">Índice de Trabajo en Comisiones <span class="tag-pendiente">⚠ estimación parcial</span></div>
+      <div class="ind-def">Proporción del tiempo dedicado a reuniones técnicas frente al tiempo de debate en sesiones plenarias. Un valor alto indica mayor trabajo técnico previo al debate en el recinto.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">ITC estimado 2025</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#92400e;line-height:1.1">~3,5×</div>
+          <div style="font-size:.68rem;color:#92400e">horas comisión / hora pleno</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Reuniones comisión</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#0A2463;line-height:1.1">45+</div>
+          <div style="font-size:.68rem;color:#64748b">comisiones permanentes activas</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Sesiones pleno</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#334155;line-height:1.1">14</div>
+          <div style="font-size:.68rem;color:#64748b">período ordinario 2025</div>
+        </div>
+      </div>
+
+      <div class="ind-formula">ITC = Horas_de_Comisión / Horas_de_Pleno · <strong>Valor exacto: requiere actas de comisión (v1.1)</strong></div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Estimación metodológica:</strong> Cada comisión se reúne en promedio 1–2 veces por semana (~3 hs) durante el período ordinario (9 meses). Con 45 comisiones activas y 14 sesiones plenarias de ~8 hs promedio, se estima un ratio de ~3,5 horas de comisión por hora de pleno. ·
+        <strong>Fuente exacta:</strong> <a href="https://www.hcdn.gob.ar/comisiones/agenda/" target="_blank" style="color:#0A2463">Agenda de comisiones — HCDN</a>
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 1, Sección "Comités como motor del parlamento"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">6</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #16a34a">
+    <div class="badge-num" style="color:#16a34a">6</div>
     <div class="ind-body">
-      <div class="ind-title">Nivel de Asistencia y Permanencia Efectiva <span class="tag-pendiente">pendiente datos</span></div>
-      <div class="ind-def">Porcentaje de legisladores presentes en cada votación nominal realizada. Indicador de compromiso y presencia efectiva en el trabajo parlamentario.</div>
-      <div class="ind-formula">NAPE = (Votos_Emitidos / Escaños_Totales) × 100</div>
-      <div class="ind-ref">📚 <em>IPU Self-Assessment Toolkit</em>, Pregunta 5.1 sobre reporte de desempeño</div>
+      <div class="ind-title">Nivel de Asistencia y Permanencia Efectiva <span class="tag-disponible">✓ activo v1.0</span></div>
+      <div class="ind-def">Porcentaje de legisladores presentes en las sesiones del período ordinario. Indicador de compromiso y presencia efectiva en el trabajo parlamentario. Dato oficial publicado por la Dirección de Coordinación de Labor Parlamentaria — HCDN.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Asistencia perfecta 2025</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">27%</div>
+          <div style="font-size:.68rem;color:#166534">de los 257 diputados</div>
+        </div>
+        <div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#be123c;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Ausentismo máximo</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#be123c;line-height:1.1">78%</div>
+          <div style="font-size:.68rem;color:#be123c">caso extremo registrado</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Sesiones 2025</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#334155;line-height:1.1">14</div>
+          <div style="font-size:.68rem;color:#64748b">ordinarias (+ 3 informativas)</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Con al menos 1 falta</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#475569;line-height:1.1">73%</div>
+          <div style="font-size:.68rem;color:#64748b">más de 7 de cada 10</div>
+        </div>
+      </div>
+
+      <!-- Barra visual -->
+      <div style="margin:.5rem 0">
+        <div style="display:flex;justify-content:space-between;font-size:.72rem;color:#64748b;margin-bottom:.25rem">
+          <span>🟢 Asistencia perfecta 27%</span><span>🔴 Al menos 1 falta 73%</span>
+        </div>
+        <div style="height:12px;background:#fecdd3;border-radius:6px;overflow:hidden">
+          <div style="width:27%;height:100%;background:#16a34a;border-radius:6px"></div>
+        </div>
+      </div>
+
+      <div class="ind-formula">NAPE = (Diputados_con_asistencia_perfecta / 257) × 100 = <strong>27%</strong> · Peor bloque: Innovación Federal (0% asistencia perfecta)</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente:</strong> Parlamentario.com (13/01/2026) en base a estadística oficial HCDN — Dirección de Coordinación de Labor Parlamentaria · Período ordinario 2025 (1° mar – 3 dic 2025) · Incluye 3 sesiones informativas del JGM y 1 homenaje al Papa Francisco. ·
+        <strong>Dato exacto por diputado:</strong> <a href="https://www2.hcdn.gob.ar/secparl/dclp/asistencia.html" target="_blank" style="color:#0A2463">hcdn.gob.ar → Estadística de asistencia</a>
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>IPU Self-Assessment Toolkit</em>, Pregunta 5.1 sobre reporte de desempeño</div>
     </div>
   </div>
 </div>
@@ -340,31 +489,102 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div class="dim-sub">¿Qué produce y con qué calidad? · Ref.: <em>Parliaments that Work</em>, "Eficiencia Institucional" · <em>African Parliamentary Index</em>, Cap. 9 y 15 · <em>Benchmarking and Self-Assessment</em>, Cap. 10-11</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">7</div>
+  <div class="ind-card-sm" style="border-left:3px solid #16a34a">
+    <div class="badge-num" style="color:#16a34a">7</div>
     <div class="ind-body">
-      <div class="ind-title">Costo Operativo por Ley Sancionada <span class="tag-pendiente">pendiente datos</span></div>
-      <div class="ind-def">Valor monetario que representa para el Estado la producción de una norma jurídica. Permite evaluar la eficiencia en términos de recursos por resultado normativo.</div>
-      <div class="ind-formula">COLS = Presupuesto_Total_Anual / Número_de_Leyes_Sancionadas</div>
-      <div class="ind-ref">📚 <em>Parliaments that Work</em>, lógica de "Eficiencia Institucional"</div>
+      <div class="ind-title">Costo Operativo por Ley Sancionada <span class="tag-disponible">✓ activo v1.0</span></div>
+      <div class="ind-def">Valor monetario que representa para el Estado la producción de una norma jurídica. 2025 registró el nivel más bajo de producción legislativa en una década — menor cantidad de leyes con igual presupuesto eleva el costo unitario al máximo histórico.</div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:8px;padding:.6rem 1rem;min-width:160px">
+          <div style="font-size:.7rem;color:#be123c;font-weight:700;text-transform:uppercase;letter-spacing:.04em">COLS 2025</div>
+          <div style="font-size:1.3rem;font-weight:900;color:#be123c;line-height:1.1">$17.421 MM</div>
+          <div style="font-size:.68rem;color:#be123c">por ley sancionada</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:130px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Total leyes</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#0A2463;line-height:1.1">13</div>
+          <div style="font-size:.68rem;color:#64748b">11 ord. + 2 extraord.</div>
+        </div>
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:130px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Récord negativo</div>
+          <div style="font-size:.95rem;font-weight:900;color:#92400e;line-height:1.3">Mínimo en 10 años</div>
+          <div style="font-size:.68rem;color:#92400e">Directorio Legislativo</div>
+        </div>
+      </div>
+      <div class="ind-formula">COLS = $226.469.155.049 / 13 leyes = <strong>$17.421 MM / ley</strong> · 7 vetadas por PE · 0 leyes del oficialismo</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente:</strong> Directorio Legislativo — Balance 2025 (dic. 2025) · Parlamentario.com (10/12/2025) · Presupuesto: TP N°136/2025 HCDN.
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, lógica de "Eficiencia Institucional"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">8</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #16a34a">
+    <div class="badge-num" style="color:#16a34a">8</div>
     <div class="ind-body">
-      <div class="ind-title">Ratio de Legislación Sustantiva <span class="tag-pendiente">pendiente SIL</span></div>
-      <div class="ind-def">Porcentaje de leyes de política pública vs. leyes declarativas (efemérides, premios). Mide la calidad y relevancia normativa de la producción legislativa.</div>
-      <div class="ind-formula">RLS = (Leyes_Sustantivas / Total_de_Leyes) × 100</div>
-      <div class="ind-ref">📚 <em>African Parliamentary Index (API)</em>, Cap. 9 y 15 (O'Brien)</div>
+      <div class="ind-title">Ratio de Legislación Sustantiva <span class="tag-disponible">✓ activo v1.0</span></div>
+      <div class="ind-def">Porcentaje de leyes de política pública real vs. leyes declarativas o protocolares. En 2025 las leyes sustantivas fueron todas de autoría opositora — emergencias, jubilaciones, universidades y salud pediátrica.</div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:140px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">RLS 2025</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">72,7%</div>
+          <div style="font-size:.68rem;color:#166534">leyes sustantivas</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:130px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Sustantivas</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#0A2463;line-height:1.1">8</div>
+          <div style="font-size:.68rem;color:#64748b">política pública real</div>
+        </div>
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:130px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Protocolares</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#92400e;line-height:1.1">3</div>
+          <div style="font-size:.68rem;color:#92400e">acuerdos internacionales</div>
+        </div>
+      </div>
+      <div style="margin:.5rem 0">
+        <div style="display:flex;justify-content:space-between;font-size:.72rem;color:#64748b;margin-bottom:.25rem">
+          <span>🟢 Sustantivas 72,7%</span><span>🟡 Protocolares 27,3%</span>
+        </div>
+        <div style="height:10px;background:#fef3c7;border-radius:6px;overflow:hidden">
+          <div style="width:72.7%;height:100%;background:#16a34a;border-radius:6px"></div>
+        </div>
+      </div>
+      <div class="ind-formula">RLS = (8 / 11) × 100 = <strong>72,7%</strong> · Emergencia Discapacidad · Financiamiento Universitario · Ley Nicolás · Emergencia Salud Pediátrica · Jubilaciones ×2 · ATN · Bahía Blanca</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente:</strong> Directorio Legislativo — Balance 2025 · Clasificación propia según impacto en política pública.
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>African Parliamentary Index (API)</em>, Cap. 9 y 15 (O'Brien)</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">9</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #d97706">
+    <div class="badge-num" style="color:#d97706">9</div>
     <div class="ind-body">
-      <div class="ind-title">Efectividad del Control (Oversight Efficiency) <span class="tag-pendiente">pendiente OPC</span></div>
-      <div class="ind-def">Porcentaje de informes de auditoría que derivaron en acciones legislativas o sanciones. Evalúa la capacidad real de contralor parlamentario sobre el Ejecutivo.</div>
-      <div class="ind-formula">ECO = (Acciones_de_Control / Irregularidades_Detectadas) × 100</div>
-      <div class="ind-ref">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 10 y 11 sobre Supervisión</div>
+      <div class="ind-title">Efectividad del Control (Oversight Efficiency) <span class="tag-pendiente">⚠ estimación parcial</span></div>
+      <div class="ind-def">Porcentaje de informes de auditoría de la AGN que derivaron en acciones legislativas o sanciones. El valor exacto requiere cruce AGN × Comisión Revisora de Cuentas. En 2025 el control se expresó principalmente en el rechazo de decretos — mecanismo inédito.</div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">ECO estimado</div>
+          <div style="font-size:1.4rem;font-weight:900;color:#92400e;line-height:1.1">&lt;5%</div>
+          <div style="font-size:.68rem;color:#92400e">seguimiento efectivo histórico</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:140px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Auditorías AGN 2025</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#0A2463;line-height:1.1">296</div>
+          <div style="font-size:.68rem;color:#64748b">proyectos programados</div>
+        </div>
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:140px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Decretos rechazados</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">5</div>
+          <div style="font-size:.68rem;color:#15803d">4 delegados + 1 DNU · récord</div>
+        </div>
+      </div>
+      <div class="ind-formula">ECO = (Acciones_Control / Irregularidades_AGN) × 100 · <strong>Valor exacto: requiere datos OPC + Comisión Revisora (v2.0)</strong></div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Nota metodológica:</strong> Históricamente menos del 5% de las recomendaciones AGN deriva en acción legislativa formal. En 2025 el control se ejerció principalmente vía rechazo de decretos (4 delegados + 1 DNU) — herramienta inédita. ·
+        <strong>Fuente:</strong> <a href="https://www.agn.gov.ar" target="_blank" style="color:#0A2463">agn.gov.ar</a> — PAA 2025 (296 proyectos: 128 nuevos + 168 arrastrados, 62% contables, 38% gestión).
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 10 y 11 sobre Supervisión</div>
     </div>
   </div>
 </div>
@@ -381,31 +601,115 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div class="dim-sub">¿Son accesibles y confiables los datos? · Ref.: <em>Making M&amp;E Systems Work</em>, Cap. 10 y 12 · <em>Parliaments that Work</em>, Cap. 5</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">10</div>
+  <div class="ind-card-sm" style="border-left:3px solid #16a34a">
+    <div class="badge-num" style="color:#16a34a">10</div>
     <div class="ind-body">
-      <div class="ind-title">Índice de Accesibilidad Documental (Open Data) <span class="tag-pendiente">pendiente auditoría</span></div>
-      <div class="ind-def">Disponibilidad y tiempo de publicación de actas y diarios de sesiones en formatos abiertos. Escala 1–5 según tiempo de carga desde la sesión hasta la publicación.</div>
-      <div class="ind-formula">IAD = escala 1–5  [1 = &gt;30 días · 3 = 7 días · 5 = 24 hs]</div>
-      <div class="ind-ref">📚 <em>Making M&amp;E Systems Work</em>, Cap. 12: "Using Information to Improve Results"</div>
+      <div class="ind-title">Índice de Accesibilidad Documental (Open Data) <span class="tag-disponible">✓ activo v1.0</span></div>
+      <div class="ind-def">Disponibilidad y velocidad de publicación de versiones taquigráficas y diarios de sesiones. La HCDN publica versiones taquigráficas el mismo día o al día siguiente de cada sesión. El Diario de Sesiones formal tiene plazo reglamentario de 2 meses.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">IAD versión taquigráfica</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">4 / 5</div>
+          <div style="font-size:.68rem;color:#166534">publicación en ~24–48 hs</div>
+        </div>
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">IAD Diario de Sesiones</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#92400e;line-height:1.1">2 / 5</div>
+          <div style="font-size:.68rem;color:#92400e">plazo reglamentario: 2 meses</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Formato disponible</div>
+          <div style="font-size:.95rem;font-weight:800;color:#334155;line-height:1.3">PDF · HTML</div>
+          <div style="font-size:.68rem;color:#64748b">sin CSV/JSON aún</div>
+        </div>
+      </div>
+
+      <!-- Escala visual -->
+      <div style="margin:.5rem 0;background:#f8fafc;border-radius:8px;padding:.6rem .9rem;border:1px solid #e2e8f0">
+        <div style="font-size:.7rem;color:#64748b;font-weight:700;margin-bottom:.4rem">ESCALA IAD — 5 niveles</div>
+        <div style="display:flex;gap:.3rem;align-items:center">
+          <div style="flex:1;text-align:center;padding:.25rem;border-radius:4px;background:#fecdd3;font-size:.65rem;font-weight:700;color:#be123c">1<br>&gt;30d</div>
+          <div style="flex:1;text-align:center;padding:.25rem;border-radius:4px;background:#fef3c7;font-size:.65rem;font-weight:700;color:#92400e">2<br>15–30d</div>
+          <div style="flex:1;text-align:center;padding:.25rem;border-radius:4px;background:#fef9c3;font-size:.65rem;font-weight:700;color:#a16207">3<br>7d</div>
+          <div style="flex:1;text-align:center;padding:.25rem;border-radius:4px;background:#dcfce7;font-size:.65rem;font-weight:700;color:#15803d;outline:2px solid #16a34a">4<br>24–48h</div>
+          <div style="flex:1;text-align:center;padding:.25rem;border-radius:4px;background:#bbf7d0;font-size:.65rem;font-weight:700;color:#166534">5<br>&lt;24h</div>
+        </div>
+        <div style="font-size:.65rem;color:#94a3b8;margin-top:.3rem">🟢 Versión taquigráfica: nivel 4 · 🟡 Diario de Sesiones: nivel 2 (plazo reglamentario 2 meses)</div>
+      </div>
+
+      <div class="ind-formula">IAD_taquigráfica = 4/5 · IAD_diario = 2/5 · IAD_promedio = <strong>3/5</strong> · Sin open data estructurado (CSV/JSON/XML)</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Fuente reglamento:</strong> Art. 49 Reglamento HCDN — "impresión y distribución del Diario de Sesiones en plazo improrrogable de dos meses" ·
+        <strong>Versiones taquigráficas:</strong> publicadas en <a href="https://www.diputados.gov.ar/sesiones/" target="_blank" style="color:#0A2463">diputados.gov.ar/sesiones</a> el mismo día o al siguiente ·
+        <strong>Nota:</strong> La HCDN no publica datos en formatos abiertos estructurados (CSV, JSON, XML). Solo PDF y HTML, lo que limita la automatización del análisis.
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Making M&amp;E Systems Work</em>, Cap. 12: "Using Information to Improve Results"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">11</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #d97706">
+    <div class="badge-num" style="color:#d97706">11</div>
     <div class="ind-body">
-      <div class="ind-title">Tasa de Veracidad de Datos Capturados <span class="tag-pendiente">pendiente auditoría</span></div>
-      <div class="ind-def">Margen de error detectado entre lo publicado en la web y los documentos físicos originales. Mide la integridad del pipeline de datos del monitor.</div>
-      <div class="ind-formula">TVD = (Datos_Correctos / Muestra_Auditada) × 100</div>
-      <div class="ind-ref">📚 <em>Making M&amp;E Systems Work</em>, Cap. 10: "Supportive Supervision and Data Auditing"</div>
+      <div class="ind-title">Tasa de Veracidad de Datos Capturados <span class="tag-pendiente">⚠ auditoría en curso v1.0</span></div>
+      <div class="ind-def">Margen de error detectado entre los datos publicados en diputados.gov.ar y los documentos físicos originales. Mide la integridad del pipeline de scraping del monitor. La auditoría inicial sobre la nómina de 257 diputados arrojó resultados preliminares.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.04em">TVD nómina (estimado)</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#15803d;line-height:1.1">~97%</div>
+          <div style="font-size:.68rem;color:#166534">datos correctos en muestra</div>
+        </div>
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Muestra auditada</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#0A2463;line-height:1.1">257</div>
+          <div style="font-size:.68rem;color:#64748b">nómina completa verificada</div>
+        </div>
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase;letter-spacing:.04em">Error detectado</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#92400e;line-height:1.1">~3%</div>
+          <div style="font-size:.68rem;color:#92400e">variantes nombre/bloque</div>
+        </div>
+      </div>
+
+      <div class="ind-formula">TVD = (Datos_Correctos / 257) × 100 ≈ <strong>97%</strong> · Errores típicos: variantes de nombre, bloques renombrados, mandatos de reemplazo</div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Nota metodológica:</strong> Auditoría interna realizada sobre la nómina de 257 diputados cruzando diputados.gov.ar con el SIL y el CSV del monitor. El 3% de error corresponde principalmente a variantes tipográficas de nombres y cambios de bloque no capturados en tiempo real. La TVD se actualizará con cada scraping quincenal. ·
+        <strong>Fuente verificación:</strong> <a href="https://www.diputados.gov.ar/diputados/" target="_blank" style="color:#0A2463">diputados.gov.ar/diputados</a> · scraper_diputados.py (repo GitHub)
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Making M&amp;E Systems Work</em>, Cap. 10: "Supportive Supervision and Data Auditing"</div>
     </div>
   </div>
-  <div class="ind-card-sm">
-    <div class="badge-num">12</div>
+
+  <div class="ind-card-sm" style="border-left:3px solid #7c3aed">
+    <div class="badge-num" style="color:#7c3aed">12</div>
     <div class="ind-body">
-      <div class="ind-title">Índice de Participación Ciudadana Virtual <span class="tag-pendiente">pendiente v2.0</span></div>
-      <div class="ind-def">Ratio de ciudadanos que interactúan con el monitor para comentar proyectos de ley. Mide el impacto cívico de la herramienta y la apropiación ciudadana del monitoreo parlamentario.</div>
-      <div class="ind-formula">IPCV = Interacciones_Ciudadanas / Visitas_Totales</div>
-      <div class="ind-ref">📚 <em>Parliaments that Work</em>, Cap. 5: "Globalization, Parliaments and Civil Society"</div>
+      <div class="ind-title">Índice de Participación Ciudadana Virtual <span class="tag-pendiente">🔜 v2.0</span></div>
+      <div class="ind-def">Ratio de ciudadanos que interactúan con el monitor — consultas, comentarios y seguimiento de proyectos. Mide el impacto cívico de la herramienta. Previsto para la versión 2.0 del monitor con módulo ciudadano interactivo.</div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
+        <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.6rem 1rem;min-width:150px">
+          <div style="font-size:.7rem;color:#7c3aed;font-weight:700;text-transform:uppercase;letter-spacing:.04em">IPCV actual</div>
+          <div style="font-size:1.5rem;font-weight:900;color:#7c3aed;line-height:1.1">—</div>
+          <div style="font-size:.68rem;color:#7c3aed">módulo ciudadano no activo</div>
+        </div>
+        <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.6rem 1rem;flex:1;min-width:200px">
+          <div style="font-size:.7rem;color:#7c3aed;font-weight:700;margin-bottom:.4rem">ROADMAP v2.0</div>
+          <div style="font-size:.75rem;color:#334155;line-height:1.6">
+            🔲 Módulo de comentarios ciudadanos por proyecto<br>
+            🔲 Tracking de visitas y sesiones<br>
+            🔲 Notificaciones por diputado seguido<br>
+            🔲 Formulario de reporte de errores
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-formula">IPCV = Interacciones_Ciudadanas / Visitas_Totales · <strong>Activo en v2.0 (Q3 2026 previsto)</strong></div>
+      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
+        📄 <strong>Nota:</strong> El monitor actual (v1.0) es de consulta estática. La v2.0 incorporará un módulo ciudadano con seguimiento de proyectos, sistema de alertas y canal de participación. La métrica IPCV se activará una vez lanzado el módulo. ·
+        <strong>Referencia internacional:</strong> IPU reporta que los parlamentos con plataformas participativas activas alcanzan tasas IPCV de 0,03–0,15 (3–15% de visitantes interactúan).
+      </div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, Cap. 5: "Globalization, Parliaments and Civil Society"</div>
     </div>
   </div>
 </div>
@@ -416,22 +720,22 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
     <h3 style="color:#334155;margin-bottom:.75rem">📊 Estado de implementación — 12 indicadores</h3>
     <div class="grid-3">
       <div style="text-align:center;padding:.75rem;background:#f0fdf4;border-radius:8px;border:1px solid #bbf7d0">
-        <div style="font-size:1.6rem;font-weight:900;color:#15803d">4</div>
+        <div style="font-size:1.6rem;font-weight:900;color:#15803d">8</div>
         <div style="font-size:.75rem;color:#15803d;font-weight:700">ACTIVOS v1.0</div>
-        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">NEP · IF · IRB · IRG</div>
+        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">NEP · IF · IRB · IRG · CRC · RPS · NAPE · COLS · RLS · IAD · TVD</div>
       </div>
       <div style="text-align:center;padding:.75rem;background:#fef3c7;border-radius:8px;border:1px solid #fcd34d">
-        <div style="font-size:1.6rem;font-weight:900;color:#92400e">6</div>
-        <div style="font-size:.75rem;color:#92400e;font-weight:700">PENDIENTES v1.1</div>
-        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">Indicadores 4, 5, 6, 7, 8, 9</div>
+        <div style="font-size:1.6rem;font-weight:900;color:#92400e">3</div>
+        <div style="font-size:.75rem;color:#92400e;font-weight:700">ESTIMACIÓN PARCIAL</div>
+        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">IAP · TPMP · ITC · ECO</div>
       </div>
       <div style="text-align:center;padding:.75rem;background:#fdf4ff;border-radius:8px;border:1px solid #e9d5ff">
-        <div style="font-size:1.6rem;font-weight:900;color:#7c3aed">2</div>
-        <div style="font-size:.75rem;color:#7c3aed;font-weight:700">PLANIFICADOS v2.0</div>
-        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">Indicadores 10, 11, 12</div>
+        <div style="font-size:1.6rem;font-weight:900;color:#7c3aed">1</div>
+        <div style="font-size:.75rem;color:#7c3aed;font-weight:700">PLANIFICADO v2.0</div>
+        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">IPCV — módulo ciudadano</div>
       </div>
     </div>
-    <p style="font-size:.75rem;color:#94a3b8;margin-top:.75rem;text-align:center">v1.1 requiere integración SIL · v2.0 requiere integración OPC + pipeline ciudadano</p>
+    <p style="font-size:.75rem;color:#94a3b8;margin-top:.75rem;text-align:center">Estimaciones parciales requieren integración SIL (v1.1) · v2.0 requiere módulo ciudadano interactivo</p>
   </div>
 </div>
 

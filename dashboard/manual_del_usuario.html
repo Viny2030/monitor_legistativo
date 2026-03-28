@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manual de Usuario – Monitor Legislativo Diputados Argentina</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.65; background: #f0f2f5; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #0A2463 0%, #1a3a7c 50%, #061440 100%); color: #fff; padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+header .escudo { font-size: 2.4rem; }
+header h1 { font-size: 1.35rem; font-weight: 700; }
+header p { font-size: .875rem; opacity: .85; margin-top: .2rem; }
+header nav { margin-left: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; }
+header nav a:hover { background: rgba(255,255,255,.35); }
+header nav a.active { background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.6); }
+.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
+.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); white-space: nowrap; }
+.nav-interna a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-interna a.activo { background: rgba(255,255,255,.18); color: #fff; border-bottom: 3px solid #C9A84C; }
+.disclaimer { background: #fffbeb; border-left: 4px solid #C9A84C; padding: .75rem 1.5rem; font-size: .78rem; color: #5a4a00; border-bottom: 1px solid #f0e0a0; }
+.container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+.seccion { margin-bottom: 2.5rem; }
+.seccion h2 { font-size: 1.1rem; font-weight: 800; color: #0A2463; padding-bottom: .5rem; border-bottom: 3px solid #d0daf0; margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem; }
+.panel { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1.25rem 1.4rem; margin-bottom: 1rem; }
+.panel h3 { font-size: .95rem; font-weight: 700; color: #334155; margin-bottom: .6rem; }
+.panel p { font-size: .85rem; color: #475569; margin-bottom: .5rem; line-height: 1.65; }
+.panel p:last-child { margin-bottom: 0; }
+
+/* Tabla de navegación */
+.nav-tabla { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.nav-tabla th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .5rem .8rem; text-align: left; border-bottom: 2px solid #c5d0e8; }
+.nav-tabla td { padding: .5rem .8rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+.nav-tabla tr:last-child td { border-bottom: none; }
+.nav-tabla tr:nth-child(even) { background: #fafbff; }
+.nav-tabla a { color: #0A2463; font-weight: 600; text-decoration: none; }
+.nav-tabla a:hover { text-decoration: underline; }
+
+/* Indicadores tabla */
+.ind-tabla { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.ind-tabla th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .45rem .7rem; text-align: left; border-bottom: 2px solid #c5d0e8; }
+.ind-tabla td { padding: .45rem .7rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+.ind-tabla tr:last-child td { border-bottom: none; }
+.ind-tabla tr:nth-child(even) { background: #fafbff; }
+
+/* Badges */
+.badge-act { display: inline-block; background: #dcfce7; color: #15803d; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+.badge-est { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+.badge-v2  { display: inline-block; background: #fdf4ff; color: #7c3aed; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+
+/* Steps */
+.steps { counter-reset: step; }
+.step { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+.step-num { background: #0A2463; color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .82rem; font-weight: 800; flex-shrink: 0; margin-top: .1rem; }
+.step-body { flex: 1; font-size: .85rem; color: #334155; }
+.step-body strong { color: #0A2463; }
+
+/* Tip box */
+.tip { background: #f0f9ff; border-left: 4px solid #0891b2; border-radius: 0 8px 8px 0; padding: .75rem 1rem; font-size: .82rem; color: #0c4a6e; margin: .75rem 0; }
+.warn { background: #fffbeb; border-left: 4px solid #C9A84C; border-radius: 0 8px 8px 0; padding: .75rem 1rem; font-size: .82rem; color: #78350f; margin: .75rem 0; }
+
+/* Código */
+.code { background: #1e293b; color: #93c5fd; border-radius: 6px; padding: .6rem 1rem; font-family: 'Courier New', monospace; font-size: .8rem; margin: .6rem 0; border-left: 3px solid #C9A84C; overflow-x: auto; }
+
+/* Glosario */
+.glos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media(max-width:640px){ .glos-grid { grid-template-columns: 1fr; } }
+.glos-item { background: #fff; border-radius: 8px; border: 1px solid #dde2ec; padding: .7rem .9rem; }
+.glos-term { font-size: .8rem; font-weight: 800; color: #0A2463; font-family: monospace; }
+.glos-def  { font-size: .76rem; color: #475569; margin-top: .15rem; }
+
+/* Contacto */
+.autor-card { background: #fff; border-radius: 12px; border: 1px solid #dde2ec; padding: 1.25rem 1.4rem; display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap; }
+.autor-foto { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg,#0A2463,#1a3a7c); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; color: #fff; border: 3px solid #C9A84C; overflow: hidden; }
+.autor-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.autor-info { flex: 1; min-width: 180px; }
+.autor-info h3 { font-size: .95rem; font-weight: 800; color: #0A2463; margin-bottom: .2rem; }
+.autor-mail { display: inline-flex; align-items: center; gap: .3rem; background: #f0f4ff; border: 1px solid #c5d0e8; border-radius: 6px; padding: .25rem .65rem; font-size: .76rem; color: #0A2463; font-weight: 600; text-decoration: none; margin: .2rem .2rem 0 0; }
+.autor-mail:hover { background: #0A2463; color: #fff; }
+
+footer { text-align: center; padding: 1.25rem; font-size: .75rem; color: #94a3b8; border-top: 1px solid #dde2ec; margin-top: 2rem; }
+footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="escudo">🏛️</span>
+  <div>
+    <h1>Monitor Legislativo · Manual de Usuario</h1>
+    <p>Guía completa de uso · Versión 1.0 · Marzo 2026</p>
+  </div>
+  <nav>
+    <a href="indicadores_diputados.html">🏛️ Nómina</a>
+    <a href="indicadores2_diputados.html">📊 Indicadores</a>
+    <a href="nomina_detalle_diputados.html">👥 Detalle</a>
+    <a href="metodologia_diputados.html">📚 Metodología</a>
+    <a href="manual_usuario.html" class="active">📖 Manual</a>
+  </nav>
+</header>
+
+<div class="nav-interna">
+  <a href="#intro" class="activo">📖 Introducción</a>
+  <a href="#navegacion">🗺️ Navegación</a>
+  <a href="#indicadores">📐 Indicadores</a>
+  <a href="#actualizar">🔄 Actualizar datos</a>
+  <a href="#limitaciones">⚠️ Limitaciones</a>
+  <a href="#glosario">📖 Glosario</a>
+  <a href="#contacto">👤 Contacto</a>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Nota:</strong> Esta herramienta es de carácter experimental y académico. Los datos provienen de fuentes públicas oficiales del Estado argentino. Los resultados son indicadores algorítmicos — no implican juicio de valor ni determinación de responsabilidad.
+</div>
+
+<div class="container">
+
+  <!-- INTRODUCCIÓN -->
+  <div class="seccion" id="intro" style="margin-top:1.5rem">
+    <h2>📖 ¿Qué es el Monitor Legislativo?</h2>
+    <div class="panel">
+      <p>El <strong>Monitor Legislativo — Cámara de Diputados</strong> es una herramienta de análisis de código abierto que mide la composición y el desempeño de los 257 diputados de la Nación Argentina. Organiza <strong>12 indicadores en 4 dimensiones</strong>: Costos e Insumos, Eficiencia en el Proceso, Desempeño y Calidad, y Transparencia y Datos.</p>
+      <p>Todos los cálculos se realizan <strong>en el navegador</strong>, sin servidores externos. Los datos de composición se actualizan editando el array <code>DIPUTADOS</code> en los archivos HTML. No requiere instalación ni conexión a internet para funcionar.</p>
+    </div>
+    <div class="panel" style="background:linear-gradient(135deg,#f0f4ff,#fff8e8);border-left:4px solid #0A2463">
+      <h3>🎯 Objetivo</h3>
+      <p>Promover la <strong>transparencia legislativa</strong> y el debate informado sobre la composición y el funcionamiento de la Cámara de Diputados, poniendo datos oficiales en formato accesible para ciudadanos, periodistas e investigadores.</p>
+    </div>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <div class="seccion" id="navegacion">
+    <h2>🗺️ Cómo navegar el dashboard</h2>
+
+    <div class="panel">
+      <h3>Archivos del dashboard</h3>
+      <table class="nav-tabla">
+        <thead><tr><th>Archivo</th><th>Contenido</th><th>Cuándo usarlo</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="indicadores_diputados.html">🏛️ Nómina</a></td>
+            <td>Nómina completa con buscador, composición por bloque y distrito, rankings, 12 indicadores y sección del autor</td>
+            <td>Punto de entrada principal. Para explorar la composición de la Cámara y consultar indicadores</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores2_diputados.html">📊 Indicadores</a></td>
+            <td>Composición por bloque y distrito con barras de representación, rankings de bloques mayor y menor</td>
+            <td>Para ver rápidamente la distribución de bancas y la fragmentación del cuerpo</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores_bloques.html">🔬 Por Bloque</a></td>
+            <td>Todos los indicadores calculados automáticamente para cada bloque, tabla ordenable, rankings por indicador</td>
+            <td>Para comparar bloques entre sí y analizar renovación, territorialidad y peso relativo</td>
+          </tr>
+          <tr>
+            <td><a href="nomina_detalle_diputados.html">👥 Detalle</a></td>
+            <td>Cards individuales por diputado con 8 indicadores activos. Vista cards o lista. Filtros por bloque, distrito y mandato</td>
+            <td>Para buscar un diputado específico o filtrar por bloque/distrito</td>
+          </tr>
+          <tr>
+            <td><a href="metodologia_diputados.html">📚 Metodología</a></td>
+            <td>Marco institucional, fórmulas matemáticas, umbrales de interpretación, glosario, fuentes y bibliografía</td>
+            <td>Para entender cómo se calculan los indicadores y sus fundamentos académicos</td>
+          </tr>
+          <tr>
+            <td><a href="manual_usuario.html">📖 Manual</a></td>
+            <td>Esta guía</td>
+            <td>Para aprender a usar el monitor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Navegación entre páginas</h3>
+      <p>Todas las páginas comparten el mismo <strong>header de navegación</strong> (arriba a la derecha) y una <strong>barra de navegación interna</strong> (sticky, en azul) con acceso rápido a las secciones de cada página.</p>
+      <div class="tip">💡 En móvil, el header y la nav interna se adaptan automáticamente. Si los botones no caben, se reorganizan en varias filas.</div>
+    </div>
+
+    <div class="panel">
+      <h3>Buscadores y filtros</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Buscador de nómina</strong> — en la página Nómina, escribí nombre, bloque o distrito para filtrar los 257 diputados en tiempo real.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Filtros de detalle</strong> — en la página Detalle usá los selectores de bloque, distrito y mandato combinados para acotar la búsqueda.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Ordenar tabla de bloques</strong> — en la página Por Bloque hacé clic en cualquier encabezado de columna para ordenar ascendente o descendente.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Vista cards / lista</strong> — en la página Detalle podés alternar entre la vista de cards visuales y la tabla compacta con el botón ▦/☰.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICADORES -->
+  <div class="seccion" id="indicadores">
+    <h2>📐 Cómo interpretar los indicadores</h2>
+
+    <div class="panel">
+      <h3>Estados de cada indicador</h3>
+      <p style="margin-bottom:.7rem">Cada indicador muestra un badge con su estado actual:</p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:.5rem">
+        <div><span class="badge-act">✓ activo</span> <span style="font-size:.8rem;color:#475569">— dato real calculado con fuentes oficiales 2025</span></div>
+        <div><span class="badge-est">⚠ estimación</span> <span style="font-size:.8rem;color:#475569">— valor aproximado, dato exacto pendiente</span></div>
+        <div><span class="badge-v2">🔜 v2.0</span> <span style="font-size:.8rem;color:#475569">— previsto para versiones futuras</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Dimensión I — Costos e Insumos</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Código</th><th>Nombre</th><th>Valor 2025</th><th>Cómo leerlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CRC</strong></td><td>Costo por ciudadano</td><td>$4.818/hab.</td><td>Cuánto le cuesta a cada argentino mantener la Cámara por año. Surge de dividir el presupuesto total ($226.469MM) entre la población (47M).</td></tr>
+          <tr><td><strong>RPS</strong></td><td>Profesionalización del staff</td><td>57,5%</td><td>Porcentaje de los 4.551 empleados que son de planta permanente (carrera). El 42,5% restante son asesores de bloques, diputados y comisiones.</td></tr>
+          <tr><td><strong>IAP</strong></td><td>Autonomía presupuestaria</td><td>~0,95</td><td>Qué tan cerca de 1 está la ejecución respecto al presupuesto aprobado. Valor 1 = plena autonomía. Se actualiza con la Cuenta de Inversión 2025.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimensión II — Eficiencia en el Proceso</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Código</th><th>Nombre</th><th>Valor 2025</th><th>Cómo leerlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>TPMP</strong></td><td>Maduración de proyectos</td><td>30–180 días</td><td>Días promedio desde que un proyecto ingresa hasta que sale dictaminado. Menos días = mayor agilidad legislativa. Requiere integración SIL.</td></tr>
+          <tr><td><strong>ITC</strong></td><td>Trabajo en comisiones</td><td>~3,5×</td><td>Horas en comisión por cada hora de sesión plenaria. Mayor valor = más trabajo técnico previo al debate.</td></tr>
+          <tr><td><strong>NAPE</strong></td><td>Asistencia efectiva</td><td>27%</td><td>Solo el 27% de los diputados tuvo asistencia perfecta en 2025. El 73% faltó al menos una sesión. El caso extremo fue 78% de ausentismo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimensión III — Desempeño y Calidad</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Código</th><th>Nombre</th><th>Valor 2025</th><th>Cómo leerlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>COLS</strong></td><td>Costo por ley</td><td>$17.421MM</td><td>2025 fue el año con menos leyes en una década (13 totales). Más leyes sancionadas = menor COLS = mayor eficiencia legislativa.</td></tr>
+          <tr><td><strong>RLS</strong></td><td>Legislación sustantiva</td><td>72,7%</td><td>8 de 11 leyes ordinarias fueron de política pública real (no acuerdos protocolares). Ninguna fue de autoría oficialista.</td></tr>
+          <tr><td><strong>ECO</strong></td><td>Efectividad del control</td><td>&lt;5%</td><td>Porcentaje de auditorías AGN que derivaron en acción legislativa. Históricamente bajo; en 2025 el control se ejerció vía rechazo de decretos (récord histórico).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimensión IV — Transparencia y Datos</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Código</th><th>Nombre</th><th>Valor 2025</th><th>Cómo leerlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>IAD</strong></td><td>Accesibilidad documental</td><td>3/5</td><td>Escala 1 (publicación &gt;30 días) a 5 (&lt;24hs). Las versiones taquigráficas se publican en 24–48hs (nivel 4), el Diario de Sesiones en hasta 2 meses (nivel 2). Sin open data estructurado (sin CSV/JSON).</td></tr>
+          <tr><td><strong>TVD</strong></td><td>Veracidad de datos</td><td>~97%</td><td>Precisión del scraping respecto a la fuente oficial. El 3% de error son variantes de nombres y cambios de bloque no capturados en tiempo real.</td></tr>
+          <tr><td><strong>IPCV</strong></td><td>Participación ciudadana</td><td>—</td><td>Previsto para v2.0 con módulo ciudadano interactivo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Indicadores de composición (calculados en tiempo real)</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Código</th><th>Nombre</th><th>Cómo leerlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>NEP</strong></td><td>Número Efectivo de Partidos</td><td>Cuántos partidos "efectivos" hay ponderando su tamaño. NEP &lt;2,5 = baja fragmentación · 2,5–4 = moderada · &gt;4 = alta. Se recalcula automáticamente.</td></tr>
+          <tr><td><strong>IF</strong></td><td>Índice de Fragmentación</td><td>Varía entre 0 (un solo bloque) y 1 (máxima dispersión). Complementa al NEP.</td></tr>
+          <tr><td><strong>IRB</strong></td><td>Tasa de Renovación Bienal</td><td>Proporción de bancas renovadas en dic. 2025. La CN establece ~50% cada 2 años (Art. 50).</td></tr>
+          <tr><td><strong>IRG</strong></td><td>Representación Geográfica</td><td>IRG &gt;1 = distrito sobre-representado · &lt;1 = sub-representado. El mínimo de 5 bancas favorece a provincias pequeñas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ACTUALIZAR DATOS -->
+  <div class="seccion" id="actualizar">
+    <h2>🔄 Cómo actualizar los datos</h2>
+
+    <div class="panel">
+      <h3>Actualización automática con el scraper</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Clonar o actualizar el repositorio</strong><div class="code">git clone https://github.com/Viny2030/monitor_legistativo.git</div></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Instalar dependencias</strong><div class="code">pip install -r requirements.txt</div></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Ejecutar el scraper</strong><div class="code">python scraper_diputados.py</div>Genera el archivo <code>nomina_diputados.csv</code> con la nómina actualizada desde diputados.gov.ar.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Reemplazar el array DIPUTADOS</strong> en los archivos HTML con los nuevos datos del CSV. Los indicadores se recalculan automáticamente al recargar.</div></div>
+      </div>
+      <div class="tip">💡 Los indicadores NEP, IF, IRB e IRG se recalculan solos al modificar el array. No hace falta cambiar ningún otro valor.</div>
+    </div>
+
+    <div class="panel">
+      <h3>Frecuencia recomendada de actualización</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Dato</th><th>Frecuencia</th><th>Evento disparador</th></tr></thead>
+        <tbody>
+          <tr><td>Nómina de diputados</td><td>Bienal</td><td>Renovación de diciembre (años impares)</td></tr>
+          <tr><td>Cambios de bloque</td><td>Mensual</td><td>Altas, bajas y fusiones de bloques</td></tr>
+          <tr><td>CRC / COLS (presupuesto)</td><td>Anual</td><td>Aprobación del presupuesto (diciembre)</td></tr>
+          <tr><td>NAPE (asistencia)</td><td>Anual</td><td>Cierre del período ordinario (noviembre)</td></tr>
+          <tr><td>RLS / ECO</td><td>Anual</td><td>Balance legislativo de fin de año</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Subir cambios a GitHub</h3>
+      <div class="code">git add .<br>git commit -m "Actualización nómina marzo 2026"<br>git push origin main</div>
+      <div class="warn">⚠️ Si usás GitHub Pages, los cambios se publican automáticamente tras el push. Verificá que la rama <code>main</code> esté configurada como fuente en Settings → Pages.</div>
+    </div>
+  </div>
+
+  <!-- LIMITACIONES -->
+  <div class="seccion" id="limitaciones">
+    <h2>⚠️ Limitaciones y pendientes</h2>
+
+    <div class="panel">
+      <h3>Versión actual (v1.0)</h3>
+      <p>La versión 1.0 cubre exclusivamente <strong>composición y representatividad</strong>. Los indicadores de actividad parlamentaria individual (proyectos presentados, votaciones nominales por diputado, comisiones integradas) requieren integración con el <strong>SIL — Sistema de Información Legislativa</strong>, prevista para la versión 1.1.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Indicadores pendientes de integración</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Indicador</th><th>Requiere</th><th>Versión prevista</th></tr></thead>
+        <tbody>
+          <tr><td>TPMP — Maduración de proyectos</td><td>SIL (fechas de ingreso y dictamen)</td><td>v1.1 — Q2 2026</td></tr>
+          <tr><td>ITC — Trabajo en comisiones</td><td>Actas de reuniones de comisión</td><td>v1.1 — Q2 2026</td></tr>
+          <tr><td>Asistencia individual por diputado</td><td>SIL (votaciones nominales)</td><td>v1.1 — Q2 2026</td></tr>
+          <tr><td>Proyectos por diputado</td><td>SIL (autoría de proyectos)</td><td>v1.1 — Q2 2026</td></tr>
+          <tr><td>ECO — Efectividad del control</td><td>OPC + Comisión Revisora de Cuentas</td><td>v2.0 — Q3 2026</td></tr>
+          <tr><td>IPCV — Participación ciudadana</td><td>Módulo ciudadano interactivo</td><td>v2.0 — Q3 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Limitaciones metodológicas conocidas</h3>
+      <p><strong>NEP:</strong> trata a todos los bloques como entidades separadas sin considerar afinidades ideológicas o acuerdos de coalición. Un NEP alto no implica necesariamente dificultad para formar mayorías.</p>
+      <p><strong>NAPE:</strong> mide asistencia a sesiones, no presencia en todas las votaciones dentro de cada sesión. Un diputado puede constar como presente pero haberse retirado antes de votar.</p>
+      <p><strong>RLS:</strong> la clasificación sustantivo/declarativo es propia del monitor y puede diferir de otras clasificaciones. Los acuerdos internacionales se clasifican como no sustantivos en esta versión.</p>
+      <p><strong>Normalización de bloques:</strong> refleja la denominación oficial HCDN al momento de la consulta. Los bloques pueden cambiar de nombre, fusionarse o dividirse durante el período legislativo.</p>
+    </div>
+  </div>
+
+  <!-- GLOSARIO -->
+  <div class="seccion" id="glosario">
+    <h2>📖 Glosario rápido</h2>
+    <div class="glos-grid">
+      <div class="glos-item"><div class="glos-term">NEP</div><div class="glos-def">Número Efectivo de Partidos — mide cuántos bloques "efectivos" hay, ponderando su tamaño.</div></div>
+      <div class="glos-item"><div class="glos-term">IF</div><div class="glos-def">Índice de Fragmentación de Rae — dispersión del poder entre bloques (0 a 1).</div></div>
+      <div class="glos-item"><div class="glos-term">IRB</div><div class="glos-def">Tasa de Renovación Bienal — porcentaje de bancas renovadas en la última elección.</div></div>
+      <div class="glos-item"><div class="glos-term">IRG</div><div class="glos-def">Índice de Representación Geográfica — sobre/sub-representación de cada distrito.</div></div>
+      <div class="glos-item"><div class="glos-term">CRC</div><div class="glos-def">Costo de Representación por Ciudadano — presupuesto HCDN dividido por la población.</div></div>
+      <div class="glos-item"><div class="glos-term">RPS</div><div class="glos-def">Ratio de Profesionalización del Staff — planta permanente sobre total de empleados.</div></div>
+      <div class="glos-item"><div class="glos-term">NAPE</div><div class="glos-def">Nivel de Asistencia y Permanencia Efectiva — % de diputados con asistencia perfecta.</div></div>
+      <div class="glos-item"><div class="glos-term">COLS</div><div class="glos-def">Costo Operativo por Ley Sancionada — presupuesto dividido por leyes aprobadas.</div></div>
+      <div class="glos-item"><div class="glos-term">RLS</div><div class="glos-def">Ratio de Legislación Sustantiva — % de leyes de política pública sobre total.</div></div>
+      <div class="glos-item"><div class="glos-term">ECO</div><div class="glos-def">Efectividad del Control — % de auditorías AGN con seguimiento legislativo efectivo.</div></div>
+      <div class="glos-item"><div class="glos-term">IAD</div><div class="glos-def">Índice de Accesibilidad Documental — velocidad de publicación de actas (escala 1–5).</div></div>
+      <div class="glos-item"><div class="glos-term">TVD</div><div class="glos-def">Tasa de Veracidad de Datos — precisión del pipeline de scraping del monitor.</div></div>
+      <div class="glos-item"><div class="glos-term">SIL</div><div class="glos-def">Sistema de Información Legislativa — base de datos oficial de proyectos y votaciones.</div></div>
+      <div class="glos-item"><div class="glos-term">OPC</div><div class="glos-def">Oficina de Presupuesto del Congreso — organismo técnico de seguimiento presupuestario.</div></div>
+      <div class="glos-item"><div class="glos-term">HCDN</div><div class="glos-def">Honorable Cámara de Diputados de la Nación.</div></div>
+      <div class="glos-item"><div class="glos-term">AGN</div><div class="glos-def">Auditoría General de la Nación — control externo del sector público nacional.</div></div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="seccion" id="contacto">
+    <h2>👤 Autor y contacto</h2>
+    <div class="autor-card">
+      <div class="autor-foto">
+        <img src="../foto.jpg" alt="Vicente H. Monteverde"
+             onerror="this.style.display='none';this.parentElement.textContent='👤'">
+      </div>
+      <div class="autor-info">
+        <h3>Ph.D. Vicente Humberto Monteverde</h3>
+        <p style="font-size:.82rem;color:#475569;font-style:italic;margin-bottom:.5rem">Doctor en Ciencias Económicas · Investigador en economía política y fenómenos de corrupción</p>
+        <p style="font-size:.8rem;color:#334155;margin-bottom:.6rem">Autor de la teoría de <strong>Transferencia Regresiva de Ingresos</strong> y desarrollador del algoritmo XAI aplicado al análisis de contrataciones públicas. Publicaciones en <em>Journal of Financial Crime</em> (Emerald Publishing). Asesor en transparencia y auditoría algorítmica del gasto público.</p>
+        <div>
+          <a class="autor-mail" href="mailto:vhmonte@retina.ar">✉️ vhmonte@retina.ar</a>
+          <a class="autor-mail" href="mailto:viny01958@gmail.com">✉️ viny01958@gmail.com</a>
+          <a class="autor-mail" href="https://github.com/Viny2030/monitor_legistativo" target="_blank">💻 GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Monitor Legislativo — Cámara de Diputados · Versión 1.0 · Marzo 2026<br>
+  <a href="indicadores_diputados.html">🏛️ Nómina</a> ·
+  <a href="indicadores2_diputados.html">📊 Indicadores</a> ·
+  <a href="nomina_detalle_diputados.html">👥 Detalle</a> ·
+  <a href="metodologia_diputados.html">📚 Metodología</a> ·
+  <a href="https://github.com/Viny2030/monitor_legistativo" target="_blank">GitHub</a> ·
+  Datos: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a>
+</footer>
+
+</body>
+</html>

@@ -577,10 +577,10 @@ function rHtml(b, n, rank) {
   </div>`;
 }
 
-const top = bloquesSorted.slice(0,10);
-const bottom = [...bloquesSorted].reverse().slice(0,10);
-document.getElementById('list-mayor').innerHTML = top.map(([b,n],i) => rHtml(b,n,i+1)).join('');
-document.getElementById('list-menor').innerHTML = bottom.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+const topBloques = bloquesSorted.slice(0,10);
+const bottomBloques = [...bloquesSorted].reverse().slice(0,10);
+document.getElementById('list-mayor').innerHTML = topBloques.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+document.getElementById('list-menor').innerHTML = bottomBloques.map(([b,n],i) => rHtml(b,n,i+1)).join('');
 </script>
 </body>
 </html>

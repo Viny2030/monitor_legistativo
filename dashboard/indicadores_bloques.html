@@ -3,88 +3,75 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Nómina Detallada – Monitor Legislativo Diputados Argentina</title>
+<title>Indicadores por Bloque – Monitor Legislativo Diputados Argentina</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 14px; scroll-behavior: smooth; }
 body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.55; background: #f0f2f5; color: #1a1a2e; }
-
 header { background: linear-gradient(135deg, #0A2463 0%, #1a3a7c 50%, #061440 100%); color: #fff; padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 header .escudo { font-size: 2.4rem; }
-header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; }
+header h1 { font-size: 1.35rem; font-weight: 700; }
 header p  { font-size: .875rem; opacity: .85; margin-top: .2rem; }
 header nav { margin-left: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
-header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; transition: background .15s; }
+header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; }
 header nav a:hover { background: rgba(255,255,255,.35); }
 header nav a.active { background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.6); }
-
-.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; gap: 0; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
-.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); transition: background .12s, color .12s; white-space: nowrap; }
+.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
+.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); white-space: nowrap; }
 .nav-interna a:hover { background: rgba(255,255,255,.12); color: #fff; }
 .nav-interna a.activo { background: rgba(255,255,255,.18); color: #fff; border-bottom: 3px solid #C9A84C; }
-
 .disclaimer { background: #fffbeb; border-left: 4px solid #C9A84C; padding: .75rem 1.5rem; font-size: .78rem; color: #5a4a00; border-bottom: 1px solid #f0e0a0; line-height: 1.55; }
 
-/* ── Controles ── */
-.controles-bar { background: #fff; border-bottom: 1px solid #dde2ec; padding: 1rem 1.5rem; display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
-.controles-bar input { flex: 1; min-width: 200px; padding: .5rem .9rem; border: 1px solid #dde2ec; border-radius: 8px; font-size: .85rem; outline: none; }
-.controles-bar input:focus { border-color: #0A2463; }
-.controles-bar select { padding: .5rem .7rem; border: 1px solid #dde2ec; border-radius: 8px; font-size: .82rem; background: #fff; outline: none; cursor: pointer; }
-.controles-bar select:focus { border-color: #0A2463; }
-.controles-bar .count-badge { margin-left: auto; background: #f0f4ff; border: 1px solid #c5d0e8; border-radius: 20px; padding: .3rem .9rem; font-size: .78rem; font-weight: 700; color: #0A2463; white-space: nowrap; }
+/* KPIs */
+.kpi-bar { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .75rem; padding: 1.25rem 1.5rem; background: #fff; border-bottom: 1px solid #dde2ec; }
+.kpi-card { background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0; padding: .9rem 1rem; text-align: center; }
+.kpi-card .kv { font-size: 1.6rem; font-weight: 800; color: #0A2463; line-height: 1; }
+.kpi-card .kl { font-size: .68rem; color: #64748b; margin-top: .3rem; text-transform: uppercase; letter-spacing: .04em; }
+.kpi-card .ks { font-size: .75rem; color: #475569; margin-top: .1rem; }
 
-/* ── Vista toggle ── */
-.vista-toggle { display: flex; gap: .4rem; }
-.vista-btn { padding: .4rem .8rem; border-radius: 6px; border: 1px solid #dde2ec; background: #fff; color: #64748b; font-size: .8rem; cursor: pointer; font-weight: 600; }
-.vista-btn.activo { background: #0A2463; color: #fff; border-color: #0A2463; }
+/* Controles */
+.controles { background: #fff; border-bottom: 1px solid #dde2ec; padding: .9rem 1.5rem; display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+.controles input { flex: 1; min-width: 180px; padding: .45rem .8rem; border: 1px solid #dde2ec; border-radius: 6px; font-size: .82rem; outline: none; }
+.controles input:focus { border-color: #0A2463; }
+.controles select { padding: .45rem .7rem; border: 1px solid #dde2ec; border-radius: 6px; font-size: .82rem; background: #fff; outline: none; }
+.ordenar-label { font-size: .78rem; color: #64748b; font-weight: 600; }
+.count-badge { background: #f0f4ff; border: 1px solid #c5d0e8; border-radius: 20px; padding: .25rem .8rem; font-size: .75rem; font-weight: 700; color: #0A2463; white-space: nowrap; margin-left: auto; }
 
-/* ── Grid de cards ── */
-.cards-container { padding: 1.25rem 1.5rem; }
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-@media(max-width:600px) { .cards-grid { grid-template-columns: 1fr; } }
+/* Tabla principal */
+.seccion { padding: 1.25rem 1.5rem; }
+.seccion h2 { font-size: 1rem; font-weight: 700; color: #0A2463; margin-bottom: .9rem; padding-bottom: .4rem; border-bottom: 2px solid #d0daf0; display: flex; align-items: center; gap: .5rem; }
+.panel { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; overflow: hidden; }
+.tbl { width: 100%; border-collapse: collapse; font-size: .78rem; }
+.tbl th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .5rem .7rem; text-align: left; border-bottom: 2px solid #c5d0e8; white-space: nowrap; cursor: pointer; user-select: none; }
+.tbl th:hover { background: #dce6f8; }
+.tbl th.num, .tbl td.num { text-align: right; }
+.tbl th .sort-arrow { font-size: .65rem; opacity: .4; margin-left: .2rem; }
+.tbl th.sorted .sort-arrow { opacity: 1; color: #C9A84C; }
+.tbl tr:nth-child(even) { background: #fafbff; }
+.tbl td { padding: .42rem .7rem; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+.tbl tr:hover td { background: #f0f4ff; }
+.tbl tr:last-child td { border-bottom: none; }
 
-/* ── Card individual ── */
-.dip-card { background: #fff; border-radius: 12px; border: 1px solid #dde2ec; overflow: hidden; transition: box-shadow .18s, transform .18s; cursor: default; }
-.dip-card:hover { box-shadow: 0 4px 20px rgba(10,36,99,.12); transform: translateY(-2px); }
-.dip-card-header { padding: 1rem 1.1rem .7rem; display: flex; align-items: center; gap: .85rem; border-bottom: 1px solid #f0f0f0; }
-.dip-foto { width: 52px; height: 52px; border-radius: 50%; background: #eef2fb; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; border: 2px solid #c5d0e8; overflow: hidden; }
-.dip-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.dip-info { flex: 1; min-width: 0; }
-.dip-nombre { font-size: .88rem; font-weight: 800; color: #1e293b; line-height: 1.3; margin-bottom: .25rem; }
-.dip-distrito { font-size: .72rem; color: #64748b; }
-.dip-bloque-pill { display: inline-block; padding: .15rem .55rem; border-radius: 12px; font-size: .67rem; font-weight: 700; color: #fff; margin-top: .2rem; }
+/* Indicador cell */
+.ind-cell { display: flex; flex-direction: column; align-items: flex-end; gap: .05rem; }
+.ind-val { font-weight: 800; color: #0A2463; }
+.ind-bar { width: 60px; height: 5px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+.ind-bar-fill { height: 100%; border-radius: 3px; }
 
-.dip-card-body { padding: .75rem 1.1rem; }
-.dip-meta { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .75rem; }
-.dip-meta-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: .2rem .6rem; font-size: .7rem; color: #475569; }
-.dip-meta-item strong { color: #0A2463; }
+/* Pill bloque */
+.bloque-pill { display: inline-block; padding: .15rem .55rem; border-radius: 12px; font-size: .68rem; font-weight: 700; color: #fff; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-/* ── Indicadores en la card ── */
-.dip-indicadores { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: .4rem; }
-.dip-ind { background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0; padding: .4rem .6rem; text-align: center; }
-.dip-ind .di-code { font-size: .65rem; font-weight: 800; color: #0A2463; font-family: monospace; }
-.dip-ind .di-val { font-size: .95rem; font-weight: 800; color: #334155; line-height: 1.1; margin: .1rem 0; }
-.dip-ind .di-label { font-size: .62rem; color: #94a3b8; }
-.tag-pend { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 3px; padding: .05rem .3rem; font-size: .62rem; font-weight: 700; }
-.tag-act  { display: inline-block; background: #dcfce7; color: #15803d; border-radius: 3px; padding: .05rem .3rem; font-size: .62rem; font-weight: 700; }
+/* Leyenda indicadores */
+.leyenda { display: flex; flex-wrap: wrap; gap: .5rem; padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #dde2ec; }
+.ley-item { background: #f0f4ff; border: 1px solid #c5d0e8; border-radius: 6px; padding: .3rem .7rem; font-size: .72rem; }
+.ley-code { font-weight: 800; color: #0A2463; font-family: monospace; }
+.ley-desc { color: #475569; margin-left: .3rem; }
+.tag-act { display: inline-block; background: #dcfce7; color: #15803d; border-radius: 3px; padding: .05rem .3rem; font-size: .65rem; font-weight: 700; }
+.tag-calc { display: inline-block; background: #eff6ff; color: #2563eb; border-radius: 3px; padding: .05rem .3rem; font-size: .65rem; font-weight: 700; }
 
-.dip-card-footer { border-top: 1px solid #f0f0f0; padding: .5rem 1.1rem; display: flex; align-items: center; justify-content: space-between; }
-.dip-mandato { font-size: .72rem; font-weight: 700; }
-.dip-link { font-size: .72rem; color: #0A2463; text-decoration: none; font-weight: 600; }
-.dip-link:hover { text-decoration: underline; }
-
-/* ── Vista lista ── */
-.lista-container { padding: 1.25rem 1.5rem; }
-.lista-tbl { width: 100%; border-collapse: collapse; font-size: .8rem; background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid #dde2ec; }
-.lista-tbl th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .5rem .75rem; text-align: left; border-bottom: 2px solid #c5d0e8; position: sticky; top: 56px; }
-.lista-tbl th.num, .lista-tbl td.num { text-align: right; }
-.lista-tbl tr:nth-child(even) { background: #fafbff; }
-.lista-tbl td { padding: .42rem .75rem; border-bottom: 1px solid #f0f0f0; }
-.lista-tbl tr:hover td { background: #f0f4ff; }
-.lista-tbl tr:last-child td { border-bottom: none; }
-
-/* ── Sin resultados ── */
-.sin-resultados { text-align: center; padding: 3rem 1rem; color: #94a3b8; font-size: .9rem; }
+/* Tooltip */
+th[data-tip] { position: relative; }
+th[data-tip]:hover::after { content: attr(data-tip); position: absolute; top: 110%; left: 50%; transform: translateX(-50%); background: #1e293b; color: #fff; font-size: .7rem; padding: .3rem .6rem; border-radius: 5px; white-space: nowrap; z-index: 999; font-weight: 400; }
 
 footer { text-align: center; padding: 1rem; font-size: .75rem; color: #94a3b8; border-top: 1px solid #dde2ec; margin-top: 1rem; }
 footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
@@ -95,80 +82,182 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
 <header>
   <span class="escudo">🏛️</span>
   <div>
-    <h1>Monitor Legislativo · Nómina Detallada — Cámara de Diputados</h1>
-    <p>257 diputados en ejercicio · indicadores individuales · datos al 27 de marzo de 2026</p>
+    <h1>Monitor Legislativo · Indicadores por Bloque</h1>
+    <p>Todos los indicadores activos calculados automáticamente para cada bloque parlamentario — datos al 27 de marzo de 2026</p>
   </div>
   <nav>
     <a href="indicadores_diputados.html">🏛️ Nómina</a>
     <a href="indicadores2_diputados.html">📊 Indicadores</a>
-    <a href="nomina_detalle_diputados.html" class="active">👥 Detalle</a>
+    <a href="indicadores_bloques.html" class="active">🔬 Por Bloque</a>
+    <a href="nomina_detalle_diputados.html">👥 Detalle</a>
     <a href="metodologia_diputados.html">📚 Metodología</a>
   </nav>
 </header>
 
 <div class="nav-interna">
-  <a href="#cards" class="activo">👥 Diputados</a>
-  <a href="indicadores_diputados.html">📊 Composición</a>
-  <a href="metodologia_diputados.html">📚 Metodología</a>
+  <a href="#tabla" class="activo">📊 Tabla comparativa</a>
+  <a href="#ranking">🏆 Rankings</a>
+  <a href="#camara">🏛️ Indicadores Cámara</a>
 </div>
 
 <div class="disclaimer">
-  ⚠️ <strong>Nota:</strong> Esta herramienta es de carácter experimental y académico. Los datos de composición provienen de <strong>diputados.gov.ar</strong> — marzo 2026. · Indicadores activos v1.0: <strong>NEP · NAPE · RLS · COLS · CRC · RPS · IAD · TVD</strong> — todos con datos oficiales 2025. Los indicadores individuales por diputado (asistencia nominal, proyectos propios) requieren integración SIL (v1.1).
+  ⚠️ <strong>Nota:</strong> Los indicadores marcados <span class="tag-calc">calc.</span> se calculan en tiempo real a partir del array de 257 diputados. Los marcados <span class="tag-act">activo</span> usan datos oficiales 2025. Hacé clic en cualquier encabezado de columna para ordenar.
+</div>
+
+<!-- Leyenda -->
+<div class="leyenda">
+  <div class="ley-item"><span class="ley-code">Bancas</span><span class="ley-desc">cantidad de diputados en el bloque</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">%Cám</span><span class="ley-desc">proporción sobre 257 bancas</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">NEP_b</span><span class="ley-desc">peso relativo del bloque en el NEP total</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">pᵢ²</span><span class="ley-desc">contribución al índice de fragmentación</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">Renov%</span><span class="ley-desc">% bancas mandato 2025-2029</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">Distritos</span><span class="ley-desc">cantidad de distritos representados</span><span class="tag-calc">calc.</span></div>
+  <div class="ley-item"><span class="ley-code">NAPE</span><span class="ley-desc">asistencia perfecta cámara 2025: 27%</span><span class="tag-act">activo</span></div>
+  <div class="ley-item"><span class="ley-code">RLS</span><span class="ley-desc">legislación sustantiva 2025: 72,7%</span><span class="tag-act">activo</span></div>
+  <div class="ley-item"><span class="ley-code">COLS</span><span class="ley-desc">costo por ley: $17.421MM</span><span class="tag-act">activo</span></div>
+  <div class="ley-item"><span class="ley-code">CRC</span><span class="ley-desc">costo por ciudadano: $4.818</span><span class="tag-act">activo</span></div>
+</div>
+
+<!-- KPIs cámara -->
+<div class="kpi-bar">
+  <div class="kpi-card"><div class="kv" id="kpi-total">—</div><div class="kl">Diputados</div><div class="ks">en ejercicio</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-bloques">—</div><div class="kl">Bloques</div><div class="ks">activos</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-nep">—</div><div class="kl">NEP Cámara</div><div class="ks">Laakso-Taagepera</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-frag">—</div><div class="kl">Fragmentación</div><div class="ks">Índice de Rae</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-renov">—</div><div class="kl">Renovación</div><div class="ks">mandato 2025-2029</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-distritos">—</div><div class="kl">Distritos</div><div class="ks">representados</div></div>
 </div>
 
 <!-- Controles -->
-<div class="controles-bar">
-  <input type="text" id="buscar" placeholder="🔍  Buscar por nombre, bloque o distrito…" oninput="filtrar()">
-  <select id="sel-bloque" onchange="filtrar()"><option value="">Todos los bloques</option></select>
-  <select id="sel-distrito" onchange="filtrar()"><option value="">Todos los distritos</option></select>
-  <select id="sel-mandato" onchange="filtrar()">
-    <option value="">Todos los mandatos</option>
-    <option value="2025-2029">Mandato 2025-2029</option>
-    <option value="2023-2027">Mandato 2023-2027</option>
+<div class="controles">
+  <input type="text" id="buscar" placeholder="🔍 Buscar bloque…" oninput="filtrarTabla()">
+  <span class="ordenar-label">Ordenar por:</span>
+  <select id="orden" onchange="ordenarTabla()">
+    <option value="bancas_desc">Bancas ↓</option>
+    <option value="bancas_asc">Bancas ↑</option>
+    <option value="renov_desc">Renovación ↓</option>
+    <option value="renov_asc">Renovación ↑</option>
+    <option value="distritos_desc">Distritos ↓</option>
+    <option value="nombre_asc">Nombre A→Z</option>
   </select>
-  <div class="vista-toggle">
-    <button class="vista-btn activo" id="btn-cards" onclick="setVista('cards')">▦ Cards</button>
-    <button class="vista-btn" id="btn-lista" onclick="setVista('lista')">☰ Lista</button>
+  <span class="count-badge" id="count-badge">— bloques</span>
+</div>
+
+<!-- Tabla comparativa -->
+<div class="seccion" id="tabla">
+  <h2>📊 Tabla comparativa — todos los indicadores por bloque</h2>
+  <div class="panel">
+    <div style="overflow-x:auto">
+      <table class="tbl" id="tbl-bloques">
+        <thead>
+          <tr>
+            <th onclick="sortBy('rk')">#<span class="sort-arrow">↕</span></th>
+            <th onclick="sortBy('bloque')">Bloque<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('bancas')" data-tip="Diputados en el bloque">Bancas<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('pct')" data-tip="% sobre 257 bancas">%Cám<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('pi2')" data-tip="Contribución al índice de fragmentación (pᵢ²)">pᵢ²<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('renov')" data-tip="% bancas con mandato 2025-2029">Renov%<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('m29')" data-tip="Diputados mandato 2025-2029">M.25-29<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('m27')" data-tip="Diputados mandato 2023-2027">M.23-27<span class="sort-arrow">↕</span></th>
+            <th class="num" onclick="sortBy('distritos')" data-tip="Cantidad de distritos representados">Distritos<span class="sort-arrow">↕</span></th>
+            <th class="num" data-tip="Asistencia perfecta cámara 2025 (dato cámara)">NAPE</th>
+            <th class="num" data-tip="Legislación sustantiva 2025 (dato cámara)">RLS</th>
+            <th class="num" data-tip="Costo por ley sancionada 2025 (dato cámara)">COLS</th>
+            <th class="num" data-tip="Costo por ciudadano 2025 (dato cámara)">CRC</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-bloques"></tbody>
+      </table>
+    </div>
   </div>
-  <span class="count-badge" id="count-badge">257 diputados</span>
 </div>
 
-<!-- Vista Cards -->
-<div class="cards-container" id="vista-cards">
-  <div class="cards-grid" id="grid-cards"></div>
-  <div class="sin-resultados" id="sin-res-cards" style="display:none">No se encontraron diputados con ese criterio.</div>
+<!-- Rankings -->
+<div class="seccion" id="ranking">
+  <h2>🏆 Rankings por indicador calculado</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+
+    <div class="panel" style="padding:1rem">
+      <h3 style="font-size:.85rem;font-weight:700;color:#334155;margin-bottom:.75rem">🏦 Mayor representación (bancas)</h3>
+      <div id="rank-bancas"></div>
+    </div>
+
+    <div class="panel" style="padding:1rem">
+      <h3 style="font-size:.85rem;font-weight:700;color:#334155;margin-bottom:.75rem">🔄 Mayor renovación bienal</h3>
+      <div id="rank-renov"></div>
+    </div>
+
+    <div class="panel" style="padding:1rem">
+      <h3 style="font-size:.85rem;font-weight:700;color:#334155;margin-bottom:.75rem">🗺️ Mayor presencia territorial</h3>
+      <div id="rank-distritos"></div>
+    </div>
+
+    <div class="panel" style="padding:1rem">
+      <h3 style="font-size:.85rem;font-weight:700;color:#334155;margin-bottom:.75rem">📉 Menor fragmentación (pᵢ² mayor)</h3>
+      <div id="rank-pi2"></div>
+    </div>
+
+  </div>
 </div>
 
-<!-- Vista Lista -->
-<div class="lista-container" id="vista-lista" style="display:none">
-  <table class="lista-tbl">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Apellido y Nombre</th>
-        <th>Distrito</th>
-        <th>Bloque</th>
-        <th class="num">Mandato</th>
-        <th class="num">Asistencia</th>
-        <th class="num">Proyectos</th>
-        <th class="num">Leyes</th>
-        <th class="num">Comisiones</th>
-      </tr>
-    </thead>
-    <tbody id="tbody-lista"></tbody>
-  </table>
-  <div class="sin-resultados" id="sin-res-lista" style="display:none">No se encontraron diputados con ese criterio.</div>
+<!-- Indicadores de cámara -->
+<div class="seccion" id="camara">
+  <h2>🏛️ Indicadores de nivel cámara — compartidos por todos los bloques</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem">
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #16a34a">
+      <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">NAPE 2025</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#15803d">27%</div>
+      <div style="font-size:.72rem;color:#64748b">asistencia perfecta · 27% de los 257 diputados no faltó ninguna sesión</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #16a34a">
+      <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">RLS 2025</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#15803d">72,7%</div>
+      <div style="font-size:.72rem;color:#64748b">legislación sustantiva · 8 de 11 leyes ordinarias de política pública real</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #be123c">
+      <div style="font-size:.7rem;color:#be123c;font-weight:700;text-transform:uppercase">COLS 2025</div>
+      <div style="font-size:1.4rem;font-weight:900;color:#be123c">$17.421 MM</div>
+      <div style="font-size:.72rem;color:#64748b">por ley sancionada · mínimo de producción legislativa en 10 años (13 leyes)</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #0A2463">
+      <div style="font-size:.7rem;color:#0A2463;font-weight:700;text-transform:uppercase">CRC 2025</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#0A2463">$4.818</div>
+      <div style="font-size:.72rem;color:#64748b">por habitante / año · presupuesto HCDN $226.469MM / 47M hab.</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #0A2463">
+      <div style="font-size:.7rem;color:#0A2463;font-weight:700;text-transform:uppercase">RPS 2025</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#0A2463">57,5%</div>
+      <div style="font-size:.72rem;color:#64748b">planta permanente · 2.616 de 4.551 empleados son de carrera</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #0A2463">
+      <div style="font-size:.7rem;color:#0A2463;font-weight:700;text-transform:uppercase">IAD 2025</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#0A2463">3/5</div>
+      <div style="font-size:.72rem;color:#64748b">accesibilidad documental · taquigráfica en 24-48hs, Diario en 2 meses</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #15803d">
+      <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">TVD v1.0</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#15803d">~97%</div>
+      <div style="font-size:.72rem;color:#64748b">veracidad datos · auditoría interna sobre nómina de 257 diputados</div>
+    </div>
+    <div style="background:#fff;border-radius:10px;border:1px solid #dde2ec;padding:1rem;border-left:4px solid #7c3aed">
+      <div style="font-size:.7rem;color:#7c3aed;font-weight:700;text-transform:uppercase">NEP Cámara</div>
+      <div style="font-size:1.6rem;font-weight:900;color:#7c3aed" id="kpi-nep2">—</div>
+      <div style="font-size:.72rem;color:#64748b">número efectivo de partidos · calculado en tiempo real</div>
+    </div>
+  </div>
 </div>
 
 <footer>
   Fuente: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a> · 27-03-2026 · Monitor Legislativo ·
   <a href="indicadores_diputados.html">🏛️ Nómina</a> ·
   <a href="indicadores2_diputados.html">📊 Indicadores</a> ·
+  <a href="nomina_detalle_diputados.html">👥 Detalle</a> ·
   <a href="metodologia_diputados.html">📚 Metodología</a> ·
   <a href="https://github.com/Viny2030/monitor_legistativo" target="_blank">GitHub</a>
 </footer>
 
 <script>
+// ── DATOS ────────────────────────────────────────────────────
 const DIPUTADOS = [
   {nombre:"Agüero, Guillermo César",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
   {nombre:"Aguirre, Hilda",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
@@ -429,181 +518,132 @@ const DIPUTADOS = [
   {nombre:"Zulli, Christian Alejandro",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"}
 ];
 
+// ── CÁLCULO AUTOMÁTICO ───────────────────────────────────────
+const total = DIPUTADOS.length;
+const bloquesMap = {}, distritosMap = {};
+
+DIPUTADOS.forEach(d => {
+  if (!bloquesMap[d.bloque]) bloquesMap[d.bloque] = {bancas:0, m29:0, m27:0, distritos:new Set()};
+  bloquesMap[d.bloque].bancas++;
+  if (d.mandato === '2025-2029') bloquesMap[d.bloque].m29++;
+  else bloquesMap[d.bloque].m27++;
+  bloquesMap[d.bloque].distritos.add(d.distrito);
+});
+
+const sumPi2 = Object.values(bloquesMap).reduce((s,b) => s + (b.bancas/total)**2, 0);
+const NEP    = (1/sumPi2).toFixed(2);
+const IF     = (1-sumPi2).toFixed(4);
+const m29tot = DIPUTADOS.filter(d=>d.mandato==='2025-2029').length;
+
+// Construir array de bloques con todos los indicadores
+let BLOQUES = Object.entries(bloquesMap).map(([nombre, b]) => {
+  const pct   = (b.bancas / total * 100);
+  const pi2   = (b.bancas / total) ** 2;
+  const renov = b.m29 > 0 ? (b.m29 / b.bancas * 100) : 0;
+  return {
+    nombre, bancas: b.bancas, m29: b.m29, m27: b.m27,
+    pct, pi2, renov,
+    distritos: b.distritos.size,
+    // Indicadores de cámara (iguales para todos)
+    nape: 27, rls: 72.7, cols: 17421, crc: 4818
+  };
+}).sort((a,b) => b.bancas - a.bancas);
+
+// KPIs
+document.getElementById('kpi-total').textContent   = total;
+document.getElementById('kpi-bloques').textContent  = BLOQUES.length;
+document.getElementById('kpi-nep').textContent      = NEP;
+document.getElementById('kpi-nep2').textContent     = NEP;
+document.getElementById('kpi-frag').textContent     = IF;
+document.getElementById('kpi-renov').textContent    = (m29tot/total*100).toFixed(1)+'%';
+document.getElementById('kpi-distritos').textContent = [...new Set(DIPUTADOS.map(d=>d.distrito))].length;
+
+// Color por bloque
 function colorBloque(b) {
-  if (!b) return '#64748b';
   const bl = b.toLowerCase();
   if (bl.includes('libertad avanza'))  return '#7c3aed';
   if (bl.includes('patria'))           return '#2563eb';
   if (bl.includes('pro') && !bl.includes('produccion')) return '#d97706';
-  if (bl.includes('radical') || bl.includes('ucr')) return '#e74c3c';
-  if (bl.includes('provincias unidas')) return '#0891b2';
-  if (bl.includes('izquierda') || bl.includes('fit')) return '#991b1b';
+  if (bl.includes('radical')||bl.includes('ucr')) return '#e74c3c';
+  if (bl.includes('provincias unidas'))return '#0891b2';
+  if (bl.includes('izquierda')||bl.includes('fit')) return '#991b1b';
   if (bl.includes('innovación'))       return '#059669';
   if (bl.includes('encuentro'))        return '#ea580c';
-  if (bl.includes('coalicion'))        return '#6b21a8';
   return '#64748b';
 }
 
-function inicialesAvatar(nombre) {
-  const partes = nombre.split(',');
-  const apellido = (partes[0] || '').trim();
-  const nombres  = (partes[1] || '').trim();
-  const a = apellido[0] || '';
-  const n = nombres[0]  || '';
-  return (a + n).toUpperCase();
+// Barra inline
+function barHtml(val, max, col) {
+  const w = Math.min(100, (val/max*100)).toFixed(0);
+  return `<div style="width:50px;height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;display:inline-block;margin-left:.3rem;vertical-align:middle"><div style="width:${w}%;height:100%;background:${col};border-radius:3px"></div></div>`;
 }
 
-// Poblar selects
-const bloquesU   = [...new Set(DIPUTADOS.map(d => d.bloque))].sort();
-const distritosU = [...new Set(DIPUTADOS.map(d => d.distrito))].sort();
-const selBloque   = document.getElementById('sel-bloque');
-const selDistrito = document.getElementById('sel-distrito');
-bloquesU.forEach(b   => { const o = document.createElement('option'); o.value = b; o.textContent = b; selBloque.appendChild(o); });
-distritosU.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; selDistrito.appendChild(o); });
+// Render tabla
+const maxBancas = BLOQUES[0].bancas;
+let filtrado = [...BLOQUES];
+let sortCol = 'bancas', sortDir = -1;
 
-// Calcular NEP del bloque de cada diputado (indicador activo v1.0)
-const total = DIPUTADOS.length;
-const bloques = {};
-DIPUTADOS.forEach(d => { bloques[d.bloque] = (bloques[d.bloque] || 0) + 1; });
-const sumPi2 = Object.values(bloques).reduce((s, n) => s + (n / total) ** 2, 0);
-const NEP_CAMARA = (1 / sumPi2).toFixed(2);
-
-function cardHTML(d, idx) {
-  const col      = colorBloque(d.bloque);
-  const inic     = inicialesAvatar(d.nombre);
-  const esMand29 = d.mandato === '2025-2029';
-  const blqN     = bloques[d.bloque] || 0;
-  const blqPct   = ((blqN / total) * 100).toFixed(1);
-  const urlPerfil = `https://www.diputados.gov.ar/diputados/`;
-
-  return `<div class="dip-card">
-    <div class="dip-card-header">
-      <div class="dip-foto" style="background:${col}22;border-color:${col}55">
-        <span style="font-size:.85rem;font-weight:800;color:${col}">${inic}</span>
-      </div>
-      <div class="dip-info">
-        <div class="dip-nombre">${d.nombre}</div>
-        <div class="dip-distrito">📍 ${d.distrito}</div>
-        <span class="dip-bloque-pill" style="background:${col}">${d.bloque}</span>
-      </div>
-    </div>
-    <div class="dip-card-body">
-      <div class="dip-meta">
-        <span class="dip-meta-item">📅 Mandato: <strong>${d.mandato}</strong></span>
-        <span class="dip-meta-item">🏛️ Bloque: <strong>${blqN} bancas</strong> (${blqPct}%)</span>
-      </div>
-      <div class="dip-indicadores">
-        <div class="dip-ind">
-          <div class="di-code">NEP</div>
-          <div class="di-val">${NEP_CAMARA}</div>
-          <div class="di-label">fragmentación <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">NAPE</div>
-          <div class="di-val">27%</div>
-          <div class="di-label">asistencia <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">RLS</div>
-          <div class="di-val">72,7%</div>
-          <div class="di-label">sustantiva <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">COLS</div>
-          <div class="di-val" style="font-size:.72rem">$17.421M</div>
-          <div class="di-label">por ley <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">CRC</div>
-          <div class="di-val" style="font-size:.72rem">$4.818</div>
-          <div class="di-label">por hab. <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">RPS</div>
-          <div class="di-val">57,5%</div>
-          <div class="di-label">staff perm. <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">IAD</div>
-          <div class="di-val">3/5</div>
-          <div class="di-label">open data <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">TVD</div>
-          <div class="di-val">~97%</div>
-          <div class="di-label">veracidad <span class="tag-act">✓</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="dip-card-footer">
-      <span class="dip-mandato" style="color:${esMand29 ? '#15803d' : '#475569'}">
-        ${esMand29 ? '🟢' : '🔵'} ${d.mandato}
-      </span>
-      <a class="dip-link" href="${urlPerfil}" target="_blank">Ver perfil oficial →</a>
-    </div>
-  </div>`;
+function renderTabla() {
+  const tbody = document.getElementById('tbody-bloques');
+  document.getElementById('count-badge').textContent = `${filtrado.length} bloques`;
+  tbody.innerHTML = filtrado.map((b, i) => {
+    const col = colorBloque(b.nombre);
+    return `<tr>
+      <td style="color:#94a3b8;font-size:.72rem">${i+1}</td>
+      <td><span class="bloque-pill" style="background:${col}">${b.nombre}</span></td>
+      <td class="num"><div class="ind-cell"><span class="ind-val">${b.bancas}</span>${barHtml(b.bancas,maxBancas,col)}</div></td>
+      <td class="num"><span style="font-weight:700">${b.pct.toFixed(1)}%</span></td>
+      <td class="num" style="font-size:.75rem;color:#64748b">${b.pi2.toFixed(4)}</td>
+      <td class="num"><span style="font-weight:700;color:${b.renov>50?'#15803d':b.renov>0?'#0A2463':'#94a3b8'}">${b.renov.toFixed(0)}%</span>${barHtml(b.renov,100,b.renov>50?'#16a34a':'#0A2463')}</td>
+      <td class="num" style="color:#15803d;font-weight:700">${b.m29}</td>
+      <td class="num" style="color:#475569">${b.m27}</td>
+      <td class="num"><span style="font-weight:700">${b.distritos}</span></td>
+      <td class="num"><span style="color:#15803d;font-weight:700">27%</span></td>
+      <td class="num"><span style="color:#15803d;font-weight:700">72,7%</span></td>
+      <td class="num" style="font-size:.72rem"><span style="color:#be123c;font-weight:700">$17.421M</span></td>
+      <td class="num" style="font-size:.72rem"><span style="color:#0A2463;font-weight:700">$4.818</span></td>
+    </tr>`;
+  }).join('');
 }
 
-function filaHTML(d, idx) {
-  const col = colorBloque(d.bloque);
-  return `<tr>
-    <td style="color:#94a3b8;font-size:.74rem">${idx + 1}</td>
-    <td style="font-weight:700">${d.nombre}</td>
-    <td style="font-size:.78rem">${d.distrito}</td>
-    <td><span style="background:${col};color:#fff;padding:.12rem .45rem;border-radius:10px;font-size:.68rem;font-weight:700">${d.bloque}</span></td>
-    <td class="num" style="font-weight:700;color:${d.mandato==='2025-2029'?'#15803d':'#475569'}">${d.mandato}</td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-  </tr>`;
+function filtrarTabla() {
+  const txt = document.getElementById('buscar').value.toLowerCase();
+  filtrado = BLOQUES.filter(b => !txt || b.nombre.toLowerCase().includes(txt));
+  renderTabla();
 }
 
-let vistaActual = 'cards';
-
-function renderizar(lista) {
-  // Cards
-  const grid = document.getElementById('grid-cards');
-  const sinC = document.getElementById('sin-res-cards');
-  if (lista.length === 0) { grid.innerHTML = ''; sinC.style.display = 'block'; }
-  else { sinC.style.display = 'none'; grid.innerHTML = lista.map((d, i) => cardHTML(d, i)).join(''); }
-
-  // Lista
-  const tbody = document.getElementById('tbody-lista');
-  const sinL  = document.getElementById('sin-res-lista');
-  if (lista.length === 0) { tbody.innerHTML = ''; sinL.style.display = 'block'; }
-  else { sinL.style.display = 'none'; tbody.innerHTML = lista.map((d, i) => filaHTML(d, i)).join(''); }
-
-  // Contador
-  document.getElementById('count-badge').textContent =
-    lista.length === DIPUTADOS.length ? `${lista.length} diputados` : `${lista.length} de ${DIPUTADOS.length}`;
+function ordenarTabla() {
+  const v = document.getElementById('orden').value;
+  const [col, dir] = v.split('_');
+  filtrado.sort((a,b) => dir==='asc' ? (a[col]>b[col]?1:-1) : (b[col]>a[col]?1:-1));
+  renderTabla();
 }
 
-function filtrar() {
-  const txt   = document.getElementById('buscar').value.toLowerCase();
-  const blq   = document.getElementById('sel-bloque').value;
-  const dist  = document.getElementById('sel-distrito').value;
-  const mand  = document.getElementById('sel-mandato').value;
-  const res = DIPUTADOS.filter(d =>
-    (!txt  || d.nombre.toLowerCase().includes(txt) || d.bloque.toLowerCase().includes(txt) || d.distrito.toLowerCase().includes(txt)) &&
-    (!blq  || d.bloque   === blq)  &&
-    (!dist || d.distrito === dist) &&
-    (!mand || d.mandato  === mand)
-  );
-  renderizar(res);
+function sortBy(col) {
+  if (sortCol === col) sortDir *= -1; else { sortCol = col; sortDir = -1; }
+  filtrado.sort((a,b) => sortDir * (typeof a[col]==='string' ? a[col].localeCompare(b[col],'es') : (a[col]-b[col])));
+  renderTabla();
 }
 
-function setVista(v) {
-  vistaActual = v;
-  document.getElementById('vista-cards').style.display = v === 'cards' ? 'block' : 'none';
-  document.getElementById('vista-lista').style.display = v === 'lista' ? 'block' : 'none';
-  document.getElementById('btn-cards').classList.toggle('activo', v === 'cards');
-  document.getElementById('btn-lista').classList.toggle('activo', v === 'lista');
+// Rankings
+function rankHtml(lista, campo, fmt) {
+  return lista.slice(0,5).map((b,i) => {
+    const col = colorBloque(b.nombre);
+    const val = fmt(b[campo]);
+    return `<div style="display:flex;align-items:center;gap:.5rem;padding:.35rem 0;border-bottom:1px solid #f0f0f0">
+      <span style="font-size:.72rem;font-weight:700;color:#94a3b8;min-width:18px">${i+1}</span>
+      <span class="bloque-pill" style="background:${col};flex:1;max-width:160px">${b.nombre}</span>
+      <span style="font-weight:800;font-size:.82rem;color:#0A2463">${val}</span>
+    </div>`;
+  }).join('');
 }
 
-// Render inicial ordenado alfabéticamente
-const ordenado = [...DIPUTADOS].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-renderizar(ordenado);
+document.getElementById('rank-bancas').innerHTML    = rankHtml([...BLOQUES].sort((a,b)=>b.bancas-a.bancas),    'bancas',    v=>v);
+document.getElementById('rank-renov').innerHTML     = rankHtml([...BLOQUES].filter(b=>b.bancas>1).sort((a,b)=>b.renov-a.renov),     'renov',     v=>v.toFixed(0)+'%');
+document.getElementById('rank-distritos').innerHTML = rankHtml([...BLOQUES].sort((a,b)=>b.distritos-a.distritos), 'distritos', v=>v+' dist.');
+document.getElementById('rank-pi2').innerHTML       = rankHtml([...BLOQUES].sort((a,b)=>b.pi2-a.pi2),          'pi2',       v=>v.toFixed(4));
+
+renderTabla();
 </script>
 </body>
 </html>

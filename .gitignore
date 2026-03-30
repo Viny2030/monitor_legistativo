@@ -15,3 +15,12 @@ data/*.csv
 
 # macOS
 .DS_Store
+data/*.csv
+
+*.log
+
+tc.json
+
+.venv/
+
+__pycache__/

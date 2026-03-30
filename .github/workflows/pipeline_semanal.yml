@@ -4,11 +4,15 @@ on:
   schedule:
     # 09:00 AM Argentina (UTC-3) los días 5 y 28 de cada mes
     - cron: '0 12 5,28 * *'
-  workflow_dispatch: 
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -21,7 +25,24 @@ jobs:
       - name: Instalar dependencias
         run: |
           pip install -r requirements.txt
-          pip install holidays  # Aseguramos la librería de feriados
 
-      # Los pasos de ejecución de scripts se mantienen igual...
-      # El script de Python decidirá si procesar o no según el calendario.
+      - name: Instalar Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Correr pipeline completo
+        run: |
+          python pipeline.py
+
+      - name: Guardar resultados
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.csv *.log
+          if git diff --staged --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            git commit -m "auto: pipeline $(date +'%Y-%m-%d') — datos actualizados"
+            git push
+          fi

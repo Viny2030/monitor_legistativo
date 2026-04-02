@@ -78,14 +78,14 @@ nav a:hover { background: rgba(255,255,255,.3); }
       <p>Indicadores, Metodología y Bibliografía</p>
     </div>
   </div>
-  <nav><a href="index.html">← Dashboard</a></nav>
+  <nav style="display:flex;gap:.4rem;flex-wrap:wrap"><a href="indicadores_diputados.html">&#127968; Indicadores</a><a href="indicadores2_diputados.html">&#128202; An&#225;lisis</a><a href="comparativa_diputados.html">&#127760; Comparativa</a><a href="metodologia_diputados.html">&#128218; Metodolog&#237;a</a></nav>
 </header>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="showTab('indicadores',event)">📊 Los 12 Indicadores</button>
+  <button class="tab-btn active" onclick="showTab('indicadores',event)">📊 Los 13 Indicadores</button>
   <button class="tab-btn" onclick="showTab('ddjj',event)">📋 DDJJ Legisladores</button>
   <button class="tab-btn" onclick="showTab('bibliografia',event)">📚 Bibliografía</button>
-  <button class="tab-btn" onclick="showTab('donar',event)" style="color:#0057b7;">💙 Donar</button>
+  <button class="tab-btn" onclick="document.querySelector('.footer-donacion').scrollIntoView({behavior:'smooth'});this.classList.add('active');" style="color:#0057b7;">💙 Donar</button>
 </div>
 
 <!-- TAB 1 – INDICADORES -->
@@ -116,6 +116,7 @@ nav a:hover { background: rgba(255,255,255,.3); }
     <div class="ind-card"><div class="ind-top"><span class="ind-id">CAD</span><span class="ind-name">Coeficiente de Apertura de Datos</span></div><div class="ind-formula">CAD = Σ(V_formato × W_tiempo) / Max_Score</div><ul class="ind-vars"><li><strong>V_formato</strong>: PDF=1 · Excel=3 · JSON/API=5</li><li><strong>W_tiempo</strong>: Inmediato=1.0 · Semana=0.5 · Mes=0.1</li></ul><div class="ind-source">Fuente: Auditoría propia del monitor sobre portales oficiales</div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">EVD</span><span class="ind-name">Error de Veracidad de Datos</span></div><div class="ind-formula">EVD = D_erroneos / D_verificables</div><ul class="ind-vars"><li><strong>D_erroneos</strong>: Datos que no coinciden con fuente primaria</li><li><strong>D_verificables</strong>: Total de puntos de datos auditados</li></ul><div class="ind-source">Fuente: Comparación cruzada SIL / <a href="https://www.boletinoficial.gob.ar/" target="_blank">Boletín Oficial</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">TCI</span><span class="ind-name">Tasa de Conversión de Interacción Ciudadana</span></div><div class="ind-formula">TCI = (U_activos / U_totales) × 100</div><ul class="ind-vars"><li><strong>U_activos</strong>: Usuarios que interactuaron (clic, descarga, voto)</li><li><strong>U_totales</strong>: Sesiones totales en el sitio del monitor</li></ul><div class="ind-source">Fuente: Google Analytics del monitor</div></div>
+    <div class="ind-card" style="border-left:4px solid #0891b2"><div class="ind-top"><span class="ind-id" style="background:#0891b2">GLIT</span><span class="ind-name">GLIT Score — Transparencia Legislativa Digital</span></div><div class="ind-formula">GLIT = (D1+D2+D3+D4+D5) / 5</div><ul class="ind-vars"><li><strong>D1</strong>: Votaciones nominales públicas</li><li><strong>D2</strong>: Perfiles de legisladores accesibles</li><li><strong>D3</strong>: Trazabilidad del proceso legislativo</li><li><strong>D4</strong>: Open data estructurado (CSV/JSON/API)</li><li><strong>D5</strong>: Interacción y canales digitales ciudadanos</li></ul><div class="ind-source">Fuente: <a href="https://doi.org/10.1177/10659129211009634" target="_blank">GLIT Index — Williamson &amp; Ebers (2021)</a> · <a href="https://www.opengovpartnership.org/" target="_blank">Open Government Partnership</a></div></div>
   </div>
 </div>
 
@@ -173,9 +174,38 @@ nav a:hover { background: rgba(255,255,255,.3); }
       <div class="biblio-card"><div class="btype">Paper</div><div class="btitle">Costs of Legislation: A Framework for Analysis</div><div class="bauthor">Huber & Shipan – Legislative Studies Quarterly, 2002</div><div class="blink"><a href="https://doi.org/10.1111/j.1939-9162.2002.tb00493.x" target="_blank">DOI link</a></div></div>
     </div>
   </div>
+
+  <div class="biblio-section">
+    <h3>&#127760; Organismos Internacionales y Benchmarks</h3>
+    <div class="biblio-grid">
+      <div class="biblio-card"><div class="btype">Informe anual</div><div class="btitle">Government at a Glance 2023</div><div class="bauthor">OECD, 2023</div><div class="blink"><a href="https://www.oecd.org/gov/government-at-a-glance/" target="_blank">oecd.org/gov/government-at-a-glance</a></div></div>
+      <div class="biblio-card"><div class="btype">Informe</div><div class="btitle">Regulatory Policy Outlook 2023</div><div class="bauthor">OECD, 2023</div><div class="blink"><a href="https://www.oecd.org/gov/regulatory-policy/" target="_blank">oecd.org/gov/regulatory-policy</a></div></div>
+      <div class="biblio-card"><div class="btype">Framework</div><div class="btitle">Public Expenditure and Financial Accountability (PEFA)</div><div class="bauthor">World Bank / PEFA Secretariat, 2023</div><div class="blink"><a href="https://www.worldbank.org/en/topic/governance" target="_blank">worldbank.org/governance</a></div></div>
+      <div class="biblio-card"><div class="btype">Portal</div><div class="btitle">Open Government Partnership — National Action Plans</div><div class="bauthor">OGP, 2024</div><div class="blink"><a href="https://www.opengovpartnership.org/" target="_blank">opengovpartnership.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Informe</div><div class="btitle">World e-Parliament Report 2023</div><div class="bauthor">Inter-Parliamentary Union (IPU), 2023</div><div class="blink"><a href="https://www.ipu.org/resources/publications/reports/2023-10/world-e-parliament-report-2023" target="_blank">ipu.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Portal</div><div class="btitle">Corruption Perceptions Index 2024</div><div class="bauthor">Transparency International, 2024</div><div class="blink"><a href="https://www.transparency.org/" target="_blank">transparency.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Portal IA</div><div class="btitle">OECD AI Policy Observatory</div><div class="bauthor">OECD, 2024</div><div class="blink"><a href="https://oecd.ai/" target="_blank">oecd.ai</a></div></div>
+      <div class="biblio-card"><div class="btype">Portal</div><div class="btitle">Digital Government Index</div><div class="bauthor">OECD, 2023</div><div class="blink"><a href="https://www.oecd.org/gov/digital-government/" target="_blank">oecd.org/gov/digital-government</a></div></div>
+      <div class="biblio-card"><div class="btype">Portal ONU</div><div class="btitle">UN e-Government Survey 2024</div><div class="bauthor">United Nations DESA, 2024</div><div class="blink"><a href="https://publicadministration.un.org/egovkb/en-us/" target="_blank">publicadministration.un.org</a></div></div>
+    </div>
+  </div>
+
+  <div class="biblio-section">
+    <h3>&#128240; Papers y Metodolog&#237;a Espec&#237;fica</h3>
+    <div class="biblio-grid">
+      <div class="biblio-card"><div class="btype">Paper</div><div class="btitle">GLIT Index: Legislative Information Transparency</div><div class="bauthor">Williamson &amp; Ebers — State Politics &amp; Policy Quarterly, 2021</div><div class="blink"><a href="https://doi.org/10.1177/10659129211009634" target="_blank">doi.org/10.1177/10659129211009634</a></div></div>
+      <div class="biblio-card"><div class="btype">Libro</div><div class="btitle">Parliaments that Work</div><div class="bauthor">Commonwealth Parliamentary Association (CPA)</div><div class="blink"><a href="https://www.cpahq.org" target="_blank">cpahq.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Toolkit</div><div class="btitle">Benchmarking and Self-Assessment for Parliaments</div><div class="bauthor">CPA / World Bank Institute</div><div class="blink"><a href="https://www.cpahq.org" target="_blank">cpahq.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Toolkit</div><div class="btitle">IPU Self-Assessment Toolkit for Parliaments</div><div class="bauthor">Inter-Parliamentary Union, 2023</div><div class="blink"><a href="https://www.ipu.org" target="_blank">ipu.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Libro</div><div class="btitle">Making M&amp;E Systems Work</div><div class="bauthor">Kusek &amp; Rist — World Bank, 2004</div><div class="blink"><a href="https://www.worldbank.org" target="_blank">worldbank.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Informe</div><div class="btitle">African Parliamentary Index — Caps. 9 y 15</div><div class="bauthor">O'Brien / ASGP, 2018</div><div class="blink"><a href="https://www.ipu.org" target="_blank">ipu.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Fuente local</div><div class="btitle">Balance Legislativo 2025</div><div class="bauthor">Directorio Legislativo, dic. 2025</div><div class="blink"><a href="https://directoriolegislativo.org" target="_blank">directoriolegislativo.org</a></div></div>
+      <div class="biblio-card"><div class="btype">Fuente local</div><div class="btitle">Parlamentario.com — Estad&#237;sticas de sesi&#243;n 2025</div><div class="bauthor">Parlamentario.com, ene. 2026</div><div class="blink"><a href="https://parlamentario.com" target="_blank">parlamentario.com</a></div></div>
+    </div>
+  </div>
 </div>
 
-<!-- ══ FOOTER NOTA LEGAL ══ -->
+<!-- &#9552;&#9552; FOOTER NOTA LEGAL &#9552;&#9552; -->
 <div class="footer-nota">
   <p>
     <strong>⚠️ Nota:</strong> Esta herramienta es de carácter <strong>experimental y académico</strong>.
@@ -237,8 +267,8 @@ nav a:hover { background: rgba(255,255,255,.3); }
         <div style="color:#64748b; font-size:.7rem;">CUIL: 20-12034411-1</div>
       </div>
     </div>
-    <div class="don-row"><span class="don-label">Email principal</span><span class="don-val"><a href="mailto:vhmonte@retina.ar" style="color:#60a5fa;">vhmonte@retina.ar</a></span></div>
-    <div class="don-row"><span class="don-label">Email alternativo</span><span class="don-val"><a href="mailto:monteverdevicente@hotmail.com" style="color:#60a5fa;">monteverdevicente@hotmail.com</a></span></div>
+    <div class="don-row"><span class="don-label">Email principal</span><span class="don-val"><a href="mailto:vmonteverde@monitorcivico.ar" style="color:#60a5fa;">vmonteverde@monitorcivico.ar</a></span></div>
+    <div class="don-row"><span class="don-label">Email alternativo</span><span class="don-val"><a href="mailto:vicentemonteverde@gmail.com" style="color:#60a5fa;">vicentemonteverde@gmail.com</a></span></div>
     <div class="don-row" style="margin-top:.5rem;"><span class="don-label">Repositorio</span><span class="don-val"><a href="https://github.com/Viny2030/monitor_legistativo" target="_blank" style="color:#60a5fa;">github.com/Viny2030</a></span></div>
   </div>
   </div><!-- /donacion-detalle -->
@@ -246,17 +276,26 @@ nav a:hover { background: rgba(255,255,255,.3); }
 
 <!-- ══ FOOTER CRÉDITOS ══ -->
 <div class="footer-credits">
-  Monitor Legislativo · República Argentina · Fuentes: HCDN · INDEC · Presupuesto Abierto · Boletín Oficial · AGN · OA ·
+  Monitor Legislativo · República Argentina · Fuentes: HCDN · INDEC · Presupuesto Abierto · Boletín Oficial · AGN · OA · OECD · World Bank · IPU · GLIT Index ·
   <a href="https://github.com/Viny2030/monitor_legistativo" target="_blank">GitHub</a>
 </div>
 
 <script>
-function showTab(name, e) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
+function showTab(id, e) {
+  var el = document.getElementById('tab-' + id);
+  if (!el) return;
+  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
   if (e && e.target) e.target.classList.add('active');
 }
+window.onload = function() {
+  var fd = document.getElementById('footer-fecha-ind');
+  if (fd) {
+    var n = new Date();
+    fd.textContent = n.toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit', year:'numeric'});
+  }
+};
 </script>
 </body>
 </html>

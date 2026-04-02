@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Comparativa — Monitor Legislativo Diputados Argentina</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.55; background: #f0f2f5; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #0A2463 0%, #1a3a7c 50%, #061440 100%); color: #fff; padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+header .escudo { font-size: 2.4rem; }
+header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; }
+header p  { font-size: .875rem; opacity: .85; margin-top: .2rem; }
+header nav { margin-left: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; transition: background .15s; }
+header nav a:hover { background: rgba(255,255,255,.35); }
+header nav a.active { background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.6); }
+.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; gap: 0; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
+.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); transition: background .12s, color .12s; white-space: nowrap; }
+.nav-interna a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-interna a.activo { background: rgba(255,255,255,.18); color: #fff; border-bottom: 3px solid #C9A84C; }
+.disclaimer { background: #fffbeb; border-left: 4px solid #C9A84C; padding: .75rem 1.5rem; font-size: .78rem; color: #5a4a00; border-bottom: 1px solid #f0e0a0; line-height: 1.55; }
+.seccion { padding: 1.25rem 1.5rem; }
+.seccion h2 { font-size: 1rem; font-weight: 700; color: #0A2463; margin-bottom: .9rem; padding-bottom: .4rem; border-bottom: 2px solid #d0daf0; }
+.seccion h3 { font-size: .9rem; font-weight: 700; color: #334155; margin-bottom: .6rem; }
+.panel { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1rem 1.1rem; overflow: hidden; margin-bottom: 1rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+@media(max-width:800px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+@media(max-width:900px){ .grid-3 { grid-template-columns: 1fr 1fr; } }
+@media(max-width:600px){ .grid-3 { grid-template-columns: 1fr; } }
+.tbl { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.tbl th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .5rem .7rem; text-align: left; border-bottom: 2px solid #c5d0e8; }
+.tbl th.num, .tbl td.num { text-align: right; }
+.tbl tr:nth-child(even) { background: #fafbff; }
+.tbl td { padding: .42rem .7rem; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+.tbl tr:hover td { background: #f0f4ff; }
+.pill { display: inline-block; padding: .15rem .55rem; border-radius: 12px; font-size: .7rem; font-weight: 700; color: #fff; }
+.pill-dip  { background: #0A2463; }
+.pill-sen  { background: #7c3aed; }
+.pill-mejor { background: #15803d; }
+.pill-peor  { background: #be123c; }
+.pill-igual { background: #475569; }
+/* Highlight cards */
+.comp-card { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1rem 1.2rem; border-top: 4px solid #0A2463; }
+.comp-card.senado { border-top-color: #7c3aed; }
+.comp-card .cc-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #64748b; margin-bottom: .3rem; }
+.comp-card .cc-val  { font-size: 1.8rem; font-weight: 900; color: #0A2463; line-height: 1; }
+.comp-card.senado .cc-val { color: #7c3aed; }
+.comp-card .cc-sub  { font-size: .75rem; color: #475569; margin-top: .25rem; }
+/* Barra comparativa */
+.bar-comp-wrap { display: flex; flex-direction: column; gap: .4rem; margin: .6rem 0; }
+.bar-comp-row { display: flex; align-items: center; gap: .5rem; }
+.bar-comp-label { font-size: .75rem; font-weight: 600; min-width: 80px; }
+.bar-comp-bg { flex: 1; height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+.bar-comp-fill { height: 100%; border-radius: 5px; }
+.bar-comp-val { font-size: .75rem; font-weight: 700; min-width: 55px; text-align: right; }
+/* Internacional */
+.intl-row { display: flex; align-items: center; gap: .75rem; padding: .5rem 0; border-bottom: 1px solid #f0f0f0; }
+.intl-row:last-child { border-bottom: none; }
+.intl-flag { font-size: 1.3rem; min-width: 28px; }
+.intl-pais { flex: 1; font-size: .82rem; font-weight: 600; }
+.intl-val  { font-size: .85rem; font-weight: 800; min-width: 70px; text-align: right; color: #0A2463; }
+.intl-nota { font-size: .7rem; color: #64748b; }
+/* Callout boxes */
+.callout { border-radius: 8px; padding: .8rem 1rem; margin-bottom: .75rem; font-size: .82rem; line-height: 1.6; }
+.callout-blue  { background: #eff6ff; border-left: 4px solid #2563eb; color: #1e3a8a; }
+.callout-green { background: #f0fdf4; border-left: 4px solid #16a34a; color: #14532d; }
+.callout-amber { background: #fffbeb; border-left: 4px solid #d97706; color: #78350f; }
+.callout-red   { background: #fff1f2; border-left: 4px solid #be123c; color: #881337; }
+.callout-purple{ background: #fdf4ff; border-left: 4px solid #7c3aed; color: #4c1d95; }
+/* Switch links */
+.switch-links { display: flex; gap: .75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.switch-link { display: inline-block; padding: .45rem 1.1rem; border-radius: 20px; font-size: .82rem; font-weight: 700; text-decoration: none; border: 2px solid #0A2463; color: #0A2463; transition: all .15s; }
+.switch-link:hover, .switch-link.active { background: #0A2463; color: #fff; }
+.switch-link.senado { border-color: #7c3aed; color: #7c3aed; }
+.switch-link.senado:hover, .switch-link.senado.active { background: #7c3aed; color: #fff; }
+footer { text-align: center; padding: 1rem; font-size: .75rem; color: #94a3b8; border-top: 1px solid #dde2ec; margin-top: 1rem; }
+footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="escudo">&#127963;</span>
+  <div>
+    <h1>Monitor Legislativo · Comparativa — C&#225;mara de Diputados</h1>
+    <p>Costos en USD · Estructura bicameral · Calidad legislativa · Comparaciones internacionales</p>
+  </div>
+  <nav>
+    <a href="indicadores_diputados.html">&#127968; Indicadores</a>
+    <a href="indicadores2_diputados.html">&#128202; An&#225;lisis</a>
+    <a href="comparativa_diputados.html" class="active">&#127760; Comparativa</a>
+    <a href="../monitor_legistativo_senadores/dashboard/indicadores_senadores.html">&#127963; Monitor Senado</a>
+    <a href="metodologia_diputados.html">&#128218; Metodolog&#237;a</a>
+  </nav>
+</header>
+
+<div class="nav-interna">
+  <a href="#costos-usd" class="activo">&#128178; Costos USD</a>
+  <a href="#bicameral">&#127963; Bicameral</a>
+  <a href="#calidad">&#128200; Calidad</a>
+  <a href="#internacional">&#127760; Internacional</a>
+  <a href="#conclusion">&#128203; Conclusiones</a>
+</div>
+
+<div class="disclaimer">
+  &#9888;&#65039; <strong>Nota:</strong> Datos en USD calculados al tipo de cambio oficial promedio 2025 (~$1.020/USD). Los indicadores son algorítmicos y de carácter experimental. Comparaciones internacionales basadas en fuentes IPU, OCDE y Directorio Legislativo.
+</div>
+
+<!-- ─── SWITCH LINKS ─────────────────────────────────────────── -->
+<div class="seccion" style="padding-bottom:.5rem">
+  <div class="switch-links">
+    <a href="comparativa_diputados.html" class="switch-link active">&#127963; Comparativa Diputados</a>
+    <a href="../monitor_legistativo_senadores/dashboard/comparativa_senado.html" class="switch-link senado">&#127963; Comparativa Senado</a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECCIÓN 1 — COSTOS EN USD
+════════════════════════════════════════════════════════════════ -->
+<div class="seccion" id="costos-usd">
+  <h2>&#128178; Costos en USD — C&#225;mara de Diputados</h2>
+
+  <div class="callout callout-blue">
+    <strong>Tipo de cambio de referencia:</strong> $1.020 ARS/USD (promedio TC oficial 2025). Los valores en pesos surgen del Presupuesto Interno HCDN — Tesorer&#237;a Parlamentaria 2025.
+  </div>
+
+  <div class="grid-3" style="margin-bottom:1rem">
+    <div class="comp-card">
+      <div class="cc-label">Presupuesto total 2025</div>
+      <div class="cc-val">USD 222 M</div>
+      <div class="cc-sub">$226.469 M ARS</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-label">Costo por diputado / a&#241;o</div>
+      <div class="cc-val">USD 864 K</div>
+      <div class="cc-sub">$881 M ARS por banca</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-label">CRC — Costo por ciudadano</div>
+      <div class="cc-val">USD 4,7</div>
+      <div class="cc-sub">$4.818 ARS por habitante/a&#241;o</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-label">COLS — Costo por ley</div>
+      <div class="cc-val">USD 17,1 M</div>
+      <div class="cc-sub">13 leyes sancionadas (m&#237;nimo dec&#233;nal)</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-label">Costo por sesi&#243;n</div>
+      <div class="cc-val">USD 14 M</div>
+      <div class="cc-sub">16 sesiones ordinarias 2025</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-label">Bancas totales</div>
+      <div class="cc-val">257</div>
+      <div class="cc-sub">Renovaci&#243;n por mitades c/2 a&#241;os</div>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <strong>Contexto inflacionario:</strong> El presupuesto en pesos creci&#243; ~180% nominal vs. 2024, pero el poder adquisitivo en d&#243;lares se mantuvo relativamente estable por el crawling peg. El COLS 2025 es el m&#225;s alto en 10 a&#241;os por la ca&#237;da a 13 leyes.
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECCIÓN 2 — COMPARATIVA BICAMERAL
+════════════════════════════════════════════════════════════════ -->
+<div class="seccion" id="bicameral">
+  <h2>&#127963; Diputados vs. Senado — Comparativa Bicameral</h2>
+
+  <div class="panel">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Indicador</th>
+          <th class="num"><span class="pill pill-dip">Diputados</span></th>
+          <th class="num"><span class="pill pill-sen">Senado</span></th>
+          <th>Diferencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Bancas totales</strong></td>
+          <td class="num">257</td>
+          <td class="num">72</td>
+          <td><span class="pill pill-dip">+185 Dip.</span></td>
+        </tr>
+        <tr>
+          <td><strong>Mandato</strong></td>
+          <td class="num">4 a&#241;os</td>
+          <td class="num">6 a&#241;os</td>
+          <td><span class="pill pill-sen">+2 a Senado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Renovaci&#243;n</strong></td>
+          <td class="num">50% c/2 a&#241;os</td>
+          <td class="num">1/3 c/2 a&#241;os</td>
+          <td><span class="pill pill-dip">M&#225;s din&#225;mica</span></td>
+        </tr>
+        <tr>
+          <td><strong>Presupuesto 2025</strong></td>
+          <td class="num">USD 222 M</td>
+          <td class="num">USD 148 M</td>
+          <td><span class="pill pill-dip">+50% Dip.</span></td>
+        </tr>
+        <tr>
+          <td><strong>Costo por banca / a&#241;o</strong></td>
+          <td class="num">USD 864 K</td>
+          <td class="num">USD 2,06 M</td>
+          <td><span class="pill pill-sen">+138% Senado</span></td>
+        </tr>
+        <tr>
+          <td><strong>CRC (por ciudadano)</strong></td>
+          <td class="num">USD 4,7</td>
+          <td class="num">USD 3,1</td>
+          <td><span class="pill pill-dip">+52% Dip.</span></td>
+        </tr>
+        <tr>
+          <td><strong>COLS (por ley)</strong></td>
+          <td class="num">USD 17,1 M</td>
+          <td class="num">USD 11,4 M</td>
+          <td><span class="pill pill-dip">+50% Dip.</span></td>
+        </tr>
+        <tr>
+          <td><strong>Leyes sancionadas 2025</strong></td>
+          <td class="num">13</td>
+          <td class="num">13</td>
+          <td><span class="pill pill-igual">Igual</span></td>
+        </tr>
+        <tr>
+          <td><strong>NEP (bloques efectivos)</strong></td>
+          <td class="num">~8,3</td>
+          <td class="num">~5,1</td>
+          <td><span class="pill pill-dip">+63% m&#225;s frag.</span></td>
+        </tr>
+        <tr>
+          <td><strong>Q&#243;rum</strong></td>
+          <td class="num">129</td>
+          <td class="num">37</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Sesiones ordinarias 2025</strong></td>
+          <td class="num">16</td>
+          <td class="num">14</td>
+          <td><span class="pill pill-dip">+2 Dip.</span></td>
+        </tr>
+        <tr>
+          <td><strong>Asistencia perfecta 2025</strong></td>
+          <td class="num">27%</td>
+          <td class="num">~32%</td>
+          <td><span class="pill pill-sen">Mejor Senado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Paridad de g&#233;nero</strong></td>
+          <td class="num">~42% mujeres</td>
+          <td class="num">~46% mujeres</td>
+          <td><span class="pill pill-sen">Mejor Senado</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ratio legislativo vs. pol&#237;tico</strong></td>
+          <td class="num">72,7% sustantivas</td>
+          <td class="num">~68% sustantivas</td>
+          <td><span class="pill pill-dip">Mejor Dip.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <h3>&#128200; CRC — Costo por ciudadano</h3>
+      <div class="bar-comp-wrap">
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Diputados</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:100%;background:#0A2463"></div></div>
+          <span class="bar-comp-val" style="color:#0A2463">USD 4,7</span>
+        </div>
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Senado</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:66%;background:#7c3aed"></div></div>
+          <span class="bar-comp-val" style="color:#7c3aed">USD 3,1</span>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:#64748b;margin-top:.4rem">El Senado es m&#225;s eficiente en CRC por el menor tama&#241;o de la c&#225;mara.</p>
+    </div>
+    <div>
+      <h3>&#127981; Costo por banca / a&#241;o</h3>
+      <div class="bar-comp-wrap">
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Diputados</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:42%;background:#0A2463"></div></div>
+          <span class="bar-comp-val" style="color:#0A2463">USD 864K</span>
+        </div>
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Senado</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:100%;background:#7c3aed"></div></div>
+          <span class="bar-comp-val" style="color:#7c3aed">USD 2,06M</span>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:#64748b;margin-top:.4rem">El Senado es 2,4x m&#225;s costoso por banca individual.</p>
+    </div>
+    <div>
+      <h3>&#127942; NEP — Fragmentaci&#243;n pol&#237;tica</h3>
+      <div class="bar-comp-wrap">
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Diputados</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:100%;background:#0A2463"></div></div>
+          <span class="bar-comp-val" style="color:#0A2463">8,3</span>
+        </div>
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Senado</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:61%;background:#7c3aed"></div></div>
+          <span class="bar-comp-val" style="color:#7c3aed">5,1</span>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:#64748b;margin-top:.4rem">Diputados tiene fragmentaci&#243;n 63% mayor — dificulta gobernabilidad.</p>
+    </div>
+    <div>
+      <h3>&#128105; Paridad de g&#233;nero</h3>
+      <div class="bar-comp-wrap">
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Diputados</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:91%;background:#0A2463"></div></div>
+          <span class="bar-comp-val" style="color:#0A2463">42%</span>
+        </div>
+        <div class="bar-comp-row">
+          <span class="bar-comp-label">Senado</span>
+          <div class="bar-comp-bg"><div class="bar-comp-fill" style="width:100%;background:#7c3aed"></div></div>
+          <span class="bar-comp-val" style="color:#7c3aed">46%</span>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:#64748b;margin-top:.4rem">Ambas c&#225;maras superan la meta ONU 40% — el Senado lidera levemente.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECCIÓN 3 — CALIDAD LEGISLATIVA
+════════════════════════════════════════════════════════════════ -->
+<div class="seccion" id="calidad">
+  <h2>&#128200; Indicadores de Calidad Legislativa</h2>
+
+  <div class="callout callout-red">
+    <strong>2025 — A&#241;o at&#237;pico:</strong> Solo 13 leyes sancionadas vs. promedio hist&#243;rico de 40&#8211;60. El a&#241;o electoral concentr&#243; la actividad legislativa en 16 sesiones, con 7 leyes vetadas por el PE.
+  </div>
+
+  <div class="panel">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Indicador de calidad</th>
+          <th class="num">Diputados 2025</th>
+          <th class="num">Senado 2025</th>
+          <th>Evaluaci&#243;n</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Leyes sancionadas</strong></td>
+          <td class="num">13 (m&#237;n. dec&#233;nal)</td>
+          <td class="num">13</td>
+          <td><span class="pill pill-peor">Bajo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Leyes vetadas por PE</strong></td>
+          <td class="num">7 (54%)</td>
+          <td class="num">7 (54%)</td>
+          <td><span class="pill pill-peor">Alto conflicto</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ratio sustantivas / total</strong></td>
+          <td class="num">72,7% (8/11)</td>
+          <td class="num">~68%</td>
+          <td><span class="pill pill-mejor">Bueno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sesiones ordinarias</strong></td>
+          <td class="num">16</td>
+          <td class="num">14</td>
+          <td><span class="pill pill-mejor">Normal</span></td>
+        </tr>
+        <tr>
+          <td><strong>Asistencia perfecta</strong></td>
+          <td class="num">27%</td>
+          <td class="num">~32%</td>
+          <td><span class="pill pill-peor">Bajo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Decretos rechazados</strong></td>
+          <td class="num">5 (r&#233;cord)</td>
+          <td class="num">5 (r&#233;cord)</td>
+          <td><span class="pill pill-mejor">Control activo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Comisiones permanentes</strong></td>
+          <td class="num">45</td>
+          <td class="num">30</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Tiempo promedio por ley (est.)</strong></td>
+          <td class="num">60&#8211;180 d&#237;as</td>
+          <td class="num">45&#8211;150 d&#237;as</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Transparencia documental</strong></td>
+          <td class="num">IAD = 3/5</td>
+          <td class="num">IAD &#8776; 3/5</td>
+          <td><span class="pill pill-igual">Similar</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-green">
+    <strong>Punto destacado — Control ejecutivo:</strong> El rechazo de 5 decretos presidenciales (4 delegados + 1 DNU) es un hito institucional in&#233;dito. Ambas c&#225;maras coordinaron para activar este mecanismo por primera vez en democracia.
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECCIÓN 4 — COMPARATIVA INTERNACIONAL
+════════════════════════════════════════════════════════════════ -->
+<div class="seccion" id="internacional">
+  <h2>&#127760; Comparativa Internacional — C&#225;maras Bajas</h2>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h3>&#128178; Costo por ciudadano (USD/hab/a&#241;o) — C&#225;mara Baja</h3>
+      <div style="padding:.25rem 0">
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Argentina — Diputados</div>
+            <div class="intl-nota">HCDN 2025</div>
+          </div>
+          <span class="intl-val" style="color:#0A2463">USD 4,7</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127463;&#127479;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Brasil — C&#226;mara dos Deputados</div>
+            <div class="intl-nota">513 bancas · Orçamento 2024</div>
+          </div>
+          <span class="intl-val">USD 8,3</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127473;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Chile — C&#225;mara de Diputadas y Diputados</div>
+            <div class="intl-nota">155 bancas · Presupuesto 2024</div>
+          </div>
+          <span class="intl-val">USD 11,2</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127482;&#127486;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Uruguay — C&#225;mara de Representantes</div>
+            <div class="intl-nota">99 bancas · Presupuesto 2024</div>
+          </div>
+          <span class="intl-val">USD 13,5</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127474;&#127485;</span>
+          <div style="flex:1">
+            <div class="intl-pais">M&#233;xico — C&#225;mara de Diputados</div>
+            <div class="intl-nota">500 bancas · Presupuesto 2024</div>
+          </div>
+          <span class="intl-val">USD 3,8</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127466;&#127480;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Espa&#241;a — Congreso de los Diputados</div>
+            <div class="intl-nota">350 bancas · PGE 2024</div>
+          </div>
+          <span class="intl-val">USD 6,1</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127469;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Promedio OCDE</div>
+            <div class="intl-nota">C&#225;maras bajas / &#250;nicas</div>
+          </div>
+          <span class="intl-val">USD 15&#8211;22</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>&#128200; NEP — Fragmentaci&#243;n pol&#237;tica en c&#225;maras bajas</h3>
+      <div style="padding:.25rem 0">
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Argentina — Diputados</div>
+            <div class="intl-nota">2026 (post-elecciones 2025)</div>
+          </div>
+          <span class="intl-val" style="color:#0A2463">8,3</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Argentina — Senado</div>
+            <div class="intl-nota">2026</div>
+          </div>
+          <span class="intl-val" style="color:#7c3aed">5,1</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127463;&#127479;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Brasil — C&#226;mara</div>
+            <div class="intl-nota">2024</div>
+          </div>
+          <span class="intl-val">10,4</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127473;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Chile</div>
+            <div class="intl-nota">2024</div>
+          </div>
+          <span class="intl-val">6,8</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127482;&#127486;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Uruguay</div>
+            <div class="intl-nota">2024</div>
+          </div>
+          <span class="intl-val">3,4</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127466;&#127480;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Espa&#241;a</div>
+            <div class="intl-nota">2024</div>
+          </div>
+          <span class="intl-val">5,2</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127469;</span>
+          <div style="flex:1">
+            <div class="intl-pais">Promedio OCDE</div>
+            <div class="intl-nota">c&#225;maras bajas</div>
+          </div>
+          <span class="intl-val">4&#8211;7</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>&#128105; Paridad de g&#233;nero — C&#225;maras bajas (% mujeres)</h3>
+      <div style="padding:.25rem 0">
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Argentina — Diputados</div></div>
+          <span class="intl-val" style="color:#0A2463">~42%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Argentina — Senado</div></div>
+          <span class="intl-val" style="color:#7c3aed">~46%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127463;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Brasil</div></div>
+          <span class="intl-val">18%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127473;</span>
+          <div style="flex:1"><div class="intl-pais">Chile</div></div>
+          <span class="intl-val">35%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127482;&#127486;</span>
+          <div style="flex:1"><div class="intl-pais">Uruguay</div></div>
+          <span class="intl-val">22%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127469;</span>
+          <div style="flex:1"><div class="intl-pais">Promedio OCDE</div></div>
+          <span class="intl-val">33%</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127759;</span>
+          <div style="flex:1"><div class="intl-pais">Meta ONU</div></div>
+          <span class="intl-val">40%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>&#128209; Leyes sancionadas / a&#241;o (promedio 2020&#8211;2025)</h3>
+      <div style="padding:.25rem 0">
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Argentina 2025</div><div class="intl-nota">m&#237;nimo dec&#233;nal</div></div>
+          <span class="intl-val" style="color:#be123c">13</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127462;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Argentina prom. 2020&#8211;2024</div></div>
+          <span class="intl-val">43</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127463;&#127479;</span>
+          <div style="flex:1"><div class="intl-pais">Brasil</div></div>
+          <span class="intl-val">450&#8211;600</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127473;</span>
+          <div style="flex:1"><div class="intl-pais">Chile</div></div>
+          <span class="intl-val">60&#8211;90</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127482;&#127486;</span>
+          <div style="flex:1"><div class="intl-pais">Uruguay</div></div>
+          <span class="intl-val">80&#8211;120</span>
+        </div>
+        <div class="intl-row">
+          <span class="intl-flag">&#127464;&#127469;</span>
+          <div style="flex:1"><div class="intl-pais">Promedio OCDE</div></div>
+          <span class="intl-val">150&#8211;300</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SECCIÓN 5 — CONCLUSIONES
+════════════════════════════════════════════════════════════════ -->
+<div class="seccion" id="conclusion">
+  <h2>&#128203; Conclusiones y Hallazgos Principales</h2>
+
+  <div class="callout callout-blue">
+    <strong>&#127963; Posici&#243;n relativa en la regi&#243;n:</strong>
+    La HCDN tiene un CRC de USD 4,7/hab — por debajo del promedio OCDE (USD 15&#8211;22) y menor que Chile y Uruguay, lo que la posiciona favorablemente en eficiencia de costo ciudadano. Sin embargo, el COLS de USD 17,1M/ley refleja una eficiencia productiva cr&#237;ticamente baja en 2025.
+  </div>
+
+  <div class="callout callout-green">
+    <strong>&#9989; Fortalezas de Diputados vs. Senado:</strong>
+    (1) Mandato m&#225;s corto favorece renovaci&#243;n y representatividad. (2) Mayor n&#250;mero de sesiones anuales. (3) Ratio legislativo superior (72,7% leyes sustantivas). (4) Costo por banca 2,4x menor que el Senado.
+  </div>
+
+  <div class="callout callout-amber">
+    <strong>&#9888;&#65039; Debilidades relativas:</strong>
+    (1) NEP 8,3 vs. Senado 5,1 — alta fragmentaci&#243;n dificulta coaliciones. (2) Asistencia perfecta 27% vs. Senado ~32%. (3) CRC total mayor que el Senado al ser c&#225;mara m&#225;s grande. (4) La producci&#243;n legislativa de 2025 es m&#237;nima hist&#243;rica.
+  </div>
+
+  <div class="callout callout-purple">
+    <strong>&#127760; En perspectiva internacional:</strong>
+    Argentina supera la meta ONU de paridad (40%) en ambas c&#225;maras — caso excepcional en Am&#233;rica Latina. El NEP de 8,3 es comparable a Brasil (10,4) pero muy superior al promedio OCDE (4&#8211;7), reflejando la fragmentaci&#243;n del sistema de partidos post-2019.
+  </div>
+
+  <div class="panel" style="margin-top:1rem">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div style="font-size:.95rem;font-weight:700;color:#0A2463;margin-bottom:.3rem">&#127963; Ver tambi&#233;n: Comparativa Senado</div>
+        <div style="font-size:.82rem;color:#475569;max-width:600px">El archivo comparativa_senado.html incluye el an&#225;lisis equivalente desde la perspectiva del Senado, con datos de las 72 bancas y mandatos de 6 a&#241;os.</div>
+      </div>
+      <a href="../monitor_legistativo_senadores/dashboard/comparativa_senado.html" style="display:inline-block;background:#7c3aed;color:#fff;text-decoration:none;padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:700;white-space:nowrap">Ver Comparativa Senado &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Fuente: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a> ·
+  <a href="https://www.senado.gob.ar" target="_blank">senado.gob.ar</a> ·
+  IPU Parline 2025 · Directorio Legislativo 2025 ·
+  <span id="footer-fecha-comp"></span> · Monitor Legislativo ·
+  <a href="indicadores_diputados.html">&#127968; Indicadores</a> ·
+  <a href="indicadores2_diputados.html">&#128202; An&#225;lisis</a> ·
+  <a href="metodologia_diputados.html">&#128218; Metodolog&#237;a</a>
+</footer>
+
+<script>
+window.onload = function() {
+  var fd = document.getElementById('footer-fecha-comp');
+  if (fd) {
+    var now = new Date();
+    fd.textContent = now.toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit', year:'numeric'});
+  }
+};
+</script>
+</body>
+</html>

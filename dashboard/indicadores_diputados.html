@@ -129,15 +129,14 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
   <span class="escudo">🏛️</span>
   <div>
     <h1>Monitor Legislativo · Indicadores — Cámara de Diputados</h1>
-    <p>13 indicadores en 4 dimensiones: Costos · Eficiencia · Desempeño · Transparencia — datos al 27 de marzo de 2026</p>
+    <p>12 indicadores en 4 dimensiones: Costos · Eficiencia · Desempeño · Transparencia — datos al 27 de marzo de 2026</p>
   </div>
   <nav>
-    <a href="indicadores_diputados.html">🏠 Indicadores</a>
-    <a href="indicadores2_diputados.html" class="active">📊 Análisis</a>
+    <a href="indicadores_diputados.html">🏛️ Nómina</a>
+    <a href="indicadores2_diputados.html" class="active">📊 Indicadores</a>
     <a href="nomina_detalle_diputados.html">👥 Detalle</a>
-    <a href="comparativa_diputados.html">🌐 Comparativa</a>
-    <a href="../monitor_legistativo_senadores/dashboard/indicadores_senadores.html">🏛️ Monitor Senado</a>
     <a href="metodologia_diputados.html">📚 Metodología</a>
+    <a href="manual_usuario.html">📖 Manual</a>
   </nav>
 </header>
 
@@ -161,13 +160,10 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
 
 <!-- KPIs -->
 <div class="kpi-bar" id="resumen">
-  <div class="kpi-card"><div class="kv" id="kpi-total">—</div><div class="kl">Diputados</div><div class="ks">en ejercicio</div></div>
-  <div class="kpi-card"><div class="kv" id="kpi-mujeres">—</div><div class="kl">Mujeres</div><div class="ks" id="kpi-mujeres-pct">—</div></div>
-  <div class="kpi-card"><div class="kv" id="kpi-varones">—</div><div class="kl">Varones</div><div class="ks" id="kpi-varones-pct">—</div></div>
-  <div class="kpi-card"><div class="kv" id="kpi-ren2027">—</div><div class="kl">Renuevan 2027</div><div class="ks">electos 2023</div></div>
-  <div class="kpi-card"><div class="kv" id="kpi-ren2029">—</div><div class="kl">Renuevan 2029</div><div class="ks">electos 2025</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-total">257</div><div class="kl">Diputados</div><div class="ks">en ejercicio</div></div>
   <div class="kpi-card"><div class="kv" id="kpi-nep">—</div><div class="kl">NEP</div><div class="ks">Laakso-Taagepera</div></div>
   <div class="kpi-card"><div class="kv" id="kpi-frag">—</div><div class="kl">Fragmentación</div><div class="ks">Índice de Rae</div></div>
+  <div class="kpi-card"><div class="kv" id="kpi-irb">—</div><div class="kl">Tasa renovación</div><div class="ks">bienal dic. 2025</div></div>
   <div class="kpi-card"><div class="kv" id="kpi-bloques">—</div><div class="kl">Bloques</div><div class="ks">activos</div></div>
   <div class="kpi-card"><div class="kv">129</div><div class="kl">Quórum</div><div class="ks">Art. 64 CN</div></div>
 </div>
@@ -202,9 +198,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
           <th>Distrito</th>
           <th class="num">Bancas</th>
           <th style="min-width:180px">Representación</th>
-          <th>Bloque mayoritario</th>
-          <th class="num">Ren. 2027</th>
-          <th class="num">Ren. 2029</th>
+          <th>Bloques presentes</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -216,17 +210,13 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
 <div class="seccion">
   <div class="grid-2">
     <div id="ranking-mayor">
-      <h2>&#127942; Top 5 — mayor representación</h2>
+      <h2>🏆 Bloques con más bancas</h2>
       <div class="panel"><div class="panel-scroll" id="list-mayor"></div></div>
     </div>
     <div id="ranking-menor">
-      <h2>&#128202; Bottom 5 — menor representación</h2>
+      <h2>📉 Bloques con menos bancas</h2>
       <div class="panel"><div class="panel-scroll" id="list-menor"></div></div>
     </div>
-  </div>
-  <div style="margin-top:1.25rem">
-    <h2>&#8987; Antigüedad promedio por bloque</h2>
-    <div class="panel"><div class="panel-scroll" id="list-antiguedad"></div></div>
   </div>
 </div>
 
@@ -275,7 +265,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         <strong>Población:</strong> INDEC Proyección 2025 (~47.000.000 hab.) ·
         <strong>Nota:</strong> incluye gastos corrientes + capital de la Cámara de Diputados (jurisdicción propia, excl. Senado).
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, Cap. 1: "The Ecology of Governance" · <em>OECD — Government at a Glance 2023</em>: CRC promedio OCDE USD 15–22/hab/año · Argentina (USD 4,7) se ubica en el tercio inferior — eficiente en costo ciudadano · <a href="https://www.oecd.org/gov/government-at-a-glance/" target="_blank" style="color:#0A2463">oecd.org/gov/government-at-a-glance</a></div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em> (Manual), Cap. 1: "The Ecology of Governance"</div>
     </div>
   </div>
   <div class="ind-card-sm" style="border-left:3px solid #16a34a">
@@ -350,24 +340,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         </div>
       </div>
 
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.4rem 0 .6rem">
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.5rem .9rem;min-width:160px">
-          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">Rango OCDE — parlamentos</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#15803d">0,88 – 0,98</div>
-          <div style="font-size:.68rem;color:#166534">ejecución típica cámaras legislativas</div>
-        </div>
-        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.5rem .9rem;min-width:160px">
-          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase">Argentina histórico</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#92400e">0,93 – 0,97</div>
-          <div style="font-size:.68rem;color:#92400e">ejecución HCDN 2018–2024</div>
-        </div>
-      </div>
-      <div class="ind-formula">IAP = Presupuesto_Ejecutado / $226.469.155.049 · Estimación 2025: ~0,95 · Ejecución exacta: <a href="https://www.hcdn.gob.ar/institucional/transparencia/ejecucion_presupuestaria/index.html" target="_blank" style="color:#0A2463">hcdn.gob.ar → Transparencia</a></div>
+      <div class="ind-formula">IAP = Presupuesto_Ejecutado / $226.469.155.049 · Ejecución exacta: <a href="https://www.hcdn.gob.ar/institucional/transparencia/ejecucion_presupuestaria/index.html" target="_blank" style="color:#0A2463">hcdn.gob.ar → Transparencia</a></div>
       <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
         📄 <strong>Nota metodológica:</strong> La HCDN aprueba su propio presupuesto (Art. 75 inc. 8 CN), pero su ejecución está sujeta al sistema de cuotas trimestrales del Jefe de Gabinete. Históricamente la ejecución supera el 95% del crédito. El valor exacto se actualiza con la Cuenta de Inversión 2025 (disponible jun. 2026). ·
         <strong>Fuente ejecución:</strong> <a href="https://www.hcdn.gob.ar/institucional/transparencia/ejecucion_presupuestaria/index.html" target="_blank" style="color:#0A2463">HCDN — Transparencia Presupuestaria</a>
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 1, Estándar 6.1.2 · <em>World Bank</em> — Public Expenditure and Financial Accountability (PEFA) Framework: PI-1 Aggregate expenditure out-turn</div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 1, Estándar 6.1.2</div>
     </div>
   </div>
 </div>
@@ -408,33 +386,13 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         </div>
       </div>
 
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.4rem 0 .6rem">
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">Urgentes (Argentina)</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#15803d">~30 días</div>
-          <div style="font-size:.68rem;color:#166534">emergencias / sesiones especiales</div>
-        </div>
-        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase">Ordinarios (Argentina)</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#92400e">60 – 180 días</div>
-          <div style="font-size:.68rem;color:#92400e">dictamen de comisión</div>
-        </div>
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase">Referencia OCDE</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#334155">45 – 120 días</div>
-          <div style="font-size:.68rem;color:#64748b">cámaras bajas — Govt at a Glance</div>
-        </div>
-        <div style="background:#fff1f2;border:1px solid #fecdd3;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#be123c;font-weight:700;text-transform:uppercase">Sin dictamen</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#be123c">+365 días</div>
-          <div style="font-size:.68rem;color:#be123c">~80% de proyectos presentados</div>
-        </div>
-      </div>
-      <div class="ind-formula">TPMP = Σ(Fecha_Dictamen − Fecha_Ingreso) / Total_Proyectos · Estimación 2025: 60–120 días (proyectos que llegaron a sesión) · Valor exacto: SIL v1.1</div>
+      <div class="ind-formula">TPMP = Σ(Fecha_Dictamen − Fecha_Ingreso) / Total_Proyectos · <strong>Valor exacto: requiere integración SIL (v1.1)</strong></div>
       <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
-        📄 <strong>Fuente sesiones 2025:</strong> Parlamentario.com (ene. 2026) · <strong>Rango OCDE:</strong> OECD — Government at a Glance 2023, Tabla "Days from introduction to adoption" (cámaras bajas: mediana 45–120 días) · <strong>Fuente exacta Argentina:</strong> <a href="https://www.hcdn.gob.ar/proyectos/" target="_blank" style="color:#0A2463">SIL — Sistema de Información Legislativa</a>
+        📄 <strong>Fuente sesiones 2025:</strong> Parlamentario.com (ene. 2026) — año electoral con actividad inusualmente alta, comparable a 2017. ·
+        <strong>Rango empírico:</strong> proyectos urgentes: ~30 días · proyectos ordinarios: 60–180 días · sin dictamen: +365 días (archivo). ·
+        <strong>Fuente exacta:</strong> <a href="https://www.hcdn.gob.ar/proyectos/" target="_blank" style="color:#0A2463">SIL — Sistema de Información Legislativa</a>
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, Cuadro de Desempeño: "Nivel y Rango de Actividad" · <em>OECD — Government at a Glance 2023</em>, Cap. 7: Legislative Activity Indicators · 🔗 <a href="https://www.oecd.org/gov/government-at-a-glance/" target="_blank" style="color:#0A2463">oecd.org/gov/government-at-a-glance</a></div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em> (Conceptual Framework), Cuadro de Desempeño: "Nivel y Rango de Actividad"</div>
     </div>
   </div>
 
@@ -462,29 +420,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         </div>
       </div>
 
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.4rem 0 .6rem">
-        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase">HCDN estimado 2025</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#92400e">~3,5×</div>
-          <div style="font-size:.68rem;color:#92400e">hs comisión / hora pleno</div>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">Parlamentos OCDE</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#15803d">3× – 6×</div>
-          <div style="font-size:.68rem;color:#166534">ratio típico cámaras bajas activas</div>
-        </div>
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase">Senado Argentina</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#334155">~2,8×</div>
-          <div style="font-size:.68rem;color:#64748b">30 comisiones · 14 sesiones</div>
-        </div>
-      </div>
-      <div class="ind-formula">ITC = Horas_Comisión / Horas_Pleno · Estimación HCDN: (45 com. × ~126 hs/año) / (14 ses. × ~8 hs) ≈ <strong>3,5×</strong> · Valor exacto: actas comisión v1.1</div>
+      <div class="ind-formula">ITC = Horas_de_Comisión / Horas_de_Pleno · <strong>Valor exacto: requiere actas de comisión (v1.1)</strong></div>
       <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
-        📄 <strong>Estimación metodológica:</strong> 45 comisiones × 1,5 reuniones/semana × 3 hs × 28 semanas ≈ 5.670 hs comisión · 14 sesiones × 8 hs = 112 hs pleno · Ratio: ~50,6 → normalizado por comisiones activas: ~3,5×. <strong>Benchmark OCDE:</strong> Benchmarking and Self-Assessment for Parliaments señala ratio 3–6× como rango saludable. ·
+        📄 <strong>Estimación metodológica:</strong> Cada comisión se reúne en promedio 1–2 veces por semana (~3 hs) durante el período ordinario (9 meses). Con 45 comisiones activas y 14 sesiones plenarias de ~8 hs promedio, se estima un ratio de ~3,5 horas de comisión por hora de pleno. ·
         <strong>Fuente exacta:</strong> <a href="https://www.hcdn.gob.ar/comisiones/agenda/" target="_blank" style="color:#0A2463">Agenda de comisiones — HCDN</a>
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 1: "Committees as the engine of parliament" · <em>IPU — World e-Parliament Report 2023</em>, Cap. 4: Committee work indicators</div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 1, Sección "Comités como motor del parlamento"</div>
     </div>
   </div>
 
@@ -575,7 +516,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
         📄 <strong>Fuente:</strong> Directorio Legislativo — Balance 2025 (dic. 2025) · Parlamentario.com (10/12/2025) · Presupuesto: TP N°136/2025 HCDN.
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, "Eficiencia Institucional" · <em>OECD — Government at a Glance 2023</em>: COLS promedio OCDE equivale a ~USD 3–8 M/ley · Argentina 2025 (USD 17,1 M) supera 2–5x el rango típico por producción legislativa mínima histórica · <em>World Bank</em> — Legislative Efficiency Index</div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, lógica de "Eficiencia Institucional"</div>
     </div>
   </div>
 
@@ -639,29 +580,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
           <div style="font-size:.68rem;color:#15803d">4 delegados + 1 DNU · récord</div>
         </div>
       </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.4rem 0 .6rem">
-        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase">Argentina histórico</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#92400e">&lt;5%</div>
-          <div style="font-size:.68rem;color:#92400e">recomendaciones AGN con seguimiento</div>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">2025 — hito control</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#15803d">5 decretos</div>
-          <div style="font-size:.68rem;color:#166534">rechazados · récord histórico</div>
-        </div>
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase">Referencia OCDE</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#334155">15 – 35%</div>
-          <div style="font-size:.68rem;color:#64748b">parlamentqs con oversight efectivo</div>
-        </div>
-      </div>
-      <div class="ind-formula">ECO = (Acciones_Control / Irregularidades_AGN) × 100 · Estimación 2025: &lt;5% seguimiento formal + 5 decretos rechazados (mecanismo extraordinario) · Valor exacto: OPC + Comisión Revisora v2.0</div>
+      <div class="ind-formula">ECO = (Acciones_Control / Irregularidades_AGN) × 100 · <strong>Valor exacto: requiere datos OPC + Comisión Revisora (v2.0)</strong></div>
       <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
-        📄 <strong>Nota metodológica:</strong> Históricamente menos del 5% de las recomendaciones AGN deriva en acción legislativa formal — por debajo del rango OCDE (15–35%). En 2025 el control extraordinario vía rechazo de decretos (4 delegados + 1 DNU) representa un salto cualitativo no capturado por el ECO estándar. ·
-        <strong>Fuente AGN:</strong> <a href="https://www.agn.gov.ar" target="_blank" style="color:#0A2463">agn.gov.ar</a> — PAA 2025 · <strong>Fuente OCDE:</strong> OECD Regulatory Policy Outlook 2023 — Parliamentary oversight indicators
+        📄 <strong>Nota metodológica:</strong> Históricamente menos del 5% de las recomendaciones AGN deriva en acción legislativa formal. En 2025 el control se ejerció principalmente vía rechazo de decretos (4 delegados + 1 DNU) — herramienta inédita. ·
+        <strong>Fuente:</strong> <a href="https://www.agn.gov.ar" target="_blank" style="color:#0A2463">agn.gov.ar</a> — PAA 2025 (296 proyectos: 128 nuevos + 168 arrastrados, 62% contables, 38% gestión).
       </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment for Parliaments</em>, Cap. 10–11: Supervisión y Control · <em>OECD — Regulatory Policy Outlook 2023</em>, Cap. 3: Parliamentary scrutiny · 🔗 <a href="https://www.oecd.org/gov/regulatory-policy/" target="_blank" style="color:#0A2463">oecd.org/gov/regulatory-policy</a></div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Benchmarking and Self-Assessment</em>, Cap. 10 y 11 sobre Supervisión</div>
     </div>
   </div>
 </div>
@@ -675,7 +599,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
     <span class="dim-num">IV</span>
     <div>
       <div class="dim-title">Transparencia y Datos</div>
-      <div class="dim-sub">¿Son accesibles y confiables los datos? · Ref.: <em>Making M&amp;E Systems Work</em>, Cap. 10 y 12 · <em>GLIT Index</em> (2021) · <em>Open Government Partnership</em> · <em>Parliaments that Work</em>, Cap. 5</div>
+      <div class="dim-sub">¿Son accesibles y confiables los datos? · Ref.: <em>Making M&amp;E Systems Work</em>, Cap. 10 y 12 · <em>Parliaments that Work</em>, Cap. 5</div>
     </div>
   </div>
   <div class="ind-card-sm" style="border-left:3px solid #16a34a">
@@ -721,43 +645,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         <strong>Versiones taquigráficas:</strong> publicadas en <a href="https://www.diputados.gov.ar/sesiones/" target="_blank" style="color:#0A2463">diputados.gov.ar/sesiones</a> el mismo día o al siguiente ·
         <strong>Nota:</strong> La HCDN no publica datos en formatos abiertos estructurados (CSV, JSON, XML). Solo PDF y HTML, lo que limita la automatización del análisis.
       </div>
-      <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:.7rem 1rem;margin:.6rem 0">
-        <div style="font-size:.72rem;font-weight:700;color:#7c3aed;margin-bottom:.45rem">&#127760; GLIT Index — sub-dimensiones (Argentina estimado)</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem">
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Votaciones nominales</div>
-            <div style="font-size:.9rem;font-weight:900;color:#4c1d95">&#9989; Sí</div>
-            <div style="font-size:.62rem;color:#64748b">registro público completo</div>
-          </div>
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Perfil legisladores</div>
-            <div style="font-size:.9rem;font-weight:900;color:#4c1d95">Parcial</div>
-            <div style="font-size:.62rem;color:#64748b">básico — sin historial proyectos</div>
-          </div>
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Agenda publicada</div>
-            <div style="font-size:.9rem;font-weight:900;color:#4c1d95">&#9989; Sí</div>
-            <div style="font-size:.62rem;color:#64748b">comisiones y sesiones</div>
-          </div>
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Trazabilidad proyectos</div>
-            <div style="font-size:.9rem;font-weight:900;color:#92400e">Parcial</div>
-            <div style="font-size:.62rem;color:#64748b">SIL — sin API abierta</div>
-          </div>
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Datos abiertos (CSV/JSON)</div>
-            <div style="font-size:.9rem;font-weight:900;color:#be123c">&#10060; No</div>
-            <div style="font-size:.62rem;color:#64748b">solo PDF y HTML</div>
-          </div>
-          <div style="background:#fff;border-radius:5px;padding:.35rem .55rem;border:1px solid #e9d5ff">
-            <div style="font-size:.65rem;color:#7c3aed;font-weight:700">Interacción digital</div>
-            <div style="font-size:.9rem;font-weight:900;color:#be123c">Limitada</div>
-            <div style="font-size:.62rem;color:#64748b">sin consulta pública formal</div>
-          </div>
-        </div>
-        <div style="font-size:.65rem;color:#94a3b8;margin-top:.4rem">Estimación propia basada en GLIT Index framework · Fuente: <a href="https://doi.org/10.1177/10659129211009634" target="_blank" style="color:#7c3aed">doi.org/10.1177/10659129211009634</a></div>
-      </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Making M&amp;E Systems Work</em>, Cap. 12: "Using Information to Improve Results" · <em>GLIT Index</em> (Griffith Legislative Information Transparency) — 5 dimensiones: votaciones, perfiles, proceso, infraestructura digital, interacción ciudadana · <em>Open Government Partnership</em> — <a href="https://www.opengovpartnership.org/" target="_blank" style="color:#0A2463">opengovpartnership.org</a></div>
+      <div class="ind-ref" style="margin-top:.4rem">📚 <em>Making M&amp;E Systems Work</em>, Cap. 12: "Using Information to Improve Results"</div>
     </div>
   </div>
 
@@ -825,81 +713,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       <div class="ind-ref" style="margin-top:.4rem">📚 <em>Parliaments that Work</em>, Cap. 5: "Globalization, Parliaments and Civil Society"</div>
     </div>
   </div>
-
-  <div class="ind-card-sm" style="border-left:3px solid #0891b2">
-    <div class="badge-num" style="color:#0891b2">13</div>
-    <div class="ind-body">
-      <div class="ind-title">GLIT Score — Transparencia Legislativa Digital <span class="tag-pendiente">&#9888; estimación v1.0</span></div>
-      <div class="ind-def">Score compuesto de transparencia legislativa online basado en el GLIT Index (Griffith Legislative Information Transparency). Evalúa 5 dimensiones: disponibilidad de votaciones, perfiles de legisladores, proceso legislativo, infraestructura digital e interacción ciudadana. Permite comparación internacional directa.</div>
-
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:.6rem 0">
-        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:.6rem 1rem;min-width:150px">
-          <div style="font-size:.7rem;color:#1d4ed8;font-weight:700;text-transform:uppercase;letter-spacing:.04em">GLIT Score HCDN</div>
-          <div style="font-size:1.5rem;font-weight:900;color:#1d4ed8;line-height:1.1">~0,55</div>
-          <div style="font-size:.68rem;color:#1e40af">sobre escala 0–1 (estimado)</div>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#15803d;font-weight:700;text-transform:uppercase">Promedio AL</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#15803d">~0,42</div>
-          <div style="font-size:.68rem;color:#166534">América Latina — GLIT 2021</div>
-        </div>
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#64748b;font-weight:700;text-transform:uppercase">Promedio OCDE</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#334155">~0,72</div>
-          <div style="font-size:.68rem;color:#64748b">cámaras bajas avanzadas</div>
-        </div>
-        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:.5rem .9rem;min-width:150px">
-          <div style="font-size:.7rem;color:#92400e;font-weight:700;text-transform:uppercase">Brecha vs OCDE</div>
-          <div style="font-size:1.2rem;font-weight:900;color:#92400e">-0,17</div>
-          <div style="font-size:.68rem;color:#92400e">principalmente en open data</div>
-        </div>
-      </div>
-
-      <div style="margin:.5rem 0;background:#f8fafc;border-radius:8px;padding:.6rem .9rem;border:1px solid #e2e8f0">
-        <div style="font-size:.7rem;color:#64748b;font-weight:700;margin-bottom:.4rem">DESAGREGADO POR DIMENSIÓN — HCDN estimado</div>
-        <div style="display:flex;flex-direction:column;gap:.3rem">
-          <div style="display:flex;align-items:center;gap:.5rem">
-            <span style="font-size:.72rem;min-width:160px">Votaciones nominales</span>
-            <div style="flex:1;height:7px;background:#e2e8f0;border-radius:3px;overflow:hidden"><div style="width:85%;height:100%;background:#0891b2;border-radius:3px"></div></div>
-            <span style="font-size:.72rem;font-weight:700;min-width:32px;text-align:right">0,85</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:.5rem">
-            <span style="font-size:.72rem;min-width:160px">Perfiles legisladores</span>
-            <div style="flex:1;height:7px;background:#e2e8f0;border-radius:3px;overflow:hidden"><div style="width:45%;height:100%;background:#d97706;border-radius:3px"></div></div>
-            <span style="font-size:.72rem;font-weight:700;min-width:32px;text-align:right">0,45</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:.5rem">
-            <span style="font-size:.72rem;min-width:160px">Proceso legislativo</span>
-            <div style="flex:1;height:7px;background:#e2e8f0;border-radius:3px;overflow:hidden"><div style="width:60%;height:100%;background:#0891b2;border-radius:3px"></div></div>
-            <span style="font-size:.72rem;font-weight:700;min-width:32px;text-align:right">0,60</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:.5rem">
-            <span style="font-size:.72rem;min-width:160px">Open data / infraestructura</span>
-            <div style="flex:1;height:7px;background:#e2e8f0;border-radius:3px;overflow:hidden"><div style="width:20%;height:100%;background:#be123c;border-radius:3px"></div></div>
-            <span style="font-size:.72rem;font-weight:700;min-width:32px;text-align:right">0,20</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:.5rem">
-            <span style="font-size:.72rem;min-width:160px">Interacción ciudadana</span>
-            <div style="flex:1;height:7px;background:#e2e8f0;border-radius:3px;overflow:hidden"><div style="width:65%;height:100%;background:#16a34a;border-radius:3px"></div></div>
-            <span style="font-size:.72rem;font-weight:700;min-width:32px;text-align:right">0,65</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ind-formula">GLIT = (D1_votaciones + D2_perfiles + D3_proceso + D4_opendata + D5_interaccion) / 5 · Estimación HCDN: (0,85+0,45+0,60+0,20+0,65)/5 = <strong>~0,55</strong></div>
-      <div style="margin-top:.5rem;font-size:.72rem;color:#64748b;line-height:1.6">
-        📄 <strong>Metodología:</strong> Estimación propia aplicando el framework GLIT Index (Griffith University) a la HCDN. Fortaleza: votaciones nominales públicas y registro SIL. Debilidad principal: ausencia de open data estructurado (CSV/JSON) y perfiles legislativos incompletos. ·
-        <strong>Fuente:</strong> <a href="https://doi.org/10.1177/10659129211009634" target="_blank" style="color:#0A2463">Griffith Legislative Information Transparency Index (2021)</a> · Open Government Partnership — <a href="https://www.opengovpartnership.org/" target="_blank" style="color:#0A2463">opengovpartnership.org</a>
-      </div>
-      <div class="ind-ref" style="margin-top:.4rem">📚 <em>GLIT Index</em> — Williamson &amp; Ebers (2021), State Politics &amp; Policy Quarterly · <em>IPU — World e-Parliament Report 2023</em> · <em>OECD — Open Government Data</em>: <a href="https://www.oecd.org/gov/digital-government/" target="_blank" style="color:#0A2463">oecd.org/gov/digital-government</a></div>
-    </div>
-  </div>
 </div>
 
 <!-- Estado de implementación -->
 <div class="seccion">
   <div class="panel" style="background:linear-gradient(135deg,#f8fafc,#fff);border-left:4px solid #94a3b8">
-    <h3 style="color:#334155;margin-bottom:.75rem">📊 Estado de implementación — 13 indicadores</h3>
+    <h3 style="color:#334155;margin-bottom:.75rem">📊 Estado de implementación — 12 indicadores</h3>
     <div class="grid-3">
       <div style="text-align:center;padding:.75rem;background:#f0fdf4;border-radius:8px;border:1px solid #bbf7d0">
         <div style="font-size:1.6rem;font-weight:900;color:#15803d">8</div>
@@ -907,9 +726,9 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">NEP · IF · IRB · IRG · CRC · RPS · NAPE · COLS · RLS · IAD · TVD</div>
       </div>
       <div style="text-align:center;padding:.75rem;background:#fef3c7;border-radius:8px;border:1px solid #fcd34d">
-        <div style="font-size:1.6rem;font-weight:900;color:#92400e">4</div>
+        <div style="font-size:1.6rem;font-weight:900;color:#92400e">3</div>
         <div style="font-size:.75rem;color:#92400e;font-weight:700">ESTIMACIÓN PARCIAL</div>
-        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">IAP · TPMP · ITC · ECO · GLIT</div>
+        <div style="font-size:.7rem;color:#64748b;margin-top:.2rem">IAP · TPMP · ITC · ECO</div>
       </div>
       <div style="text-align:center;padding:.75rem;background:#fdf4ff;border-radius:8px;border:1px solid #e9d5ff">
         <div style="font-size:1.6rem;font-weight:900;color:#7c3aed">1</div>
@@ -993,17 +812,16 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
         <option value="2025-2029">Mandato 2025-2029</option>
         <option value="2023-2027">Mandato 2023-2027</option>
       </select>
-      <button onclick="exportarCSV()" style="padding:.42rem .9rem;border:1px solid #0A2463;border-radius:6px;background:#0A2463;color:#fff;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">&#11015; CSV</button>
       <span class="nomina-count" id="nomina-count">257 diputados</span>
     </div>
     <div class="panel-scroll" style="max-height:520px">
       <table class="tbl" id="tbl-nomina">
         <thead><tr>
           <th style="min-width:28px">#</th>
-          <th onclick="sortNomina('nombre')" style="cursor:pointer;user-select:none">Apellido y Nombre <span id="sort-nombre">&#8645;</span></th>
-          <th onclick="sortNomina('distrito')" style="cursor:pointer;user-select:none">Distrito <span id="sort-distrito">&#8645;</span></th>
-          <th onclick="sortNomina('bloque')" style="cursor:pointer;user-select:none">Bloque <span id="sort-bloque">&#8645;</span></th>
-          <th class="num" onclick="sortNomina('mandato')" style="cursor:pointer;user-select:none">Hasta <span id="sort-mandato">&#8645;</span></th>
+          <th>Apellido y Nombre</th>
+          <th>Distrito</th>
+          <th>Bloque</th>
+          <th class="num">Mandato</th>
         </tr></thead>
         <tbody id="tbody-nomina"></tbody>
       </table>
@@ -1031,7 +849,7 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
       </div>
       <div class="autor-mails">
         <a class="autor-mail" href="mailto:vhmonte@retina.ar">✉️ vhmonte@retina.ar</a>
-        <a class="autor-mail" href="mailto:monteverdevicente@hotmail.com">✉️ monteverdevicente@hotmail.com</a>
+        <a class="autor-mail" href="mailto:viny01958@gmail.com">✉️ viny01958@gmail.com</a>
       </div>
     </div>
   </div>
@@ -1134,12 +952,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
 </div>
 
 <footer>
-  Fuente: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a> · <span id="footer-fecha"></span> · Monitor Legislativo ·
-  <a href="indicadores_diputados.html">🏠 Indicadores</a> · <a href="comparativa_diputados.html">🌐 Comparativa</a> · <a href="metodologia_diputados.html">📚 Metodología</a>
+  Fuente: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a> · 27-03-2026 · Monitor Legislativo ·
+  <a href="indicadores_diputados.html">🏛️ Nómina</a> · <a href="metodologia_diputados.html">📚 Metodología</a>
 </footer>
 
 <script>
-var DIPUTADOS = [
+const DIPUTADOS = [
   {nombre:"Agüero, Guillermo César",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029"},
   {nombre:"Aguirre, Hilda",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"},
   {nombre:"Ajmechet, Sabrina",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029"},
@@ -1399,310 +1217,179 @@ var DIPUTADOS = [
   {nombre:"Zulli, Christian Alejandro",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027"}
 ];
 
-window.onload = function() {
-
 function colorBloque(b) {
   if (!b) return '#64748b';
-  var bl = b.toLowerCase();
-  if (bl.indexOf('libertad avanza') >= 0) return '#7c3aed';
-  if (bl.indexOf('patria') >= 0)          return '#2563eb';
-  if (bl.indexOf('pro') >= 0 && bl.indexOf('produccion') < 0) return '#d97706';
-  if (bl.indexOf('radical') >= 0 || bl.indexOf('ucr') >= 0) return '#e74c3c';
-  if (bl.indexOf('provincias unidas') >= 0) return '#0891b2';
-  if (bl.indexOf('izquierda') >= 0 || bl.indexOf('fit') >= 0) return '#991b1b';
-  if (bl.indexOf('innovacion') >= 0 || bl.indexOf('innovación') >= 0) return '#059669';
-  if (bl.indexOf('encuentro') >= 0) return '#ea580c';
-  if (bl.indexOf('coalicion') >= 0) return '#6b21a8';
+  const bl = b.toLowerCase();
+  if (bl.includes('libertad avanza')) return '#7c3aed';
+  if (bl.includes('patria'))          return '#2563eb';
+  if (bl.includes('pro') && !bl.includes('produccion')) return '#d97706';
+  if (bl.includes('radical') || bl.includes('ucr')) return '#e74c3c';
+  if (bl.includes('provincias unidas')) return '#0891b2';
+  if (bl.includes('izquierda') || bl.includes('fit')) return '#991b1b';
+  if (bl.includes('innovación')) return '#059669';
+  if (bl.includes('encuentro')) return '#ea580c';
+  if (bl.includes('coalicion')) return '#6b21a8';
   return '#64748b';
 }
 
-// ── CALCULAR ──
-var total = DIPUTADOS.length;
-var bloques = {}, distritos = {};
-DIPUTADOS.forEach(function(d) {
-  bloques[d.bloque]   = (bloques[d.bloque]||0) + 1;
-  distritos[d.distrito] = (distritos[d.distrito]||0) + 1;
-});
-
-var m2529 = 0, m2327 = 0;
-DIPUTADOS.forEach(function(d) {
-  if (d.mandato === '2025-2029') m2529++;
-  if (d.mandato === '2023-2027') m2327++;
-});
-
-var bKeys = Object.keys(bloques);
-var sumPi2 = 0;
-bKeys.forEach(function(k){ var p = bloques[k]/total; sumPi2 += p*p; });
-var nep  = (1/sumPi2).toFixed(2);
-var frag = (1-sumPi2).toFixed(4);
-var nb   = bKeys.length;
-
-// Género — heurística por primer nombre
-var SUFIJOS_F = ['ia','ina','ela','era','ora','isa','ita','ana','ena','ona','ura','nia','cia','lia','ria','fia','via','uca','eca','ica'];
-function esMujer(nombre) {
-  var partes = nombre.split(',');
-  var p = partes.length > 1 ? partes[1] : nombre;
-  p = p.trim().split(' ')[0].toLowerCase()
-       .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i')
-       .replace(/ó/g,'o').replace(/ú/g,'u');
-  for (var i = 0; i < SUFIJOS_F.length; i++) {
-    if (p.slice(-SUFIJOS_F[i].length) === SUFIJOS_F[i]) return true;
-  }
-  return false;
+function barHtml(pct, max) {
+  const w = (pct / max * 100).toFixed(0);
+  const col = colorBloque('');
+  return `<div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:#0A2463"></div></div><span class="bar-label" style="color:#0A2463">${pct}</span></div>`;
 }
-var mujeres = 0;
-DIPUTADOS.forEach(function(d){ if (esMujer(d.nombre)) mujeres++; });
-var varones = total - mujeres;
 
-// ── KPIs ──
-document.getElementById('kpi-total').textContent      = total;
-document.getElementById('kpi-mujeres').textContent    = mujeres;
-document.getElementById('kpi-mujeres-pct').textContent = (mujeres/total*100).toFixed(1)+'% de la Camara';
-document.getElementById('kpi-varones').textContent    = varones;
-document.getElementById('kpi-varones-pct').textContent = (varones/total*100).toFixed(1)+'% de la Camara';
-document.getElementById('kpi-ren2027').textContent    = m2327;
-document.getElementById('kpi-ren2029').textContent    = m2529;
-document.getElementById('kpi-nep').textContent        = nep;
-document.getElementById('kpi-frag').textContent       = frag;
-document.getElementById('kpi-bloques').textContent    = nb;
+// Calcular
+const total = DIPUTADOS.length;
+const bloques = {}, distritos = {};
+DIPUTADOS.forEach(d => {
+  bloques[d.bloque] = (bloques[d.bloque]||0)+1;
+  distritos[d.distrito] = (distritos[d.distrito]||0)+1;
+});
 
-// ── TABLA BLOQUES ──
-var bloquesSorted = [];
-bKeys.forEach(function(b){ bloquesSorted.push([b, bloques[b]]); });
-bloquesSorted.sort(function(a,b){ return b[1]-a[1]; });
-var maxB = bloquesSorted[0][1];
+const m2529 = DIPUTADOS.filter(d=>d.mandato==='2025-2029').length;
+const m2327 = DIPUTADOS.filter(d=>d.mandato==='2023-2027').length;
+const sumPi2 = Object.values(bloques).reduce((s,n)=>s+(n/total)**2,0);
+const nep  = (1/sumPi2).toFixed(2);
+const frag = (1-sumPi2).toFixed(4);
+const irb  = (m2529/total*100).toFixed(1)+'%';
+const nb   = Object.keys(bloques).length;
 
-document.querySelector('#tbl-bloques tbody').innerHTML = bloquesSorted.map(function(entry){
-  var b=entry[0], n=entry[1];
-  var pct=(n/total*100).toFixed(1);
-  var w=(n/maxB*100).toFixed(0);
-  var col=colorBloque(b);
-  var m29=0, m27=0;
-  DIPUTADOS.forEach(function(d){
-    if (d.bloque===b && d.mandato==='2025-2029') m29++;
-    if (d.bloque===b && d.mandato==='2023-2027') m27++;
-  });
-  return '<tr>'
-    +'<td><span class="pill" style="background:'+col+'">'+b+'</span></td>'
-    +'<td class="num" style="font-weight:800">'+n+'</td>'
-    +'<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:'+w+'%;background:'+col+'"></div></div>'
-    +'<span class="bar-label" style="color:'+col+'">'+pct+'%</span></div></td>'
-    +'<td class="num">'+pct+'%</td>'
-    +'<td class="num">'+m29+'</td>'
-    +'<td class="num">'+m27+'</td>'
-    +'</tr>';
+document.getElementById('kpi-total').textContent  = total;
+document.getElementById('kpi-nep').textContent    = nep;
+document.getElementById('kpi-frag').textContent   = frag;
+document.getElementById('kpi-irb').textContent    = irb;
+document.getElementById('kpi-bloques').textContent = nb;
+
+// Tabla bloques
+const bloquesSorted = Object.entries(bloques).sort((a,b)=>b[1]-a[1]);
+const maxB = bloquesSorted[0][1];
+document.querySelector('#tbl-bloques tbody').innerHTML = bloquesSorted.map(([b,n])=>{
+  const pct=(n/total*100).toFixed(1);
+  const w=(n/maxB*100).toFixed(0);
+  const col=colorBloque(b);
+  const m29=DIPUTADOS.filter(d=>d.bloque===b&&d.mandato==='2025-2029').length;
+  const m27=DIPUTADOS.filter(d=>d.bloque===b&&d.mandato==='2023-2027').length;
+  return `<tr>
+    <td><span class="pill" style="background:${col}">${b}</span></td>
+    <td class="num" style="font-weight:800">${n}</td>
+    <td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:${col}"></div></div><span class="bar-label" style="color:${col}">${pct}%</span></div></td>
+    <td class="num">${pct}%</td>
+    <td class="num">${m29}</td>
+    <td class="num">${m27}</td>
+  </tr>`;
 }).join('');
 
-// ── TABLA DISTRITOS ──
-var distKeys = Object.keys(distritos);
-var distSorted = [];
-distKeys.forEach(function(d){ distSorted.push([d, distritos[d]]); });
-distSorted.sort(function(a,b){ return b[1]-a[1]; });
-var maxD = distSorted[0][1];
-
-document.querySelector('#tbl-distritos tbody').innerHTML = distSorted.map(function(entry){
-  var d=entry[0], n=entry[1];
-  var pct=(n/total*100).toFixed(1), w=(n/maxD*100).toFixed(0);
-  var dipsDist = DIPUTADOS.filter(function(x){ return x.distrito===d; });
-  var blqCount = {};
-  dipsDist.forEach(function(x){ blqCount[x.bloque]=(blqCount[x.bloque]||0)+1; });
-  var blqKeys2 = Object.keys(blqCount);
-  var blqMayNombre = blqKeys2[0] || '';
-  blqKeys2.forEach(function(k){ if (blqCount[k]>blqCount[blqMayNombre]) blqMayNombre=k; });
-  var blqMayCol = colorBloque(blqMayNombre);
-  var ren2027 = dipsDist.filter(function(x){ return x.mandato==='2023-2027'; }).length;
-  var ren2029 = dipsDist.filter(function(x){ return x.mandato==='2025-2029'; }).length;
-  return '<tr>'
-    +'<td><strong>'+d+'</strong></td>'
-    +'<td class="num" style="font-weight:800">'+n+'</td>'
-    +'<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:'+w+'%;background:#0A2463"></div></div>'
-    +'<span class="bar-label" style="color:#0A2463">'+pct+'%</span></div></td>'
-    +'<td><span class="pill" style="background:'+blqMayCol+';font-size:.66rem">'+blqMayNombre+'</span></td>'
-    +'<td class="num"><span class="pill" style="background:#475569;font-size:.68rem">'+ren2027+'</span></td>'
-    +'<td class="num"><span class="pill" style="background:#15803d;font-size:.68rem">'+ren2029+'</span></td>'
-    +'</tr>';
+// Tabla distritos
+const distSorted = Object.entries(distritos).sort((a,b)=>b[1]-a[1]);
+const maxD = distSorted[0][1];
+document.querySelector('#tbl-distritos tbody').innerHTML = distSorted.map(([d,n])=>{
+  const pct=(n/total*100).toFixed(1), w=(n/maxD*100).toFixed(0);
+  const blqsDist=[...new Set(DIPUTADOS.filter(x=>x.distrito===d).map(x=>x.bloque))].join(', ');
+  return `<tr>
+    <td><strong>${d}</strong></td>
+    <td class="num" style="font-weight:800">${n}</td>
+    <td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${w}%;background:#0A2463"></div></div><span class="bar-label" style="color:#0A2463">${pct}%</span></div></td>
+    <td style="font-size:.72rem;color:#475569">${blqsDist.length>80?blqsDist.slice(0,78)+'…':blqsDist}</td>
+  </tr>`;
 }).join('');
 
-// ── RANKINGS ──
+// Rankings bloques
 function rHtml(b, n, rank) {
-  var col = colorBloque(b);
-  var pct = (n/total*100).toFixed(1);
-  return '<div class="ranking-row">'
-    +'<span class="rk-num">'+rank+'</span>'
-    +'<div style="flex:1;min-width:0">'
-    +'<div class="rk-nombre">'+b+'</div>'
-    +'<div class="rk-dist">'+n+' diputados · '+pct+'% de la Cámara</div>'
-    +'</div>'
-    +'<span class="rk-val" style="color:'+col+'">'+n+'</span>'
-    +'</div>';
-}
-// Top 5 / Bottom 5 disjuntos
-var topBloques = bloquesSorted.slice(0,5);
-var topIds = {};
-topBloques.forEach(function(e){ topIds[e[0]]=1; });
-var bottomBloques = [];
-for (var bi = bloquesSorted.length-1; bi >= 0 && bottomBloques.length < 5; bi--) {
-  if (!topIds[bloquesSorted[bi][0]]) bottomBloques.push(bloquesSorted[bi]);
-}
-document.getElementById('list-mayor').innerHTML = topBloques.map(function(e,i){ return rHtml(e[0],e[1],i+1); }).join('');
-document.getElementById('list-menor').innerHTML = bottomBloques.map(function(e,i){ return rHtml(e[0],e[1],i+1); }).join('');
-
-// Ranking antigüedad promedio por bloque
-// mandato 2023-2027 = ingresó dic 2023 → ~2.3 años | 2025-2029 = dic 2025 → ~0.3 años
-var blqAntig = {};
-DIPUTADOS.forEach(function(d){
-  if (!blqAntig[d.bloque]) blqAntig[d.bloque] = {sum:0, n:0};
-  blqAntig[d.bloque].sum += d.mandato==='2023-2027' ? 2.3 : 0.3;
-  blqAntig[d.bloque].n++;
-});
-var antigSorted = [];
-Object.keys(blqAntig).forEach(function(b){
-  antigSorted.push([b, (blqAntig[b].sum/blqAntig[b].n).toFixed(1), blqAntig[b].n]);
-});
-antigSorted.sort(function(a,b){ return b[1]-a[1]; });
-var maxAntig = parseFloat(antigSorted[0][1]);
-document.getElementById('list-antiguedad').innerHTML = antigSorted.map(function(e,i){
-  var col = colorBloque(e[0]);
-  var w = (parseFloat(e[1])/maxAntig*100).toFixed(0);
-  return '<div class="ranking-row">'
-    +'<span class="rk-num">'+(i+1)+'</span>'
-    +'<div style="flex:1;min-width:0">'
-    +'<div class="rk-nombre">'+e[0]+'</div>'
-    +'<div class="rk-dist">'+e[2]+' diputados</div>'
-    +'</div>'
-    +'<div style="display:flex;align-items:center;gap:.5rem;min-width:140px">'
-    +'<div class="bar-bg" style="flex:1"><div class="bar-fill" style="width:'+w+'%;background:'+col+'"></div></div>'
-    +'<span class="rk-val" style="color:'+col+'">'+e[1]+' a&#241;os</span>'
-    +'</div>'
-    +'</div>';
-}).join('');
-
-// Footer fecha dinamica
-var fd = document.getElementById('footer-fecha');
-if (fd) { var now = new Date(); fd.textContent = now.toLocaleDateString('es-AR',{day:'2-digit',month:'2-digit',year:'numeric'}); }
-
-// ── NÓMINA ──
-var bloquesSet2 = {}, distritosSet2 = {};
-DIPUTADOS.forEach(function(d){ bloquesSet2[d.bloque]=1; distritosSet2[d.distrito]=1; });
-var bloquesUnicos = Object.keys(bloquesSet2).sort();
-var distritosUnicos = Object.keys(distritosSet2).sort();
-
-var selBloque = document.getElementById('nomina-bloque');
-bloquesUnicos.forEach(function(b) {
-  var o = document.createElement('option'); o.value=b; o.textContent=b; selBloque.appendChild(o);
-});
-var selDistrito = document.getElementById('nomina-distrito');
-distritosUnicos.forEach(function(d) {
-  var o = document.createElement('option'); o.value=d; o.textContent=d; selDistrito.appendChild(o);
-});
-
-var nominaSortField = 'nombre';
-var nominaSortAsc = true;
-var nominaFiltrada = [];
-
-function sortNomina(field) {
-  if (nominaSortField === field) { nominaSortAsc = !nominaSortAsc; }
-  else { nominaSortField = field; nominaSortAsc = true; }
-  ['nombre','distrito','bloque','mandato'].forEach(function(f) {
-    var el = document.getElementById('sort-'+f);
-    if (el) el.innerHTML = f===nominaSortField ? (nominaSortAsc?' &#9650;':' &#9660;') : ' &#8645;';
-  });
-  var sorted = nominaFiltrada.slice().sort(function(a,b){
-    var va=a[nominaSortField]||'', vb=b[nominaSortField]||'';
-    var cmp=va.localeCompare(vb,'es');
-    return nominaSortAsc ? cmp : -cmp;
-  });
-  renderNominaRows(sorted);
+  const col = colorBloque(b);
+  const pct = (n/total*100).toFixed(1);
+  return `<div class="ranking-row">
+    <span class="rk-num">${rank}</span>
+    <div style="flex:1;min-width:0">
+      <div class="rk-nombre">${b}</div>
+      <div class="rk-dist">${n} diputados · ${pct}% de la Cámara</div>
+    </div>
+    <span class="rk-val" style="color:${col}">${n}</span>
+  </div>`;
 }
 
-function renderNominaRows(lista) {
-  var tbody = document.getElementById('tbody-nomina');
-  tbody.innerHTML = lista.map(function(d,i) {
-    var col = colorBloque(d.bloque);
-    var badge = '<span class="pill" style="background:'+col+';font-size:.68rem">'+d.bloque+'</span>';
-    var mandPill = d.mandato==='2025-2029'
-      ? '<span class="pill" style="background:#15803d;font-size:.7rem">2029</span>'
-      : '<span class="pill" style="background:#475569;font-size:.7rem">2027</span>';
-    return '<tr>'
-      +'<td style="color:#94a3b8;font-size:.75rem">'+(i+1)+'</td>'
-      +'<td style="font-weight:600">'+d.nombre+'</td>'
-      +'<td style="font-size:.78rem;color:#334155">'+d.distrito+'</td>'
-      +'<td>'+badge+'</td>'
-      +'<td class="num">'+mandPill+'</td>'
-      +'</tr>';
-  }).join('');
-}
+const topBloques = bloquesSorted.slice(0,10);
+const bottomBloques = [...bloquesSorted].reverse().slice(0,10);
+document.getElementById('list-mayor').innerHTML = topBloques.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+document.getElementById('list-menor').innerHTML = bottomBloques.map(([b,n],i) => rHtml(b,n,i+1)).join('');
+
+// ── NÓMINA COMPLETA ──────────────────────────────────────────
+// Poblar selects de filtro
+const bloquesUnicos = [...new Set(DIPUTADOS.map(d=>d.bloque))].sort();
+const distritosUnicos = [...new Set(DIPUTADOS.map(d=>d.distrito))].sort();
+
+const selBloque = document.getElementById('nomina-bloque');
+bloquesUnicos.forEach(b => {
+  const o = document.createElement('option'); o.value = b; o.textContent = b;
+  selBloque.appendChild(o);
+});
+const selDistrito = document.getElementById('nomina-distrito');
+distritosUnicos.forEach(d => {
+  const o = document.createElement('option'); o.value = d; o.textContent = d;
+  selDistrito.appendChild(o);
+});
 
 function renderNomina(lista) {
-  nominaFiltrada = lista;
-  var sorted = lista.slice().sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); });
-  renderNominaRows(sorted);
+  const tbody = document.getElementById('tbody-nomina');
+  tbody.innerHTML = lista.map((d, i) => {
+    const col = colorBloque(d.bloque);
+    const badge = `<span class="pill" style="background:${col};font-size:.68rem">${d.bloque}</span>`;
+    const mandBadge = d.mandato === '2025-2029'
+      ? `<span style="color:#15803d;font-weight:700">${d.mandato}</span>`
+      : `<span style="color:#475569">${d.mandato}</span>`;
+    return `<tr>
+      <td style="color:#94a3b8;font-size:.75rem">${i+1}</td>
+      <td style="font-weight:600">${d.nombre}</td>
+      <td style="font-size:.78rem;color:#334155">${d.distrito}</td>
+      <td>${badge}</td>
+      <td class="num">${mandBadge}</td>
+    </tr>`;
+  }).join('');
   document.getElementById('nomina-count').textContent =
-    lista.length===DIPUTADOS.length ? lista.length+' diputados' : lista.length+' de '+DIPUTADOS.length;
+    lista.length === DIPUTADOS.length
+      ? `${lista.length} diputados`
+      : `${lista.length} de ${DIPUTADOS.length}`;
 }
 
 function filtrarNomina() {
-  var texto  = document.getElementById('nomina-buscar').value.toLowerCase();
-  var bloque = document.getElementById('nomina-bloque').value;
-  var distr  = document.getElementById('nomina-distrito').value;
-  var mand   = document.getElementById('nomina-mandato').value;
-  var filtered = DIPUTADOS.filter(function(d) {
-    return (!texto  || d.nombre.toLowerCase().indexOf(texto)>=0
-                    || d.bloque.toLowerCase().indexOf(texto)>=0
-                    || d.distrito.toLowerCase().indexOf(texto)>=0)
-        && (!bloque || d.bloque===bloque)
-        && (!distr  || d.distrito===distr)
-        && (!mand   || d.mandato===mand);
-  });
+  const texto  = document.getElementById('nomina-buscar').value.toLowerCase();
+  const bloque = document.getElementById('nomina-bloque').value;
+  const distr  = document.getElementById('nomina-distrito').value;
+  const mand   = document.getElementById('nomina-mandato').value;
+  const filtered = DIPUTADOS.filter(d =>
+    (!texto  || d.nombre.toLowerCase().includes(texto) || d.bloque.toLowerCase().includes(texto) || d.distrito.toLowerCase().includes(texto)) &&
+    (!bloque || d.bloque   === bloque) &&
+    (!distr  || d.distrito === distr)  &&
+    (!mand   || d.mandato  === mand)
+  );
   renderNomina(filtered);
 }
 
-function exportarCSV() {
-  var rows = [['Nro','Apellido y Nombre','Distrito','Bloque','Mandato hasta']];
-  nominaFiltrada.forEach(function(d,i) {
-    rows.push([i+1, d.nombre, d.distrito, d.bloque, d.mandato==='2025-2029'?'2029':'2027']);
-  });
-  var csv = rows.map(function(r){
-    return r.map(function(c){ return '"'+String(c).replace(/"/g,'""')+'"'; }).join(',');
-  }).join('\n');
-  var blob = new Blob(['\uFEFF'+csv], {type:'text/csv;charset=utf-8;'});
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href=url; a.download='nomina_diputados.csv'; a.click();
-  URL.revokeObjectURL(url);
-}
+// Render inicial ordenado alfabéticamente
+const nominaOrdenada = [...DIPUTADOS].sort((a,b)=>a.nombre.localeCompare(b.nombre,'es'));
+renderNomina(nominaOrdenada);
 
-// Render inicial
-renderNomina(DIPUTADOS.slice().sort(function(a,b){ return a.nombre.localeCompare(b.nombre,'es'); }));
-
-// ── DONACIÓN ──
 function toggleDonacion() {
-  var body  = document.getElementById('don-body');
-  var arrow = document.getElementById('don-arrow');
-  var abierto = body.style.display !== 'none';
+  const body  = document.getElementById('don-body');
+  const arrow = document.getElementById('don-arrow');
+  const abierto = body.style.display !== 'none';
   body.style.display  = abierto ? 'none' : 'block';
   arrow.style.transform = abierto ? '' : 'rotate(180deg)';
 }
 
+// ── DONACIÓN: tabs y copiar ──────────────────────────────────
 function donTab(btn, panelId) {
-  document.querySelectorAll('.don-tab').forEach(function(b){ b.classList.remove('don-tab-activo'); });
-  document.querySelectorAll('.don-panel').forEach(function(p){ p.style.display='none'; });
-  document.getElementById(panelId).style.display = 'block';
+  document.querySelectorAll('.don-tab').forEach(b => b.classList.remove('don-tab-activo'));
+  document.querySelectorAll('.don-panel').forEach(p => p.style.display = 'none');
   btn.classList.add('don-tab-activo');
+  document.getElementById(panelId).style.display = 'block';
 }
-
 function copiar(texto, btn) {
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(texto).then(function() {
-      var orig = btn.textContent;
-      btn.textContent = '\u2713 Copiado';
-      btn.classList.add('copiado');
-      setTimeout(function(){ btn.textContent = orig; btn.classList.remove('copiado'); }, 2000);
-    });
-  }
+  navigator.clipboard.writeText(texto).then(() => {
+    btn.textContent = '✅ Copiado';
+    btn.classList.add('copiado');
+    setTimeout(() => { btn.textContent = '📋 Copiar ' + (texto.length > 10 ? 'CBU' : 'SWIFT'); btn.classList.remove('copiado'); }, 2000);
+  });
 }
-
-}; // end window.onload
 </script>
 </body>
 </html>

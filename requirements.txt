@@ -11,17 +11,14 @@ beautifulsoup4==4.12.3
 pandas==2.2.2
 numpy==1.26.4
 lxml==5.2.1
+pdfplumber>=0.11.0
 
-# ── HTTP async (opcional para scrapers async) ──────────────────────────────
+# ── HTTP async ────────────────────────────────────────────────────────────
 httpx==0.27.0
-
-# ── Navegador headless (solo necesario para DDJJ anti-bot) ────────────────
-playwright==1.44.0
-# Después de instalar: playwright install chromium
 
 # ── Calendario y Feriados ──────────────────────────────────────────────────
 holidays==0.47
 
-# ── Testing ────────────────────────────────────────────────────────────────
-pytest==8.2.0
-pytest-mock==3.14.0
+# Nota: playwright se removió — no es necesario para el pipeline de diputados.
+# Si se necesita scraping headless en el futuro, agregar playwright y correr
+# "playwright install chromium --with-deps" manualmente.

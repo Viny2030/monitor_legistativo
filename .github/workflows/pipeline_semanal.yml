@@ -26,20 +26,15 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Instalar Playwright browsers
-        run: |
-          playwright install chromium
-          playwright install-deps chromium
-
       - name: Correr pipeline completo
         run: |
-          python pipeline.py
+          python scraper_pipeline.py
 
       - name: Guardar resultados
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.csv *.log
+          git add data/ *.csv *.log || true
           if git diff --staged --quiet; then
             echo "Sin cambios en los datos."
           else

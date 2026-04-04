@@ -40,7 +40,7 @@ from bs4 import BeautifulSoup
 OUTPUT_DIR = "data"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "diputados.json")
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; MonitorLegislativo/1.0)"}
-TIMEOUT = 30
+TIMEOUT = 60  # el SIL es lento
 
 # Nombres femeninos frecuentes en Argentina para deteccion de genero
 # (fallback heuristico; el campo genero del scraper tiene prioridad)
@@ -148,53 +148,84 @@ def scrape_nomina():
 # ---------------------------------------------------------------------------
 def scrape_asistencia(diputados):
     """
-    Fuente: https://hcdn.gob.ar/secparl/dclp/asistencia.html
-    Agrega campo asistencia_pct a cada diputado por coincidencia de nombre.
-    """
-    print("[STEP 2] Scraping asistencia...")
-    url = "https://hcdn.gob.ar/secparl/dclp/asistencia.html"
-    try:
-        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        res.raise_for_status()
-        soup = BeautifulSoup(res.text, "html.parser")
+    Fuente: PDF de estadisticas de asistencia en www3.hcdn.gob.ar
+    El sitio www2.hcdn.gob.ar/secparl/dclp/asistencia.html lista los PDFs por periodo.
+    Descargamos el PDF del periodo ordinario mas reciente y parseamos con pdfplumber.
 
-        # Construir mapa nombre -> porcentaje de asistencia
+    El PDF tiene lineas con formato: "APELLIDO, Nombre   distrito   sesiones   presentes   %"
+    """
+    print("[STEP 2] Descargando PDF de asistencia (periodo 143 ordinario 2025)...")
+
+    # PDF del periodo 143 ordinario 2025 (antes de la renovacion de diciembre 2025)
+    # Es el mas reciente con datos de todo el anio legislativo de los 257 actuales
+    PDF_URL = "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo%20143/ESTADISTICAS.pdf"
+
+    try:
+        import pdfplumber
+    except ImportError:
+        print("[WARN] pdfplumber no instalado. Instalar con: pip install pdfplumber")
+        print("       Saltando step de asistencia.")
+        return diputados
+
+    try:
+        res = requests.get(PDF_URL, headers=HEADERS, timeout=TIMEOUT, stream=True)
+        res.raise_for_status()
+
+        import io
+        pdf_bytes = io.BytesIO(res.content)
         asistencia_map = {}
-        tabla = soup.find("table")
-        if tabla:
-            for fila in tabla.find_all("tr")[1:]:
-                cols = fila.find_all("td")
-                if len(cols) >= 2:
-                    nombre_raw = cols[0].get_text(strip=True).upper()
-                    pct_raw = cols[-1].get_text(strip=True).replace("%", "").replace(",", ".")
+
+        with pdfplumber.open(pdf_bytes) as pdf:
+            for page in pdf.pages:
+                text = page.extract_text() or ""
+                for line in text.split("\n"):
+                    line = line.strip()
+                    if not line:
+                        continue
+                    # Buscar lineas con porcentaje al final: numero con % o numero decimal
+                    parts = line.split()
+                    if len(parts) < 3:
+                        continue
+                    # El porcentaje suele ser el ultimo campo
+                    pct_raw = parts[-1].replace("%", "").replace(",", ".")
                     try:
                         pct = float(pct_raw)
-                        asistencia_map[nombre_raw] = pct
+                        if 0 <= pct <= 100:
+                            # El nombre es el inicio de la linea (todo en mayusculas)
+                            nombre_raw = " ".join(parts[:-3]).upper().strip()
+                            if nombre_raw:
+                                asistencia_map[nombre_raw] = pct
                     except ValueError:
                         pass
 
-        # Match por nombre (normalizacion simple)
+        print(f"[INFO] {len(asistencia_map)} entradas en el PDF de asistencia")
+
+        # Match por apellido (primera palabra antes de la coma)
         matched = 0
         for d in diputados:
-            key = d["nombre"].upper()
-            if key in asistencia_map:
-                d["asistencia_pct"] = asistencia_map[key]
-                matched += 1
-            else:
-                # Intento de match parcial con apellido
-                apellido = key.split(",")[0].strip()
-                for k, v in asistencia_map.items():
-                    if apellido in k:
-                        d["asistencia_pct"] = v
-                        matched += 1
-                        break
+            nombre_key = d["nombre"].upper().strip()
+            apellido = nombre_key.split(",")[0].strip()
 
-        # Calcular NAPE por bloque
+            # Match exacto primero
+            if nombre_key in asistencia_map:
+                d["asistencia_pct"] = asistencia_map[nombre_key]
+                matched += 1
+                continue
+
+            # Match por apellido parcial
+            for k, v in asistencia_map.items():
+                if apellido and apellido in k:
+                    d["asistencia_pct"] = v
+                    matched += 1
+                    break
+
+        # Calcular NAPE
         for d in diputados:
-            if d["asistencia_pct"] is not None:
+            if d.get("asistencia_pct") is not None:
                 d["nape"] = round(1 - d["asistencia_pct"] / 100, 4)
 
         print(f"[OK] Asistencia matcheada para {matched}/{len(diputados)} diputados")
+
     except Exception as e:
         print(f"[ERROR] scrape_asistencia: {e}")
 
@@ -206,45 +237,75 @@ def scrape_asistencia(diputados):
 # ---------------------------------------------------------------------------
 def scrape_proyectos(diputados):
     """
-    Fuente: https://www.hcdn.gob.ar/proyectos/
-    Scrapea proyectos del anio legislativo en curso y los cuenta por autor.
-    Agrega proyectos_presentados y proyectos_aprobados a cada diputado.
+    Fuente: API CKAN de datos.hcdn.gob.ar con paginacion.
+    Resource ID fijo: 22b2d52c-7a0e-426b-ac0a-a3326c388ba6
+    Incluye proyectos del anio actual Y el anterior (el periodo 144 arranca en marzo 2026
+    pero el dataset puede tener datos cargados bajo expedientes -D-2025).
     """
-    print("[STEP 3] Scraping proyectos del SIL...")
-    anio = datetime.now().year
-    # El SIL expone busqueda por anio; usar pagina de resultados
-    url = f"https://www.hcdn.gob.ar/proyectos/resultado.html?anio={anio}&tipo=0"
-    try:
-        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        res.raise_for_status()
-        soup = BeautifulSoup(res.text, "html.parser")
+    print("[STEP 3] Consultando API CKAN de proyectos parlamentarios...")
+    anio = str(datetime.now().year)
+    anio_prev = str(int(anio) - 1)
 
-        proyectos_map = {}  # nombre_autor -> {presentados, aprobados}
-        tabla = soup.find("table", {"id": "tablaResultados"}) or soup.find("table")
-        if tabla:
-            for fila in tabla.find_all("tr")[1:]:
-                cols = fila.find_all("td")
-                if len(cols) < 4:
+    RESOURCE_ID = "22b2d52c-7a0e-426b-ac0a-a3326c388ba6"
+    API_URL = "https://datos.hcdn.gob.ar/api/3/action/datastore_search"
+
+    proyectos_map = {}
+    offset = 0
+    limit = 1000
+    total_procesados = 0
+
+    try:
+        while True:
+            res = requests.get(
+                API_URL,
+                params={"resource_id": RESOURCE_ID, "limit": limit, "offset": offset},
+                headers=HEADERS,
+                timeout=60
+            )
+            res.raise_for_status()
+            data = res.json()
+            records = data.get("result", {}).get("records", [])
+            if not records:
+                break
+
+            for row in records:
+                # Campo real: EXP_DIPUTADOS con formato "1234-D-2025"
+                expediente = str(row.get("EXP_DIPUTADOS") or "")
+                if anio not in expediente and anio_prev not in expediente:
                     continue
-                autor_raw = cols[2].get_text(strip=True).upper()
-                estado = cols[3].get_text(strip=True).upper()
-                if autor_raw not in proyectos_map:
-                    proyectos_map[autor_raw] = {"presentados": 0, "aprobados": 0}
-                proyectos_map[autor_raw]["presentados"] += 1
-                if "SANCIONADO" in estado or "APROBADO" in estado:
-                    proyectos_map[autor_raw]["aprobados"] += 1
+
+                # Campo real: AUTOR (un solo autor por fila, no multiples)
+                firmantes_raw = (row.get("AUTOR") or "").upper()
+                estado = (row.get("TIPO") or "").upper()
+                total_procesados += 1
+
+                # AUTOR tiene formato "APELLIDO, NOMBRE" — tomar apellido
+                apellido = firmantes_raw.split(",")[0].strip()
+                if len(apellido) < 3:
+                    continue
+                if apellido not in proyectos_map:
+                    proyectos_map[apellido] = {"presentados": 0, "aprobados": 0}
+                proyectos_map[apellido]["presentados"] += 1
+                if any(x in estado for x in ("LEY", "SANCIONADO", "APROBADO")):
+                    proyectos_map[apellido]["aprobados"] += 1
+
+            total_available = data.get("result", {}).get("total", 0)
+            offset += limit
+            if offset >= total_available:
+                break
+
+        print(f"[INFO] {total_procesados} proyectos ({anio_prev}-{anio}), {len(proyectos_map)} autores")
 
         matched = 0
         for d in diputados:
             apellido = d["nombre"].split(",")[0].strip().upper()
-            for k, v in proyectos_map.items():
-                if apellido in k:
-                    d["proyectos_presentados"] = v["presentados"]
-                    d["proyectos_aprobados"] = v["aprobados"]
-                    matched += 1
-                    break
+            if len(apellido) >= 3 and apellido in proyectos_map:
+                d["proyectos_presentados"] = proyectos_map[apellido]["presentados"]
+                d["proyectos_aprobados"] = proyectos_map[apellido]["aprobados"]
+                matched += 1
 
         print(f"[OK] Proyectos matcheados para {matched}/{len(diputados)} diputados")
+
     except Exception as e:
         print(f"[ERROR] scrape_proyectos: {e}")
 
@@ -256,44 +317,59 @@ def scrape_proyectos(diputados):
 # ---------------------------------------------------------------------------
 def scrape_presupuesto():
     """
-    Fuente: https://www.presupuestoabierto.gob.ar/sici/datos-abiertos
-    API REST publica. Consulta ejecucion del ejercicio para el Poder Legislativo
-    (Jurisdiccion 01 — Congreso de la Nacion).
-    Devuelve dict con credito_vigente, devengado, iap.
+    Fuente: API de ejecucion presupuestaria de la ONP (Oficina Nacional de Presupuesto).
+    URL: https://www.economia.gob.ar/onp/ejecucion/
+    Endpoint de datos abiertos que devuelve ejecucion por jurisdiccion en JSON.
+    Jurisdiccion 01 = Poder Legislativo / Congreso de la Nacion.
+
+    Alternativa: presupuestoabierto.gob.ar tiene CSV descargables por anio.
     """
-    print("[STEP 4] Consultando API de Presupuesto Abierto...")
+    print("[STEP 4] Consultando ejecucion presupuestaria (ONP)...")
     anio = datetime.now().year
-    # Endpoint publico de datos abiertos
-    base = "https://www.presupuestoabierto.gob.ar/sici/rest-api/credito"
-    params = {
+
+    # La ONP publica archivos CSV de ejecucion presupuestaria en datos abiertos
+    # URL del CSV de ejecucion anual (estructura: jurisdiccion, credito, devengado)
+    # Nota: para 2025/2026 Argentina prorrogo el presupuesto 2023 (Dec. 88/2023)
+    CSV_URLS = [
+        f"https://www.presupuestoabierto.gob.ar/datasets/credito_jurisdiccion_{anio}.csv",
+        f"https://www.presupuestoabierto.gob.ar/datasets/credito_{anio}.csv",
+        # El archivo de ejecucion historica consolidada
+        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.1/download/presupuesto-nacionale-gasto-por-finalidad-funcion-desde-1963.csv",
+    ]
+
+    import csv, io
+    for url in CSV_URLS:
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            if res.status_code != 200:
+                continue
+            content = res.content.decode("utf-8", errors="replace")
+            reader = csv.DictReader(io.StringIO(content))
+            credito = devengado = 0.0
+            for row in reader:
+                jur = str(row.get("jurisdiccion") or row.get("cod_jurisdiccion") or "")
+                desc = (row.get("desc_jurisdiccion") or row.get("jurisdiccion_desc") or "").upper()
+                if jur.strip() == "01" or "LEGISLATIVO" in desc or "CONGRESO" in desc:
+                    credito += float(str(row.get("credito_vigente") or row.get("credito") or "0").replace(",", ".") or 0)
+                    devengado += float(str(row.get("devengado") or row.get("ejecutado") or "0").replace(",", ".") or 0)
+            if credito > 0:
+                iap = round(devengado / credito, 4)
+                print(f"[OK] IAP={iap} (credito={credito/1e9:.1f}B, devengado={devengado/1e9:.1f}B ARS)")
+                return {"ejercicio": anio, "fuente": url, "credito_vigente_m": round(credito/1e6, 2), "devengado_m": round(devengado/1e6, 2), "iap": iap}
+        except Exception as e:
+            print(f"[WARN] {url[:70]}: {e}")
+
+    # Fallback estatico con datos reales del IAP historico del Congreso
+    # Fuente: OPC informes trimestrales 2024 — IAP del Legislativo ~0.951
+    print("[WARN] CSV de presupuesto no disponible — usando valor historico de referencia")
+    return {
         "ejercicio": anio,
-        "jurisdiccion": "01",   # Poder Legislativo
-        "formato": "json"
+        "fuente": "historico OPC 2024",
+        "nota": "IAP estimado en base a ejecucion 2024 (95.1%). Actualizar con datos de opc.gob.ar",
+        "credito_vigente_m": None,
+        "devengado_m": None,
+        "iap": 0.951
     }
-    try:
-        res = requests.get(base, params=params, headers=HEADERS, timeout=TIMEOUT)
-        res.raise_for_status()
-        datos = res.json()
-
-        # La respuesta puede ser una lista de partidas; sumar credito y devengado
-        credito = 0
-        devengado = 0
-        for item in datos if isinstance(datos, list) else [datos]:
-            credito += float(item.get("credito_vigente", 0) or 0)
-            devengado += float(item.get("devengado", 0) or 0)
-
-        iap = round(devengado / credito, 4) if credito > 0 else None
-        resultado = {
-            "ejercicio": anio,
-            "credito_vigente_m": round(credito / 1_000_000, 2),
-            "devengado_m": round(devengado / 1_000_000, 2),
-            "iap": iap
-        }
-        print(f"[OK] IAP calculado: {iap} (devengado {devengado/1e9:.1f}B / credito {credito/1e9:.1f}B ARS)")
-        return resultado
-    except Exception as e:
-        print(f"[ERROR] scrape_presupuesto: {e}")
-        return {}
 
 
 # ---------------------------------------------------------------------------
@@ -301,62 +377,94 @@ def scrape_presupuesto():
 # ---------------------------------------------------------------------------
 def scrape_votaciones(diputados):
     """
-    Fuente: https://votaciones.hcdn.gob.ar/api/
-    API publica de votaciones nominales de la HCDN.
-    Calcula IQP (Indice de Calidad de Participacion) = votos_emitidos / sesiones_convocado.
+    Fuente: Portal de Datos Abiertos HCDN - dataset votaciones nominales
+    El dataset tiene una fila por voto individual: legislador x votacion x resultado.
+    Se calcula IQP = votos_emitidos / total_votaciones_convocado.
     """
-    print("[STEP 5] Consultando API de votaciones nominales...")
-    anio = datetime.now().year
-    api_base = "https://votaciones.hcdn.gob.ar/api"
+    print("[STEP 5] Consultando votaciones nominales...")
+    anio = str(datetime.now().year)
+    anio_prev = str(int(anio) - 1)
 
+    # Opcion 1: API interna de votaciones.hcdn.gob.ar
+    # Probar distintas versiones del endpoint
     try:
-        # Obtener periodos del anio
-        res = requests.get(f"{api_base}/periodos/?format=json", headers=HEADERS, timeout=TIMEOUT)
-        res.raise_for_status()
-        periodos = res.json()
+        periodo = 144 if int(anio) >= 2026 else 143
+        api_base = "https://votaciones.hcdn.gob.ar"
 
-        # Filtrar periodo actual
-        periodo_actual = None
-        for p in (periodos.get("results") or periodos if isinstance(periodos, list) else []):
-            if str(anio) in str(p.get("anio", "") or p.get("periodo", "")):
-                periodo_actual = p
-                break
+        # Probar endpoints conocidos
+        endpoints = [
+            f"/api/v1/actas/?periodo={periodo}&page_size=50",
+            f"/api/actas/?periodo={periodo}",
+            f"/votos/?periodo={periodo}",
+        ]
 
-        if not periodo_actual:
-            print("[WARN] No se encontro periodo actual en la API de votaciones")
-            return diputados
+        actas = []
+        for ep in endpoints:
+            try:
+                res = requests.get(f"{api_base}{ep}", headers=HEADERS, timeout=20)
+                print(f"[INFO] {ep} → {res.status_code}")
+                if res.status_code == 200:
+                    data = res.json()
+                    if isinstance(data, list):
+                        actas = data
+                    elif isinstance(data, dict):
+                        actas = data.get("results") or data.get("data") or data.get("actas") or []
+                    if actas:
+                        break
+            except Exception:
+                continue
 
-        periodo_id = periodo_actual.get("id") or periodo_actual.get("numero")
-
-        # Obtener resumen de asistencia por legislador para ese periodo
-        res2 = requests.get(
-            f"{api_base}/legisladores/asistencia/?periodo={periodo_id}&format=json",
-            headers=HEADERS, timeout=TIMEOUT
-        )
-        res2.raise_for_status()
-        leg_data = res2.json()
-
-        iqp_map = {}
-        for item in (leg_data.get("results") or leg_data if isinstance(leg_data, list) else []):
-            nombre = item.get("legislador", {}).get("apellido_nombre", "").upper()
-            convocado = int(item.get("convocado", 0) or 0)
-            emitio = int(item.get("emitio", 0) or 0)
-            if convocado > 0:
-                iqp_map[nombre] = round(emitio / convocado, 4)
-
-        matched = 0
-        for d in diputados:
-            apellido = d["nombre"].split(",")[0].strip().upper()
-            for k, v in iqp_map.items():
-                if apellido in k:
-                    d["iqp"] = v
-                    matched += 1
+        conteo = {}
+        for acta in actas[:30]:
+            acta_id = acta.get("id") or acta.get("acta_id")
+            if not acta_id:
+                continue
+            for ep_votos in [f"/api/v1/actas/{acta_id}/votos/", f"/api/actas/{acta_id}/votos/"]:
+                try:
+                    res2 = requests.get(f"{api_base}{ep_votos}", headers=HEADERS, timeout=20)
+                    if res2.status_code != 200:
+                        continue
+                    votos_data = res2.json()
+                    votos_list = votos_data if isinstance(votos_data, list) else (votos_data.get("results") or [])
+                    for v in votos_list:
+                        nombre = (v.get("diputado_nombre") or v.get("legislador") or v.get("nombre") or "").upper().strip()
+                        voto = (v.get("voto") or "").upper().strip()
+                        apellido = nombre.split(",")[0].strip() if "," in nombre else nombre.split()[0].strip()
+                        if len(apellido) < 3:
+                            continue
+                        if apellido not in conteo:
+                            conteo[apellido] = {"c": 0, "e": 0}
+                        conteo[apellido]["c"] += 1
+                        if voto and "AUSENTE" not in voto:
+                            conteo[apellido]["e"] += 1
                     break
+                except Exception:
+                    continue
 
-        print(f"[OK] IQP calculado para {matched}/{len(diputados)} diputados")
+        if conteo:
+            matched = sum(1 for d in diputados
+                         if d["nombre"].split(",")[0].strip().upper() in conteo
+                         and conteo[d["nombre"].split(",")[0].strip().upper()]["c"] > 0)
+            for d in diputados:
+                ap = d["nombre"].split(",")[0].strip().upper()
+                if ap in conteo and conteo[ap]["c"] > 0:
+                    d["iqp"] = round(conteo[ap]["e"] / conteo[ap]["c"], 4)
+            if matched > 0:
+                print(f"[OK] IQP (API votaciones periodo {periodo}) para {matched}/{len(diputados)} diputados")
+                return diputados
+            else:
+                print(f"[WARN] API votaciones respondio pero sin matches con los diputados actuales")
+        else:
+            print(f"[WARN] API votaciones.hcdn.gob.ar: ningun endpoint funciono o sin actas para periodo {periodo}")
+
     except Exception as e:
-        print(f"[ERROR] scrape_votaciones: {e}")
+        print(f"[WARN] API votaciones.hcdn.gob.ar: {e}")
 
+    # El dataset CKAN de votaciones (periodos 129-137) es historico y no tiene datos 2025/2026.
+    # El sitio votaciones.hcdn.gob.ar carga sus estadisticas via JavaScript (no parseable con requests).
+    # IQP queda en null hasta que la HCDN publique un dataset actualizado o habilite una API publica.
+    print("[WARN] IQP no disponible para el periodo actual.")
+    print("       Fuente pendiente: dataset votaciones 2025/2026 en datos.hcdn.gob.ar")
     return diputados
 
 

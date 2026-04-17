@@ -52,7 +52,6 @@ nav a:hover { background: rgba(255,255,255,.3); }
 .biblio-card .bauthor { font-size: .78rem; color: #555; margin-bottom: .3rem; }
 .biblio-card .blink a { font-size: .78rem; color: #0057b7; text-decoration: none; word-break: break-all; }
 .biblio-card .blink a:hover { text-decoration: underline; }
-/* ── FOOTER ── */
 .footer-nota { background: #1e293b; border-top: 3px solid #f59e0b; padding: 1.2rem 2rem; text-align: center; }
 .footer-nota p { max-width: 860px; margin: 0 auto; font-size: .8rem; color: #94a3b8; line-height: 1.6; }
 .footer-nota strong { color: #fbbf24; }
@@ -69,7 +68,6 @@ nav a:hover { background: rgba(255,255,255,.3); }
 </style>
 </head>
 <body>
-
 <header>
   <div class="header-left">
     <span class="escudo">🏛️</span>
@@ -80,15 +78,12 @@ nav a:hover { background: rgba(255,255,255,.3); }
   </div>
   <nav style="display:flex;gap:.4rem;flex-wrap:wrap"><a href="indicadores_diputados.html">&#127968; Indicadores</a><a href="indicadores2_diputados.html">&#128202; An&#225;lisis</a><a href="comparativa_diputados.html">&#127760; Comparativa</a><a href="metodologia_diputados.html">&#128218; Metodolog&#237;a</a></nav>
 </header>
-
 <div class="tabs">
   <button class="tab-btn active" onclick="showTab('indicadores',event)">📊 Los 13 Indicadores</button>
   <button class="tab-btn" onclick="showTab('ddjj',event)">📋 DDJJ Legisladores</button>
   <button class="tab-btn" onclick="showTab('bibliografia',event)">📚 Bibliografía</button>
   <button class="tab-btn" onclick="document.querySelector('.footer-donacion').scrollIntoView({behavior:'smooth'});this.classList.add('active');" style="color:#0057b7;">💙 Donar</button>
 </div>
-
-<!-- TAB 1 – INDICADORES -->
 <div id="tab-indicadores" class="tab-content active">
   <div class="dim-header"><span class="dim-badge">I</span><span class="dim-title">Costos e Insumos — Finanzas Legislativas</span></div>
   <div class="ind-grid">
@@ -96,21 +91,18 @@ nav a:hover { background: rgba(255,255,255,.3); }
     <div class="ind-card"><div class="ind-top"><span class="ind-id">TPS</span><span class="ind-name">Tasa de Profesionalización del Staff</span></div><div class="ind-formula">TPS = (S_perm / (S_perm + S_temp)) × 100</div><ul class="ind-vars"><li><strong>S_perm</strong>: Agentes en Planta Permanente</li><li><strong>S_temp</strong>: Agentes en Planta Temporaria</li></ul><div class="ind-source">Fuente: <a href="https://datos.hcdn.gob.ar" target="_blank">Nómina de Personal HCDN</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">CAF</span><span class="ind-name">Coeficiente de Autonomía Fiscal</span></div><div class="ind-formula">CAF = P_devengado / P_solicitado</div><ul class="ind-vars"><li><strong>P_devengado</strong>: Presupuesto final recibido</li><li><strong>P_solicitado</strong>: Presupuesto pedido en el anteproyecto</li></ul><div class="ind-source">Fuente: <a href="https://www.presupuestoabierto.gob.ar" target="_blank">Presupuesto Abierto</a></div></div>
   </div>
-
   <div class="dim-header"><span class="dim-badge">II</span><span class="dim-title">Eficiencia en el Proceso — Productividad</span></div>
   <div class="ind-grid">
     <div class="ind-card"><div class="ind-top"><span class="ind-id">TMM</span><span class="ind-name">Tiempo Medio de Maduración Legislativa</span></div><div class="ind-formula">TMM = Σ(F_dictamen − F_ingreso) / n</div><ul class="ind-vars"><li><strong>F_dictamen</strong>: Fecha de despacho de comisión</li><li><strong>F_ingreso</strong>: Fecha de entrada por mesa de entradas</li><li><strong>n</strong>: Total de proyectos dictaminados</li></ul><div class="ind-source">Fuente: <a href="https://datos.hcdn.gob.ar" target="_blank">SIL – Proyectos HCDN</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">ITT</span><span class="ind-name">Intensidad de Trabajo Técnico</span></div><div class="ind-formula">ITT = ΣH_com / ΣH_pleno</div><ul class="ind-vars"><li><strong>H_com</strong>: Horas de reuniones de comisión</li><li><strong>H_pleno</strong>: Horas de sesiones en el recinto</li></ul><div class="ind-source">Fuente: <a href="https://www.hcdn.gob.ar/comisiones/" target="_blank">Actas de Comisión HCDN</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">IQP</span><span class="ind-name">Índice de Quórum y Permanencia</span></div><div class="ind-formula">IQP = [Σ(L_presentes / L_totales)] / V</div><ul class="ind-vars"><li><strong>L_presentes</strong>: Legisladores que emitieron voto</li><li><strong>L_totales</strong>: Total de escaños (257 / 72)</li><li><strong>V</strong>: Votaciones nominales en el año</li></ul><div class="ind-source">Fuente: <a href="https://votaciones.hcdn.gob.ar/" target="_blank">Votaciones Nominales HCDN</a></div></div>
   </div>
-
   <div class="dim-header"><span class="dim-badge">III</span><span class="dim-title">Desempeño y Calidad — Impacto</span></div>
   <div class="ind-grid">
     <div class="ind-card"><div class="ind-top"><span class="ind-id">CUN</span><span class="ind-name">Costo Unitario por Norma Sancionada</span></div><div class="ind-formula">CUN = P_total / L_sancionadas</div><ul class="ind-vars"><li><strong>L_sancionadas</strong>: Leyes publicadas en Boletín Oficial</li></ul><div class="ind-source">Fuente: <a href="https://www.boletinoficial.gob.ar/" target="_blank">Boletín Oficial</a> · <a href="https://www.hcdn.gob.ar/secparl/dgral_info_parlamentaria/estadisticas_parlamentarias/index.html" target="_blank">Estadísticas HCDN</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">CLS</span><span class="ind-name">Calidad Legislativa Sustantiva</span></div><div class="ind-formula">CLS = (L_sust / L_total) × 100</div><ul class="ind-vars"><li><strong>L_sust</strong>: Leyes que modifican cuerpo normativo de fondo</li><li><strong>L_total</strong>: Total de leyes (incluye declaraciones, efemérides)</li></ul><div class="ind-source">Fuente: <a href="https://www.infoleg.gob.ar/" target="_blank">InfoLEG – SIL</a></div></div>
     <div class="ind-card"><div class="ind-top"><span class="ind-id">TEF</span><span class="ind-name">Tasa de Efectividad de Fiscalización</span></div><div class="ind-formula">TEF = IC_resueltos / IF_recibidos</div><ul class="ind-vars"><li><strong>IC_resueltos</strong>: Informes AGN con seguimiento efectivo</li><li><strong>IF_recibidos</strong>: Total de pedidos de control ingresados</li></ul><div class="ind-source">Fuente: <a href="https://www.agn.gob.ar/informes" target="_blank">AGN – Informes de Auditoría</a></div></div>
   </div>
-
   <div class="dim-header"><span class="dim-badge">IV</span><span class="dim-title">Transparencia y Datos — Tecnología</span></div>
   <div class="ind-grid">
     <div class="ind-card"><div class="ind-top"><span class="ind-id">CAD</span><span class="ind-name">Coeficiente de Apertura de Datos</span></div><div class="ind-formula">CAD = Σ(V_formato × W_tiempo) / Max_Score</div><ul class="ind-vars"><li><strong>V_formato</strong>: PDF=1 · Excel=3 · JSON/API=5</li><li><strong>W_tiempo</strong>: Inmediato=1.0 · Semana=0.5 · Mes=0.1</li></ul><div class="ind-source">Fuente: Auditoría propia del monitor sobre portales oficiales</div></div>
@@ -119,8 +111,6 @@ nav a:hover { background: rgba(255,255,255,.3); }
     <div class="ind-card" style="border-left:4px solid #0891b2"><div class="ind-top"><span class="ind-id" style="background:#0891b2">GLIT</span><span class="ind-name">GLIT Score — Transparencia Legislativa Digital</span></div><div class="ind-formula">GLIT = (D1+D2+D3+D4+D5) / 5</div><ul class="ind-vars"><li><strong>D1</strong>: Votaciones nominales públicas</li><li><strong>D2</strong>: Perfiles de legisladores accesibles</li><li><strong>D3</strong>: Trazabilidad del proceso legislativo</li><li><strong>D4</strong>: Open data estructurado (CSV/JSON/API)</li><li><strong>D5</strong>: Interacción y canales digitales ciudadanos</li></ul><div class="ind-source">Fuente: <a href="https://doi.org/10.1177/10659129211009634" target="_blank">GLIT Index — Williamson &amp; Ebers (2021)</a> · <a href="https://www.opengovpartnership.org/" target="_blank">Open Government Partnership</a></div></div>
   </div>
 </div>
-
-<!-- TAB 2 – DDJJ -->
 <div id="tab-ddjj" class="tab-content">
   <div class="ddjj-box">
     <h3>⚠️ Sobre el acceso a las DDJJ de Diputados</h3>
@@ -138,8 +128,6 @@ nav a:hover { background: rgba(255,255,255,.3); }
     <strong>📌 Dato clave:</strong> Según la Ley N° 26.857, la parte pública de las DJPI debe publicarse dentro de los <strong>10 días hábiles</strong> desde su presentación. El vencimiento anual opera el <strong>30 de mayo</strong> de cada año.
   </div>
 </div>
-
-<!-- TAB 3 – BIBLIOGRAFÍA -->
 <div id="tab-bibliografia" class="tab-content">
   <div class="biblio-section">
     <h3>📡 Fuentes de Datos Oficiales</h3>
@@ -174,9 +162,8 @@ nav a:hover { background: rgba(255,255,255,.3); }
       <div class="biblio-card"><div class="btype">Paper</div><div class="btitle">Costs of Legislation: A Framework for Analysis</div><div class="bauthor">Huber & Shipan – Legislative Studies Quarterly, 2002</div><div class="blink"><a href="https://doi.org/10.1111/j.1939-9162.2002.tb00493.x" target="_blank">DOI link</a></div></div>
     </div>
   </div>
-
   <div class="biblio-section">
-    <h3>&#127760; Organismos Internacionales y Benchmarks</h3>
+    <h3>🌐 Organismos Internacionales y Benchmarks</h3>
     <div class="biblio-grid">
       <div class="biblio-card"><div class="btype">Informe anual</div><div class="btitle">Government at a Glance 2023</div><div class="bauthor">OECD, 2023</div><div class="blink"><a href="https://www.oecd.org/gov/government-at-a-glance/" target="_blank">oecd.org/gov/government-at-a-glance</a></div></div>
       <div class="biblio-card"><div class="btype">Informe</div><div class="btitle">Regulatory Policy Outlook 2023</div><div class="bauthor">OECD, 2023</div><div class="blink"><a href="https://www.oecd.org/gov/regulatory-policy/" target="_blank">oecd.org/gov/regulatory-policy</a></div></div>
@@ -189,9 +176,8 @@ nav a:hover { background: rgba(255,255,255,.3); }
       <div class="biblio-card"><div class="btype">Portal ONU</div><div class="btitle">UN e-Government Survey 2024</div><div class="bauthor">United Nations DESA, 2024</div><div class="blink"><a href="https://publicadministration.un.org/egovkb/en-us/" target="_blank">publicadministration.un.org</a></div></div>
     </div>
   </div>
-
   <div class="biblio-section">
-    <h3>&#128240; Papers y Metodolog&#237;a Espec&#237;fica</h3>
+    <h3>📰 Papers y Metodología Específica</h3>
     <div class="biblio-grid">
       <div class="biblio-card"><div class="btype">Paper</div><div class="btitle">GLIT Index: Legislative Information Transparency</div><div class="bauthor">Williamson &amp; Ebers — State Politics &amp; Policy Quarterly, 2021</div><div class="blink"><a href="https://doi.org/10.1177/10659129211009634" target="_blank">doi.org/10.1177/10659129211009634</a></div></div>
       <div class="biblio-card"><div class="btype">Libro</div><div class="btitle">Parliaments that Work</div><div class="bauthor">Commonwealth Parliamentary Association (CPA)</div><div class="blink"><a href="https://www.cpahq.org" target="_blank">cpahq.org</a></div></div>
@@ -200,12 +186,10 @@ nav a:hover { background: rgba(255,255,255,.3); }
       <div class="biblio-card"><div class="btype">Libro</div><div class="btitle">Making M&amp;E Systems Work</div><div class="bauthor">Kusek &amp; Rist — World Bank, 2004</div><div class="blink"><a href="https://www.worldbank.org" target="_blank">worldbank.org</a></div></div>
       <div class="biblio-card"><div class="btype">Informe</div><div class="btitle">African Parliamentary Index — Caps. 9 y 15</div><div class="bauthor">O'Brien / ASGP, 2018</div><div class="blink"><a href="https://www.ipu.org" target="_blank">ipu.org</a></div></div>
       <div class="biblio-card"><div class="btype">Fuente local</div><div class="btitle">Balance Legislativo 2025</div><div class="bauthor">Directorio Legislativo, dic. 2025</div><div class="blink"><a href="https://directoriolegislativo.org" target="_blank">directoriolegislativo.org</a></div></div>
-      <div class="biblio-card"><div class="btype">Fuente local</div><div class="btitle">Parlamentario.com — Estad&#237;sticas de sesi&#243;n 2025</div><div class="bauthor">Parlamentario.com, ene. 2026</div><div class="blink"><a href="https://parlamentario.com" target="_blank">parlamentario.com</a></div></div>
+      <div class="biblio-card"><div class="btype">Fuente local</div><div class="btitle">Parlamentario.com — Estadísticas de sesión 2025</div><div class="bauthor">Parlamentario.com, ene. 2026</div><div class="blink"><a href="https://parlamentario.com" target="_blank">parlamentario.com</a></div></div>
     </div>
   </div>
 </div>
-
-<!-- &#9552;&#9552; FOOTER NOTA LEGAL &#9552;&#9552; -->
 <div class="footer-nota">
   <p>
     <strong>⚠️ Nota:</strong> Esta herramienta es de carácter <strong>experimental y académico</strong>.
@@ -215,8 +199,6 @@ nav a:hover { background: rgba(255,255,255,.3); }
     El objetivo es promover la <strong>transparencia y el debate informado</strong> sobre el gasto público.
   </p>
 </div>
-
-<!-- ══ FOOTER DONACIONES ══ -->
 <div class="footer-donacion">
   <h4>💙 Apoyá este proyecto — Donaciones voluntarias</h4>
   <div style="width:100%; text-align:center; margin-bottom:.8rem;">
@@ -255,31 +237,29 @@ nav a:hover { background: rgba(255,255,255,.3); }
     <div class="don-row"><span class="don-label">Swift</span><span class="don-val highlight">BSCHUYMM</span></div>
     <div class="don-row"><span class="don-label">CUIT</span><span class="don-val">20-12034411-1</span></div>
   </div>
+  <!-- TARJETA AUTOR Y CONTACTO — emails y foto corregidos -->
   <div class="don-card" style="max-width:320px;">
     <h5>📬 Autor y Contacto</h5>
     <div style="display:flex; align-items:center; gap:.8rem; margin-bottom:.7rem;">
-      <img src="../foto.jpg" alt="Vicente Humberto Monteverde"
+      <img src="foto.jpg" alt="Vicente Humberto Monteverde"
         style="width:56px; height:56px; border-radius:50%; object-fit:cover; border:2px solid #334155; flex-shrink:0;"
-        onerror="this.style.display='none'">
+        onerror="this.parentElement.querySelector('img').style.display='none'">
       <div>
         <div style="color:#e2e8f0; font-weight:700; font-size:.82rem;">Vicente Humberto Monteverde</div>
         <div style="color:#64748b; font-size:.7rem;">Investigador · Desarrollador</div>
         <div style="color:#64748b; font-size:.7rem;">CUIL: 20-12034411-1</div>
       </div>
     </div>
-    <div class="don-row"><span class="don-label">Email principal</span><span class="don-val"><a href="mailto:vmonteverde@monitorcivico.ar" style="color:#60a5fa;">vmonteverde@monitorcivico.ar</a></span></div>
-    <div class="don-row"><span class="don-label">Email alternativo</span><span class="don-val"><a href="mailto:vicentemonteverde@gmail.com" style="color:#60a5fa;">vicentemonteverde@gmail.com</a></span></div>
+    <div class="don-row"><span class="don-label">Email principal</span><span class="don-val"><a href="mailto:vhmonte@retina.ar" style="color:#60a5fa;">vhmonte@retina.ar</a></span></div>
+    <div class="don-row"><span class="don-label">Email alternativo</span><span class="don-val"><a href="mailto:viny01958@gmail.com" style="color:#60a5fa;">viny01958@gmail.com</a></span></div>
     <div class="don-row" style="margin-top:.5rem;"><span class="don-label">Repositorio</span><span class="don-val"><a href="https://github.com/Viny2030/monitor_legistativo" target="_blank" style="color:#60a5fa;">github.com/Viny2030</a></span></div>
   </div>
-  </div><!-- /donacion-detalle -->
-</div><!-- /footer-donacion -->
-
-<!-- ══ FOOTER CRÉDITOS ══ -->
+  </div>
+</div>
 <div class="footer-credits">
   Monitor Legislativo · República Argentina · Fuentes: HCDN · INDEC · Presupuesto Abierto · Boletín Oficial · AGN · OA · OECD · World Bank · IPU · GLIT Index ·
   <a href="https://github.com/Viny2030/monitor_legistativo" target="_blank">GitHub</a>
 </div>
-
 <script>
 function showTab(id, e) {
   var el = document.getElementById('tab-' + id);

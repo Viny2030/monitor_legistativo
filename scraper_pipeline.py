@@ -469,13 +469,114 @@ def scrape_votaciones(diputados):
 
 
 # ---------------------------------------------------------------------------
+# STEP 6 — TPMP (SIL: fechas ingreso y dictamen) [v1.1]
+# ---------------------------------------------------------------------------
+def scrape_tpmp(anio: int = None) -> dict:
+    """
+    Calcula el TPMP usando el scraper SIL.
+    Retorna dict con valor y metadatos para incluir en data/diputados.json.
+    """
+    print("[STEP 6] Calculando TPMP (Tiempo Promedio de Maduración de Proyectos)...")
+    anio = anio or datetime.now().year
+    try:
+        from scrapers.sil import calcular_tpmp, obtener_proyectos_por_diputado
+        resultado = calcular_tpmp(anio)
+        return resultado
+    except ImportError as e:
+        print(f"[WARN] scrapers/sil.py no disponible: {e}")
+    except Exception as e:
+        print(f"[WARN] Error en TPMP: {e}")
+
+    # Fallback
+    return {
+        "valor": 105.0,
+        "unidad": "días",
+        "n_proyectos": 0,
+        "fuente": "fallback (scrapers/sil.py no disponible)",
+        "advertencia": "⚠️ Instalar scrapers/sil.py para datos reales",
+    }
+
+
+def _enriquecer_diputados_con_sil(diputados: list[dict], anio: int = None) -> list[dict]:
+    """
+    Enriquece la lista de diputados con datos del SIL:
+      - sil_presentados:     proyectos presentados (dato SIL, más completo que CKAN)
+      - sil_con_dictamen:    proyectos que llegaron a dictamen
+      - sil_tasa_dictamen:   % de proyectos con dictamen
+    """
+    anio = anio or datetime.now().year
+    try:
+        from scrapers.sil import obtener_proyectos_por_diputado
+        df_sil = obtener_proyectos_por_diputado(anio)
+
+        if df_sil.empty:
+            return diputados
+
+        # Crear mapa de apellido → datos SIL
+        sil_map = df_sil.set_index("apellido").to_dict("index")
+
+        matcheados = 0
+        for d in diputados:
+            apellido = d.get("nombre", "").split(",")[0].strip().upper()
+            if apellido in sil_map:
+                d["sil_presentados"] = int(sil_map[apellido].get("presentados", 0))
+                d["sil_con_dictamen"] = int(sil_map[apellido].get("con_dictamen", 0))
+                d["sil_tasa_dictamen"] = float(sil_map[apellido].get("tasa_dictamen_pct", 0))
+
+                # Si los datos del pipeline (CKAN) son nulos, usar datos SIL
+                if not d.get("proyectos_presentados"):
+                    d["proyectos_presentados"] = d["sil_presentados"]
+                if not d.get("proyectos_aprobados"):
+                    d["proyectos_aprobados"] = d["sil_con_dictamen"]
+                matcheados += 1
+
+        print(f"[OK] SIL: datos enriquecidos para {matcheados}/{len(diputados)} diputados")
+
+    except Exception as e:
+        print(f"[WARN] Error enriqueciendo con SIL: {e}")
+
+    return diputados
+
+
+# ---------------------------------------------------------------------------
+# STEP 7 — ITC (actas de reuniones de comisión) [v1.1]
+# ---------------------------------------------------------------------------
+def scrape_itc(anio: int = None) -> dict:
+    """
+    Calcula el ITC usando el scraper de comisiones.
+    Retorna dict con valor y metadatos.
+    """
+    print("[STEP 7] Calculando ITC (Índice de Trabajo en Comisiones)...")
+    anio = anio or datetime.now().year
+    try:
+        from scrapers.comisiones import calcular_itc
+        resultado = calcular_itc(anio, max_comisiones=20)
+        return resultado
+    except ImportError as e:
+        print(f"[WARN] scrapers/comisiones.py no disponible: {e}")
+    except Exception as e:
+        print(f"[WARN] Error en ITC: {e}")
+
+    # Fallback
+    return {
+        "id": "ITC",
+        "valor": 3.5,
+        "unidad": "ratio",
+        "fuente": "fallback histórico",
+        "advertencia": "⚠️ Instalar scrapers/comisiones.py para datos reales",
+    }
+
+
+# ---------------------------------------------------------------------------
 # Pipeline completo
 # ---------------------------------------------------------------------------
 def run_pipeline(steps=None):
     ensure_output_dir()
     data = load_existing()
+    anio = datetime.now().year
 
-    all_steps = {"nomina", "asistencia", "proyectos", "presupuesto", "votaciones"}
+    all_steps = {"nomina", "asistencia", "proyectos", "presupuesto", "votaciones",
+                 "tpmp", "itc"}
     steps = set(steps) if steps else all_steps
 
     if "nomina" in steps:
@@ -500,6 +601,21 @@ def run_pipeline(steps=None):
         diputados = scrape_votaciones(diputados)
         data["diputados"] = diputados
 
+    # ── v1.1: TPMP y SIL ─────────────────────────────────────────────────────
+    if "tpmp" in steps:
+        tpmp_resultado = scrape_tpmp(anio)
+        data["tpmp"] = tpmp_resultado
+
+        # Enriquecer diputados con datos SIL
+        if diputados:
+            diputados = _enriquecer_diputados_con_sil(diputados, anio)
+            data["diputados"] = diputados
+
+    # ── v1.1: ITC ────────────────────────────────────────────────────────────
+    if "itc" in steps:
+        itc_resultado = scrape_itc(anio)
+        data["itc"] = itc_resultado
+
     save(data)
     return data
 
@@ -511,7 +627,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Pipeline de scraping legislativo")
     parser.add_argument(
         "--step",
-        choices=["nomina", "asistencia", "proyectos", "presupuesto", "votaciones"],
+        choices=["nomina", "asistencia", "proyectos", "presupuesto", "votaciones",
+                 "tpmp", "itc"],
         help="Correr solo un step especifico"
     )
     args = parser.parse_args()

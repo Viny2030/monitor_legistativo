@@ -13,14 +13,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt requirements_api.txt ./
 RUN pip install --no-cache-dir -r requirements.txt -r requirements_api.txt
 
+# Instalar aiofiles explicitamente (requerido por FastAPI StaticFiles)
+RUN pip install aiofiles>=23.2.1
+
 # Copiar codigo
 COPY . .
 
 # Crear directorio de datos
 RUN mkdir -p data
-
-# Correr pipeline inicial al buildear (opcional; Railway puede hacerlo en start)
-# RUN python scraper_pipeline.py
 
 # Puerto expuesto (Railway lo asigna via $PORT)
 EXPOSE 8000

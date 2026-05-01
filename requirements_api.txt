@@ -1,19 +1,17 @@
 # requirements_api.txt
 # Dependencias para api_server.py + scraper_pipeline.py
 # Instalar con: pip install -r requirements_api.txt
-#
-# Las dependencias originales del repo (requests, beautifulsoup4, pandas)
-# se mantienen en requirements.txt — este archivo solo agrega lo nuevo.
 
-# API
-fastapi>=0.111.0
-uvicorn[standard]>=0.29.0
+# API (versiones fijas para evitar incompatibilidades)
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Archivos estaticos — REQUERIDO por FastAPI StaticFiles
+aiofiles>=23.2.1
 
 # Scraping robusto
-lxml>=5.2.0
+lxml==5.2.1
 html5lib>=1.1
 
 # Manejo de fechas (para pipeline)
 python-dateutil>=2.9.0
-# Archivos estáticos (requerido por FastAPI StaticFiles)
-aiofiles>=23.2.1

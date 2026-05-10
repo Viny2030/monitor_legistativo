@@ -172,266 +172,34 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
 </footer>
 
 <script>
-// DIPUTADOS:START
-const DIPUTADOS = [
-  {nombre:"Agüero, Guillermo César",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029",genero:"M"},
-  {nombre:"Aguirre, Hilda",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Ajmechet, Sabrina",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Alí, Ernesto \"Pipi\"",distrito:"SAN LUIS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Almena, Carlos Alberto",distrito:"SAN LUIS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Almirón, Lisandro",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Álvarez, Claudio",distrito:"SAN LUIS",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Andino, Cristian",distrito:"SAN JUAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Andrade, Javier",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Andreussi, Barbara",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Ansaloni, Pablo",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Arabia, Damián",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Araujo Hernández, Jorge Neri",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Ardohain, Martín",distrito:"LA PAMPA",bloque:"PRO",mandato:"2023-2027",genero:"I"},
-  {nombre:"Arrieta, Lourdes Micaela",distrito:"MENDOZA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Arrúa, Alberto",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Aveiro, Martín",distrito:"MENDOZA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Avico, Belén",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Avila, Fernanda",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Avila, Jorge Antonio",distrito:"CHUBUT",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Banfi, Karina",distrito:"BUENOS AIRES",bloque:"ADELANTE BUENOS AIRES",mandato:"2023-2027",genero:"F"},
-  {nombre:"Barbur, Marcelo",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Basterra, Luis Eugenio",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Basualdo, Atilio",distrito:"FORMOSA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Basualdo, Carolina",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"F"},
-  {nombre:"Becerra, Mónica",distrito:"SAN LUIS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Benedit, Beltrán",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Benegas Lynch, Bertie",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Bianchetti, Emmanuel",distrito:"MISIONES",bloque:"PRO",mandato:"2023-2027",genero:"M"},
-  {nombre:"Biella, Bernardo",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2025-2029",genero:"M"},
-  {nombre:"Bonacci, Rocío",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Bongiovanni, Alejandro",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Bordet, Gustavo",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Borgatta, Alejandrina",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Bornoroni, Gabriel",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Bregman, Myriam",distrito:"CIUDAD DE BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029",genero:"I"},
-  {nombre:"Brizuela, Adrián",distrito:"CATAMARCA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Brügge, Juan Fernando",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Bruno, Eliana",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Cafiero, Santiago",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Campero, Mariano",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Campitelli, Celia",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Campo, Julieta Marisol",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Cámpora, Lucía",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Capozzi, Sergio Eduardo",distrito:"RIO NEGRO",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"M"},
-  {nombre:"Carignano, Florencia",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Carrancio, Alejandro",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Casas, Sergio Guillermo",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Castagneto, Carlos Daniel",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Castelnuovo, Giselle",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Chica, Jorge",distrito:"SAN JUAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Chiconi, Abel",distrito:"SAN JUAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Cipolini, Gerardo",distrito:"CHACO",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Cisneros, Carlos",distrito:"TUCUMAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Coletta, Mariela",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"F"},
-  {nombre:"Correa Llano, Facundo",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Daives, Ricardo",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"de Andreis, Fernando",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2025-2029",genero:"M"},
-  {nombre:"de la Rosa, María Graciela",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"de la Sota, Natalia",distrito:"CORDOBA",bloque:"DEFENDAMOS CÓRDOBA",mandato:"2025-2029",genero:"F"},
-  {nombre:"De Sensi, María Florencia",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029",genero:"F"},
-  {nombre:"del Caño, Nicolás",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029",genero:"I"},
-  {nombre:"Del Plá, Romina",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2025-2029",genero:"F"},
-  {nombre:"Díaz, Fernanda",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Diez, Romina",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Dolce, Sergio",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Emma, Nicolás",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Estévez, Gabriela Beatriz",distrito:"CORDOBA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Falcone, Eduardo",distrito:"BUENOS AIRES",bloque:"MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",mandato:"2023-2027",genero:"M"},
-  {nombre:"Fargosi, Alejandro",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Farías, Pablo",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"M"},
-  {nombre:"Félix, Emir",distrito:"MENDOZA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Fernández, Jorge",distrito:"SAN LUIS",bloque:"PRIMERO SAN LUIS",mandato:"2025-2029",genero:"I"},
-  {nombre:"Fernández, Elia Marina",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Fernández Molero, Daiana",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2023-2027",genero:"F"},
-  {nombre:"Ferrán, Abelardo",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Ferraro, Maximiliano",distrito:"CIUDAD DE BUENOS AIRES",bloque:"COALICION CIVICA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Ferreyra, Alida",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Figliuolo, Sergio",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Finocchiaro, Alejandro",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029",genero:"M"},
-  {nombre:"Flores, Maria Gabriela",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Frade, Mónica",distrito:"BUENOS AIRES",bloque:"COALICION CIVICA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Fregonese, Alicia",distrito:"ENTRE RIOS",bloque:"PRO",mandato:"2025-2029",genero:"F"},
-  {nombre:"Freites, Andrea",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Frias, Maira",distrito:"CHUBUT",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Gallardo, María Virginia",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Galmarini, Sebastián",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"García, Álvaro",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"García, María Teresa",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"García, Carlos",distrito:"CHACO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"García Aresca, Ignacio",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"M"},
-  {nombre:"Garrido, José Luis",distrito:"SANTA CRUZ",bloque:"POR SANTA CRUZ",mandato:"2023-2027",genero:"I"},
-  {nombre:"Giampieri, Antonela",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2025-2029",genero:"F"},
-  {nombre:"Giudici, Silvana",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Giuliano, Diego A.",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Glinski, José",distrito:"CHUBUT",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Goitia, Rosario",distrito:"CHACO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Gomez, José",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Gonzales, Alfredo",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"González, Diógenes Ignacio",distrito:"CORRIENTES",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029",genero:"I"},
-  {nombre:"González, Álvaro",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PRO",mandato:"2023-2027",genero:"M"},
-  {nombre:"González, Gerardo Gustavo",distrito:"FORMOSA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"González Estevarena, María Luisa",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Grabois, Juan",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Gruber, Maura",distrito:"MISIONES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Gutiérrez, Ramiro",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Gutiérrez, Carlos",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"M"},
-  {nombre:"Guzmán, Jairo",distrito:"SANTA CRUZ",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Hadad, Raúl",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Hagman, Itai",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Hartfield, Diego",distrito:"MISIONES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Herrera, Oscar",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2025-2029",genero:"M"},
-  {nombre:"Holzman, Patricia",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Huesen, Gerardo",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Humenuk, Gladys",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Ianni, Ana María",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Ibañez, María Cecilia",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Jaime Quiroga, Carlos Gustavo",distrito:"SAN JUAN",bloque:"PRODUCCION Y TRABAJO",mandato:"2025-2029",genero:"M"},
-  {nombre:"Juliano, Pablo",distrito:"BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"M"},
-  {nombre:"Kirchner, Máximo Carlos",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Lanesan Sancho, Moira",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Laumann, Andrés Ariel",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Leiva, Aldo",distrito:"CHACO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Lemoine, Lilia",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Leone, Andrés",distrito:"CIUDAD DE BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Llano, Mercedes",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Lluch, Enrique",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Longo, Johanna Sabrina",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"López, Jimena",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"López Pasquali, Cecilia",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Lousteau, Martín",distrito:"CIUDAD DE BUENOS AIRES",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"I"},
-  {nombre:"Luque, Juan Pablo",distrito:"CHUBUT",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Macyszyn, Lorena",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Mango, Marcelo",distrito:"RIO NEGRO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Manrique, Mario",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Marclay, Marianela",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Marín, Varinia Lis",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Marino, Juan",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Martínez, Germán Pedro",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Martínez, Álvaro",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Massot, Nicolás",distrito:"BUENOS AIRES",bloque:"ENCUENTRO FEDERAL",mandato:"2023-2027",genero:"I"},
-  {nombre:"Maureira, Karina",distrito:"NEUQUEN",bloque:"LA NEUQUINIDAD",mandato:"2025-2029",genero:"F"},
-  {nombre:"Mayoraz, Nicolás",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Medina, Gladys",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Menem, Martín",distrito:"LA RIOJA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Metral Asensio, Julieta",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Michel, Guillermo",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Miño, Fernanda",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Molina, Juan Carlos",distrito:"SANTA CRUZ",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Molinuevo, Soledad",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Molle, Matías",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Mondaca, Soledad",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Monguillot, Fernando",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Montenegro, Juan Pablo",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Montenegro, Guillermo",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Monzón, Roxana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Morchio, Francisco",distrito:"ENTRE RIOS",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Moreau, Cecilia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Moreno Ovalle, Julio",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Moyano, Hugo Antonio",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Mukdise, Jorge",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Muñoz, Gabriela Luciana",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Neder, Estela Mary",distrito:"SANTIAGO DEL ESTERO",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Nieri, Lisandro",distrito:"MENDOZA",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Niveyro, Miriam",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Nóblega, Sebastián",distrito:"CATAMARCA",bloque:"ELIJO CATAMARCA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Noguera, Javier",distrito:"TUCUMAN",bloque:"INDEPENDENCIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Nuñez, José",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Ojeda, Joaquín",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Olmos, Kelly",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Osuna, Blanca Inés",distrito:"ENTRE RIOS",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Outes, Pablo",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Pagano, Marcela Marina",distrito:"BUENOS AIRES",bloque:"COHERENCIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Palazzo, Sergio Omar",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Palladino, Claudia María",distrito:"CATAMARCA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Pareja, Sebastián",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Parola, María Graciela",distrito:"FORMOSA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Patiño Brizuela, Marcos",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Pauli, Santiago",distrito:"TIERRA DEL FUEGO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Paulón, Esteban",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Pedrali, Gabriela",distrito:"LA RIOJA",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Pellegrini, Agustín",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Pelli, Federico Agustín",distrito:"TUCUMAN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Peluc, José",distrito:"SAN JUAN",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Penacca, Paula Andrea",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Petri, Luis",distrito:"MENDOZA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Petrovich, María Lorena",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Picat, Luis Albino",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Pichetto, Miguel Ángel",distrito:"BUENOS AIRES",bloque:"ENCUENTRO FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Picón Martínez, Nancy Viviana",distrito:"SAN JUAN",bloque:"PRODUCCION Y TRABAJO",mandato:"2023-2027",genero:"I"},
-  {nombre:"Pietragalla Corti, Horacio",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Pitrola, Nestor",distrito:"BUENOS AIRES",bloque:"FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",mandato:"2023-2027",genero:"I"},
-  {nombre:"Pokoik, Lorena",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Ponce, María Celeste",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Potenza, Luciana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Propato, Agustina Lucrecia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Quintar, Manuel",distrito:"JUJUY",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Rauschenberger, Ariel",distrito:"LA PAMPA",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Ravera, Valentina",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Ravier, Adrián",distrito:"LA PAMPA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Razzini, Verónica",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Reichardt, Karen",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Riesco, Gastón",distrito:"NEUQUEN",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Ritondo, Cristian A.",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2023-2027",genero:"I"},
-  {nombre:"Rizzotti, Jorge",distrito:"JUJUY",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"I"},
-  {nombre:"Roberto, Santiago Luis",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Roca, Gonzalo",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Rodríguez, Miguel",distrito:"TIERRA DEL FUEGO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Rodríguez Machado, Laura Elena",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Rossi, Agustín Oscar",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Ruíz, Yamila",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"F"},
-  {nombre:"Salzmann, Marina Dorotea",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Sánchez Wrba, Javier",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2025-2029",genero:"M"},
-  {nombre:"Sand, Nancy",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Santillán Juárez Brahim, Juliana",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Santurio, Santiago",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Scaglia, Gisela",distrito:"SANTA FE",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"F"},
-  {nombre:"Schiaretti, Juan",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"I"},
-  {nombre:"Schneider, Darío",distrito:"ENTRE RIOS",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029",genero:"M"},
-  {nombre:"Selva, Sabrina",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Serquis, Adriana Cristina",distrito:"RIO NEGRO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Siley, Vanesa Raquel",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Snopek, Guillermo",distrito:"JUJUY",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Soldano, Laura",distrito:"CORDOBA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Strada, Julia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Taiana, Jorge",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Tailhade, Rodolfo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Tepp, Caren",distrito:"SANTA FE",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Tita, Paulo Agustín",distrito:"TIERRA DEL FUEGO",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Todero, Pablo",distrito:"NEUQUEN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Tolosa Paz, Victoria",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Tomassoni, Yamile",distrito:"SANTA FE",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Torres, Rubén Darío",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Torres, Alejandra",distrito:"CORDOBA",bloque:"PROVINCIAS UNIDAS",mandato:"2023-2027",genero:"F"},
-  {nombre:"Tortoriello, Aníbal",distrito:"RIO NEGRO",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Tournier, José Federico",distrito:"CORRIENTES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"I"},
-  {nombre:"Treffinger, César",distrito:"CHUBUT",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Trotta, Nicolás Alfredo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Urien, Hernán",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Valdés, Eduardo Félix",distrito:"CIUDAD DE BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Vancsik, Daniel",distrito:"MISIONES",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"M"},
-  {nombre:"Vásquez, Patricia",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Vega, Yolanda",distrito:"SALTA",bloque:"INNOVACIÓN FEDERAL",mandato:"2023-2027",genero:"F"},
-  {nombre:"Velázquez, M. Elena",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"I"},
-  {nombre:"Vera, Andrea Fernanda",distrito:"BUENOS AIRES",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"F"},
-  {nombre:"Verasay, Pamela Fernanda",distrito:"MENDOZA",bloque:"UCR - UNIÓN CÍVICA RADICAL",mandato:"2025-2029",genero:"F"},
-  {nombre:"Villaverde, Lorena",distrito:"RIO NEGRO",bloque:"LA LIBERTAD AVANZA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Visconti, Gino",distrito:"LA RIOJA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Volnovich, Luana",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Yasky, Hugo",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Yedlin, Pablo Raúl",distrito:"TUCUMAN",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"M"},
-  {nombre:"Yeza, Martín",distrito:"BUENOS AIRES",bloque:"PRO",mandato:"2023-2027",genero:"I"},
-  {nombre:"Zago, Oscar",distrito:"CIUDAD DE BUENOS AIRES",bloque:"MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",mandato:"2023-2027",genero:"M"},
-  {nombre:"Zapata, Carlos Raúl",distrito:"SALTA",bloque:"LA LIBERTAD AVANZA",mandato:"2025-2029",genero:"M"},
-  {nombre:"Zaracho, Natalia",distrito:"BUENOS AIRES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"F"},
-  {nombre:"Zigarán, María Inés",distrito:"JUJUY",bloque:"PROVINCIAS UNIDAS",mandato:"2025-2029",genero:"F"},
-  {nombre:"Zulli, Christian Alejandro",distrito:"CORRIENTES",bloque:"UNIÓN POR LA PATRIA",mandato:"2023-2027",genero:"I"}
-];
+// DIPUTADOS:START — datos desde API
+let DIPUTADOS = [];
+let _bloques = {};
+let _total = 0;
+let _NEP_CAMARA = "—";
+
+async function cargarDiputados() {
+  try {
+    const resp = await fetch('/api/diputados', {headers: {'Accept': 'application/json'}});
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const ct = resp.headers.get('content-type') || '';
+    if (!ct.includes('json')) throw new Error('No JSON: ' + ct);
+    const data = await resp.json();
+    DIPUTADOS = (data.diputados || []).map(d => ({
+      nombre:   d.nombre,
+      distrito: d.distrito,
+      bloque:   d.bloque,
+      mandato:  d.mandato_hasta || d.mandato || '—',
+      genero:   d.genero || 'I',
+      asistencia_pct:        d.asistencia_pct,
+      proyectos_presentados: d.proyectos_presentados,
+      proyectos_aprobados:   d.proyectos_aprobados,
+      iqp:                   d.iqp,
+    }));
+  } catch(e) {
+    console.warn('API no disponible:', e);
+  }
+}
 // DIPUTADOS:END
 
 function colorBloque(b) {
@@ -458,27 +226,16 @@ function inicialesAvatar(nombre) {
   return (a + n).toUpperCase();
 }
 
-// Poblar selects
-const bloquesU   = [...new Set(DIPUTADOS.map(d => d.bloque))].sort();
-const distritosU = [...new Set(DIPUTADOS.map(d => d.distrito))].sort();
-const selBloque   = document.getElementById('sel-bloque');
-const selDistrito = document.getElementById('sel-distrito');
-bloquesU.forEach(b   => { const o = document.createElement('option'); o.value = b; o.textContent = b; selBloque.appendChild(o); });
-distritosU.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; selDistrito.appendChild(o); });
 
-// Calcular NEP del bloque de cada diputado (indicador activo v1.0)
-const total = DIPUTADOS.length;
-const bloques = {};
-DIPUTADOS.forEach(d => { bloques[d.bloque] = (bloques[d.bloque] || 0) + 1; });
-const sumPi2 = Object.values(bloques).reduce((s, n) => s + (n / total) ** 2, 0);
-const NEP_CAMARA = (1 / sumPi2).toFixed(2);
+
+// NEP calculado en inicializar()
 
 function cardHTML(d, idx) {
   const col      = colorBloque(d.bloque);
   const inic     = inicialesAvatar(d.nombre);
   const esMand29 = d.mandato === '2025-2029';
-  const blqN     = bloques[d.bloque] || 0;
-  const blqPct   = ((blqN / total) * 100).toFixed(1);
+  const blqN     = _bloques[d.bloque] || 0;
+  const blqPct   = _total > 0 ? ((blqN / _total) * 100).toFixed(1) : "0";
   const urlPerfil = `https://www.diputados.gov.ar/diputados/`;
 
   return `<div class="dip-card">
@@ -500,12 +257,12 @@ function cardHTML(d, idx) {
       <div class="dip-indicadores">
         <div class="dip-ind">
           <div class="di-code">NEP</div>
-          <div class="di-val">${NEP_CAMARA}</div>
+          <div class="di-val">${_NEP_CAMARA}</div>
           <div class="di-label">fragmentación <span class="tag-act">✓</span></div>
         </div>
         <div class="dip-ind">
           <div class="di-code">NAPE</div>
-          <div class="di-val">27%</div>
+          <div class="di-val">${d.asistencia_pct != null ? d.asistencia_pct.toFixed(0) + "%" : "—"}</div>
           <div class="di-label">asistencia <span class="tag-act">✓</span></div>
         </div>
         <div class="dip-ind">
@@ -557,10 +314,10 @@ function filaHTML(d, idx) {
     <td style="font-size:.78rem">${d.distrito}</td>
     <td><span style="background:${col};color:#fff;padding:.12rem .45rem;border-radius:10px;font-size:.68rem;font-weight:700">${d.bloque}</span></td>
     <td class="num" style="font-weight:700;color:${d.mandato==='2025-2029'?'#15803d':'#475569'}">${d.mandato}</td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
-    <td class="num"><span style="color:#94a3b8;font-size:.72rem">—</span></td>
+    <td class="num">${d.asistencia_pct != null ? d.asistencia_pct.toFixed(0)+"%" : "—"}</td>
+    <td class="num">${d.proyectos_presentados != null ? d.proyectos_presentados : "—"}</td>
+    <td class="num">${d.proyectos_aprobados != null ? d.proyectos_aprobados : "—"}</td>
+    <td class="num">${d.iqp != null ? (d.iqp*100).toFixed(0)+"%" : "—"}</td>
   </tr>`;
 }
 
@@ -581,7 +338,7 @@ function renderizar(lista) {
 
   // Contador
   document.getElementById('count-badge').textContent =
-    lista.length === DIPUTADOS.length ? `${lista.length} diputados` : `${lista.length} de ${DIPUTADOS.length}`;
+    `${lista.length}${lista.length < DIPUTADOS.length ? " de " + DIPUTADOS.length : ""} diputados`;
 }
 
 function filtrar() {
@@ -606,9 +363,31 @@ function setVista(v) {
   document.getElementById('btn-lista').classList.toggle('activo', v === 'lista');
 }
 
-// Render inicial ordenado alfabéticamente
-const ordenado = [...DIPUTADOS].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-renderizar(ordenado);
+// Inicializar: cargar API luego renderizar
+async function inicializar() {
+  await cargarDiputados();
+
+  // Calcular NEP con datos reales
+  _total = DIPUTADOS.length;
+  DIPUTADOS.forEach(d => { _bloques[d.bloque] = (_bloques[d.bloque] || 0) + 1; });
+  const _sumPi2 = Object.values(_bloques).reduce((s, n) => s + (n / _total) ** 2, 0);
+  _NEP_CAMARA = _total > 0 ? (1 / _sumPi2).toFixed(2) : "—";
+
+  // Poblar selects
+  const bloquesU   = [...new Set(DIPUTADOS.map(d => d.bloque))].sort();
+  const distritosU = [...new Set(DIPUTADOS.map(d => d.distrito))].sort();
+  const selBloque   = document.getElementById('sel-bloque');
+  const selDistrito = document.getElementById('sel-distrito');
+  selBloque.innerHTML   = '<option value="">Todos los bloques</option>';
+  selDistrito.innerHTML = '<option value="">Todos los distritos</option>';
+  bloquesU.forEach(b => { const o = document.createElement('option'); o.value=b; o.textContent=b; selBloque.appendChild(o); });
+  distritosU.forEach(d => { const o = document.createElement('option'); o.value=d; o.textContent=d; selDistrito.appendChild(o); });
+
+  const ordenado = [...DIPUTADOS].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+  renderizar(ordenado);
+}
+
+inicializar();
 </script>
 </body>
 </html>

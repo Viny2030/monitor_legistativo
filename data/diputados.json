@@ -1,6 +1,7 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-04-05T12:44:27.304660"
+    "ultima_actualizacion": "2026-05-10T17:54:53.412600",
+    "fuente_asistencia": "indicadores_votacion.csv (HCDN votaciones)"
   },
   "diputados": [
     {
@@ -9,10 +10,12 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Aguirre, Hilda",
@@ -20,11 +23,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 24,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ajmechet, Sabrina",
@@ -32,11 +37,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 37,
-      "proyectos_aprobados": 10,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Alí, Ernesto \"Pipi\"",
@@ -44,10 +51,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Almena, Carlos Alberto",
@@ -55,10 +64,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Almirón, Lisandro",
@@ -66,10 +77,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Álvarez, Claudio",
@@ -77,10 +90,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 11,
+      "iqp": 0.2821,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Andino, Cristian",
@@ -88,10 +103,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Andrade, Javier",
@@ -99,10 +116,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Andreussi, Barbara",
@@ -110,10 +129,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ansaloni, Pablo",
@@ -121,11 +142,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Arabia, Damián",
@@ -133,11 +156,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 30,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Araujo Hernández, Jorge Neri",
@@ -145,10 +170,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ardohain, Martín",
@@ -156,11 +183,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 20,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Arrieta, Lourdes Micaela",
@@ -168,11 +197,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 21,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 5,
+      "iqp": 0.1667,
+      "nape": 1.0,
+      "bipartisanship": 92.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Arrúa, Alberto",
@@ -180,10 +211,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Aveiro, Martín",
@@ -191,11 +224,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 35,
-      "proyectos_aprobados": 15,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0645,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Avico, Belén",
@@ -203,11 +238,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Avila, Fernanda",
@@ -215,11 +252,13 @@
       "bloque": "ELIJO CATAMARCA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 23,
-      "proyectos_aprobados": 11,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 8,
+      "iqp": 0.2,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Avila, Jorge Antonio",
@@ -227,11 +266,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 23,
-      "proyectos_aprobados": 11,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.069,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Banfi, Karina",
@@ -239,11 +280,13 @@
       "bloque": "ADELANTE BUENOS AIRES",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 49,
-      "proyectos_aprobados": 16,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 34,
+      "iqp": 0.9189,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Barbur, Marcelo",
@@ -251,10 +294,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Basterra, Luis Eugenio",
@@ -262,11 +307,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Basualdo, Atilio",
@@ -274,10 +321,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Basualdo, Carolina",
@@ -285,10 +334,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 25,
+      "iqp": 0.7143,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Becerra, Mónica",
@@ -296,10 +347,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Benedit, Beltrán",
@@ -307,11 +360,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Benegas Lynch, Bertie",
@@ -319,11 +374,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bianchetti, Emmanuel",
@@ -331,11 +388,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 15,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Biella, Bernardo",
@@ -343,10 +402,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9231,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bonacci, Rocío",
@@ -354,11 +415,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bongiovanni, Alejandro",
@@ -366,11 +429,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bordet, Gustavo",
@@ -378,11 +443,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Borgatta, Alejandrina",
@@ -390,10 +457,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bornoroni, Gabriel",
@@ -401,11 +470,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bregman, Myriam",
@@ -413,10 +484,12 @@
       "bloque": "FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 4,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Brizuela, Adrián",
@@ -424,10 +497,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Brügge, Juan Fernando",
@@ -435,11 +510,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1176,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Bruno, Eliana",
@@ -447,10 +524,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Cafiero, Santiago",
@@ -458,11 +537,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 9,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Campero, Mariano",
@@ -470,11 +551,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Campitelli, Celia",
@@ -482,11 +565,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 12,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Campo, Julieta Marisol",
@@ -494,10 +579,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Cámpora, Lucía",
@@ -505,10 +592,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Capozzi, Sergio Eduardo",
@@ -516,11 +605,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 27,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 30,
+      "iqp": 0.9677,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Carignano, Florencia",
@@ -528,11 +619,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 39,
-      "proyectos_aprobados": 16,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Carrancio, Alejandro",
@@ -540,10 +633,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Casas, Sergio Guillermo",
@@ -551,11 +646,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.25,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Castagneto, Carlos Daniel",
@@ -563,11 +660,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 65,
-      "proyectos_aprobados": 50,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Castelnuovo, Giselle",
@@ -575,10 +674,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Chica, Jorge",
@@ -586,11 +687,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 66,
-      "proyectos_aprobados": 12,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Chiconi, Abel",
@@ -598,10 +701,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Cipolini, Gerardo",
@@ -609,11 +714,13 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 19,
-      "proyectos_aprobados": 10,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9474,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Cisneros, Carlos",
@@ -621,11 +728,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0811,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Coletta, Mariela",
@@ -633,11 +742,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 18,
+      "iqp": 0.5806,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Correa Llano, Facundo",
@@ -645,11 +756,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Daives, Ricardo",
@@ -657,11 +770,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0645,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "de Andreis, Fernando",
@@ -669,10 +784,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9474,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "de la Rosa, María Graciela",
@@ -680,10 +797,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "de la Sota, Natalia",
@@ -691,11 +810,13 @@
       "bloque": "DEFENDAMOS CÓRDOBA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 13,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "De Sensi, María Florencia",
@@ -703,11 +824,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "del Caño, Nicolás",
@@ -715,11 +838,13 @@
       "bloque": "FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Del Plá, Romina",
@@ -727,10 +852,12 @@
       "bloque": "FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Díaz, Fernanda",
@@ -738,10 +865,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Diez, Romina",
@@ -749,11 +878,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Dolce, Sergio",
@@ -761,10 +892,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Emma, Nicolás",
@@ -772,11 +905,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Estévez, Gabriela Beatriz",
@@ -784,10 +919,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Falcone, Eduardo",
@@ -795,11 +932,13 @@
       "bloque": "MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 34,
+      "iqp": 0.9714,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Fargosi, Alejandro",
@@ -807,10 +946,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Farías, Pablo",
@@ -818,10 +959,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0938,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Félix, Emir",
@@ -829,10 +972,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1379,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Fernández, Jorge",
@@ -840,10 +985,12 @@
       "bloque": "PRIMERO SAN LUIS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1053,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Fernández, Elia Marina",
@@ -851,10 +998,12 @@
       "bloque": "INDEPENDENCIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.925,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Fernández Molero, Daiana",
@@ -862,10 +1011,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 34,
+      "iqp": 0.9444,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ferrán, Abelardo",
@@ -873,10 +1024,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ferraro, Maximiliano",
@@ -884,11 +1037,13 @@
       "bloque": "COALICION CIVICA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 64,
-      "proyectos_aprobados": 35,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 14,
+      "iqp": 0.4667,
+      "nape": 1.0,
+      "bipartisanship": 95.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ferreyra, Alida",
@@ -896,11 +1051,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Figliuolo, Sergio",
@@ -908,10 +1065,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Finocchiaro, Alejandro",
@@ -919,11 +1078,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Flores, Maria Gabriela",
@@ -931,10 +1092,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Frade, Mónica",
@@ -942,11 +1105,13 @@
       "bloque": "COALICION CIVICA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 45,
-      "proyectos_aprobados": 19,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0938,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Fregonese, Alicia",
@@ -954,10 +1119,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Freites, Andrea",
@@ -965,11 +1132,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
+      "asistencia_pct": 100.0,
       "proyectos_presentados": 40,
-      "proyectos_aprobados": 8,
-      "iqp": null,
-      "nape": 1.0
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Frias, Maira",
@@ -977,10 +1146,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gallardo, María Virginia",
@@ -988,10 +1159,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Galmarini, Sebastián",
@@ -999,10 +1172,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 2,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "García, Álvaro",
@@ -1010,11 +1185,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "García, María Teresa",
@@ -1022,11 +1199,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "García, Carlos",
@@ -1034,11 +1213,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "García Aresca, Ignacio",
@@ -1046,11 +1227,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.4286,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Garrido, José Luis",
@@ -1058,11 +1241,13 @@
       "bloque": "POR SANTA CRUZ",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 14,
-      "proyectos_aprobados": 11,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Giampieri, Antonela",
@@ -1070,10 +1255,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Giudici, Silvana",
@@ -1081,11 +1268,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 70,
-      "proyectos_aprobados": 28,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Giuliano, Diego A.",
@@ -1093,11 +1282,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 16,
-      "proyectos_aprobados": 10,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Glinski, José",
@@ -1105,11 +1296,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 9,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Goitia, Rosario",
@@ -1117,10 +1310,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gomez, José",
@@ -1128,11 +1323,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0968,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gonzales, Alfredo",
@@ -1140,10 +1337,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "González, Diógenes Ignacio",
@@ -1151,10 +1350,12 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9231,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "González, Álvaro",
@@ -1162,10 +1363,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 30,
+      "iqp": 0.9677,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "González, Gerardo Gustavo",
@@ -1173,10 +1376,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 30,
+      "iqp": 0.9677,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "González Estevarena, María Luisa",
@@ -1184,10 +1389,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Grabois, Juan",
@@ -1195,10 +1402,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gruber, Maura",
@@ -1206,10 +1415,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gutiérrez, Ramiro",
@@ -1217,10 +1428,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Gutiérrez, Carlos",
@@ -1228,10 +1441,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 24,
+      "iqp": 0.7059,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Guzmán, Jairo",
@@ -1239,10 +1454,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Hadad, Raúl",
@@ -1250,10 +1467,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Hagman, Itai",
@@ -1261,11 +1480,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 12,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Hartfield, Diego",
@@ -1273,10 +1494,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Herrera, Oscar",
@@ -1284,10 +1507,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 23,
-      "proyectos_aprobados": 10,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Holzman, Patricia",
@@ -1295,10 +1520,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Huesen, Gerardo",
@@ -1306,11 +1533,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Humenuk, Gladys",
@@ -1318,10 +1547,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ianni, Ana María",
@@ -1329,11 +1560,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 112,
-      "proyectos_aprobados": 8,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ibañez, María Cecilia",
@@ -1341,11 +1574,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Jaime Quiroga, Carlos Gustavo",
@@ -1353,10 +1588,12 @@
       "bloque": "PRODUCCION Y TRABAJO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9474,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Juliano, Pablo",
@@ -1364,11 +1601,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 69,
-      "proyectos_aprobados": 16,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1176,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Kirchner, Máximo Carlos",
@@ -1376,11 +1615,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Lanesan Sancho, Moira",
@@ -1388,10 +1629,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Laumann, Andrés Ariel",
@@ -1399,10 +1642,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Leiva, Aldo",
@@ -1410,11 +1655,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 14,
-      "proyectos_aprobados": 9,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Lemoine, Lilia",
@@ -1422,11 +1669,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Leone, Andrés",
@@ -1434,10 +1683,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Llano, Mercedes",
@@ -1445,11 +1696,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 15,
-      "proyectos_aprobados": 10,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Lluch, Enrique",
@@ -1457,10 +1710,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Longo, Johanna Sabrina",
@@ -1468,10 +1723,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "López, Jimena",
@@ -1479,10 +1736,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "López Pasquali, Cecilia",
@@ -1490,10 +1749,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Lousteau, Martín",
@@ -1501,10 +1762,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 18,
+      "iqp": 0.5625,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Luque, Juan Pablo",
@@ -1512,10 +1775,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": 3,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Macyszyn, Lorena",
@@ -1523,11 +1788,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Mango, Marcelo",
@@ -1535,10 +1802,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 2,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Manrique, Mario",
@@ -1546,11 +1815,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0789,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Marclay, Marianela",
@@ -1558,10 +1829,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Marín, Varinia Lis",
@@ -1569,11 +1842,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Marino, Juan",
@@ -1581,11 +1856,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 27,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Martínez, Álvaro",
@@ -1593,11 +1870,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Martínez, Germán Pedro",
@@ -1605,11 +1884,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Massot, Nicolás",
@@ -1617,10 +1898,12 @@
       "bloque": "ENCUENTRO FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
       "proyectos_aprobados": 2,
-      "iqp": null
+      "iqp": 0.0556,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Maureira, Karina",
@@ -1628,10 +1911,12 @@
       "bloque": "LA NEUQUINIDAD",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 31,
+      "iqp": 0.775,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Mayoraz, Nicolás",
@@ -1639,11 +1924,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Medina, Gladys",
@@ -1651,11 +1938,13 @@
       "bloque": "INDEPENDENCIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 12,
-      "proyectos_aprobados": 11,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.925,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Menem, Martín",
@@ -1663,11 +1952,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 0,
+      "iqp": 0.0,
+      "nape": 1.0,
+      "bipartisanship": 0.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Metral Asensio, Julieta",
@@ -1675,10 +1966,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Michel, Guillermo",
@@ -1686,10 +1979,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 8,
-      "proyectos_aprobados": 7,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Miño, Fernanda",
@@ -1697,10 +1992,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Molina, Juan Carlos",
@@ -1708,10 +2005,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Molinuevo, Soledad",
@@ -1719,10 +2018,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Molle, Matías",
@@ -1730,11 +2031,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Mondaca, Soledad",
@@ -1742,10 +2045,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Monguillot, Fernando",
@@ -1753,10 +2058,12 @@
       "bloque": "ELIJO CATAMARCA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 8,
+      "iqp": 0.2,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Montenegro, Juan Pablo",
@@ -1764,11 +2071,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 19,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Montenegro, Guillermo",
@@ -1776,11 +2085,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 19,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Monzón, Roxana",
@@ -1788,10 +2099,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0811,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Morchio, Francisco",
@@ -1799,11 +2112,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 20,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Moreau, Cecilia",
@@ -1811,11 +2126,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 34,
-      "proyectos_aprobados": 10,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Moreno Ovalle, Julio",
@@ -1823,11 +2140,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 8,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Moyano, Hugo Antonio",
@@ -1835,10 +2154,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 14,
-      "proyectos_aprobados": 2,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Mukdise, Jorge",
@@ -1846,10 +2167,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Muñoz, Gabriela Luciana",
@@ -1857,10 +2180,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Neder, Estela Mary",
@@ -1868,11 +2193,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Nieri, Lisandro",
@@ -1880,11 +2207,13 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Niveyro, Miriam",
@@ -1892,10 +2221,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Nóblega, Sebastián",
@@ -1903,10 +2234,12 @@
       "bloque": "ELIJO CATAMARCA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 8,
+      "iqp": 0.2,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Noguera, Javier",
@@ -1914,10 +2247,12 @@
       "bloque": "INDEPENDENCIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Nuñez, José",
@@ -1925,11 +2260,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 30,
+      "iqp": 0.9375,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ojeda, Joaquín",
@@ -1937,10 +2274,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Olmos, Kelly",
@@ -1948,10 +2287,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1026,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Osuna, Blanca Inés",
@@ -1959,11 +2300,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 72,
-      "proyectos_aprobados": 18,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Outes, Pablo",
@@ -1971,11 +2314,13 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pagano, Marcela Marina",
@@ -1983,11 +2328,13 @@
       "bloque": "COHERENCIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 73,
-      "proyectos_aprobados": 58,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 1,
+      "iqp": 0.0286,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Palazzo, Sergio Omar",
@@ -1995,11 +2342,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Palladino, Claudia María",
@@ -2007,10 +2356,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pareja, Sebastián",
@@ -2018,10 +2369,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Parola, María Graciela",
@@ -2029,11 +2382,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Patiño Brizuela, Marcos",
@@ -2041,10 +2396,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pauli, Santiago",
@@ -2052,11 +2409,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Paulón, Esteban",
@@ -2064,10 +2423,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1176,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pedrali, Gabriela",
@@ -2075,11 +2436,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pellegrini, Agustín",
@@ -2087,10 +2450,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pelli, Federico Agustín",
@@ -2098,10 +2463,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Peluc, José",
@@ -2109,11 +2476,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Penacca, Paula Andrea",
@@ -2121,11 +2490,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 9,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Petri, Luis",
@@ -2133,10 +2504,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Petrovich, María Lorena",
@@ -2144,10 +2517,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Picat, Luis Albino",
@@ -2155,11 +2530,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pichetto, Miguel Ángel",
@@ -2167,11 +2544,13 @@
       "bloque": "ENCUENTRO FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 9,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1212,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Picón Martínez, Nancy Viviana",
@@ -2179,10 +2558,12 @@
       "bloque": "PRODUCCION Y TRABAJO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pietragalla Corti, Horacio",
@@ -2190,10 +2571,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 2,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pitrola, Nestor",
@@ -2201,10 +2584,12 @@
       "bloque": "FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Pokoik, Lorena",
@@ -2212,11 +2597,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 48,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ponce, María Celeste",
@@ -2224,11 +2611,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Potenza, Luciana",
@@ -2236,11 +2625,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 7,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Propato, Agustina Lucrecia",
@@ -2248,11 +2639,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 247,
-      "proyectos_aprobados": 47,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 0.0513,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Quintar, Manuel",
@@ -2260,11 +2653,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Rauschenberger, Ariel",
@@ -2272,11 +2667,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 33,
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
       "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ravera, Valentina",
@@ -2284,10 +2681,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ravier, Adrián",
@@ -2295,10 +2694,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Razzini, Verónica",
@@ -2306,11 +2707,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Reichardt, Karen",
@@ -2318,10 +2721,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Riesco, Gastón",
@@ -2329,10 +2734,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ritondo, Cristian A.",
@@ -2340,11 +2747,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9737,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Rizzotti, Jorge",
@@ -2352,11 +2761,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 19,
+      "iqp": 0.5938,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Roberto, Santiago Luis",
@@ -2364,10 +2775,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Roca, Gonzalo",
@@ -2375,10 +2788,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Rodríguez, Miguel",
@@ -2386,11 +2801,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Rodríguez Machado, Laura Elena",
@@ -2398,11 +2815,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Rossi, Agustín Oscar",
@@ -2410,10 +2829,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 7,
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
       "proyectos_aprobados": 4,
-      "iqp": null
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Ruíz, Yamila",
@@ -2421,10 +2842,12 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Salzmann, Marina Dorotea",
@@ -2432,10 +2855,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Sánchez Wrba, Javier",
@@ -2443,10 +2868,12 @@
       "bloque": "PRO",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9474,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Sand, Nancy",
@@ -2454,11 +2881,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 22,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Santillán Juárez Brahim, Juliana",
@@ -2466,10 +2895,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Santurio, Santiago",
@@ -2477,11 +2908,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Scaglia, Gisela",
@@ -2489,10 +2922,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 29,
+      "iqp": 0.8788,
+      "bipartisanship": 95.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Schiaretti, Juan",
@@ -2500,10 +2935,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 77.5,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 2,
+      "iqp": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Schneider, Darío",
@@ -2511,10 +2948,12 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 36,
+      "iqp": 0.9474,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Selva, Sabrina",
@@ -2522,11 +2961,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 23,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Serquis, Adriana Cristina",
@@ -2534,10 +2975,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Siley, Vanesa Raquel",
@@ -2545,11 +2988,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Snopek, Guillermo",
@@ -2557,11 +3002,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0811,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Soldano, Laura",
@@ -2569,10 +3016,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Strada, Julia",
@@ -2580,11 +3029,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 28,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Taiana, Jorge",
@@ -2592,10 +3043,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tailhade, Rodolfo",
@@ -2603,11 +3056,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 3,
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
       "proyectos_aprobados": 1,
-      "iqp": null,
-      "nape": 1.0
+      "iqp": 0.0323,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tepp, Caren",
@@ -2615,10 +3070,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tita, Paulo Agustín",
@@ -2626,10 +3083,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": 0,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 1,
+      "iqp": 0.3333,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Todero, Pablo",
@@ -2637,11 +3096,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 30,
-      "proyectos_aprobados": 12,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tolosa Paz, Victoria",
@@ -2649,11 +3110,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 44,
-      "proyectos_aprobados": 16,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tomassoni, Yamile",
@@ -2661,10 +3124,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Torres, Rubén Darío",
@@ -2672,11 +3137,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Torres, Alejandra",
@@ -2684,11 +3151,13 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 10,
-      "proyectos_aprobados": 6,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.6,
+      "nape": 1.0,
+      "bipartisanship": 95.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tortoriello, Aníbal",
@@ -2696,11 +3165,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Tournier, José Federico",
@@ -2708,11 +3179,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Treffinger, César",
@@ -2720,11 +3193,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Trotta, Nicolás Alfredo",
@@ -2732,10 +3207,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": 1,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Urien, Hernán",
@@ -2743,10 +3220,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Valdés, Eduardo Félix",
@@ -2754,10 +3233,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Vancsik, Daniel",
@@ -2765,11 +3246,13 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 67,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Vásquez, Patricia",
@@ -2777,10 +3260,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Vega, Yolanda",
@@ -2788,11 +3273,13 @@
       "bloque": "INNOVACIÓN FEDERAL",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 48,
-      "proyectos_aprobados": 28,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.9744,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Velázquez, M. Elena",
@@ -2800,10 +3287,12 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Vera, Andrea Fernanda",
@@ -2811,11 +3300,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Verasay, Pamela Fernanda",
@@ -2823,11 +3314,13 @@
       "bloque": "UCR - UNIÓN CÍVICA RADICAL",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": 4,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Villaverde, Lorena",
@@ -2835,11 +3328,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 0,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Visconti, Gino",
@@ -2847,10 +3342,12 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 38,
+      "iqp": 0.95,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Volnovich, Luana",
@@ -2858,11 +3355,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Yasky, Hugo",
@@ -2870,11 +3369,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 49,
-      "proyectos_aprobados": 33,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Yedlin, Pablo Raúl",
@@ -2882,11 +3383,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 34,
-      "proyectos_aprobados": 7,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 4,
+      "iqp": 0.1,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Yeza, Martín",
@@ -2894,11 +3397,13 @@
       "bloque": "PRO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": 2,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9737,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Zago, Oscar",
@@ -2906,11 +3411,13 @@
       "bloque": "MID - MOVIMIENTO DE INTEGRACIÓN Y DESARROLLO",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": 3,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 34,
+      "iqp": 0.9714,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Zapata, Carlos Raúl",
@@ -2918,11 +3425,13 @@
       "bloque": "LA LIBERTAD AVANZA",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 8,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 37,
+      "iqp": 0.9487,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Zaracho, Natalia",
@@ -2930,11 +3439,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "F",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.075,
+      "nape": 1.0,
+      "bipartisanship": 100.0,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Zigarán, María Inés",
@@ -2942,10 +3453,12 @@
       "bloque": "PROVINCIAS UNIDAS",
       "mandato_hasta": "2025-2029",
       "genero": "M",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 18,
+      "iqp": 0.5625,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     },
     {
       "nombre": "Zulli, Christian Alejandro",
@@ -2953,11 +3466,13 @@
       "bloque": "UNIÓN POR LA PATRIA",
       "mandato_hasta": "2023-2027",
       "genero": "M",
-      "asistencia_pct": 0.0,
-      "proyectos_presentados": 12,
-      "proyectos_aprobados": 5,
-      "iqp": null,
-      "nape": 1.0
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 3,
+      "iqp": 0.0769,
+      "nape": 1.0,
+      "bipartisanship": 97.5,
+      "fuente_asistencia": "indicadores_votacion.csv"
     }
   ],
   "presupuesto": {

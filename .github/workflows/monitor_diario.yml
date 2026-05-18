@@ -36,7 +36,7 @@ jobs:
         run: python obtener_datos.py
 
       - name: Actualizar array DIPUTADOS en HTMLs
-        run: python scripts/actualizar_diputados.py
+        run: python actualizar_diputados.py
 
       - name: Commit y push
         run: |

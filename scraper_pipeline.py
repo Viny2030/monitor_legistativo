@@ -29,6 +29,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 from datetime import datetime
 
 import requests
@@ -44,6 +45,10 @@ TIMEOUT = 60  # el SIL es lento
 
 # Nombres femeninos frecuentes en Argentina para deteccion de genero
 # (fallback heuristico; el campo genero del scraper tiene prioridad)
+# NOTA (2026-06): lista ampliada tras detectar 59+ diputadas mal clasificadas
+# como "M" (ver auditoria de datos). Se agrega tambien una regla de sufijo
+# "-a" como red de contencion, con excepciones masculinas conocidas, en vez
+# de defaultear todo nombre desconocido a "M".
 _NOMBRES_F = {
     "maria", "ana", "laura", "sandra", "carolina", "andrea", "patricia",
     "monica", "claudia", "vanesa", "natalia", "silvana", "roxana", "graciela",
@@ -55,12 +60,41 @@ _NOMBRES_F = {
     "cintia", "noelia", "melisa", "valeria", "agustina", "micaela", "jimena",
     "antonella", "josefina", "belen", "pilar", "mercedes", "ines", "teresa",
     "nora", "alicia", "amanda", "esther", "estela", "amalia", "elvira",
-    "adelaida", "griselda", "alejandrina", "rebeca", "eugenia", "marta"
+    "adelaida", "griselda", "alejandrina", "rebeca", "eugenia", "marta",
+    # --- ampliacion 2026-06 ---
+    "hilda", "barbara", "fernanda", "eliana", "celia", "julieta", "mariela",
+    "daiana", "alida", "frida", "maira", "virginia", "antonela", "luisa",
+    "maura", "moira", "lilia", "johanna", "marianela", "varinia", "luciana",
+    "valentina", "gisela", "blanca", "isabel", "carmen", "raquel", "dolores",
+    "ximena", "yolanda", "viviana", "miriam", "perla", "noemi", "edith",
+    "delia", "felisa", "haydee", "zulema", "iris", "lidia", "leonor",
+    "magdalena", "antonia", "matilde", "angela", "constanza", "guadalupe",
+    "rocio", "milagros", "candela", "abril", "luna", "luz", "dalma",
+    "macarena", "araceli", "yael", "tamara", "vanina", "estefania", "daniela",
+    "camila", "carla", "diana", "elena", "emilia", "eva", "flavia",
+    "gimena", "ivana", "judith", "karen", "marisa", "marina", "miryam",
+    "olivia", "ornela", "renata", "sofia", "sol", "wanda", "yanina",
+    # --- ampliacion 2026-06 (segunda pasada, nombres con variantes/raros) ---
+    "myriam", "giselle", "caren", "kelly", "yamile", "lourdes", "nancy",
+    "rosario", "belen", "rocio", "veronica",
+}
+
+# Nombres masculinos que terminan en "-a" (excepciones a la regla de sufijo)
+_NOMBRES_M_EXCEPCION_A = {
+    "luca", "matias", "tobias", "elias", "isaias", "jonas", "nicolas",
+    "andres", "tomas", "lucas", "ezequiel",  # por si el split deja sufijos raros
 }
 
 
 def _detect_gender(nombre):
-    """Heuristica de genero por primer nombre. Devuelve 'F', 'M' o 'ND'."""
+    """Heuristica de genero por primer nombre. Devuelve 'F', 'M' o 'ND'.
+
+    Orden de prioridad:
+      1. Lista curada de nombres femeninos -> F
+      2. Lista de excepciones masculinas terminadas en "-a" -> M
+      3. Termina en "-a" (regla general en espanol) -> F
+      4. Default -> M
+    """
     parts = nombre.lower().split()
     if not parts:
         return "ND"
@@ -70,8 +104,17 @@ def _detect_gender(nombre):
         primer = after_comma[0] if after_comma else parts[0]
     else:
         primer = parts[0]
-    primer = re.sub(r"[^a-z]", "", primer)
-    if primer in _NOMBRES_F:
+    primer = re.sub(r"[^a-záéíóúñ]", "", primer)
+    primer_sin_tilde = (
+        unicodedata.normalize("NFKD", primer)
+        .encode("ascii", "ignore")
+        .decode("ascii")
+    )
+    if primer_sin_tilde in _NOMBRES_F:
+        return "F"
+    if primer_sin_tilde in _NOMBRES_M_EXCEPCION_A:
+        return "M"
+    if primer_sin_tilde.endswith("a"):
         return "F"
     return "M"
 

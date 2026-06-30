@@ -14,7 +14,7 @@ import os
 import csv
 from datetime import datetime
 
-DATA_DIR    = "../data"
+DATA_DIR    = "data"
 JSON_FILE   = os.path.join(DATA_DIR, "diputados.json")
 ASIST_CSV   = os.path.join(DATA_DIR, "indicadores_votacion.csv")
 

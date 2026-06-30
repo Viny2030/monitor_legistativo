@@ -5,7 +5,7 @@ __pycache__/
 *.pyo
 .env
 
-# Datos grandes (no versionar CSVs pesados, solo los pequeños de referencia)
+# Datos grandes (no versionar CSVs pesados, solo los pequenos de referencia)
 data/*.csv
 !data/.gitkeep
 
@@ -15,12 +15,13 @@ data/*.csv
 
 # macOS
 .DS_Store
-data/*.csv
 
 *.log
 
 tc.json
 
-.venv/
+# PDFs de referencia bibliografica (mover a Drive/Notion, no al repo de codigo)
+*.pdf
 
-__pycache__/
+# Scripts de bootstrap descargados, no son codigo propio
+get-pip.py

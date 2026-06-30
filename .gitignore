@@ -25,3 +25,6 @@ tc.json
 
 # Scripts de bootstrap descargados, no son codigo propio
 get-pip.py
+
+data/itc_resultado.json
+data/tpmp_resultado.json

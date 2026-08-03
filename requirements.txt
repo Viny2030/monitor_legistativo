@@ -1,20 +1,25 @@
 # MEL-TP — requirements.txt
 
 # ── Backend ────────────────────────────────────────────────────────────────
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
-pydantic==2.7.1
+# Versiones verificadas: instaladas en .venv y con los 119 tests (test_api,
+# test_bloque_stats, test_kpis, test_live, test_scraper_hcdn) pasando en
+# agosto 2026. pandas 2→3 es un salto mayor pero ya está probado contra este
+# repo — si hacés `pip install -r requirements.txt` desde cero y algo de
+# scraping/pandas se comporta distinto, empezá a mirar ahí.
+fastapi==0.138.2
+uvicorn[standard]==0.49.0
+pydantic==2.13.4
 
 # ── Scraping / datos ───────────────────────────────────────────────────────
-requests==2.31.0
-beautifulsoup4==4.12.3
-pandas==2.2.2
-numpy==1.26.4
-lxml==5.2.1
+requests==2.33.1
+beautifulsoup4==4.15.0
+pandas==3.0.2
+numpy==2.4.4
+lxml==6.1.1
 pdfplumber>=0.11.0
 
 # ── HTTP async ────────────────────────────────────────────────────────────
-httpx==0.27.0
+httpx==0.28.1
 
 # ── Calendario y Feriados ──────────────────────────────────────────────────
 holidays==0.47

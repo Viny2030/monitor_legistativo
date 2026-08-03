@@ -61,11 +61,25 @@ jobs:
         continue-on-error: true
         run: python obtener_datos.py
 
+      # ── Agente autónomo de monitoreo ────────────────────────────────────────
+      # Corre después del scraping, sobre el data/diputados.json ya actualizado.
+      # No depende de ANTHROPIC_API_KEY (si no está seteada, igual detecta
+      # anomalías con reglas estadísticas — solo se pierde el resumen en
+      # lenguaje natural). Exit code 1 = encontró hallazgos de severidad alta;
+      # no debe tumbar el job, así que se captura con continue-on-error y se
+      # decide la alerta en el step siguiente.
+      - name: Agente de monitoreo (detección de anomalías)
+        id: agente
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/agente_monitor.py
+
       - name: Commit y push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/diputados.json nomina_diputados.csv 2>/dev/null || true
+          git add data/diputados.json nomina_diputados.csv data/alertas_agente.json data/.snapshot_anterior.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Sin cambios, nada que commitear"
           else
@@ -86,6 +100,46 @@ jobs:
           else
             echo "- ❌ data/diputados.json no generado" >> $GITHUB_STEP_SUMMARY
           fi
+          if [ -f data/alertas_agente.json ]; then
+            python -c "
+import json
+d = json.load(open('data/alertas_agente.json'))
+a = d.get('analisis', {})
+sev = a.get('por_severidad', {})
+print('- **Agente de monitoreo**: %d hallazgos (alta: %d, media: %d, baja: %d)' % (a.get('total_hallazgos', 0), sev.get('alta', 0), sev.get('media', 0), sev.get('baja', 0)))
+" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # ── Alerta del agente ────────────────────────────────────────────────────
+      # Se dispara sola cuando el agente encuentra severidad alta (exit code 1
+      # de scripts/agente_monitor.py) — nadie tiene que pedirla ni revisar el
+      # dashboard a mano para enterarse.
+      - name: Notificar hallazgos de severidad alta
+        if: steps.agente.outcome == 'failure'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          to: viny01958@gmail.com
+          from: Agente Monitor Legislativo <${{ secrets.MAIL_USER }}>
+          subject: "🚨 Agente detectó hallazgos de severidad alta — Monitor Legislativo"
+          body: |
+            El agente de monitoreo (scripts/agente_monitor.py) encontró hallazgos de
+            severidad ALTA en la corrida de hoy (ausentismo crítico, caída fuerte de
+            asistencia global, datos muy desactualizados, o cambio brusco de composición).
+
+            Detalle completo en data/alertas_agente.json (commiteado en este mismo run)
+            y en el log del step "Agente de monitoreo (detección de anomalías)":
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Nota: requiere que los secrets MAIL_USER y MAIL_PASS estén configurados
+            (ya lo están si tests_diarios.yml te manda notificaciones). El resumen
+            narrativo en lenguaje natural solo aparece si además está configurado el
+            secret ANTHROPIC_API_KEY — si no, el agente igual detecta y lista los
+            hallazgos, solo que sin la redacción de Claude.
 
       # ── Alerta por falla ──────────────────────────────────────────────────
       # Antes este workflow no avisaba si fallaba — por eso pasaron ~3 meses

@@ -237,7 +237,6 @@ def main():
         2024: 107_000_000_000,
         2025: 425_000_000_000,
     }
-    PCT_DIPUTADOS = 0.45  # ← esta línea NO existe todavía, hay que agregarla
     # 2026 no tiene presupuesto aprobado → usar 2025 como base oficial más reciente
     anio_ref = ANIO if ANIO in PRESUPUESTO_REAL else 2025
     presupuesto_estimado = PRESUPUESTO_REAL[anio_ref]

@@ -437,6 +437,32 @@ def ia_explicar(req: ExplicarIARequest):
     return explicar(req.tipo, req.datos)
 
 
+@app.get("/api/ia/anomalias")
+def ia_anomalias():
+    """
+    Agente autónomo (parte 1): corre las reglas de detección de anomalías
+    sobre el data/diputados.json actual. No depende de Claude/ANTHROPIC_API_KEY
+    — siempre devuelve hallazgos estructurados (ausentismo crítico, IQP bajo,
+    outliers estadísticos, datos desactualizados, indicadores estimados).
+    """
+    from agentic_ai import detectar_anomalias
+    data = load_data()
+    return detectar_anomalias(data)
+
+
+@app.get("/api/ia/resumen")
+def ia_resumen():
+    """
+    Agente autónomo (parte 2): además de los hallazgos, si hay
+    ANTHROPIC_API_KEY configurada le pide a Claude un resumen ejecutivo en
+    lenguaje natural. Es el mismo análisis que corre scripts/agente_monitor.py
+    en el workflow diario, expuesto para verlo on-demand desde el dashboard.
+    """
+    from agentic_ai import resumen_diario
+    data = load_data()
+    return resumen_diario(data)
+
+
 @app.post("/api/refresh")
 def refresh_data(x_refresh_token: str = Header(None)):
     """

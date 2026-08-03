@@ -1,0 +1,90 @@
+{
+  "generado_en": "2026-08-03T20:12:30.479258+00:00",
+  "total_diputados": 257,
+  "analisis": {
+    "generado_en": "2026-08-03T20:12:30.479258+00:00",
+    "total_hallazgos": 12,
+    "por_severidad": {
+      "alta": 11,
+      "media": 0,
+      "baja": 1
+    },
+    "hallazgos": [
+      {
+        "tipo": "datos_desactualizados",
+        "severidad": "alta",
+        "detalle": "data/diputados.json no se actualiza hace 85.1 días (última actualización: 2026-05-10T17:54:53.412600). Revisar el pipeline diario."
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Menem, Martín (LA LIBERTAD AVANZA): IQP 0.0 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Menem, Martín"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Pagano, Marcela Marina (COHERENCIA): IQP 0.0286 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Pagano, Marcela Marina"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Tailhade, Rodolfo (UNIÓN POR LA PATRIA): IQP 0.0323 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Tailhade, Rodolfo"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Bregman, Myriam (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Bregman, Myriam"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "del Caño, Nicolás (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "del Caño, Nicolás"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Del Plá, Romina (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Del Plá, Romina"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Ianni, Ana María (UNIÓN POR LA PATRIA): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Ianni, Ana María"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Pitrola, Nestor (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Pitrola, Nestor"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Propato, Agustina Lucrecia (UNIÓN POR LA PATRIA): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Propato, Agustina Lucrecia"
+      },
+      {
+        "tipo": "iqp_bajo",
+        "severidad": "alta",
+        "detalle": "Massot, Nicolás (ENCUENTRO FEDERAL): IQP 0.0556 (índice de quórum y permanencia por debajo de 0.3).",
+        "diputado": "Massot, Nicolás"
+      },
+      {
+        "tipo": "outlier_estadistico_asistencia",
+        "severidad": "baja",
+        "detalle": "Schiaretti, Juan: asistencia 77.5%, por debajo del piso estadístico (100.0%) del resto del cuerpo.",
+        "diputado": "Schiaretti, Juan"
+      }
+    ]
+  },
+  "narrativa": {
+    "disponible": false,
+    "motivo": "Hallazgos estructurados generados sin problema (no requieren IA); la redacción narrativa está deshabilitada porque no hay ANTHROPIC_API_KEY."
+  }
+}

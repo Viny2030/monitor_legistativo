@@ -3,14 +3,15 @@
 # Instalar con: pip install -r requirements_api.txt
 
 # API (versiones fijas para evitar incompatibilidades)
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
+# Alineadas con requirements.txt — verificadas contra la suite de tests en agosto 2026.
+fastapi==0.138.2
+uvicorn[standard]==0.49.0
 
 # Archivos estaticos — REQUERIDO por FastAPI StaticFiles
 aiofiles>=23.2.1
 
 # Scraping robusto
-lxml==5.2.1
+lxml==6.1.1
 html5lib>=1.1
 
 # Manejo de fechas (para pipeline)

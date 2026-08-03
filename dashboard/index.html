@@ -249,7 +249,7 @@ const API_URL = (typeof window.API_URL !== 'undefined')
   : (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:8000'
     : window.location.origin;
-document.getElementById('api-url-display').textContent = API_URL + '/indicadores';
+document.getElementById('api-url-display').textContent = API_URL + '/api/indicadores';
 const META = {
   CPR: {
     unidad_display: id => v => `$${Number(v).toLocaleString('es-AR', {maximumFractionDigits:0})}`,
@@ -339,6 +339,35 @@ function calcularPosicion(id, valor) {
   const pct = Math.min(Math.max(((v - min) / (max - min)) * 100, 2), 98);
   return Math.round(pct);
 }
+// ── Agentic AI ────────────────────────────────────────────────────────────
+window.IA_DATOS = {};
+async function explicarConIA(tipo, boxId, btnId) {
+  const box = document.getElementById(boxId);
+  const btn = btnId ? document.getElementById(btnId) : null;
+  if (btn) { btn.disabled = true; btn.textContent = '🤖 Pensando…'; }
+  box.style.display = 'block';
+  box.innerHTML = '<span style="color:#94a3b8;font-style:italic">Consultando IA…</span>';
+  try {
+    const resp = await fetch(`${API_URL}/api/ia/explicar`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipo, datos: window.IA_DATOS[boxId] || {} }),
+      signal: AbortSignal.timeout(15000)
+    });
+    const data = await resp.json();
+    if (data.disponible) {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#c9a227;margin-bottom:6px">🤖 Explicación (Claude)</span>' + data.explicacion.replace(/\n/g, '<br>');
+      if (btn) btn.style.display = 'none';
+    } else {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;color:#94a3b8;margin-bottom:6px">IA no disponible</span>' + (data.motivo || 'Sin detalle.');
+      if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+    }
+  } catch (e) {
+    box.innerHTML = 'No se pudo consultar la IA.';
+    if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+  }
+}
+
 function renderCard(ind) {
   const m = META[ind.id] || {};
   const estado = m.estado ? m.estado(ind.valor) : 'amarillo';
@@ -346,6 +375,9 @@ function renderCard(ind) {
   const pos = calcularPosicion(ind.id, ind.valor);
   const inv = m.bench?.inv ? ' inv' : '';
   const zonas = m.bench?.zonas || ['—','—','—'];
+  const iaBoxId = `ia-box-${ind.id}`;
+  const iaBtnId = `ia-btn-${ind.id}`;
+  window.IA_DATOS[iaBoxId] = ind;
   return `
     <div class="card ${estado}">
       <div class="card-header">
@@ -369,6 +401,13 @@ function renderCard(ind) {
           ${zonas.map(z => `<span class="bz">${z}</span>`).join('')}
         </div>
       </div>
+      <button id="${iaBtnId}" onclick="explicarConIA('indicador','${iaBoxId}','${iaBtnId}')"
+        style="margin-top:.6rem;background:#1a1500;border:1px solid #3a2f00;color:#c9a227;
+               padding:5px 12px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer">
+        🤖 Explicar con IA
+      </button>
+      <div id="${iaBoxId}" style="display:none;margin-top:.5rem;background:#0f1e3a;border:1px solid #2d4a7a;
+           border-radius:8px;padding:10px 12px;font-size:.78rem;color:#cbd5e1;line-height:1.6"></div>
     </div>`;
 }
 function renderDashboard(indicadores) {
@@ -392,7 +431,7 @@ async function recargarDatos() {
   dot.className = 'status-dot';
   statusEl.textContent = 'Conectando...';
   try {
-    const resp = await fetch(`${API_URL}/indicadores`, { signal: AbortSignal.timeout(8000) });
+    const resp = await fetch(`${API_URL}/api/indicadores`, { signal: AbortSignal.timeout(8000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     dot.className = 'status-dot online';
@@ -675,7 +714,7 @@ function estadoICE(ice) {
 }
 async function cargarDiputados() {
   try {
-    const resp = await fetch(`${API_URL}/diputados`, { signal: AbortSignal.timeout(5000) });
+    const resp = await fetch(`${API_URL}/api/diputados`, { signal: AbortSignal.timeout(5000) });
     if (resp.ok) {
       const data = await resp.json();
       DIPUTADOS_DATA = data.diputados.map(enriquecerDiputado);

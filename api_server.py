@@ -34,13 +34,28 @@ from fastapi import FastAPI, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
+from pydantic import BaseModel
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 DATA_FILE = os.getenv("DATA_FILE", "data/diputados.json")
-REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "dev")
 PORT = int(os.getenv("PORT", 8000))
+
+REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "")
+if not REFRESH_TOKEN:
+    # Antes el default era "dev" — un token público y adivinable que dejaba
+    # /api/refresh (dispara subprocess.run del pipeline) abierto a cualquiera
+    # que supiera el literal "dev". Generamos uno aleatorio por proceso si no
+    # está configurado, para que no quede protegido por un secreto conocido.
+    import secrets as _secrets
+    REFRESH_TOKEN = _secrets.token_urlsafe(24)
+    print(
+        "⚠️ REFRESH_TOKEN no configurado — generé uno temporal para este proceso: "
+        f"{REFRESH_TOKEN}\n"
+        "   Configurá REFRESH_TOKEN en las variables de Railway para que "
+        "/api/refresh siga funcionando entre reinicios."
+    )
 
 app = FastAPI(
     title="Monitor Legislativo Diputados — API",
@@ -400,6 +415,26 @@ def get_proyectos_diputado(nombre_busqueda: str):
                        "proyectos_aprobados": aprobados, "tasa_aprobacion_pct": tasa,
                        "fuente": "CKAN HCDN + SIL", "version": "1.1"})
     return {"ok": True, "resultados": len(salida), "diputados": salida, "meta": data.get("meta", {})}
+
+
+# ---------------------------------------------------------------------------
+# API — AGENTIC AI (explicaciones narrativas vía Claude)
+# ---------------------------------------------------------------------------
+class ExplicarIARequest(BaseModel):
+    tipo: str = "indicador"
+    datos: dict = {}
+
+
+@app.get("/api/ia/status")
+def ia_status():
+    from agentic_ai import ia_disponible
+    return {"disponible": ia_disponible()}
+
+
+@app.post("/api/ia/explicar")
+def ia_explicar(req: ExplicarIARequest):
+    from agentic_ai import explicar
+    return explicar(req.tipo, req.datos)
 
 
 @app.post("/api/refresh")

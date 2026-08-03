@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   actualizar:
-    name: Scrape → Actualizar HTMLs → Commit
+    name: Scrape → data/diputados.json → Commit
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -30,22 +30,42 @@ jobs:
       - name: Instalar dependencias
         run: |
           pip install --upgrade pip
-          pip install requests beautifulsoup4 pandas lxml
+          pip install -r requirements.txt
 
-      - name: Scraper — actualizar nómina CSV
-        run: python obtener_datos.py
+      # ── Pipeline principal ────────────────────────────────────────────────
+      # scraper_pipeline.py es el pipeline completo (nómina, asistencia,
+      # proyectos, presupuesto, votaciones, TPMP, ITC) y genera
+      # data/diputados.json, que es lo que consumen /api/* y dashboard/index.html
+      # en tiempo real. Cada step interno ya degrada con gracia si una fuente
+      # falla (no aborta el pipeline entero), así que no usamos continue-on-error
+      # acá: si esto falla de verdad, queremos que la alerta salte.
+      - name: Pipeline completo (nómina + asistencia + proyectos + presupuesto + votaciones + TPMP + ITC)
+        run: python scraper_pipeline.py
 
-      - name: Actualizar array DIPUTADOS en HTMLs
+      # ── Enriquecimiento local ─────────────────────────────────────────────
+      # Complementa data/diputados.json con data/indicadores_votacion.csv
+      # (indicadores de asistencia/IQP curados localmente, más completos que
+      # lo que las fuentes en vivo devuelven hoy). No scrapea nada, así que
+      # si falla no debería bloquear el commit de lo que sí se obtuvo arriba.
+      - name: Enriquecer con indicadores_votacion.csv
+        continue-on-error: true
         run: python actualizar_diputados.py
+
+      # ── Nómina CSV legacy ─────────────────────────────────────────────────
+      # obtener_datos.py alimenta nomina_diputados.csv, que todavía leen
+      # algunos scripts viejos (api_diputados.py, data_loader.py). Viene
+      # fallando desde hace meses (diputados.gov.ar cambió o bloquea el
+      # request) — lo dejamos como best-effort para no tapar la actualización
+      # real de arriba mientras no se investigue a fondo.
+      - name: "[legacy] Nómina CSV (best-effort)"
+        continue-on-error: true
+        run: python obtener_datos.py
 
       - name: Commit y push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add nomina_diputados.csv \
-                  dashboard/indicadores_diputados.html \
-                  dashboard/nomina_detalle_diputados.html \
-                  dashboard/indicadores_bloques_diputados.html
+          git add data/diputados.json nomina_diputados.csv 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Sin cambios, nada que commitear"
           else
@@ -58,10 +78,38 @@ jobs:
         if: always()
         run: |
           echo "### Monitor Diputados" >> $GITHUB_STEP_SUMMARY
-          if [ -f nomina_diputados.csv ]; then
-            TOTAL=$(tail -n +2 nomina_diputados.csv | wc -l)
-            echo "- **Diputados en CSV**: $TOTAL" >> $GITHUB_STEP_SUMMARY
-            echo "- **Fecha**: $(date -u +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/diputados.json ]; then
+            TOTAL=$(python -c "import json;print(len(json.load(open('data/diputados.json')).get('diputados',[])))" 2>/dev/null || echo "?")
+            UPD=$(python -c "import json;print(json.load(open('data/diputados.json')).get('meta',{}).get('ultima_actualizacion',''))" 2>/dev/null || echo "?")
+            echo "- **Diputados en data/diputados.json**: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- **Última actualización**: $UPD" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- ❌ CSV no generado" >> $GITHUB_STEP_SUMMARY
+            echo "- ❌ data/diputados.json no generado" >> $GITHUB_STEP_SUMMARY
           fi
+
+      # ── Alerta por falla ──────────────────────────────────────────────────
+      # Antes este workflow no avisaba si fallaba — por eso pasaron ~3 meses
+      # sin que nadie notara que la data estaba stale. Mismo patrón que
+      # tests_diarios.yml.
+      - name: Notificar falla del pipeline
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          to: viny01958@gmail.com
+          from: Monitor Legislativo <${{ secrets.MAIL_USER }}>
+          subject: "⚠️ Monitor Diario Diputados FALLÓ — revisar"
+          body: |
+            El pipeline diario de scraper_pipeline.py (el que alimenta data/diputados.json
+            y por lo tanto /api/* y el dashboard) falló hoy.
+
+            Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Nota: requiere que los secrets MAIL_USER y MAIL_PASS estén configurados
+            en este repo (Settings → Secrets → Actions), igual que en
+            tests_diarios.yml. Si no lo están, este paso también va a fallar
+            silenciosamente — conviene confirmarlo.

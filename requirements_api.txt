@@ -15,3 +15,6 @@ html5lib>=1.1
 
 # Manejo de fechas (para pipeline)
 python-dateutil>=2.9.0
+
+# Agentic AI (opcional — se degrada si no hay ANTHROPIC_API_KEY)
+anthropic>=0.40.0

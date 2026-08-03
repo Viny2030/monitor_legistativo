@@ -230,12 +230,44 @@ function inicialesAvatar(nombre) {
 
 // NEP calculado en inicializar()
 
+window.IA_DATOS = {};
+async function explicarConIA(tipo, boxId, btnId) {
+  const box = document.getElementById(boxId);
+  const btn = btnId ? document.getElementById(btnId) : null;
+  if (btn) { btn.disabled = true; btn.textContent = '🤖 Pensando…'; }
+  box.style.display = 'block';
+  box.innerHTML = '<span style="color:#64748b;font-style:italic">Consultando IA…</span>';
+  try {
+    const resp = await fetch('/api/ia/explicar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipo, datos: window.IA_DATOS[boxId] || {} }),
+      signal: AbortSignal.timeout(15000)
+    });
+    const data = await resp.json();
+    if (data.disponible) {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#0A2463;margin-bottom:6px">🤖 Explicación (Claude)</span>' + data.explicacion.replace(/\n/g, '<br>');
+      if (btn) btn.style.display = 'none';
+    } else {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;color:#64748b;margin-bottom:6px">IA no disponible</span>' + (data.motivo || 'Sin detalle.');
+      if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+    }
+  } catch (e) {
+    box.innerHTML = 'No se pudo consultar la IA.';
+    if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+  }
+}
+
 function cardHTML(d, idx) {
   const col      = colorBloque(d.bloque);
   const inic     = inicialesAvatar(d.nombre);
   const esMand29 = d.mandato === '2025-2029';
   const blqN     = _bloques[d.bloque] || 0;
   const blqPct   = _total > 0 ? ((blqN / _total) * 100).toFixed(1) : "0";
+  window.IA_DATOS[`ia-box-${idx}`] = {
+    nombre: d.nombre, distrito: d.distrito, bloque: d.bloque, mandato: d.mandato,
+    asistencia_pct: d.asistencia_pct, proyectos_presentados: d.proyectos_presentados,
+    proyectos_aprobados: d.proyectos_aprobados, iqp: d.iqp,
+  };
   const urlPerfil = `https://www.diputados.gov.ar/diputados/`;
 
   return `<div class="dip-card">
@@ -266,42 +298,29 @@ function cardHTML(d, idx) {
           <div class="di-label">asistencia <span class="tag-act">✓</span></div>
         </div>
         <div class="dip-ind">
-          <div class="di-code">RLS</div>
-          <div class="di-val">72,7%</div>
-          <div class="di-label">sustantiva <span class="tag-act">✓</span></div>
+          <div class="di-code">PRY</div>
+          <div class="di-val">${d.proyectos_presentados != null ? d.proyectos_presentados : "—"}</div>
+          <div class="di-label">proyectos <span class="tag-act">✓</span></div>
         </div>
         <div class="dip-ind">
-          <div class="di-code">COLS</div>
-          <div class="di-val" style="font-size:.72rem">$17.421M</div>
-          <div class="di-label">por ley <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">CRC</div>
-          <div class="di-val" style="font-size:.72rem">$4.818</div>
-          <div class="di-label">por hab. <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">RPS</div>
-          <div class="di-val">57,5%</div>
-          <div class="di-label">staff perm. <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">IAD</div>
-          <div class="di-val">3/5</div>
-          <div class="di-label">open data <span class="tag-act">✓</span></div>
-        </div>
-        <div class="dip-ind">
-          <div class="di-code">TVD</div>
-          <div class="di-val">~97%</div>
-          <div class="di-label">veracidad <span class="tag-act">✓</span></div>
+          <div class="di-code">IQP</div>
+          <div class="di-val">${d.iqp != null ? d.iqp : "—"}</div>
+          <div class="di-label">quórum/perman. <span class="tag-act">✓</span></div>
         </div>
       </div>
     </div>
-    <div class="dip-card-footer">
-      <span class="dip-mandato" style="color:${esMand29 ? '#15803d' : '#475569'}">
-        ${esMand29 ? '🟢' : '🔵'} ${d.mandato}
-      </span>
-      <a class="dip-link" href="${urlPerfil}" target="_blank">Ver perfil oficial →</a>
+    <div class="dip-card-footer" style="flex-direction:column;align-items:stretch;gap:.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span class="dip-mandato" style="color:${esMand29 ? '#15803d' : '#475569'}">
+          ${esMand29 ? '🟢' : '🔵'} ${d.mandato}
+        </span>
+        <a class="dip-link" href="${urlPerfil}" target="_blank">Ver perfil oficial →</a>
+      </div>
+      <button id="ia-btn-${idx}" onclick="explicarConIA('diputado','ia-box-${idx}','ia-btn-${idx}')"
+        style="background:#1a1500;border:1px solid #3a2f00;color:#c9a227;padding:4px 10px;border-radius:6px;
+               font-size:.7rem;font-weight:600;cursor:pointer;align-self:flex-start">🤖 Explicar con IA</button>
+      <div id="ia-box-${idx}" style="display:none;background:#0f1e3a;border:1px solid #2d4a7a;
+           border-radius:8px;padding:8px 10px;font-size:.76rem;color:#334155;line-height:1.6"></div>
     </div>
   </div>`;
 }

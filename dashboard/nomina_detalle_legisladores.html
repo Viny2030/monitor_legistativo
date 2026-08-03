@@ -133,6 +133,14 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
   <span class="count-badge" id="count-badge">257 diputados</span>
 </div>
 
+<div style="margin:.5rem 0 1.2rem">
+  <button id="ia-btn-resumen" onclick="explicarConIA('indicador','ia-box-resumen','ia-btn-resumen')"
+    style="background:#1a1500;border:1px solid #3a2f00;color:#c9a227;padding:6px 14px;border-radius:6px;
+           font-size:.78rem;font-weight:600;cursor:pointer">🤖 Explicar con IA</button>
+  <div id="ia-box-resumen" style="display:none;margin-top:.6rem;background:#0f1e3a;border:1px solid #2d4a7a;
+       border-radius:8px;padding:12px 16px;font-size:.85rem;color:#334155;line-height:1.7"></div>
+</div>
+
 <!-- Vista Cards -->
 <div class="cards-container" id="vista-cards">
   <div class="cards-grid" id="grid-cards"></div>
@@ -446,6 +454,39 @@ const bloques = {};
 DIPUTADOS.forEach(d => { bloques[d.bloque] = (bloques[d.bloque] || 0) + 1; });
 const sumPi2 = Object.values(bloques).reduce((s, n) => s + (n / total) ** 2, 0);
 const NEP_CAMARA = (1 / sumPi2).toFixed(2);
+
+// ── Agentic AI ──────────────────────────────────────────────────────────────
+window.IA_DATOS = { 'ia-box-resumen': {
+  id: 'NOMINA', nombre: 'Nómina de diputados por bloque',
+  valor: `NEP=${NEP_CAMARA}, Diputados=${total}, Bloques=${Object.keys(bloques).length}`,
+  unidad: '', formula: 'NEP=1/Σpᵢ²',
+  interpretacion: 'Indica cuántos bloques "efectivos" concentran el poder en la Cámara.'
+}};
+async function explicarConIA(tipo, boxId, btnId) {
+  const box = document.getElementById(boxId);
+  const btn = btnId ? document.getElementById(btnId) : null;
+  if (btn) { btn.disabled = true; btn.textContent = '🤖 Pensando…'; }
+  box.style.display = 'block';
+  box.innerHTML = '<span style="color:#64748b;font-style:italic">Consultando IA…</span>';
+  try {
+    const resp = await fetch('/api/ia/explicar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipo, datos: window.IA_DATOS[boxId] || {} }),
+      signal: AbortSignal.timeout(15000)
+    });
+    const data = await resp.json();
+    if (data.disponible) {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#0A2463;margin-bottom:6px">🤖 Explicación (Claude)</span>' + data.explicacion.replace(/\n/g, '<br>');
+      if (btn) btn.style.display = 'none';
+    } else {
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;color:#64748b;margin-bottom:6px">IA no disponible</span>' + (data.motivo || 'Sin detalle.');
+      if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+    }
+  } catch (e) {
+    box.innerHTML = 'No se pudo consultar la IA.';
+    if (btn) { btn.disabled = false; btn.textContent = '🤖 Explicar con IA'; }
+  }
+}
 
 function cardHTML(d, idx) {
   const col      = colorBloque(d.bloque);

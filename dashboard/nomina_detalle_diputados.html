@@ -245,7 +245,7 @@ async function explicarConIA(tipo, boxId, btnId) {
     });
     const data = await resp.json();
     if (data.disponible) {
-      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#0A2463;margin-bottom:6px">🤖 Explicación (Claude)</span>' + data.explicacion.replace(/\n/g, '<br>');
+      box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:#c9a227;margin-bottom:6px">🤖 Explicación (Claude)</span>' + data.explicacion.replace(/\n/g, '<br>');
       if (btn) btn.style.display = 'none';
     } else {
       box.innerHTML = '<span style="display:block;font-size:.68rem;text-transform:uppercase;color:#64748b;margin-bottom:6px">IA no disponible</span>' + (data.motivo || 'Sin detalle.');
@@ -320,7 +320,7 @@ function cardHTML(d, idx) {
         style="background:#1a1500;border:1px solid #3a2f00;color:#c9a227;padding:4px 10px;border-radius:6px;
                font-size:.7rem;font-weight:600;cursor:pointer;align-self:flex-start">🤖 Explicar con IA</button>
       <div id="ia-box-${idx}" style="display:none;background:#0f1e3a;border:1px solid #2d4a7a;
-           border-radius:8px;padding:8px 10px;font-size:.76rem;color:#334155;line-height:1.6"></div>
+           border-radius:8px;padding:8px 10px;font-size:.76rem;color:#cbd5e1;line-height:1.6"></div>
     </div>
   </div>`;
 }

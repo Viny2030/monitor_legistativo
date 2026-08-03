@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-05-10T17:54:53.412600",
+    "ultima_actualizacion": "2026-08-03T20:57:09.290005",
     "fuente_asistencia": "indicadores_votacion.csv (HCDN votaciones)"
   },
   "diputados": [
@@ -3483,5 +3483,38 @@
     "devengado_m": null,
     "iap": 0.951
   },
-  "votaciones": {}
+  "votaciones": {},
+  "tpmp": {
+    "valor": 105.0,
+    "unidad": "días",
+    "n_proyectos": 0,
+    "min_dias": null,
+    "max_dias": null,
+    "mediana_dias": null,
+    "fuente": "estimación (rango histórico 30-180 días)",
+    "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
+    "advertencia": "⚠️ Requiere conexión al SIL para valor real",
+    "anio": 2026,
+    "timestamp": "2026-08-03T20:56:55.543065"
+  },
+  "itc": {
+    "id": "ITC",
+    "nombre": "Índice de Trabajo en Comisiones",
+    "valor": 3.5,
+    "unidad": "ratio",
+    "formula": "ITC = Σhoras_comision / Σhoras_pleno",
+    "horas_comision": 0.0,
+    "horas_pleno": 80.0,
+    "n_reuniones": 0,
+    "n_sesiones": 20,
+    "comisiones_con_datos": 0,
+    "duracion_promedio_reunion_hs": 2.5,
+    "duracion_promedio_sesion_hs": 4.0,
+    "anio": 2026,
+    "fuente": "estimación histórica MEL-TP",
+    "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
+    "timestamp": "2026-08-03T20:57:09.136015",
+    "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
+    "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
+  }
 }

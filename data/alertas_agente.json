@@ -1,20 +1,15 @@
 {
-  "generado_en": "2026-08-03T20:12:30.479258+00:00",
+  "generado_en": "2026-08-03T20:57:30.357229+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-08-03T20:12:30.479258+00:00",
-    "total_hallazgos": 12,
+    "generado_en": "2026-08-03T20:57:30.357229+00:00",
+    "total_hallazgos": 13,
     "por_severidad": {
-      "alta": 11,
+      "alta": 10,
       "media": 0,
-      "baja": 1
+      "baja": 3
     },
     "hallazgos": [
-      {
-        "tipo": "datos_desactualizados",
-        "severidad": "alta",
-        "detalle": "data/diputados.json no se actualiza hace 85.1 días (última actualización: 2026-05-10T17:54:53.412600). Revisar el pipeline diario."
-      },
       {
         "tipo": "iqp_bajo",
         "severidad": "alta",
@@ -80,6 +75,16 @@
         "severidad": "baja",
         "detalle": "Schiaretti, Juan: asistencia 77.5%, por debajo del piso estadístico (100.0%) del resto del cuerpo.",
         "diputado": "Schiaretti, Juan"
+      },
+      {
+        "tipo": "indicador_estimado",
+        "severidad": "baja",
+        "detalle": "TPMP usa un valor de referencia, no dato en vivo: ⚠️ Requiere conexión al SIL para valor real"
+      },
+      {
+        "tipo": "indicador_estimado",
+        "severidad": "baja",
+        "detalle": "ITC usa un valor de referencia, no dato en vivo: ⚠️ Valor de referencia. Conectar actas HCDN para dato real."
       }
     ]
   },

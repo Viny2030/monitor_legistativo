@@ -101,13 +101,7 @@ jobs:
             echo "- ❌ data/diputados.json no generado" >> $GITHUB_STEP_SUMMARY
           fi
           if [ -f data/alertas_agente.json ]; then
-            python -c "
-import json
-d = json.load(open('data/alertas_agente.json'))
-a = d.get('analisis', {})
-sev = a.get('por_severidad', {})
-print('- **Agente de monitoreo**: %d hallazgos (alta: %d, media: %d, baja: %d)' % (a.get('total_hallazgos', 0), sev.get('alta', 0), sev.get('media', 0), sev.get('baja', 0)))
-" >> $GITHUB_STEP_SUMMARY
+            python -c "import json; d = json.load(open('data/alertas_agente.json')); a = d.get('analisis', {}); sev = a.get('por_severidad', {}); print('- **Agente de monitoreo**: %d hallazgos (alta: %d, media: %d, baja: %d)' % (a.get('total_hallazgos', 0), sev.get('alta', 0), sev.get('media', 0), sev.get('baja', 0)))" >> $GITHUB_STEP_SUMMARY
           fi
 
       # ── Alerta del agente ────────────────────────────────────────────────────

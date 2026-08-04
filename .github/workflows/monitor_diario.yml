@@ -119,14 +119,18 @@ jobs:
           password: ${{ secrets.MAIL_PASS }}
           to: viny01958@gmail.com
           from: Agente Monitor Legislativo <${{ secrets.MAIL_USER }}>
-          subject: "🚨 Agente detectó hallazgos de severidad alta — Monitor Legislativo"
+          subject: "🚨 Agente: hallazgo nuevo o urgente — Monitor Legislativo"
           body: |
-            El agente de monitoreo (scripts/agente_monitor.py) encontró hallazgos de
-            severidad ALTA en la corrida de hoy (ausentismo crítico, caída fuerte de
-            asistencia global, datos muy desactualizados, o cambio brusco de composición).
+            El agente de monitoreo (scripts/agente_monitor.py) encontró algo que amerita
+            este mail: o es un evento puntual (datos muy desactualizados, caída fuerte de
+            asistencia global, cambio brusco de composición), o es un estado por diputado
+            (ausentismo crítico, IQP bajo) que NO estaba en la corrida de ayer — o sea,
+            no es el mismo aviso repetido por una condición que ya conocés.
 
-            Detalle completo en data/alertas_agente.json (commiteado en este mismo run)
-            y en el log del step "Agente de monitoreo (detección de anomalías)":
+            Detalle completo (incluye qué hallazgos disparó exactamente la alerta, en
+            "alerta.hallazgos_relevantes") en data/alertas_agente.json (commiteado en
+            este mismo run) y en el log del step "Agente de monitoreo (detección de
+            anomalías)":
             ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             Nota: requiere que los secrets MAIL_USER y MAIL_PASS estén configurados

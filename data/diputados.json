@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-08-04T10:01:54.663896",
+    "ultima_actualizacion": "2026-08-05T10:02:21.544936",
     "fuente_asistencia": "indicadores_votacion.csv (HCDN votaciones)"
   },
   "diputados": [
@@ -3495,7 +3495,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-08-04T10:01:41.215708"
+    "timestamp": "2026-08-05T10:02:04.600073"
   },
   "itc": {
     "id": "ITC",
@@ -3513,7 +3513,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-08-04T10:01:54.563728",
+    "timestamp": "2026-08-05T10:02:21.444560",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }

@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-08-04T10:02:02.739512+00:00",
+  "generado_en": "2026-08-05T10:02:39.477602+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-08-04T10:02:02.739512+00:00",
+    "generado_en": "2026-08-05T10:02:39.477602+00:00",
     "total_hallazgos": 13,
     "por_severidad": {
       "alta": 10,
@@ -91,5 +91,10 @@
   "narrativa": {
     "disponible": false,
     "motivo": "Hallazgos estructurados generados sin problema (no requieren IA); la redacción narrativa está deshabilitada porque no hay ANTHROPIC_API_KEY."
+  },
+  "alerta": {
+    "requiere_alerta": false,
+    "criterio": "siempre para eventos puntuales; solo si es nuevo para estados por diputado",
+    "hallazgos_relevantes": []
   }
 }

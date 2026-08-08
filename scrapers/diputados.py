@@ -19,6 +19,7 @@ import pandas as pd
 import io
 import time
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 
 # ── Constantes ────────────────────────────────────────────────────────────────
@@ -97,6 +98,15 @@ def obtener_nomina_scraping() -> pd.DataFrame:
             if len(cols) < 4:
                 continue
 
+            # Col 0: foto (imagen) — antes se ignoraba por completo (ver
+            # diagnostico arriba). La extraemos ahora en vez de descartarla.
+            img = cols[0].find("img") if len(cols) > 0 else None
+            url_foto = ""
+            if img:
+                src = (img.get("src") or img.get("data-src") or "").strip()
+                if src and not any(p in src.lower() for p in ("sin-foto", "sinfoto", "blank.gif", "default")):
+                    url_foto = urljoin(URL_NOMINA, src)
+
             # Col 1: puede ser link o texto
             col_nombre = cols[1]
             nombre = col_nombre.get_text(strip=True)
@@ -113,6 +123,7 @@ def obtener_nomina_scraping() -> pd.DataFrame:
                 "Finaliza_mandato": cols[6].get_text(strip=True) if len(cols) > 6 else "",
                 "Fecha_nacimiento": cols[7].get_text(strip=True) if len(cols) > 7 else "",
                 "URL_perfil":       url_perfil,
+                "URL_foto":         url_foto,
             })
 
         df = pd.DataFrame(datos)

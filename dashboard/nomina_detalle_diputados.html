@@ -191,6 +191,7 @@ async function cargarDiputados() {
       bloque:   d.bloque,
       mandato:  d.mandato_hasta || d.mandato || '—',
       genero:   d.genero || 'I',
+      foto:     d.foto_url || d.foto || null,
       asistencia_pct:        d.asistencia_pct,
       proyectos_presentados: d.proyectos_presentados,
       proyectos_aprobados:   d.proyectos_aprobados,
@@ -270,10 +271,15 @@ function cardHTML(d, idx) {
   };
   const urlPerfil = `https://www.diputados.gov.ar/diputados/`;
 
+  const fotoTag = d.foto
+    ? `<img src="${d.foto}" alt="" loading="lazy" referrerpolicy="no-referrer"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`
+    : '';
   return `<div class="dip-card">
     <div class="dip-card-header">
       <div class="dip-foto" style="background:${col}22;border-color:${col}55">
-        <span style="font-size:.85rem;font-weight:800;color:${col}">${inic}</span>
+        ${fotoTag}
+        <span style="font-size:.85rem;font-weight:800;color:${col};display:${d.foto ? 'none' : 'flex'};align-items:center;justify-content:center;width:100%;height:100%;">${inic}</span>
       </div>
       <div class="dip-info">
         <div class="dip-nombre">${d.nombre}</div>

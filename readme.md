@@ -58,23 +58,31 @@ Monitor de eficiencia legislativa y transparencia presupuestaria de la Honorable
 
 ```
 monitor_legistativo/
-├── dashboard/
+├── dashboard/                  # Frontend estático (HTML servido por api_server.py)
+│   ├── index.html
 │   ├── indicadores_diputados.html
 │   ├── indicadores2_diputados.html
-│   ├── indicadores_bloques.html
+│   ├── indicadores_bloques_diputados.html
 │   ├── nomina_detalle_diputados.html
+│   ├── nomina_detalle_legisladores.html
+│   ├── comparativa_diputados.html
 │   ├── metodologia_diputados.html
 │   └── manual_usuario.html
-├── tests/
-│   ├── test_obtener_datos.py   # Tests para el pipeline de datos
-│   └── test_scraper_hcdn.py    # Tests para el scraper HCDN
-├── scraper_diputados.py        # Scraper nómina HCDN
-├── obtener_datos.py            # Pipeline de datos
-├── scraper_hcdn.py             # Scraper votaciones y comisiones
-├── nomina_diputados.csv        # Nómina en CSV
-├── conftest.py                 # Configuración pytest
-├── pytest.ini                  # Configuración pytest
-├── foto.jpg                    # Foto del autor
+├── data/                       # JSON/CSV generados por el pipeline (data/diputados.json es el que consume la API)
+├── scrapers/                   # Scrapers por fuente (diputados, asistencia, votaciones, comisiones, SIL, parlamentario)
+├── scripts/                    # Jobs puntuales (tipo de cambio, teléfonos, bipartisanship, presupuesto)
+├── core/                       # Cálculos de costo de personal y eficiencia
+├── indicadores/                # Fórmulas de los indicadores (NEP, NAPE, IQP, etc.)
+├── archive/                    # Código archivado, no usado en producción
+├── tests/                      # Suite de pytest (ver sección Tests)
+├── api_server.py               # API FastAPI que sirve el dashboard y /api/*
+├── scraper_pipeline.py         # Pipeline principal — genera data/diputados.json (nómina, foto, asistencia, proyectos, presupuesto, votaciones)
+├── actualizar_diputados.py     # Actualiza diputados.json con datos locales de indicadores_votacion.csv
+├── obtener_datos.py            # Script legacy best-effort (nómina/DDJJ), complementa nomina_diputados.csv
+├── scraper_hcdn.py             # Scraper de votaciones y comisiones
+├── agentic_ai.py                # Integración de explicación con IA (/api/ia/explicar)
+├── inject_json_to_html.py      # Inyecta el JSON en el HTML para uso local sin servidor
+├── Dockerfile / railway.toml   # Deploy en Railway (build Docker + FastAPI/uvicorn)
 ├── requirements.txt
 └── README.md
 ```
@@ -91,11 +99,14 @@ cd monitor_legistativo
 # Instalar dependencias
 pip install -r requirements.txt
 
-# Actualizar nómina de diputados
-python scraper_diputados.py
+# Correr el pipeline completo (nómina, foto, asistencia, proyectos, presupuesto, votaciones)
+python scraper_pipeline.py
+# o un solo paso:
+python scraper_pipeline.py --step nomina
 
-# Abrir el dashboard (sin servidor necesario)
-# Abrir dashboard/indicadores_diputados.html en el navegador
+# Levantar la API + dashboard localmente
+python api_server.py
+# abre http://localhost:8000/dashboard
 ```
 
 ---
@@ -109,12 +120,15 @@ El proyecto incluye una suite de tests automatizados que cubre los módulos prin
 python -m pytest -v
 ```
 
-| Archivo | Módulo testeado | Tests | Estado |
-|---------|----------------|-------|--------|
-| `tests/test_obtener_datos.py` | `obtener_datos.py` | 17 | ✅ |
-| `tests/test_scraper_hcdn.py` | `scraper_hcdn.py` | 21 | ✅ |
+| Archivo | Módulo testeado |
+|---------|----------------|
+| `tests/test_api.py` | `api_server.py` |
+| `tests/test_bloque_stats.py` | Cálculo de estadísticas por bloque |
+| `tests/test_kpis.py` | KPIs globales del dashboard |
+| `tests/test_live.py` | Endpoints en vivo de la API |
+| `tests/test_scraper_hcdn.py` | `scraper_hcdn.py` |
 
-**Total: 38 tests · 100% passing**
+**119 tests · 100% passing** (agosto 2026, ver `requirements.txt`)
 
 Los tests usan mocks para simular respuestas HTTP — son reproducibles en cualquier entorno y no requieren conexión a internet.
 
@@ -122,11 +136,10 @@ Los tests usan mocks para simular respuestas HTTP — son reproducibles en cualq
 
 ## 🔄 Actualización de datos
 
-Los indicadores de composición (NEP, IF, IRB, IRG) se calculan automáticamente en el navegador a partir del array `DIPUTADOS` en cada archivo HTML. Para actualizar:
+El dashboard consume `data/diputados.json` en tiempo real vía `GET /api/diputados` (servido por `api_server.py`) — los HTML ya no tienen datos hardcodeados. Para actualizar:
 
-1. Ejecutar `scraper_diputados.py` para obtener la nómina actualizada
-2. Reemplazar el array `DIPUTADOS` en los archivos HTML con los nuevos datos
-3. Los indicadores se recalculan automáticamente al recargar la página
+1. Ejecutar `python scraper_pipeline.py` (local) para regenerar `data/diputados.json`, o disparar `POST /api/refresh` (protegido por `REFRESH_TOKEN`) en el deploy de Railway
+2. Los indicadores de composición (NEP, IF, IRB, IRG) se recalculan automáticamente en el navegador al recargar la página, a partir de los nuevos datos
 
 ### Frecuencia recomendada
 - **Nómina de diputados**: tras cada renovación bienal (diciembre de años impares)

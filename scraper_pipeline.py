@@ -31,6 +31,7 @@ import re
 import time
 import unicodedata
 from datetime import datetime
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -141,10 +142,37 @@ def save(data):
 # ---------------------------------------------------------------------------
 # STEP 1 — Nomina + Genero
 # ---------------------------------------------------------------------------
+def _extraer_foto_url(col_foto, base_url):
+    """
+    Extrae la URL de la foto desde la primera columna de la tabla de nomina.
+    La imagen puede venir en src (carga normal) o en data-src/data-original
+    (lazy-loading, comun en el sitio de diputados.gov.ar). Devuelve None si
+    no hay imagen o si es un placeholder generico (sin-foto.jpg, blank.gif).
+    """
+    if col_foto is None:
+        return None
+    img = col_foto.find("img")
+    if not img:
+        return None
+    src = (
+        img.get("src")
+        or img.get("data-src")
+        or img.get("data-original")
+        or ""
+    ).strip()
+    if not src:
+        return None
+    # Descartar placeholders conocidos de "sin foto"
+    src_lower = src.lower()
+    if any(p in src_lower for p in ("sin-foto", "sinfoto", "no-photo", "blank.gif", "default")):
+        return None
+    return urljoin(base_url, src)
+
+
 def scrape_nomina():
     """
     Fuente: https://www.diputados.gov.ar/diputados/
-    Campos obtenidos: nombre, distrito, bloque, mandato_hasta, genero
+    Campos obtenidos: nombre, distrito, bloque, mandato_hasta, genero, foto_url
     """
     print("[STEP 1] Scraping nomina de diputados...")
     url = "https://www.diputados.gov.ar/diputados/"
@@ -158,28 +186,36 @@ def scrape_nomina():
             return []
 
         diputados = []
+        con_foto = 0
         filas = tabla.find_all("tr")[1:]
         for fila in filas:
             cols = fila.find_all("td")
             if len(cols) < 4:
                 continue
+            # Col 0 = foto (imagen), col 1 = nombre — ver diagnostico en
+            # scrapers/diputados.py. Ya filtramos arriba len(cols) >= 4, asi
+            # que cols[0] siempre existe en este punto.
+            foto_url = _extraer_foto_url(cols[0], url)
             nombre = cols[1].get_text(strip=True)
             distrito = cols[2].get_text(strip=True)
             bloque = cols[3].get_text(strip=True)
             # Columna de mandato puede variar; intentar col 4 si existe
             mandato_hasta = cols[4].get_text(strip=True) if len(cols) > 4 else ""
+            if foto_url:
+                con_foto += 1
             diputados.append({
                 "nombre": nombre,
                 "distrito": distrito,
                 "bloque": bloque,
                 "mandato_hasta": mandato_hasta,
                 "genero": _detect_gender(nombre),  # mejorar con datos oficiales
+                "foto_url": foto_url,
                 "asistencia_pct": None,
                 "proyectos_presentados": None,
                 "proyectos_aprobados": None,
                 "iqp": None
             })
-        print(f"[OK] {len(diputados)} diputados encontrados")
+        print(f"[OK] {len(diputados)} diputados encontrados ({con_foto} con foto)")
         return diputados
     except Exception as e:
         print(f"[ERROR] scrape_nomina: {e}")

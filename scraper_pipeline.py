@@ -34,7 +34,17 @@ from datetime import datetime
 from urllib.parse import urljoin
 
 import requests
+import urllib3
 from bs4 import BeautifulSoup
+
+# Los dominios .gob.ar vienen fallando con SSLCertVerificationError ("unable
+# to get local issuer certificate") tanto en Windows como en runners de CI
+# (mismo workaround aplicado en obtener_datos.py / scripts/cruzar_presupuesto.py).
+# No es un problema de nuestro codigo, es la cadena de certificados del
+# servidor publico: desactivamos la verificacion estricta para no perder el
+# dato por esto (aceptable aca: solo se lee HTML/CSV/JSON publico, no se
+# manda nada sensible).
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ---------------------------------------------------------------------------
 # Configuracion
@@ -177,7 +187,7 @@ def scrape_nomina():
     print("[STEP 1] Scraping nomina de diputados...")
     url = "https://www.diputados.gov.ar/diputados/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        res = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=False)
         res.raise_for_status()
         soup = BeautifulSoup(res.text, "html.parser")
         tabla = soup.find("table")
@@ -247,7 +257,7 @@ def scrape_asistencia(diputados):
         return diputados
 
     try:
-        res = requests.get(PDF_URL, headers=HEADERS, timeout=TIMEOUT, stream=True)
+        res = requests.get(PDF_URL, headers=HEADERS, timeout=TIMEOUT, stream=True, verify=False)
         res.raise_for_status()
 
         import io
@@ -339,7 +349,8 @@ def scrape_proyectos(diputados):
                 API_URL,
                 params={"resource_id": RESOURCE_ID, "limit": limit, "offset": offset},
                 headers=HEADERS,
-                timeout=60
+                timeout=60,
+                verify=False,
             )
             res.raise_for_status()
             data = res.json()
@@ -419,7 +430,7 @@ def scrape_presupuesto():
     import csv, io
     for url in CSV_URLS:
         try:
-            res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            res = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=False)
             if res.status_code != 200:
                 continue
             content = res.content.decode("utf-8", errors="replace")
@@ -480,7 +491,7 @@ def scrape_votaciones(diputados):
         actas = []
         for ep in endpoints:
             try:
-                res = requests.get(f"{api_base}{ep}", headers=HEADERS, timeout=20)
+                res = requests.get(f"{api_base}{ep}", headers=HEADERS, timeout=20, verify=False)
                 print(f"[INFO] {ep} → {res.status_code}")
                 if res.status_code == 200:
                     data = res.json()
@@ -500,7 +511,7 @@ def scrape_votaciones(diputados):
                 continue
             for ep_votos in [f"/api/v1/actas/{acta_id}/votos/", f"/api/actas/{acta_id}/votos/"]:
                 try:
-                    res2 = requests.get(f"{api_base}{ep_votos}", headers=HEADERS, timeout=20)
+                    res2 = requests.get(f"{api_base}{ep_votos}", headers=HEADERS, timeout=20, verify=False)
                     if res2.status_code != 200:
                         continue
                     votos_data = res2.json()

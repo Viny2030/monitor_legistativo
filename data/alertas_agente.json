@@ -1,80 +1,79 @@
 {
-  "generado_en": "2026-08-08T09:22:44.035334+00:00",
+  "generado_en": "2026-08-09T09:32:24.756017+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-08-08T09:22:44.035334+00:00",
+    "generado_en": "2026-08-09T09:32:24.756017+00:00",
     "total_hallazgos": 13,
     "por_severidad": {
-      "alta": 10,
+      "alta": 11,
       "media": 0,
-      "baja": 3
+      "baja": 2
     },
     "hallazgos": [
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Menem, Martín (LA LIBERTAD AVANZA): IQP 0.0 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Menem, Martín"
+        "detalle": "Aguirre, Hilda (UNIÓN POR LA PATRIA, LA RIOJA): asistencia 0.0%.",
+        "diputado": "Aguirre, Hilda"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Pagano, Marcela Marina (COHERENCIA): IQP 0.0286 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Pagano, Marcela Marina"
+        "detalle": "Ajmechet, Sabrina (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Ajmechet, Sabrina"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Tailhade, Rodolfo (UNIÓN POR LA PATRIA): IQP 0.0323 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Tailhade, Rodolfo"
+        "detalle": "Ansaloni, Pablo (LA LIBERTAD AVANZA, BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Ansaloni, Pablo"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Bregman, Myriam (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Bregman, Myriam"
+        "detalle": "Arabia, Damián (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Arabia, Damián"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "del Caño, Nicolás (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "del Caño, Nicolás"
+        "detalle": "Ardohain, Martín (PRO, LA PAMPA): asistencia 0.0%.",
+        "diputado": "Ardohain, Martín"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Del Plá, Romina (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Del Plá, Romina"
+        "detalle": "Arrieta, Lourdes Micaela (PROVINCIAS UNIDAS, MENDOZA): asistencia 0.0%.",
+        "diputado": "Arrieta, Lourdes Micaela"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Ianni, Ana María (UNIÓN POR LA PATRIA): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Ianni, Ana María"
+        "detalle": "Aveiro, Martín (UNIÓN POR LA PATRIA, MENDOZA): asistencia 0.0%.",
+        "diputado": "Aveiro, Martín"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Pitrola, Nestor (FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Pitrola, Nestor"
+        "detalle": "Avico, Belén (LA LIBERTAD AVANZA, CORDOBA): asistencia 0.0%.",
+        "diputado": "Avico, Belén"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Propato, Agustina Lucrecia (UNIÓN POR LA PATRIA): IQP 0.0513 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Propato, Agustina Lucrecia"
+        "detalle": "Avila, Jorge Antonio (PROVINCIAS UNIDAS, CHUBUT): asistencia 0.0%.",
+        "diputado": "Avila, Jorge Antonio"
       },
       {
-        "tipo": "iqp_bajo",
+        "tipo": "asistencia_critica",
         "severidad": "alta",
-        "detalle": "Massot, Nicolás (ENCUENTRO FEDERAL): IQP 0.0556 (índice de quórum y permanencia por debajo de 0.3).",
-        "diputado": "Massot, Nicolás"
+        "detalle": "Avila, Fernanda (ELIJO CATAMARCA, CATAMARCA): asistencia 0.0%.",
+        "diputado": "Avila, Fernanda"
       },
       {
-        "tipo": "outlier_estadistico_asistencia",
-        "severidad": "baja",
-        "detalle": "Schiaretti, Juan: asistencia 77.5%, por debajo del piso estadístico (100.0%) del resto del cuerpo.",
-        "diputado": "Schiaretti, Juan"
+        "tipo": "delta_asistencia_global",
+        "severidad": "alta",
+        "detalle": "Asistencia promedio global cayó 99.9 puntos vs. la corrida anterior (99.9% → 0.0%)."
       },
       {
         "tipo": "indicador_estimado",
@@ -93,8 +92,74 @@
     "motivo": "Hallazgos estructurados generados sin problema (no requieren IA); la redacción narrativa está deshabilitada porque no hay ANTHROPIC_API_KEY."
   },
   "alerta": {
-    "requiere_alerta": false,
+    "requiere_alerta": true,
     "criterio": "siempre para eventos puntuales; solo si es nuevo para estados por diputado",
-    "hallazgos_relevantes": []
+    "hallazgos_relevantes": [
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Aguirre, Hilda (UNIÓN POR LA PATRIA, LA RIOJA): asistencia 0.0%.",
+        "diputado": "Aguirre, Hilda"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Ajmechet, Sabrina (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Ajmechet, Sabrina"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Ansaloni, Pablo (LA LIBERTAD AVANZA, BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Ansaloni, Pablo"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Arabia, Damián (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
+        "diputado": "Arabia, Damián"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Ardohain, Martín (PRO, LA PAMPA): asistencia 0.0%.",
+        "diputado": "Ardohain, Martín"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Arrieta, Lourdes Micaela (PROVINCIAS UNIDAS, MENDOZA): asistencia 0.0%.",
+        "diputado": "Arrieta, Lourdes Micaela"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Aveiro, Martín (UNIÓN POR LA PATRIA, MENDOZA): asistencia 0.0%.",
+        "diputado": "Aveiro, Martín"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Avico, Belén (LA LIBERTAD AVANZA, CORDOBA): asistencia 0.0%.",
+        "diputado": "Avico, Belén"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Avila, Jorge Antonio (PROVINCIAS UNIDAS, CHUBUT): asistencia 0.0%.",
+        "diputado": "Avila, Jorge Antonio"
+      },
+      {
+        "tipo": "asistencia_critica",
+        "severidad": "alta",
+        "detalle": "Avila, Fernanda (ELIJO CATAMARCA, CATAMARCA): asistencia 0.0%.",
+        "diputado": "Avila, Fernanda"
+      },
+      {
+        "tipo": "delta_asistencia_global",
+        "severidad": "alta",
+        "detalle": "Asistencia promedio global cayó 99.9 puntos vs. la corrida anterior (99.9% → 0.0%)."
+      }
+    ]
   }
 }

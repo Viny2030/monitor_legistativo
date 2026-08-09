@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-08-08T09:24:43.559602",
+    "ultima_actualizacion": "2026-08-09T09:32:16.907567",
     "fuente_asistencia": "indicadores_votacion.csv (HCDN votaciones)"
   },
   "diputados": [
@@ -11,10 +11,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27139186244_20231130154914000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 57,
+      "proyectos_aprobados": 10,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 57,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Agüero, Guillermo César",
@@ -35,10 +39,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27290423894_20251205090952000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 28,
+      "proyectos_aprobados": 12,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 34,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Alí, Ernesto \"Pipi\"",
@@ -60,9 +68,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20200592167_20251204134624000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Almirón, Lisandro",
@@ -96,9 +107,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20233803252_20251202134006000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 54,
+      "proyectos_aprobados": 23,
+      "iqp": null,
+      "sil_presentados": 52,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Andrade, Javier",
@@ -108,9 +122,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20205726838_20251202084506000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Andreussi, Barbara",
@@ -131,10 +148,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20220776795_20231218133633000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Arabia, Damián",
@@ -143,10 +161,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20357318158_20231128095338000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 27,
+      "proyectos_aprobados": 12,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 49,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Araujo Hernández, Jorge Neri",
@@ -167,10 +189,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23202055869_20231218135501000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 18,
+      "proyectos_aprobados": 7,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Arrieta, Lourdes Micaela",
@@ -179,10 +205,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27372984177_20240522103948000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 32,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 39,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Arrúa, Alberto",
@@ -203,10 +233,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20241811612_20231218133854000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 60,
+      "proyectos_aprobados": 33,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 70,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Avico, Belén",
@@ -215,10 +249,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27275988877_20231218134025000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Avila, Jorge Antonio",
@@ -227,10 +262,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20174462144_20231205093948000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 21,
+      "proyectos_aprobados": 13,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Avila, Fernanda",
@@ -239,10 +278,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27324151031_20231128100116000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 21,
+      "proyectos_aprobados": 13,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Banfi, Karina",
@@ -251,10 +294,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27225074467_20231215100135000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 73,
+      "proyectos_aprobados": 48,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 96,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Barbur, Marcelo",
@@ -264,9 +311,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20184725976_20251127111243000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Basterra, Luis Eugenio",
@@ -275,10 +325,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23124773849_20231218134240000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 11,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Basualdo, Atilio",
@@ -288,9 +342,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20147385375_20251216131254000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 31,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Basualdo, Carolina",
@@ -300,9 +357,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27264849638_20251203092410000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 31,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Becerra, Mónica",
@@ -323,10 +383,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20131823666_20231207102136000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Benegas Lynch, Bertie",
@@ -335,10 +399,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20186213476_20231218134617000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Bianchetti, Emmanuel",
@@ -347,10 +412,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20290353123_20241015130737000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 20,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 26,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Biella, Bernardo",
@@ -360,9 +429,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20162915119_20251204135134000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 36,
+      "proyectos_aprobados": 14,
+      "iqp": null,
+      "sil_presentados": 26,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bonacci, Rocío",
@@ -371,10 +443,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27396592881_20231128103306000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bongiovanni, Alejandro",
@@ -383,10 +459,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20301123990_20231128103659000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bordet, Gustavo",
@@ -395,10 +475,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20149980548_20231128110939000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 14,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Borgatta, Alejandrina",
@@ -408,9 +492,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27307017496_20251201094658000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 20,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bornoroni, Gabriel",
@@ -419,10 +506,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20266723181_20231129150958000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bregman, Myriam",
@@ -432,9 +523,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27226005531_20251127152919000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 34,
+      "proyectos_aprobados": 13,
+      "iqp": null,
+      "sil_presentados": 20,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Brizuela, Adrián",
@@ -444,9 +538,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20229354036_20251127111925000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bruno, Eliana",
@@ -456,9 +553,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27337541599_20251204135612000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Brügge, Juan Fernando",
@@ -467,10 +567,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20161572749_20231128095743000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 29,
+      "proyectos_aprobados": 18,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 52,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Cafiero, Santiago",
@@ -479,10 +583,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20273754041_20231218134818000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Campero, Mariano",
@@ -491,10 +599,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20301177314_20231128100341000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Campitelli, Celia",
@@ -503,10 +615,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27051354805_20231130154636000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 17,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Campo, Julieta Marisol",
@@ -516,9 +632,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27360187867_20251127084629000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 44,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 37,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Cámpora, Lucía",
@@ -539,10 +658,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23111038589_20231129154056000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 29,
+      "proyectos_aprobados": 13,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 45,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Carignano, Florencia",
@@ -551,10 +674,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27266811425_20231218134938000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 49,
+      "proyectos_aprobados": 5,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 56,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Carrancio, Alejandro",
@@ -564,9 +691,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20253856409_20251127112724000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Casas, Sergio Guillermo",
@@ -575,10 +705,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20172493379_20231129154211000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 9,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Castagneto, Carlos Daniel",
@@ -587,10 +721,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20139425163_20231128100920000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 55,
+      "proyectos_aprobados": 37,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 92,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Castelnuovo, Giselle",
@@ -611,10 +749,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20275742253_20231128101110000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 44,
+      "proyectos_aprobados": 17,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 68,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Chiconi, Abel",
@@ -635,10 +777,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20056678558_20231128100953000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 26,
+      "proyectos_aprobados": 24,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 11,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Cisneros, Carlos",
@@ -647,10 +793,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20162164040_20200206125401_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 11,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Coletta, Mariela",
@@ -659,10 +809,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27345125391_20231128100429000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Correa Llano, Facundo",
@@ -671,10 +825,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20268386131_20231218135336000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Daives, Ricardo",
@@ -683,10 +838,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20080476842_20231207100702000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 5,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "de Andreis, Fernando",
@@ -696,9 +855,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20249775461_20251127113216000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "sil_presentados": 5,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "de la Rosa, María Graciela",
@@ -708,9 +870,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23113647604_20251126100940000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "de la Sota, Natalia",
@@ -719,10 +884,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27248854265_20211216102711000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 19,
+      "proyectos_aprobados": 10,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 19,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "De Sensi, María Florencia",
@@ -731,10 +900,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27332948895_20251128092414000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "del Caño, Nicolás",
@@ -743,10 +916,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20279217714_20251204140140000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 67,
+      "proyectos_aprobados": 23,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 72,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Del Plá, Romina",
@@ -779,10 +956,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27280582536_20231128105528000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Dolce, Sergio",
@@ -792,9 +970,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20269684438_20251126101424000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Emma, Nicolás",
@@ -803,10 +984,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20291515011_20251128090428000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Estévez, Gabriela Beatriz",
@@ -827,10 +1009,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20148134902_20241128142619000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Fargosi, Alejandro",
@@ -923,10 +1109,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20250442433_20231128104631000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 93,
+      "proyectos_aprobados": 74,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 92,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ferreyra, Alida",
@@ -935,10 +1125,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27262351195_20240129145036000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Figliuolo, Sergio",
@@ -948,9 +1142,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20253596814_20251204141955000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Finocchiaro, Alejandro",
@@ -959,10 +1156,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20184536758_20211202162523000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Flores, Maria Gabriela",
@@ -972,9 +1173,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27241384727_20251204142138000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Frade, Mónica",
@@ -983,10 +1187,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23127596824_20231128101433000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 70,
+      "proyectos_aprobados": 34,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 74,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Fregonese, Alicia",
@@ -996,9 +1204,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27142715916_20251215115147000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Freites, Andrea",
@@ -1007,10 +1218,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27256325689_20231128102702000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 55,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 50,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Frias, Maira",
@@ -1032,9 +1247,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27318487222_20251215091750000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Galmarini, Sebastián",
@@ -1044,9 +1262,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20266508329_20251201142222000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 15,
+      "proyectos_aprobados": 11,
+      "iqp": null,
+      "sil_presentados": 13,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "García, Carlos",
@@ -1055,10 +1276,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20221313837_20231205095639000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "García, María Teresa",
@@ -1067,10 +1289,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27122857714_20251126102902000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "García, Álvaro",
@@ -1079,10 +1302,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20270878181_20251204142930000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "García Aresca, Ignacio",
@@ -1091,10 +1315,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20208736338_20251203094634000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Garrido, José Luis",
@@ -1103,10 +1328,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20209210739_20240122145422000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Giampieri, Antonela",
@@ -1116,9 +1345,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27339516524_20251204143259000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Giudici, Silvana",
@@ -1127,10 +1359,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27145408909_20231128100754000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 67,
+      "proyectos_aprobados": 34,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 96,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Giuliano, Diego A.",
@@ -1139,10 +1375,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20172884181_20231129150454000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 39,
+      "proyectos_aprobados": 16,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 42,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Glinski, José",
@@ -1151,10 +1391,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20280759881_20231128111210000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 13,
+      "proyectos_aprobados": 5,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Goitia, Rosario",
@@ -1175,10 +1419,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20161912078_20231129151752000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Gonzales, Alfredo",
@@ -1248,9 +1496,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20303347659_20251126103754000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Gruber, Maura",
@@ -1308,9 +1559,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20323020516_20251126104035000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Hagman, Itai",
@@ -1319,10 +1573,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20190103200_20251127083856000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 19,
+      "proyectos_aprobados": 5,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 26,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Hartfield, Diego",
@@ -1344,9 +1602,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20223522514_20251126104204000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "sil_presentados": 7,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Holzman, Patricia",
@@ -1367,10 +1628,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20279611412_20231206151210000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Humenuk, Gladys",
@@ -1391,10 +1656,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27209648909_20231128100843000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 119,
+      "proyectos_aprobados": 17,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 162,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ibañez, María Cecilia",
@@ -1403,10 +1672,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23171578434_20231129152402000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 25,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 30,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Jaime Quiroga, Carlos Gustavo",
@@ -1416,9 +1689,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20291658971_20251201114641000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Juliano, Pablo",
@@ -1427,10 +1703,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23337997589_20231128111433000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 191,
+      "proyectos_aprobados": 35,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 153,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Kirchner, Máximo Carlos",
@@ -1439,10 +1719,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20258693109_20231128170631000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Lanesan Sancho, Moira",
@@ -1452,9 +1736,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27314401234_20251127085330000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 13,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 13,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Laumann, Andrés Ariel",
@@ -1464,8 +1751,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20225959111_20251204145542000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
       "iqp": null
     },
     {
@@ -1475,10 +1762,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20165030398_20240319150734000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 26,
+      "proyectos_aprobados": 15,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 18,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Lemoine, Lilia",
@@ -1487,10 +1778,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27282985263_20231128101233000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Leone, Andrés",
@@ -1511,10 +1806,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27267928539_20231128104245000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 29,
+      "proyectos_aprobados": 17,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 19,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Lluch, Enrique",
@@ -1536,9 +1835,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27296966075_20251126105244000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "López, Jimena",
@@ -1584,9 +1886,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20263667000_20251126081336000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 17,
+      "proyectos_aprobados": 7,
+      "iqp": null,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Macyszyn, Lorena",
@@ -1595,10 +1900,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27267660633_20231129152015000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Mango, Marcelo",
@@ -1608,9 +1917,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20173882174_20251201142709000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 37,
+      "proyectos_aprobados": 15,
+      "iqp": null,
+      "sil_presentados": 28,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Manrique, Mario",
@@ -1619,10 +1931,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20146757066_20231128100511000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Marclay, Marianela",
@@ -1632,9 +1948,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27305499108_20251126085708000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Marín, Varinia Lis",
@@ -1643,10 +1962,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27201070746_20251126110014000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Marino, Juan",
@@ -1655,10 +1975,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20338868244_20231128101152000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 51,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 51,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Martínez, Álvaro",
@@ -1667,10 +1991,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20326276287_20251201145432000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Martínez, Germán Pedro",
@@ -1679,10 +2004,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242395752_20200206125405_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Massot, Nicolás",
@@ -1692,9 +2018,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20310895955_20231128100601000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Matzkin, Martín",
@@ -1716,9 +2045,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23221392094_20251211134029000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "sil_presentados": 5,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Mayoraz, Nicolás",
@@ -1727,10 +2059,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20202980210_20231128104924000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Medina, Gladys",
@@ -1739,10 +2075,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27233105193_20251202145510000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 14,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 18,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Menem, Martín",
@@ -1751,10 +2091,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245792906_20231207105307000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Metral Asensio, Julieta",
@@ -1776,9 +2120,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20256611210_20251126111108000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 22,
+      "proyectos_aprobados": 20,
+      "iqp": null,
+      "sil_presentados": 16,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Miño, Fernanda",
@@ -1788,9 +2135,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27241001070_20251126111348000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Molina, Juan Carlos",
@@ -1800,9 +2150,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20179418046_20251203102227000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 44,
+      "proyectos_aprobados": 11,
+      "iqp": null,
+      "sil_presentados": 29,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Molinuevo, Soledad",
@@ -1812,9 +2165,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27225573641_20251126111910000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Molle, Matías",
@@ -1823,10 +2179,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20253485478_20231128101340000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 7,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Mondaca, Soledad",
@@ -1836,9 +2196,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27340841366_20251126112238000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Monguillot, Fernando",
@@ -1848,9 +2211,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20336951292_20251204152800000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Montenegro, Juan Pablo",
@@ -1859,10 +2225,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20266676531_20251204153033000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 44,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Montenegro, Guillermo",
@@ -1871,10 +2241,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245846828_20231205094335000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 44,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Monzón, Roxana",
@@ -1895,10 +2269,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245607068_20231129150853000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 30,
+      "proyectos_aprobados": 14,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 32,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Moreau, Cecilia",
@@ -1907,10 +2285,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27256151524_20200206125351_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 39,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 44,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Moreno Ovalle, Julio",
@@ -1919,10 +2301,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20112830325_20231207101650000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Moyano, Hugo Antonio",
@@ -1932,9 +2318,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20305063291_20251127154357000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 15,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Mukdise, Jorge",
@@ -1944,9 +2333,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20228949907_20251126121705000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Muñoz, Gabriela Luciana",
@@ -1956,9 +2348,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27348606684_20251127141340000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Neder, Estela Mary",
@@ -1967,10 +2362,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23137026104_20200206125333_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 18,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Nieri, Lisandro",
@@ -1979,10 +2378,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20227777436_20231130151346000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Niveyro, Miriam",
@@ -1992,9 +2395,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27200012513_20251126125955000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Nóblega, Sebastián",
@@ -2016,9 +2422,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20217440743_20251127092235000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Nuñez, José",
@@ -2027,10 +2436,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242920644_20200206125307_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ojeda, Joaquín",
@@ -2052,9 +2465,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27104003465_20251211133815000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 47,
+      "proyectos_aprobados": 26,
+      "iqp": null,
+      "sil_presentados": 37,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Osuna, Blanca Inés",
@@ -2063,10 +2479,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27065013253_20200206125406_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 58,
+      "proyectos_aprobados": 17,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 123,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Outes, Pablo",
@@ -2075,10 +2495,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20186082134_20231206151257000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 13,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pagano, Marcela Marina",
@@ -2087,10 +2511,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27319281628_20231128104503000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 285,
+      "proyectos_aprobados": 224,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 192,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Palazzo, Sergio Omar",
@@ -2099,10 +2527,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20160116006_20211202190948000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Palladino, Claudia María",
@@ -2112,9 +2544,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27177269323_20251127141926000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pareja, Sebastián",
@@ -2135,10 +2570,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27267107721_20200206125405_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Patiño Brizuela, Marcos",
@@ -2159,10 +2595,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20330842025_20250310200035000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 7,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Paulón, Esteban",
@@ -2183,10 +2623,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27167558742_20251204153727000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 31,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 42,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pellegrini, Agustín",
@@ -2208,9 +2652,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20318128031_20251126135026000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Peluc, José",
@@ -2219,10 +2666,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20229030680_20231128104116000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Penacca, Paula Andrea",
@@ -2231,10 +2679,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27288605993_20231129153817000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Petri, Luis",
@@ -2244,9 +2696,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20258871112_20251215092917000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Petrovich, María Lorena",
@@ -2256,8 +2711,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27276017328_20251215093643000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
       "iqp": null
     },
     {
@@ -2267,10 +2722,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/24240124552_20231129152201000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Pichetto, Miguel Ángel",
@@ -2279,10 +2735,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20084824403_20231207101138000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 9,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 17,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Picón Martínez, Nancy Viviana",
@@ -2304,9 +2764,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20260191951_20251126135219000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 14,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pitrola, Nestor",
@@ -2316,9 +2779,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20104458832_20251201112051000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 34,
+      "proyectos_aprobados": 17,
+      "iqp": null,
+      "sil_presentados": 41,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pokoik, Lorena",
@@ -2327,10 +2793,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27232050107_20231128101305000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 47,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 67,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ponce, María Celeste",
@@ -2339,10 +2809,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27329016817_20240220173740000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 5,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Potenza, Luciana",
@@ -2351,10 +2825,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27383193562_20231205094547000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 7,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Propato, Agustina Lucrecia",
@@ -2363,10 +2841,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27295495540_20251203103219000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 336,
+      "proyectos_aprobados": 99,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 256,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Quintar, Manuel",
@@ -2375,10 +2857,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20286470298_20231212100502000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Rauschenberger, Ariel",
@@ -2387,10 +2873,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20173488956_20231207102606000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 32,
+      "proyectos_aprobados": 7,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 52,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ravera, Valentina",
@@ -2411,10 +2901,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27280877188_20231206151457000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Reichardt, Karen",
@@ -2424,9 +2918,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27208314128_20251126140748000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Riesco, Gastón",
@@ -2436,9 +2933,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20328293162_20251126141016000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ritondo, Cristian A.",
@@ -2447,10 +2947,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20178562038_20200206125410_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 29,
+      "proyectos_aprobados": 22,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 20,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Rizzotti, Jorge",
@@ -2459,10 +2963,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20147877596_20231129151608000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 7,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Roberto, Santiago Luis",
@@ -2472,9 +2980,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20228130770_20251126141452000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 17,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 18,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Roca, Gonzalo",
@@ -2484,8 +2995,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20270799044_20251126141757000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
       "iqp": null
     },
     {
@@ -2495,10 +3006,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20327299264_20251126142417000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Rodríguez Machado, Laura Elena",
@@ -2507,10 +3019,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27148917987_20251201132523000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Rossi, Agustín Oscar",
@@ -2520,9 +3033,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20136518772_20251204154656000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 14,
+      "iqp": null,
+      "sil_presentados": 32,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ruíz, Yamila",
@@ -2544,9 +3060,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27352538626_20251126143421000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 13,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "sil_presentados": 9,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Sánchez Wrba, Javier",
@@ -2567,10 +3086,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27165495239_20231128104737000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 53,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 62,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Santillán Juárez Brahim, Juliana",
@@ -2591,10 +3114,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20334340660_20231220212146000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 4,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Scaglia, Gisela",
@@ -2604,9 +3131,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27254532164_20251126150327000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Schiaretti, Juan",
@@ -2616,9 +3146,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20077998412_20260211164128000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Schneider, Darío",
@@ -2628,9 +3161,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20169551139_20251126151156000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Selva, Sabrina",
@@ -2639,10 +3175,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27326867476_20250609144435000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 47,
+      "proyectos_aprobados": 12,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 55,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Serquis, Adriana Cristina",
@@ -2652,9 +3192,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27184140115_20251204155243000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 8,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Siley, Vanesa Raquel",
@@ -2663,10 +3206,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27311140693_20251127081950000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 39,
+      "proyectos_aprobados": 24,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 33,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Snopek, Guillermo",
@@ -2675,10 +3222,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20243992371_20231128095550000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 30,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Soldano, Laura",
@@ -2699,10 +3250,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27344084039_20231128095848000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 45,
+      "proyectos_aprobados": 15,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 51,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Taiana, Jorge",
@@ -2712,9 +3267,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23083626739_20251127155233000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 15,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 10,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tailhade, Rodolfo",
@@ -2723,10 +3281,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20213862996_20200206125321_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tepp, Caren",
@@ -2736,9 +3298,12 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27327025533_20251126153919000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 27,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "sil_presentados": 19,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tita, Paulo Agustín",
@@ -2748,9 +3313,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20250816031_20251202135647000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "sil_presentados": 17,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Todero, Pablo",
@@ -2759,10 +3327,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20225253324_20231128101514000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 42,
+      "proyectos_aprobados": 19,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 33,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tolosa Paz, Victoria",
@@ -2771,10 +3343,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27234850666_20231212100552000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 65,
+      "proyectos_aprobados": 27,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 85,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tomassoni, Yamile",
@@ -2795,10 +3371,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27142911502_20231206151657000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Torres, Rubén Darío",
@@ -2807,10 +3387,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20255454995_20251201151659000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 12,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tortoriello, Aníbal",
@@ -2819,10 +3403,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20129790351_20240202135114000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tournier, José Federico",
@@ -2831,10 +3419,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20244166246_20240814152633000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Treffinger, César",
@@ -2843,10 +3435,11 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242671652_20231206151800000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Trotta, Nicolás Alfredo",
@@ -2856,9 +3449,12 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20249577163_20251126094055000_small.png",
       "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "proyectos_presentados": 38,
+      "proyectos_aprobados": 7,
+      "iqp": null,
+      "sil_presentados": 35,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Urien, Hernán",
@@ -2891,10 +3487,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245096152_20231128095424000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 25,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 71,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Vásquez, Patricia",
@@ -2915,10 +3515,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27182307349_20231128103453000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 58,
+      "proyectos_aprobados": 30,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 62,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Velázquez, M. Elena",
@@ -2939,10 +3543,11 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27386299175_20251126155353000_small.png",
-      "asistencia_pct": null,
+      "asistencia_pct": 0.0,
       "proyectos_presentados": null,
       "proyectos_aprobados": null,
-      "iqp": null
+      "iqp": null,
+      "nape": 1.0
     },
     {
       "nombre": "Verasay, Pamela Fernanda",
@@ -2951,10 +3556,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27281591954_20251211094515000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Villaverde, Lorena",
@@ -2963,10 +3572,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23238322464_20231128105805000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 3,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 9,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Visconti, Gino",
@@ -2987,10 +3600,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27188873559_20231205095034000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 30,
+      "proyectos_aprobados": 22,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Yasky, Hugo",
@@ -2999,10 +3616,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23082070699_20200206125341_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 84,
+      "proyectos_aprobados": 58,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 63,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Yedlin, Pablo Raúl",
@@ -3011,10 +3632,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20176149923_20231128100642000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 36,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 62,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Yeza, Martín",
@@ -3023,10 +3648,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20319778110_20231128103139000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 10,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 14,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zago, Oscar",
@@ -3035,10 +3664,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23165838009_20231129153517000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zapata, Carlos Raúl",
@@ -3047,10 +3680,14 @@
       "mandato_hasta": "2025-2029",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20127901628_20251127080650000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 17,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zaracho, Natalia",
@@ -3059,10 +3696,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27354613285_20251021154732000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 21,
+      "proyectos_aprobados": 11,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 24,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zigarán, María Inés",
@@ -3083,10 +3724,14 @@
       "mandato_hasta": "2023-2027",
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23332030159_20231130155355000_small.png",
-      "asistencia_pct": null,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null
+      "asistencia_pct": 0.0,
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 0,
+      "iqp": null,
+      "nape": 1.0,
+      "sil_presentados": 22,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     }
   ],
   "presupuesto": {
@@ -3109,7 +3754,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-08-08T09:22:22.111286"
+    "timestamp": "2026-08-09T09:27:44.667240"
   },
   "itc": {
     "id": "ITC",
@@ -3127,7 +3772,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-08-08T09:22:35.803474",
+    "timestamp": "2026-08-09T09:32:16.806695",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }

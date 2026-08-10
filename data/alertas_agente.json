@@ -1,11 +1,11 @@
 {
-  "generado_en": "2026-08-09T09:32:24.756017+00:00",
+  "generado_en": "2026-08-10T09:51:22.012261+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-08-09T09:32:24.756017+00:00",
-    "total_hallazgos": 13,
+    "generado_en": "2026-08-10T09:51:22.012261+00:00",
+    "total_hallazgos": 12,
     "por_severidad": {
-      "alta": 11,
+      "alta": 10,
       "media": 0,
       "baja": 2
     },
@@ -71,11 +71,6 @@
         "diputado": "Avila, Fernanda"
       },
       {
-        "tipo": "delta_asistencia_global",
-        "severidad": "alta",
-        "detalle": "Asistencia promedio global cayó 99.9 puntos vs. la corrida anterior (99.9% → 0.0%)."
-      },
-      {
         "tipo": "indicador_estimado",
         "severidad": "baja",
         "detalle": "TPMP usa un valor de referencia, no dato en vivo: ⚠️ Requiere conexión al SIL para valor real"
@@ -92,74 +87,8 @@
     "motivo": "Hallazgos estructurados generados sin problema (no requieren IA); la redacción narrativa está deshabilitada porque no hay ANTHROPIC_API_KEY."
   },
   "alerta": {
-    "requiere_alerta": true,
+    "requiere_alerta": false,
     "criterio": "siempre para eventos puntuales; solo si es nuevo para estados por diputado",
-    "hallazgos_relevantes": [
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Aguirre, Hilda (UNIÓN POR LA PATRIA, LA RIOJA): asistencia 0.0%.",
-        "diputado": "Aguirre, Hilda"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Ajmechet, Sabrina (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
-        "diputado": "Ajmechet, Sabrina"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Ansaloni, Pablo (LA LIBERTAD AVANZA, BUENOS AIRES): asistencia 0.0%.",
-        "diputado": "Ansaloni, Pablo"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Arabia, Damián (LA LIBERTAD AVANZA, CIUDAD DE BUENOS AIRES): asistencia 0.0%.",
-        "diputado": "Arabia, Damián"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Ardohain, Martín (PRO, LA PAMPA): asistencia 0.0%.",
-        "diputado": "Ardohain, Martín"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Arrieta, Lourdes Micaela (PROVINCIAS UNIDAS, MENDOZA): asistencia 0.0%.",
-        "diputado": "Arrieta, Lourdes Micaela"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Aveiro, Martín (UNIÓN POR LA PATRIA, MENDOZA): asistencia 0.0%.",
-        "diputado": "Aveiro, Martín"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Avico, Belén (LA LIBERTAD AVANZA, CORDOBA): asistencia 0.0%.",
-        "diputado": "Avico, Belén"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Avila, Jorge Antonio (PROVINCIAS UNIDAS, CHUBUT): asistencia 0.0%.",
-        "diputado": "Avila, Jorge Antonio"
-      },
-      {
-        "tipo": "asistencia_critica",
-        "severidad": "alta",
-        "detalle": "Avila, Fernanda (ELIJO CATAMARCA, CATAMARCA): asistencia 0.0%.",
-        "diputado": "Avila, Fernanda"
-      },
-      {
-        "tipo": "delta_asistencia_global",
-        "severidad": "alta",
-        "detalle": "Asistencia promedio global cayó 99.9 puntos vs. la corrida anterior (99.9% → 0.0%)."
-      }
-    ]
+    "hallazgos_relevantes": []
   }
 }

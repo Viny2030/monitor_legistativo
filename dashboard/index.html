@@ -283,16 +283,25 @@ const ESTADO_INFO = {
   auditoria:   { badge: '⚠ Auditoría en curso',   cls: 'badge-amarillo',  card: 'amarillo' },
   planificado: { badge: '🔜 Planificado v2.0',     cls: 'badge-sin_datos', card: '' },
 };
-function formatearValor(id, valor) {
+function formatearValor(valor, unidad) {
+  // Formatea según la UNIDAD real del dato (la del servidor si es en vivo,
+  // si no la de referencia) en vez de asumirla por ID: el propio backend
+  // reutiliza el id "COLS" para dos indicadores con unidades distintas
+  // ("$ ARS / ley" en la definición de referencia vs. "% diputados con 1+
+  // ley aprobada" en /api/indicadores) — formatear por ID fijo mostraba
+  // "$0 M" para ese valor cuando en realidad es un porcentaje.
   if (valor === null || valor === undefined || valor === '') return '—';
   const v = parseFloat(valor);
   if (isNaN(v)) return String(valor);
-  if (id === 'CRC') return `$${v.toLocaleString('es-AR', {maximumFractionDigits:0})}`;
-  if (id === 'COLS') return `$${(v/1_000_000).toLocaleString('es-AR', {maximumFractionDigits:0})} M`;
-  if (['RPS','RLS','ECO','TVD','IPCV'].includes(id)) return `${v.toFixed(1)}%`;
-  if (id === 'NAPE') return `${(v <= 1 ? v*100 : v).toFixed(0)}%`;
-  if (id === 'IAP') return v.toFixed(3);
-  if (id === 'IAD') return `${v}/5`;
+  const u = (unidad || '').toLowerCase();
+  if (u.includes('$') || u.includes('ars')) {
+    return Math.abs(v) >= 1_000_000
+      ? `$${(v/1_000_000).toLocaleString('es-AR', {maximumFractionDigits:0})} MM`
+      : `$${v.toLocaleString('es-AR', {maximumFractionDigits:0})}`;
+  }
+  if (u.includes('%')) return `${v.toFixed(1)}%`;
+  if (u.includes('ratio')) return v.toFixed(3);
+  if (u.includes('escala')) return `${v}/5`;
   return v.toLocaleString('es-AR', { maximumFractionDigits: 3 });
 }
 // ── Agentic AI ────────────────────────────────────────────────────────────
@@ -324,12 +333,22 @@ async function explicarConIA(tipo, boxId, btnId) {
   }
 }
 
+function normalizar(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+}
 function renderCard(id, live) {
   const ref = REF[id] || {};
   const tieneLive = !!(live && live.valor !== undefined && live.valor !== null);
   const valor = tieneLive ? live.valor : ref.valor_ref;
-  const nombre = ref.nombre || (live && live.nombre) || id;
-  const unidad = (live && live.unidad) || ref.unidad || '';
+  const unidad = tieneLive ? (live.unidad || '') : (ref.unidad || '');
+  // El propio backend a veces reutiliza un id con otro significado (p. ej.
+  // "COLS" es "Costo Operativo por Ley Sancionada" en esta definición de
+  // referencia pero "Coeficiente de Legislación Sustantiva" en
+  // /api/indicadores). Si el nombre que manda el servidor no coincide con
+  // el de referencia, mostramos el nombre/fuente del servidor tal cual y
+  // NO la fórmula/interpretación de referencia (describirían otro indicador).
+  const coincide = !tieneLive || !live.nombre || normalizar(live.nombre) === normalizar(ref.nombre || '');
+  const nombre = tieneLive ? (live.nombre || ref.nombre || id) : (ref.nombre || id);
   const estadoKey = tieneLive ? 'activo' : (ref.estado_ref || 'estimacion');
   const info = ESTADO_INFO[estadoKey] || ESTADO_INFO.estimacion;
   const iaBoxId = `ia-box-${id}`;
@@ -341,10 +360,11 @@ function renderCard(id, live) {
         <span class="card-id">${id}</span>
         <span class="card-name">${nombre}</span>
       </div>
-      <div class="card-value">${formatearValor(id, valor)}</div>
+      <div class="card-value">${formatearValor(valor, unidad)}</div>
       <div class="card-unit">${unidad}</div>
-      ${ref.formula ? `<div class="card-formula">${ref.formula}</div>` : ''}
-      ${ref.interpretacion ? `<div class="card-interp">${ref.interpretacion}</div>` : ''}
+      ${coincide && ref.formula ? `<div class="card-formula">${ref.formula}</div>` : ''}
+      ${coincide && ref.interpretacion ? `<div class="card-interp">${ref.interpretacion}</div>` : ''}
+      ${!coincide ? `<div class="card-interp" style="color:#b45309;">⚠ Definición del servidor distinta de la de referencia — se muestra el dato tal como lo envía la API.</div>` : ''}
       <span class="estado-badge ${info.cls}">${info.badge}</span>
       ${tieneLive && live.fuente ? `<div style="font-size:.68rem;color:#94a3b8;margin-top:.4rem;">📄 ${live.fuente}</div>` : ''}
       ${tieneLive && live.advertencia ? `<div style="font-size:.68rem;color:#b45309;margin-top:.3rem;">${live.advertencia}</div>` : ''}
@@ -378,10 +398,15 @@ async function recargarDatos() {
     const resp = await fetch(`${API_URL}/api/indicadores`, { signal: AbortSignal.timeout(8000) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
+    // Cuenta solo los que caen en alguno de los 12 slots canónicos (REF),
+    // no el total crudo que devuelve el servidor: si mañana el backend suma
+    // un indicador con un id nuevo (como pasó con "PDA"), no se muestra en
+    // esta grilla de 12 y no debe inflar el contador de "en vivo".
+    const enVivo = (data.indicadores || []).filter(i => REF[i.id]).length;
     dot.className = 'status-dot online';
-    statusEl.textContent = `✅ Servidor conectado · ${data.total}/${totalDef} indicadores en vivo · ${new Date().toLocaleTimeString('es-AR')}`;
+    statusEl.textContent = `✅ Servidor conectado · ${enVivo}/${totalDef} indicadores en vivo · ${new Date().toLocaleTimeString('es-AR')}`;
     document.getElementById('header-subtitulo').textContent =
-      `${totalDef} Indicadores de Desempeño del Congreso Nacional · ${data.total} en vivo, el resto con valor de referencia`;
+      `${totalDef} Indicadores de Desempeño del Congreso Nacional · ${enVivo} en vivo, el resto con valor de referencia`;
     renderDashboard(data.indicadores);
   } catch (err) {
     dot.className = 'status-dot offline';
@@ -425,7 +450,7 @@ recargarDatos();
 <div style="background:#f0f2f5; padding:0 1.5rem 0.5rem;">
   <div style="border-top:3px solid #003087; padding-top:1.2rem; margin-bottom:.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
     <h2 style="font-size:1rem; font-weight:700; color:#003087; text-transform:uppercase; letter-spacing:.05em;">
-      👤 Índice de Eficiencia por Diputado/a
+      👤 Productividad Legislativa por Diputado/a
     </h2>
     <div style="margin-left:auto; display:flex; gap:.5rem; flex-wrap:wrap; align-items:center;">
       <input id="buscar-diputado" type="text" placeholder="🔍 Buscar nombre..."
@@ -437,7 +462,8 @@ recargarDatos();
       </select>
       <select id="orden-col" onchange="ordenarTabla(this.value)"
         style="border:1px solid #cbd5e1; border-radius:6px; padding:.35rem .7rem; font-size:.8rem;">
-        <option value="ice">Ordenar por ICE ↓</option>
+        <option value="presentados">Ordenar por proyectos presentados ↓</option>
+        <option value="aprobados">Ordenar por proyectos aprobados ↓</option>
         <option value="nombre">Ordenar por Nombre</option>
         <option value="bloque">Ordenar por Bloque</option>
         <option value="distrito">Ordenar por Distrito</option>
@@ -445,9 +471,12 @@ recargarDatos();
     </div>
   </div>
   <p style="font-size:.75rem; color:#64748b; padding-bottom:.8rem;">
-    <strong>ICE</strong> = Índice Compuesto de Eficiencia ·
-    Fórmula: <code style="background:#e2e8f0; padding:.1rem .3rem; border-radius:3px;">ICE = (Asistencia × 0.4) + (Productividad × 0.35) + (Participación en Comisiones × 0.25)</code>
-    · Escala 0–100
+    Proyectos de ley presentados y aprobados por cada diputado/a, según datos oficiales de la HCDN.
+    <strong>Nota:</strong> la asistencia nominal y la participación en comisiones por diputado todavía no
+    están disponibles de forma confiable (requieren integración con el SIL — ver
+    <a href="metodologia_diputados.html" style="color:#0057b7;">metodología</a>). Antes esta tabla completaba
+    esos dos componentes con números aleatorios para armar un "Índice de Eficiencia (ICE)" que cambiaba en
+    cada recarga — se quitó por no ser un dato real.
   </p>
 </div>
 <div class="container" style="padding-top:.5rem;">
@@ -460,15 +489,14 @@ recargarDatos();
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Nombre</th>
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Distrito</th>
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Bloque</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Asistencia</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Productividad</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Comisiones</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">ICE</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos presentados</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos aprobados</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Tasa de aprobación</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Estado</th>
           </tr>
         </thead>
         <tbody id="tbody-diputados">
-          <tr><td colspan="9" style="text-align:center; padding:2rem; color:#94a3b8;">Cargando datos...</td></tr>
+          <tr><td colspan="8" style="text-align:center; padding:2rem; color:#94a3b8;">Cargando datos...</td></tr>
         </tbody>
       </table>
     </div>
@@ -631,72 +659,30 @@ function colorBloque(bloque) {
   }
   return '#94a3b8';
 }
-function calcularICE(asistencia, productividad, comisiones) {
-  return Math.round(asistencia * 0.40 + productividad * 0.35 + comisiones * 0.25);
-}
-function estadoICE(ice) {
-  if (ice >= 70) return { label: '🟢 Alto',   cls: 'badge-verde' };
-  if (ice >= 45) return { label: '🟡 Medio',  cls: 'badge-amarillo' };
-  return            { label: '🔴 Bajo',   cls: 'badge-rojo' };
-}
+// Antes había un calcularICE()/estadoICE() que combinaba Asistencia,
+// Productividad y Participación en Comisiones en un "Índice de Eficiencia".
+// Se quitaron: Asistencia y Comisiones no tienen todavía una fuente de datos
+// real por diputado (ver nota en el HTML), y enriquecerDiputado() los
+// rellenaba con Math.random() — un número distinto en cada recarga para cada
+// diputado real. Ahora solo se muestran los dos campos que sí vienen de la
+// API con datos reales: proyectos_presentados y proyectos_aprobados.
 async function cargarDiputados() {
   try {
     const resp = await fetch(`${API_URL}/api/diputados`, { signal: AbortSignal.timeout(5000) });
-    if (resp.ok) {
-      const data = await resp.json();
-      DIPUTADOS_DATA = data.diputados.map(enriquecerDiputado);
-    } else {
-      throw new Error('endpoint no disponible');
-    }
-  } catch {
-    DIPUTADOS_DATA = generarDiputadosFallback();
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    DIPUTADOS_DATA = data.diputados || [];
+    ordenarTabla('presentados');
+    poblarFiltroBloques(DIPUTADOS_DATA);
+  } catch (err) {
+    DIPUTADOS_DATA = [];
+    document.getElementById('tbody-diputados').innerHTML =
+      `<tr><td colspan="8" style="text-align:center; padding:2rem; color:#94a3b8;">
+        ⚠️ No se pudo conectar con el servidor (${err.message}). No se muestran datos de ejemplo para
+        no confundirlos con datos reales de diputados.
+      </td></tr>`;
+    document.getElementById('tabla-footer').textContent = 'Servidor no disponible.';
   }
-  renderTablaDiputados(DIPUTADOS_DATA);
-  poblarFiltroBloques(DIPUTADOS_DATA);
-}
-function enriquecerDiputado(d) {
-  const asistencia    = d.asistencia    ?? Math.round(55 + Math.random() * 44);
-  const productividad = d.productividad ?? Math.round(30 + Math.random() * 65);
-  const comisiones    = d.comisiones    ?? Math.round(40 + Math.random() * 55);
-  const ice = calcularICE(asistencia, productividad, comisiones);
-  return { ...d, asistencia, productividad, comisiones, ice };
-}
-function generarDiputadosFallback() {
-  const bloquesDist = [
-    { bloque: 'La Libertad Avanza',       n: 38, distritos: ['CABA','Buenos Aires','Córdoba','Santa Fe','Mendoza'] },
-    { bloque: 'Unión por la Patria',      n: 40, distritos: ['Buenos Aires','Santa Fe','Tucumán','Córdoba','Chaco'] },
-    { bloque: 'PRO',                       n: 37, distritos: ['CABA','Buenos Aires','Córdoba','Mendoza','Santa Fe'] },
-    { bloque: 'UCR',                       n: 34, distritos: ['Buenos Aires','Córdoba','Santa Fe','Entre Ríos','Río Negro'] },
-    { bloque: 'Hacemos Coalición Federal', n: 21, distritos: ['Córdoba','Tucumán','Salta','Jujuy','Misiones'] },
-    { bloque: 'Innovación Federal',        n: 16, distritos: ['San Juan','San Luis','Catamarca','La Rioja','Formosa'] },
-    { bloque: 'Monobloque',                n: 12, distritos: ['Neuquén','Río Negro','Chubut','Santa Cruz','Tierra del Fuego'] },
-  ];
-  const apellidos = ['García','González','Rodríguez','Fernández','López','Martínez','Sánchez','Pérez',
-    'Romero','Torres','Díaz','Gómez','Ruiz','Morales','Castro','Herrera','Medina','Flores','Alvarez','Ramos'];
-  const nombres = ['Juan','María','Carlos','Ana','Luis','Laura','Jorge','Patricia','Marcelo','Claudia',
-    'Roberto','Silvia','Diego','Verónica','Pablo','Gabriela','Sergio','Florencia','Martín','Cecilia'];
-  let lista = [];
-  let idx = 1;
-  bloquesDist.forEach(({ bloque, n, distritos }) => {
-    for (let i = 0; i < n; i++) {
-      const asistencia    = Math.round(50 + Math.random() * 49);
-      const productividad = Math.round(25 + Math.random() * 70);
-      const comisiones    = Math.round(35 + Math.random() * 60);
-      const ice = calcularICE(asistencia, productividad, comisiones);
-      lista.push({
-        id: idx++,
-        nombre: `${apellidos[Math.floor(Math.random()*apellidos.length)]}, ${nombres[Math.floor(Math.random()*nombres.length)]}`,
-        distrito: distritos[i % distritos.length],
-        bloque,
-        asistencia,
-        productividad,
-        comisiones,
-        ice,
-        fuente: 'ejemplo',
-      });
-    }
-  });
-  return lista.sort((a, b) => b.ice - a.ice);
 }
 function miniBar(valor, color) {
   return `<div style="display:flex; align-items:center; gap:.3rem;">
@@ -709,13 +695,17 @@ function miniBar(valor, color) {
 function renderTablaDiputados(lista) {
   const tbody = document.getElementById('tbody-diputados');
   if (!lista.length) {
-    tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:2rem;color:#94a3b8;">Sin datos disponibles</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:2rem;color:#94a3b8;">Sin datos disponibles</td></tr>';
+    document.getElementById('tabla-footer').textContent = '';
     return;
   }
-  const esFallback = lista[0]?.fuente === 'ejemplo';
   tbody.innerHTML = lista.map((d, i) => {
-    const est = estadoICE(d.ice);
     const col = colorBloque(d.bloque);
+    const presentados = d.proyectos_presentados;
+    const aprobados = d.proyectos_aprobados;
+    const tieneDatos = presentados !== null && presentados !== undefined;
+    const tasa = (tieneDatos && presentados > 0 && aprobados !== null && aprobados !== undefined)
+      ? Math.round(aprobados / presentados * 100) : null;
     return `<tr style="border-bottom:1px solid #f1f5f9; ${i%2===0?'background:#fafafa':''}"
                onmouseover="this.style.background='#eff6ff'"
                onmouseout="this.style.background='${i%2===0?'#fafafa':''}'">
@@ -728,24 +718,20 @@ function renderTablaDiputados(lista) {
           ${d.bloque}
         </span>
       </td>
-      <td style="padding:.45rem .8rem; min-width:90px;">${miniBar(d.asistencia, '#0057b7')}</td>
-      <td style="padding:.45rem .8rem; min-width:90px;">${miniBar(d.productividad, '#22c55e')}</td>
-      <td style="padding:.45rem .8rem; min-width:90px;">${miniBar(d.comisiones, '#f59e0b')}</td>
+      <td style="padding:.45rem .8rem; text-align:center; font-weight:700;">${tieneDatos ? presentados : '—'}</td>
+      <td style="padding:.45rem .8rem; text-align:center; font-weight:700;">${(aprobados !== null && aprobados !== undefined) ? aprobados : '—'}</td>
+      <td style="padding:.45rem .8rem; min-width:100px;">${tasa !== null ? miniBar(tasa, '#22c55e') : '<span style="color:#94a3b8;">—</span>'}</td>
       <td style="padding:.45rem .8rem; text-align:center;">
-        <span style="font-size:1.1rem; font-weight:900; color:${d.ice>=70?'#15803d':d.ice>=45?'#92400e':'#991b1b'};">
-          ${d.ice}
-        </span>
-      </td>
-      <td style="padding:.45rem .8rem; text-align:center;">
-        <span class="estado-badge ${est.cls}" style="font-size:.65rem;">${est.label}</span>
+        ${tieneDatos
+          ? `<span class="estado-badge badge-verde" style="font-size:.65rem;">✓ Con datos</span>`
+          : `<span class="estado-badge badge-sin_datos" style="font-size:.65rem;">Sin dato SIL</span>`}
       </td>
     </tr>`;
   }).join('');
   const total = lista.length;
-  const icePromedio = Math.round(lista.reduce((s,d)=>s+d.ice,0)/total);
+  const conDatos = lista.filter(d => d.proyectos_presentados !== null && d.proyectos_presentados !== undefined).length;
   document.getElementById('tabla-footer').innerHTML =
-    `Mostrando <strong>${total}</strong> diputados/as · ICE promedio: <strong>${icePromedio}</strong>
-     ${esFallback ? '· <span style="color:#f59e0b;">⚠️ Datos de ejemplo — conectar <code>nomina_diputados.csv</code> para datos reales</span>' : ''}`;
+    `Mostrando <strong>${total}</strong> diputados/as · <strong>${conDatos}</strong> con datos de proyectos (SIL) · <strong>${total - conDatos}</strong> sin dato todavía`;
 }
 function poblarFiltroBloques(lista) {
   const bloques = [...new Set(lista.map(d => d.bloque))].sort();
@@ -767,10 +753,14 @@ function filtrarTabla() {
 }
 function ordenarTabla(col) {
   const copia = [...DIPUTADOS_DATA];
-  if (col === 'ice')      copia.sort((a,b) => b.ice - a.ice);
-  if (col === 'nombre')   copia.sort((a,b) => a.nombre.localeCompare(b.nombre));
-  if (col === 'bloque')   copia.sort((a,b) => a.bloque.localeCompare(b.bloque));
-  if (col === 'distrito') copia.sort((a,b) => a.distrito.localeCompare(b.distrito));
+  // Los diputados sin dato (null/undefined) van al final en vez de contar como 0,
+  // para no mezclarlos con quienes de verdad presentaron 0 proyectos.
+  const num = v => (v === null || v === undefined ? -Infinity : v);
+  if (col === 'presentados') copia.sort((a,b) => num(b.proyectos_presentados) - num(a.proyectos_presentados));
+  if (col === 'aprobados')   copia.sort((a,b) => num(b.proyectos_aprobados) - num(a.proyectos_aprobados));
+  if (col === 'nombre')      copia.sort((a,b) => a.nombre.localeCompare(b.nombre));
+  if (col === 'bloque')      copia.sort((a,b) => a.bloque.localeCompare(b.bloque));
+  if (col === 'distrito')    copia.sort((a,b) => a.distrito.localeCompare(b.distrito));
   const buscar = document.getElementById('buscar-diputado').value.toLowerCase();
   const bloque = document.getElementById('filtro-bloque').value;
   const filtrado = copia.filter(d =>

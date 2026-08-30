@@ -240,7 +240,7 @@ def get_kpis():
     KPIs globales para el dashboard:
       - NAPE global (% inasistencia promedio)
       - TPMP (tasa proyectos media por diputado)
-      - COLS (coeficiente de legisferacion activa)
+      - PDA (porcentaje de diputados con al menos 1 ley aprobada)
       - IAP (indice de aprobacion presupuestaria)
       - RLS (ratio legisladores/100k hab)
       - Paridad de genero
@@ -260,9 +260,11 @@ def get_kpis():
     proyectos = [d["proyectos_presentados"] for d in diputados if d.get("proyectos_presentados") is not None]
     tpmp = round(sum(proyectos) / len(proyectos), 2) if proyectos else None
 
-    # COLS (% con al menos 1 proyecto aprobado)
+    # PDA (% con al menos 1 proyecto aprobado). Antes esto se llamaba "cols"
+    # y colisionaba con el id "COLS" ya usado en dashboard/indicadores_diputados.html
+    # para "Costo Operativo por Ley Sancionada" (un indicador distinto, en $ ARS/ley).
     con_aprobado = sum(1 for d in diputados if (d.get("proyectos_aprobados") or 0) > 0)
-    cols = round(con_aprobado / n * 100, 1) if n else None
+    pda = round(con_aprobado / n * 100, 1) if n else None
 
     # IAP
     presupuesto = data.get("presupuesto", {})
@@ -283,7 +285,7 @@ def get_kpis():
         "total_diputados": n,
         "nape": nape,
         "tpmp": tpmp,
-        "cols": cols,
+        "pda": pda,
         "iap": iap,
         "iqp_global": iqp_global,
         "rls": rls,
@@ -330,7 +332,11 @@ def get_indicadores():
          "horas_pleno": itc_data.get("horas_pleno"),
          "n_reuniones": itc_data.get("n_reuniones"),
          "advertencia": itc_data.get("advertencia"), "version": "1.1"},
-        {"id": "COLS", "nombre": "Coeficiente de Legislacion Sustantiva",
+        # Antes tenia id "COLS", que colisionaba con "Costo Operativo por Ley
+        # Sancionada" (indicador distinto, ya usado con ese id en
+        # dashboard/indicadores_diputados.html). Se renombro a "PDA" para que
+        # cada id identifique un unico indicador en todo el sitio.
+        {"id": "PDA", "nombre": "Porcentaje de Diputados con Ley Aprobada",
          "valor": round(cols_n / n * 100, 1) if n else None,
          "unidad": "% diputados con 1+ ley aprobada", "fuente": "CKAN HCDN / SIL", "version": "1.0"},
         {"id": "IAP", "nombre": "Indice de Autonomia Presupuestaria",

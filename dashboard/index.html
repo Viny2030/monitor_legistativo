@@ -161,11 +161,10 @@ footer {
   </span>
 </div>
 <div class="leyenda">
-  <strong>Benchmarks internacionales (IPU · OCDE · CEPAL · OGP):</strong>
-  <span><span class="dot dot-g"></span> Bueno</span>
-  <span><span class="dot dot-y"></span> Regular</span>
-  <span><span class="dot dot-r"></span> Crítico</span>
-  <span style="margin-left:auto; color:#aaa; font-weight:400;">La barra ▌azul marca el valor actual de Argentina</span>
+  <strong>Estado de los indicadores:</strong>
+  <span><span class="dot dot-g"></span> ✓ Activo (dato real)</span>
+  <span><span class="dot dot-y"></span> ⚠ Estimación / auditoría en curso</span>
+  <span style="color:#94a3b8;"><span class="dot" style="background:#94a3b8;"></span> 🔜 Planificado v2.0</span>
 </div>
 <div class="container" id="main-container">
   <div style="text-align:center; padding:3rem; color:#94a3b8;">
@@ -223,7 +222,7 @@ footer {
   <div class="don-card" style="max-width:320px;">
     <h5>📬 Autor y Contacto</h5>
     <div style="display:flex; align-items:center; gap:.8rem; margin-bottom:.7rem;">
-      <img src="../foto.jpg" alt="Vicente Humberto Monteverde"
+      <img src="foto.jpg" alt="Vicente Humberto Monteverde"
         style="width:56px; height:56px; border-radius:50%; object-fit:cover; border:2px solid #334155; flex-shrink:0;"
         onerror="this.style.display='none'">
       <div>
@@ -250,94 +249,51 @@ const API_URL = (typeof window.API_URL !== 'undefined')
     ? 'http://localhost:8000'
     : window.location.origin;
 document.getElementById('api-url-display').textContent = API_URL + '/api/indicadores';
-const META = {
-  CPR: {
-    unidad_display: id => v => `$${Number(v).toLocaleString('es-AR', {maximumFractionDigits:0})}`,
-    bench: { inv: true, zonas: ['🟢 &lt;USD 8/hab.', '🟡 USD 8–20', '🔴 &gt;USD 20<br><small>(OCDE)</small>'], min: 0, max_usd: 25 },
-    estado: v => v / 900 < 8 ? 'verde' : v / 900 < 20 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Bajo costo', etiqueta_der: 'Alto costo',
-  },
-  TPS: {
-    bench: { inv: false, zonas: ['🔴 &lt;50%', '🟡 50–70%', '🟢 &gt;70%<br><small>(Ref. AL)</small>'], min: 0, max: 100 },
-    estado: v => v > 70 ? 'verde' : v > 50 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Baja profesionalización', etiqueta_der: 'Alta',
-  },
-  CAF: {
-    bench: { inv: false, zonas: ['🔴 &lt;0.85', '🟡 0.85–0.95', '🟢 &gt;0.95<br><small>(Ref. OCDE)</small>'], min: 0.7, max: 1.0 },
-    estado: v => v > 0.95 ? 'verde' : v > 0.85 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Recorte severo', etiqueta_der: 'Plena autonomía',
-  },
-  TMM: {
-    bench: { inv: true, zonas: ['🟢 &lt;45 días<br><small>(UK/NZ)</small>', '🟡 45–90 días', '🔴 &gt;90 días'], min: 0, max: 180 },
-    estado: v => v < 45 ? 'verde' : v < 90 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Ágil', etiqueta_der: 'Lento',
-  },
-  ITT: {
-    bench: { inv: false, zonas: ['🔴 &lt;1.0', '🟡 1.0–2.0<br><small>(Ref. OCDE: ≥2)</small>', '🟢 &gt;2.0'], min: 0, max: 6 },
-    estado: v => v > 2 ? 'verde' : v > 1 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Débil técnica', etiqueta_der: 'Fuerte técnica',
-  },
-  IQP: {
-    bench: { inv: false, zonas: ['🔴 &lt;0.60<br><small>(AL prom.)</small>', '🟡 0.60–0.75', '🟢 &gt;0.75<br><small>(Ref. IPU)</small>'], min: 0, max: 1 },
-    estado: v => v > 0.75 ? 'verde' : v > 0.60 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Baja asistencia', etiqueta_der: 'Alta asistencia',
-  },
-  CUN: {
-    bench: { inv: true, zonas: ['🟢 &lt;USD 2M', '🟡 USD 2–5M<br><small>(Ref. AL)</small>', '🔴 &gt;USD 5M'], min: 0, max_usd: 12 },
-    estado: v => v/900_000_000 < 2 ? 'verde' : v/900_000_000 < 5 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Eficiente', etiqueta_der: 'Costoso',
-  },
-  CLS: {
-    bench: { inv: false, zonas: ['🔴 &lt;40%', '🟡 40–55%', '🟢 &gt;55%<br><small>(Ref. CEPAL)</small>'], min: 0, max: 100 },
-    estado: v => v > 55 ? 'verde' : v > 40 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Baja calidad', etiqueta_der: 'Alta calidad',
-  },
-  TEF: {
-    bench: { inv: false, zonas: ['🔴 &lt;0.40', '🟡 0.40–0.60<br><small>(Ref. IPU)</small>', '🟢 &gt;0.60<br><small>(UK, Canadá)</small>'], min: 0, max: 1 },
-    estado: v => v > 0.60 ? 'verde' : v > 0.40 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Inefectivo', etiqueta_der: 'Efectivo',
-  },
-  CAD: {
-    bench: { inv: false, zonas: ['🔴 &lt;0.35', '🟡 0.35–0.65<br><small>(Ref. OGP: ≥0.65)</small>', '🟢 &gt;0.65<br><small>(NZ, Estonia)</small>'], min: 0, max: 1 },
-    estado: v => v > 0.65 ? 'verde' : v > 0.35 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Cerrado', etiqueta_der: 'Totalmente abierto',
-  },
-  EVD: {
-    bench: { inv: true, zonas: ['🟢 &lt;5%<br><small>(Estándar auditoría)</small>', '🟡 5–15%', '🔴 &gt;15%'], min: 0, max: 0.30 },
-    estado: v => v < 0.05 ? 'verde' : v < 0.15 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Sin errores', etiqueta_der: 'Muchos errores',
-  },
-  TCI: {
-    bench: { inv: false, zonas: ['🔴 &lt;3%', '🟡 3–10%<br><small>(Ref. OGP: ≥10%)</small>', '🟢 &gt;10%'], min: 0, max: 25 },
-    estado: v => v > 10 ? 'verde' : v > 3 ? 'amarillo' : 'rojo',
-    etiqueta_izq: 'Baja participación', etiqueta_der: 'Alta participación',
-  },
+// ── Definición canónica de los 12 indicadores (misma taxonomía que
+//    dashboard/indicadores_diputados.html). Antes este archivo usaba IDs
+//    viejos (CPR, TPS, CAF...) que ya no coinciden con lo que devuelve
+//    /api/indicadores (NAPE, TPMP, ITC, COLS, IAP...), por eso todas las
+//    tarjetas mostraban "Sin datos disponibles" pese a decir "conectado".
+//    REF trae la definición de referencia (fórmula, unidad, interpretación,
+//    valor de referencia) para los 12; recargarDatos() la completa con el
+//    valor EN VIVO cuando /api/indicadores ya lo calcula.
+const REF = {
+  CRC:  { dim:'I',   nombre:'Costo de Representación por Ciudadano',       formula:'CRC = Presupuesto HCDN / Población',                    unidad:'$ ARS / habitante / año', valor_ref: 4818,        estado_ref:'activo',      interpretacion:'Gasto total de la HCDN prorrateado por habitante: costo directo de la democracia representativa para cada ciudadano.' },
+  RPS:  { dim:'I',   nombre:'Ratio de Profesionalización del Staff',       formula:'RPS = (Planta permanente / Total empleados) × 100',     unidad:'%',                        valor_ref: 57.5,        estado_ref:'activo',      interpretacion:'Proporción de empleados de carrera (planta permanente) vs. designaciones políticas transitorias.' },
+  IAP:  { dim:'I',   nombre:'Índice de Autonomía Presupuestaria',          formula:'IAP = Presupuesto ejecutado / Presupuesto aprobado',    unidad:'ratio (0–1)',              valor_ref: 0.95,        estado_ref:'estimacion',  interpretacion:'Capacidad del Congreso de ejecutar su propio presupuesto sin interferencia del Ejecutivo.' },
+  TPMP: { dim:'II',  nombre:'Tiempo Promedio de Maduración de Proyectos',  formula:'TPMP = Σ(Fecha dictamen − Fecha ingreso) / proyectos',  unidad:'días',                     valor_ref: 105,         estado_ref:'estimacion',  interpretacion:'Días transcurridos desde que un proyecto ingresa hasta que sale dictaminado de comisión.' },
+  ITC:  { dim:'II',  nombre:'Índice de Trabajo en Comisiones',             formula:'ITC = Horas de comisión / Horas de pleno',              unidad:'ratio',                    valor_ref: 3.5,         estado_ref:'estimacion',  interpretacion:'Proporción del tiempo dedicado a reuniones técnicas frente al debate en sesiones plenarias.' },
+  NAPE: { dim:'II',  nombre:'Nivel de Asistencia y Permanencia Efectiva',  formula:'NAPE = Diputados con asistencia perfecta / 257',        unidad:'ratio (0–1)',              valor_ref: 0.27,        estado_ref:'activo',      interpretacion:'Compromiso y presencia efectiva de los legisladores en las sesiones del período ordinario.' },
+  COLS: { dim:'III', nombre:'Costo Operativo por Ley Sancionada',          formula:'COLS = Presupuesto HCDN / Leyes sancionadas',           unidad:'$ ARS / ley',              valor_ref: 17421000000, estado_ref:'activo',      interpretacion:'Valor que representa para el Estado la producción de una norma jurídica.' },
+  RLS:  { dim:'III', nombre:'Ratio de Legislación Sustantiva',             formula:'RLS = (Leyes sustantivas / Leyes totales) × 100',       unidad:'%',                        valor_ref: 72.7,        estado_ref:'activo',      interpretacion:'Porcentaje de leyes de política pública real vs. declarativas o protocolares.' },
+  ECO:  { dim:'III', nombre:'Efectividad del Control (Oversight)',         formula:'ECO = Acciones de control / Irregularidades AGN',       unidad:'%',                        valor_ref: 5,           estado_ref:'estimacion',  interpretacion:'Porcentaje de informes de auditoría de la AGN que derivaron en acciones legislativas o sanciones.' },
+  IAD:  { dim:'IV',  nombre:'Índice de Accesibilidad Documental',          formula:'IAD = escala 1–5 según velocidad de publicación',       unidad:'escala 1–5',               valor_ref: 3,           estado_ref:'activo',      interpretacion:'Disponibilidad y velocidad de publicación de versiones taquigráficas y diarios de sesión.' },
+  TVD:  { dim:'IV',  nombre:'Tasa de Veracidad de Datos Capturados',       formula:'TVD = Datos correctos / 257 × 100',                     unidad:'%',                        valor_ref: 97,          estado_ref:'auditoria',   interpretacion:'Integridad del pipeline de scraping del monitor frente a los documentos oficiales originales.' },
+  IPCV: { dim:'IV',  nombre:'Índice de Participación Ciudadana Virtual',   formula:'IPCV = Interacciones ciudadanas / Visitas totales',     unidad:'%',                        valor_ref: null,        estado_ref:'planificado', interpretacion:'Impacto cívico de la herramienta. Módulo ciudadano interactivo previsto para la v2.0.' },
 };
 const DIMENSIONES = [
-  { titulo: 'Dimensión I – Costos e Insumos (Finanzas Legislativas)',  ids: ['CPR','TPS','CAF'] },
-  { titulo: 'Dimensión II – Eficiencia en el Proceso (Productividad)', ids: ['TMM','ITT','IQP'] },
-  { titulo: 'Dimensión III – Desempeño y Calidad (Impacto)',           ids: ['CUN','CLS','TEF'] },
-  { titulo: 'Dimensión IV – Transparencia y Datos (Tecnología)',       ids: ['CAD','EVD','TCI'] },
+  { titulo: 'Dimensión I – Costos e Insumos (Finanzas Legislativas)',  ids: ['CRC','RPS','IAP'] },
+  { titulo: 'Dimensión II – Eficiencia en el Proceso (Productividad)', ids: ['TPMP','ITC','NAPE'] },
+  { titulo: 'Dimensión III – Desempeño y Calidad (Impacto)',           ids: ['COLS','RLS','ECO'] },
+  { titulo: 'Dimensión IV – Transparencia y Datos (Tecnología)',       ids: ['IAD','TVD','IPCV'] },
 ];
-function formatearValor(id, valor, unidad) {
+const ESTADO_INFO = {
+  activo:      { badge: '✓ Activo',              cls: 'badge-verde',     card: 'verde' },
+  estimacion:  { badge: '⚠ Estimación parcial',   cls: 'badge-amarillo',  card: 'amarillo' },
+  auditoria:   { badge: '⚠ Auditoría en curso',   cls: 'badge-amarillo',  card: 'amarillo' },
+  planificado: { badge: '🔜 Planificado v2.0',     cls: 'badge-sin_datos', card: '' },
+};
+function formatearValor(id, valor) {
+  if (valor === null || valor === undefined || valor === '') return '—';
   const v = parseFloat(valor);
-  if (['CPR'].includes(id)) return `$${v.toLocaleString('es-AR', {maximumFractionDigits:0})}`;
-  if (['TPS','CLS','TCI'].includes(id)) return `${v.toFixed(1)}%`;
-  if (['CUN'].includes(id)) {
-    const m = v / 1_000_000;
-    return m >= 1000 ? `$${(m/1000).toFixed(1)} MM` : `$${m.toFixed(1)} M`;
-  }
+  if (isNaN(v)) return String(valor);
+  if (id === 'CRC') return `$${v.toLocaleString('es-AR', {maximumFractionDigits:0})}`;
+  if (id === 'COLS') return `$${(v/1_000_000).toLocaleString('es-AR', {maximumFractionDigits:0})} M`;
+  if (['RPS','RLS','ECO','TVD','IPCV'].includes(id)) return `${v.toFixed(1)}%`;
+  if (id === 'NAPE') return `${(v <= 1 ? v*100 : v).toFixed(0)}%`;
+  if (id === 'IAP') return v.toFixed(3);
+  if (id === 'IAD') return `${v}/5`;
   return v.toLocaleString('es-AR', { maximumFractionDigits: 3 });
-}
-function calcularPosicion(id, valor) {
-  const m = META[id];
-  if (!m) return 50;
-  const b = m.bench;
-  const v = parseFloat(valor);
-  const min = b.min || 0;
-  const max = b.max || b.max_usd * 900 || 100;
-  const pct = Math.min(Math.max(((v - min) / (max - min)) * 100, 2), 98);
-  return Math.round(pct);
 }
 // ── Agentic AI ────────────────────────────────────────────────────────────
 window.IA_DATOS = {};
@@ -368,39 +324,30 @@ async function explicarConIA(tipo, boxId, btnId) {
   }
 }
 
-function renderCard(ind) {
-  const m = META[ind.id] || {};
-  const estado = m.estado ? m.estado(ind.valor) : 'amarillo';
-  const estadoLabel = { verde: '🟢 Bueno', amarillo: '🟡 Regular', rojo: '🔴 Crítico' }[estado] || '⏳ Sin datos';
-  const pos = calcularPosicion(ind.id, ind.valor);
-  const inv = m.bench?.inv ? ' inv' : '';
-  const zonas = m.bench?.zonas || ['—','—','—'];
-  const iaBoxId = `ia-box-${ind.id}`;
-  const iaBtnId = `ia-btn-${ind.id}`;
-  window.IA_DATOS[iaBoxId] = ind;
+function renderCard(id, live) {
+  const ref = REF[id] || {};
+  const tieneLive = !!(live && live.valor !== undefined && live.valor !== null);
+  const valor = tieneLive ? live.valor : ref.valor_ref;
+  const nombre = ref.nombre || (live && live.nombre) || id;
+  const unidad = (live && live.unidad) || ref.unidad || '';
+  const estadoKey = tieneLive ? 'activo' : (ref.estado_ref || 'estimacion');
+  const info = ESTADO_INFO[estadoKey] || ESTADO_INFO.estimacion;
+  const iaBoxId = `ia-box-${id}`;
+  const iaBtnId = `ia-btn-${id}`;
+  window.IA_DATOS[iaBoxId] = live || { id, nombre, valor, unidad };
   return `
-    <div class="card ${estado}">
+    <div class="card ${info.card}">
       <div class="card-header">
-        <span class="card-id">${ind.id}</span>
-        <span class="card-name">${ind.nombre}</span>
+        <span class="card-id">${id}</span>
+        <span class="card-name">${nombre}</span>
       </div>
-      <div class="card-value">${formatearValor(ind.id, ind.valor, ind.unidad)}</div>
-      <div class="card-unit">${ind.unidad}</div>
-      <div class="card-formula">${ind.formula}</div>
-      <div class="card-interp">${ind.interpretacion}</div>
-      <span class="estado-badge badge-${estado}">${estadoLabel}</span>
-      <div class="bench-wrap">
-        <div class="bench-label">
-          <span>${m.etiqueta_izq || ''}</span>
-          <span>${m.etiqueta_der || ''}</span>
-        </div>
-        <div class="bench-track${inv}">
-          <div class="bench-marker" style="left:${pos}%"></div>
-        </div>
-        <div class="bench-zones">
-          ${zonas.map(z => `<span class="bz">${z}</span>`).join('')}
-        </div>
-      </div>
+      <div class="card-value">${formatearValor(id, valor)}</div>
+      <div class="card-unit">${unidad}</div>
+      ${ref.formula ? `<div class="card-formula">${ref.formula}</div>` : ''}
+      ${ref.interpretacion ? `<div class="card-interp">${ref.interpretacion}</div>` : ''}
+      <span class="estado-badge ${info.cls}">${info.badge}</span>
+      ${tieneLive && live.fuente ? `<div style="font-size:.68rem;color:#94a3b8;margin-top:.4rem;">📄 ${live.fuente}</div>` : ''}
+      ${tieneLive && live.advertencia ? `<div style="font-size:.68rem;color:#b45309;margin-top:.3rem;">${live.advertencia}</div>` : ''}
       <button id="${iaBtnId}" onclick="explicarConIA('indicador','${iaBoxId}','${iaBtnId}')"
         style="margin-top:.6rem;background:#1a1500;border:1px solid #3a2f00;color:#c9a227;
                padding:5px 12px;border-radius:6px;font-size:.72rem;font-weight:600;cursor:pointer">
@@ -410,24 +357,21 @@ function renderCard(ind) {
            border-radius:8px;padding:10px 12px;font-size:.78rem;color:#cbd5e1;line-height:1.6"></div>
     </div>`;
 }
-function renderDashboard(indicadores) {
-  const byId = Object.fromEntries(indicadores.map(i => [i.id, i]));
+function renderDashboard(indicadoresLive) {
+  const byId = Object.fromEntries((indicadoresLive || []).map(i => [i.id, i]));
   const container = document.getElementById('main-container');
   container.innerHTML = DIMENSIONES.map(dim => `
     <div class="dimension">
       <div class="dimension-title">${dim.titulo}</div>
       <div class="cards">
-        ${dim.ids.map(id => byId[id] ? renderCard(byId[id]) : `
-          <div class="card">
-            <div class="card-header"><span class="card-id">${id}</span></div>
-            <div style="color:#94a3b8; font-size:.85rem; padding:.5rem 0;">Sin datos disponibles</div>
-          </div>`).join('')}
+        ${dim.ids.map(id => renderCard(id, byId[id])).join('')}
       </div>
     </div>`).join('');
 }
 async function recargarDatos() {
   const dot = document.getElementById('api-dot');
   const statusEl = document.getElementById('api-status');
+  const totalDef = Object.keys(REF).length;
   dot.className = 'status-dot';
   statusEl.textContent = 'Conectando...';
   try {
@@ -435,34 +379,17 @@ async function recargarDatos() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     dot.className = 'status-dot online';
-    statusEl.textContent = `✅ Servidor conectado · ${data.total} indicadores · ${new Date().toLocaleTimeString('es-AR')}`;
+    statusEl.textContent = `✅ Servidor conectado · ${data.total}/${totalDef} indicadores en vivo · ${new Date().toLocaleTimeString('es-AR')}`;
     document.getElementById('header-subtitulo').textContent =
-      '12 Indicadores de Desempeño del Congreso Nacional · Datos en tiempo real';
+      `${totalDef} Indicadores de Desempeño del Congreso Nacional · ${data.total} en vivo, el resto con valor de referencia`;
     renderDashboard(data.indicadores);
   } catch (err) {
     dot.className = 'status-dot offline';
-    statusEl.textContent = `⚠️ Servidor no disponible (${err.message}) · Mostrando datos de ejemplo`;
+    statusEl.textContent = `⚠️ Servidor no disponible (${err.message}) · Mostrando valores de referencia`;
     document.getElementById('header-subtitulo').textContent =
-      '12 Indicadores de Desempeño del Congreso Nacional · Datos de ejemplo (servidor offline)';
-    usarDatosFallback();
+      `${totalDef} Indicadores de Desempeño del Congreso Nacional · Valores de referencia (servidor no disponible)`;
+    renderDashboard([]);
   }
-}
-function usarDatosFallback() {
-  const fallback = [
-    { id:'CPR', nombre:'Costo Per Cápita de Representación',      dimension:'I', valor:3966.42,    formula:'CPR = P_total / Pop_total',                         unidad:'$ ARS por habitante',           interpretacion:'A mayor valor, mayor costo por ciudadano para sostener el Congreso.' },
-    { id:'TPS', nombre:'Tasa de Profesionalización del Staff',    dimension:'I', valor:76.0,       formula:'TPS = (S_perm / (S_perm + S_temp)) × 100',          unidad:'%',                             interpretacion:'Mayor % = personal más estable y profesionalizado.' },
-    { id:'CAF', nombre:'Coeficiente de Autonomía Fiscal',         dimension:'I', valor:0.9622,     formula:'CAF = P_devengado / P_solicitado',                   unidad:'ratio (0–1+)',                  interpretacion:'CAF < 1: el Ejecutivo recortó el presupuesto pedido.' },
-    { id:'TMM', nombre:'Tiempo Medio de Maduración Legislativa',  dimension:'II',valor:70.3,       formula:'TMM = Σ(F_dictamen − F_ingreso) / n',               unidad:'días',                          interpretacion:'Promedio de días hasta dictamen de comisión.' },
-    { id:'ITT', nombre:'Intensidad de Trabajo Técnico',           dimension:'II',valor:3.875,      formula:'ITT = ΣH_com / ΣH_pleno',                           unidad:'ratio',                         interpretacion:'ITT > 2: elaboración técnica sólida antes del debate.' },
-    { id:'IQP', nombre:'Índice de Quórum y Permanencia',          dimension:'II',valor:0.8209,     formula:'IQP = [Σ(L_presentes / L_totales)] / V',            unidad:'ratio (0–1)',                   interpretacion:'Promedio de asistencia en votaciones nominales.' },
-    { id:'CUN', nombre:'Costo Unitario por Norma Sancionada',     dimension:'III',valor:2202380952, formula:'CUN = P_total / L_sancionadas',                     unidad:'$ ARS por ley',                 interpretacion:'Costo promedio de producir una ley.' },
-    { id:'CLS', nombre:'Calidad Legislativa Sustantiva',          dimension:'III',valor:36.9,      formula:'CLS = (L_sust / L_total) × 100',                    unidad:'%',                             interpretacion:'Menos del 40%: baja proporción de legislación de fondo.' },
-    { id:'TEF', nombre:'Tasa de Efectividad de Fiscalización',    dimension:'III',valor:0.4286,    formula:'TEF = IC_resueltos / IF_recibidos',                  unidad:'ratio (0–1)',                   interpretacion:'Menos del 43% de controles con seguimiento efectivo.' },
-    { id:'CAD', nombre:'Coeficiente de Apertura de Datos',        dimension:'IV', valor:0.484,     formula:'CAD = Σ(V_formato × W_tiempo) / Max_Score',         unidad:'ratio (0–1)',                   interpretacion:'Mayor valor = datos más abiertos y accesibles.' },
-    { id:'EVD', nombre:'Error de Veracidad de Datos',             dimension:'IV', valor:0.07,      formula:'EVD = D_erroneos / D_verificables',                  unidad:'ratio (0–1)',                   interpretacion:'7% de datos no coincide con fuente primaria.' },
-    { id:'TCI', nombre:'Tasa de Conversión de Interacción Ciudadana', dimension:'IV', valor:6.67,  formula:'TCI = (U_activos / U_totales) × 100',               unidad:'%',                             interpretacion:'Mayor % = más ciudadanos participan activamente.' },
-  ];
-  renderDashboard(fallback);
 }
 recargarDatos();
 </script>

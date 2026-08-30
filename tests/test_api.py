@@ -266,9 +266,18 @@ class TestIndicadoresTpmp:
         assert data["indicador"]["id"] == "TPMP"
 
     def test_fallback_si_sin_tpmp_en_datos(self, sample_data):
-        """Si no hay clave 'tpmp', devuelve valor por defecto 105.0."""
+        """Si no hay clave 'tpmp', devuelve valor por defecto 105.0.
+
+        Sin mockear scrapers.sil.calcular_tpmp, este test terminaba
+        disparando un scraping real (requests en vivo contra el SIL) porque
+        get_tpmp() en api_server.py cae a ese import cuando data["tpmp"] es
+        falsy — dependia de la red del entorno de test y podia colgarse.
+        Mockeamos la funcion para forzar la excepcion que el endpoint ya
+        maneja, que es exactamente el escenario que este test quiere probar.
+        """
         data_sin_tpmp = {**sample_data, "tpmp": None}
-        with patch("api_server.load_data", return_value=data_sin_tpmp):
+        with patch("api_server.load_data", return_value=data_sin_tpmp), \
+             patch("scrapers.sil.calcular_tpmp", side_effect=RuntimeError("SIL no disponible (test)")):
             resp = client.get("/api/indicadores/tpmp")
         assert resp.status_code == 200
         data = resp.json()
@@ -293,8 +302,11 @@ class TestIndicadoresItc:
         assert data["ok"] is True
 
     def test_fallback_si_sin_itc_en_datos(self, sample_data):
+        """Mismo motivo que test_fallback_si_sin_tpmp_en_datos: sin mockear
+        scrapers.comisiones.calcular_itc, get_itc() dispara scraping real."""
         data_sin_itc = {**sample_data, "itc": None}
-        with patch("api_server.load_data", return_value=data_sin_itc):
+        with patch("api_server.load_data", return_value=data_sin_itc), \
+             patch("scrapers.comisiones.calcular_itc", side_effect=RuntimeError("Comisiones no disponible (test)")):
             resp = client.get("/api/indicadores/itc")
         assert resp.status_code == 200
         data = resp.json()

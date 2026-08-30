@@ -188,16 +188,47 @@ def calcular_indicadores_votacion(df_votos: pd.DataFrame) -> pd.DataFrame:
     if df_votos.empty:
         return pd.DataFrame()
 
+    # Filas basura del scraper: nombre vacio/solo coma con Bloque en NaN
+    # (visto en votaciones_detalle.csv para una banca "PENDIENTE DE
+    # INCORPORACION" que la tabla de HCDN listo sin nombre todavia asignado).
+    # No corresponden a ningun diputado real — si se dejan pasar, rompen el
+    # cálculo de Bipartisanship_Score (agg sobre un grupo con Bloque=NaN) y
+    # además aparecían como una fila fantasma en indicadores_votacion.csv.
+    nombre_valido = df_votos["Nombre"].astype(str).str.strip().str.strip(",") != ""
+    descartadas = (~nombre_valido).sum()
+    if descartadas:
+        print(f"  ⚠️  Descartando {descartadas} filas con nombre vacio/invalido (banca pendiente de incorporacion)")
+    df_votos = df_votos[nombre_valido]
+
     total_votaciones = df_votos["ID_votacion"].nunique()
     print(f"\n📊 Calculando indicadores para {total_votaciones} votaciones...")
 
     # ── Participation Index ────────────────────────────────────────────────────
+    # BUG (encontrado 2026-08 al ver que ~99% de los diputados daban 100% de
+    # asistencia en el dashboard): esto contaba CUALQUIER fila en la tabla de
+    # la votacion como "presente", pero votaciones.hcdn.gob.ar lista a TODOS
+    # los diputados en cada votacion, incluidos los ausentes, con Voto =
+    # "AUSENTE" (384 de 10280 filas en votaciones_detalle.csv). Con
+    # nunique(ID_votacion) sin filtrar, un diputado ausente en las 40
+    # votaciones igual contaba como "40 presencias" -> Participation_Index
+    # quedaba en ~100% para casi todos, sin discriminar nada.
+    # Presente ahora = emitio un voto real o presidio la sesion. No cuenta
+    # AUSENTE ni PENDIENTE DE INCORPORACION (legislador que todavia no habia
+    # jurado para esa votacion, no es lo mismo que estar ausente).
+    NO_PRESENTE = {"AUSENTE", "PENDIENTE DE INCORPORACIÓN"}
+    df_presentes = df_votos[~df_votos["Voto"].str.upper().isin(NO_PRESENTE)]
     presencias = (
-        df_votos.groupby("Nombre")["ID_votacion"]
+        df_presentes.groupby("Nombre")["ID_votacion"]
         .nunique()
         .reset_index()
         .rename(columns={"ID_votacion": "Presencias"})
     )
+    # Diputados que nunca tuvieron una fila "presente" (p.ej. ausentes en las
+    # 40 votaciones) no aparecen en el groupby de arriba — hay que sumarlos
+    # con Presencias=0 en vez de perderlos.
+    todos_los_nombres = df_votos[["Nombre"]].drop_duplicates()
+    presencias = todos_los_nombres.merge(presencias, on="Nombre", how="left")
+    presencias["Presencias"] = presencias["Presencias"].fillna(0).astype(int)
     presencias["Total_votaciones"] = total_votaciones
     presencias["Participation_Index"] = (
         presencias["Presencias"] / total_votaciones * 100

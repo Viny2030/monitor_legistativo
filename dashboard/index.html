@@ -464,6 +464,7 @@ recargarDatos();
         style="border:1px solid #cbd5e1; border-radius:6px; padding:.35rem .7rem; font-size:.8rem;">
         <option value="presentados">Ordenar por proyectos presentados ↓</option>
         <option value="aprobados">Ordenar por proyectos aprobados ↓</option>
+        <option value="asistencia">Ordenar por asistencia ↓</option>
         <option value="nombre">Ordenar por Nombre</option>
         <option value="bloque">Ordenar por Bloque</option>
         <option value="distrito">Ordenar por Distrito</option>
@@ -471,12 +472,16 @@ recargarDatos();
     </div>
   </div>
   <p style="font-size:.75rem; color:#64748b; padding-bottom:.8rem;">
-    Proyectos de ley presentados y aprobados por cada diputado/a, según datos oficiales de la HCDN.
-    <strong>Nota:</strong> la asistencia nominal y la participación en comisiones por diputado todavía no
-    están disponibles de forma confiable (requieren integración con el SIL — ver
-    <a href="metodologia_diputados.html" style="color:#0057b7;">metodología</a>). Antes esta tabla completaba
-    esos dos componentes con números aleatorios para armar un "Índice de Eficiencia (ICE)" que cambiaba en
-    cada recarga — se quitó por no ser un dato real.
+    Proyectos de ley presentados y aprobados, y asistencia en votaciones nominales, por cada diputado/a,
+    según datos oficiales de la HCDN.
+    <strong>Nota:</strong> "Asistencia" es la participación en votaciones nominales registradas
+    (<code>indicadores_votacion.csv</code>, HCDN votaciones) — mide si el diputado emitió voto en las
+    votaciones registradas, no la presencia física en sesiones completas, que todavía no está disponible
+    de forma confiable por diputado (requeriría integración con el SIL — ver
+    <a href="metodologia_diputados.html" style="color:#0057b7;">metodología</a>). La participación en
+    comisiones tampoco está disponible todavía. Antes esta tabla completaba esos componentes con números
+    aleatorios para armar un "Índice de Eficiencia (ICE)" que cambiaba en cada recarga — se quitó por no
+    ser un dato real; la columna de Asistencia que ves ahora sí sale de un archivo de datos real.
   </p>
 </div>
 <div class="container" style="padding-top:.5rem;">
@@ -489,6 +494,7 @@ recargarDatos();
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Nombre</th>
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Distrito</th>
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Bloque</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Asistencia</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos presentados</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos aprobados</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Tasa de aprobación</th>
@@ -496,7 +502,7 @@ recargarDatos();
           </tr>
         </thead>
         <tbody id="tbody-diputados">
-          <tr><td colspan="8" style="text-align:center; padding:2rem; color:#94a3b8;">Cargando datos...</td></tr>
+          <tr><td colspan="9" style="text-align:center; padding:2rem; color:#94a3b8;">Cargando datos...</td></tr>
         </tbody>
       </table>
     </div>
@@ -661,11 +667,12 @@ function colorBloque(bloque) {
 }
 // Antes había un calcularICE()/estadoICE() que combinaba Asistencia,
 // Productividad y Participación en Comisiones en un "Índice de Eficiencia".
-// Se quitaron: Asistencia y Comisiones no tienen todavía una fuente de datos
-// real por diputado (ver nota en el HTML), y enriquecerDiputado() los
-// rellenaba con Math.random() — un número distinto en cada recarga para cada
-// diputado real. Ahora solo se muestran los dos campos que sí vienen de la
-// API con datos reales: proyectos_presentados y proyectos_aprobados.
+// Se quitó: Comisiones todavía no tiene una fuente de datos real por
+// diputado (ver nota en el HTML), y enriquecerDiputado() la rellenaba con
+// Math.random() — un número distinto en cada recarga para cada diputado
+// real. Asistencia sí se reincorporó (columna propia, sin combinar en un
+// índice) una vez que actualizar_diputados.py quedó conectado a
+// indicadores_votacion.csv — ver asistencia_pct más abajo.
 async function cargarDiputados() {
   try {
     const resp = await fetch(`${API_URL}/api/diputados`, { signal: AbortSignal.timeout(5000) });
@@ -677,7 +684,7 @@ async function cargarDiputados() {
   } catch (err) {
     DIPUTADOS_DATA = [];
     document.getElementById('tbody-diputados').innerHTML =
-      `<tr><td colspan="8" style="text-align:center; padding:2rem; color:#94a3b8;">
+      `<tr><td colspan="9" style="text-align:center; padding:2rem; color:#94a3b8;">
         ⚠️ No se pudo conectar con el servidor (${err.message}). No se muestran datos de ejemplo para
         no confundirlos con datos reales de diputados.
       </td></tr>`;
@@ -695,7 +702,7 @@ function miniBar(valor, color) {
 function renderTablaDiputados(lista) {
   const tbody = document.getElementById('tbody-diputados');
   if (!lista.length) {
-    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:2rem;color:#94a3b8;">Sin datos disponibles</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:2rem;color:#94a3b8;">Sin datos disponibles</td></tr>';
     document.getElementById('tabla-footer').textContent = '';
     return;
   }
@@ -704,6 +711,8 @@ function renderTablaDiputados(lista) {
     const presentados = d.proyectos_presentados;
     const aprobados = d.proyectos_aprobados;
     const tieneDatos = presentados !== null && presentados !== undefined;
+    const asistencia = d.asistencia_pct;
+    const tieneAsistencia = asistencia !== null && asistencia !== undefined;
     const tasa = (tieneDatos && presentados > 0 && aprobados !== null && aprobados !== undefined)
       ? Math.round(aprobados / presentados * 100) : null;
     return `<tr style="border-bottom:1px solid #f1f5f9; ${i%2===0?'background:#fafafa':''}"
@@ -718,6 +727,7 @@ function renderTablaDiputados(lista) {
           ${d.bloque}
         </span>
       </td>
+      <td style="padding:.45rem .8rem; min-width:100px;">${tieneAsistencia ? miniBar(Math.round(asistencia), '#0ea5e9') : '<span style="color:#94a3b8;">—</span>'}</td>
       <td style="padding:.45rem .8rem; text-align:center; font-weight:700;">${tieneDatos ? presentados : '—'}</td>
       <td style="padding:.45rem .8rem; text-align:center; font-weight:700;">${(aprobados !== null && aprobados !== undefined) ? aprobados : '—'}</td>
       <td style="padding:.45rem .8rem; min-width:100px;">${tasa !== null ? miniBar(tasa, '#22c55e') : '<span style="color:#94a3b8;">—</span>'}</td>
@@ -730,8 +740,10 @@ function renderTablaDiputados(lista) {
   }).join('');
   const total = lista.length;
   const conDatos = lista.filter(d => d.proyectos_presentados !== null && d.proyectos_presentados !== undefined).length;
+  const conAsistencia = lista.filter(d => d.asistencia_pct !== null && d.asistencia_pct !== undefined).length;
   document.getElementById('tabla-footer').innerHTML =
-    `Mostrando <strong>${total}</strong> diputados/as · <strong>${conDatos}</strong> con datos de proyectos (SIL) · <strong>${total - conDatos}</strong> sin dato todavía`;
+    `Mostrando <strong>${total}</strong> diputados/as · <strong>${conDatos}</strong> con datos de proyectos (SIL) · ` +
+    `<strong>${conAsistencia}</strong> con dato de asistencia (indicadores_votacion.csv) · <strong>${total - conDatos}</strong> sin dato de proyectos todavía`;
 }
 function poblarFiltroBloques(lista) {
   const bloques = [...new Set(lista.map(d => d.bloque))].sort();
@@ -758,6 +770,7 @@ function ordenarTabla(col) {
   const num = v => (v === null || v === undefined ? -Infinity : v);
   if (col === 'presentados') copia.sort((a,b) => num(b.proyectos_presentados) - num(a.proyectos_presentados));
   if (col === 'aprobados')   copia.sort((a,b) => num(b.proyectos_aprobados) - num(a.proyectos_aprobados));
+  if (col === 'asistencia')  copia.sort((a,b) => num(b.asistencia_pct) - num(a.asistencia_pct));
   if (col === 'nombre')      copia.sort((a,b) => a.nombre.localeCompare(b.nombre));
   if (col === 'bloque')      copia.sort((a,b) => a.bloque.localeCompare(b.bloque));
   if (col === 'distrito')    copia.sort((a,b) => a.distrito.localeCompare(b.distrito));

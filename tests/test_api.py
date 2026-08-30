@@ -231,7 +231,11 @@ class TestIndicadores:
         with patch("api_server.load_data", return_value=sample_data):
             indicadores = client.get("/api/indicadores").json()["indicadores"]
         ids = {i["id"] for i in indicadores}
-        for esperado in ("NAPE", "TPMP", "ITC", "COLS", "IAP"):
+        # "COLS" se renombro a "PDA" en api_server.py (ver comentario ahi) para
+        # no colisionar con el id "COLS" real ("Costo Operativo por Ley
+        # Sancionada") que ya usa dashboard/indicadores_diputados.html. Este
+        # test seguia esperando el id viejo.
+        for esperado in ("NAPE", "TPMP", "ITC", "PDA", "IAP"):
             assert esperado in ids
 
     def test_version_api_presente(self, sample_data):

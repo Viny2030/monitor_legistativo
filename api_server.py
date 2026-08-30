@@ -474,6 +474,21 @@ def refresh_data(x_refresh_token: str = Header(None)):
     """
     Dispara el pipeline de scraping.
     Requiere header: X-Refresh-Token: <REFRESH_TOKEN>
+
+    Corre los mismos dos pasos que el workflow diario
+    (.github/workflows/monitor_diario.yml), en el mismo orden:
+      1. scraper_pipeline.py       → nomina + asistencia/proyectos/votaciones en vivo
+      2. actualizar_diputados.py   → enriquece con data/indicadores_votacion.csv
+
+    ANTES este endpoint solo corría el paso 1. El paso 2 es el que llena
+    asistencia_pct / iqp / bipartisanship con los datos curados de
+    indicadores_votacion.csv (las fuentes en vivo del paso 1 son mucho menos
+    confiables y a menudo dejan esos campos en 0.0 o null). Como resultado,
+    cualquier refresh disparado desde acá pisaba silenciosamente los datos
+    reales que sí había cargado el workflow diario, aunque
+    meta.fuente_asistencia siguiera diciendo "indicadores_votacion.csv"
+    porque ese campo quedaba de una corrida anterior y el merge de nomina
+    reemplaza la lista de diputados sin volver a aplicarlo.
     """
     if x_refresh_token != REFRESH_TOKEN:
         raise HTTPException(status_code=401, detail="Token invalido")
@@ -481,12 +496,30 @@ def refresh_data(x_refresh_token: str = Header(None)):
     try:
         result = subprocess.run(
             [sys.executable, "scraper_pipeline.py"],
-            capture_output=True, text=True, timeout=660
+            capture_output=True, text=True, timeout=600
         )
+
+        enriquecimiento = None
+        if result.returncode == 0:
+            # Best-effort: si esto falla no invalida lo que ya trajo el paso 1.
+            try:
+                result_csv = subprocess.run(
+                    [sys.executable, "actualizar_diputados.py"],
+                    capture_output=True, text=True, timeout=60
+                )
+                enriquecimiento = {
+                    "status": "ok" if result_csv.returncode == 0 else "error",
+                    "stdout": result_csv.stdout[-1500:],
+                    "stderr": result_csv.stderr[-500:],
+                }
+            except Exception as e:
+                enriquecimiento = {"status": "error", "stderr": str(e)}
+
         return {
             "status": "ok" if result.returncode == 0 else "error",
             "stdout": result.stdout[-3000:],
             "stderr": result.stderr[-1000:],
+            "enriquecimiento_csv": enriquecimiento,
             "timestamp": datetime.now().isoformat()
         }
     except subprocess.TimeoutExpired:

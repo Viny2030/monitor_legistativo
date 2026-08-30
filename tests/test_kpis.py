@@ -84,9 +84,17 @@ class TestKpisTpmp:
 
 
 class TestKpisCols:
+    """KPI de % de diputados con 1+ proyecto aprobado.
+
+    El campo se llamaba "cols" en la respuesta de /api/kpis; se renombro a
+    "pda" en api_server.py para no colisionar con el id "COLS" real ("Costo
+    Operativo por Ley Sancionada", un indicador distinto en $ ARS/ley que ya
+    usa dashboard/indicadores_diputados.html). Estos tests seguian esperando
+    el nombre de campo viejo.
+    """
 
     def test_cols_porcentaje_con_aprobado(self):
-        """COLS = % diputados con al menos 1 proyecto aprobado."""
+        """PDA = % diputados con al menos 1 proyecto aprobado."""
         diputados = [
             {"asistencia_pct": 80.0, "proyectos_presentados": 3, "proyectos_aprobados": 2, "iqp": 0.5},
             {"asistencia_pct": 80.0, "proyectos_presentados": 3, "proyectos_aprobados": 0, "iqp": 0.5},
@@ -96,7 +104,7 @@ class TestKpisCols:
         with patch("api_server.load_data", return_value=_data_with(diputados)):
             resp = client.get("/api/kpis")
         # 2 de 4 = 50%
-        assert resp.json()["cols"] == 50.0
+        assert resp.json()["pda"] == 50.0
 
     def test_cols_cero_si_nadie_aprobado(self):
         diputados = [
@@ -104,7 +112,7 @@ class TestKpisCols:
         ]
         with patch("api_server.load_data", return_value=_data_with(diputados)):
             resp = client.get("/api/kpis")
-        assert resp.json()["cols"] == 0.0
+        assert resp.json()["pda"] == 0.0
 
 
 class TestKpisParidad:
@@ -176,7 +184,7 @@ class TestKpisGeneral:
             resp = client.get("/api/kpis")
         assert resp.status_code == 200
         data = resp.json()
-        for campo in ("total_diputados", "nape", "tpmp", "cols", "iap",
+        for campo in ("total_diputados", "nape", "tpmp", "pda", "iap",
                       "iqp_global", "rls", "paridad", "meta"):
             assert campo in data, f"Falta campo: {campo}"
 

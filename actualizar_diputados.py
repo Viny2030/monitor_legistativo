@@ -85,13 +85,32 @@ def main():
             d["iqp"]                   = a["iqp"]
             d["bipartisanship"]        = a["bipartisanship"]
             d["fuente_asistencia"]     = "indicadores_votacion.csv"
+            # nape se calculaba antes en scraper_pipeline.py a partir del
+            # asistencia_pct viejo (de la fuente en vivo, poco confiable) y
+            # quedaba stale/inconsistente una vez que este merge pisaba
+            # asistencia_pct con el valor real — recalculamos para que ambos
+            # campos sigan siendo consistentes entre si.
+            d["nape"]                  = round(1 - a["asistencia_pct"] / 100, 4)
             actualizados += 1
 
     print(f"[OK] {actualizados}/{len(diputados)} diputados actualizados con datos reales")
 
     # Guardar
     data["meta"]["ultima_actualizacion"] = datetime.now().isoformat()
-    data["meta"]["fuente_asistencia"]    = "indicadores_votacion.csv (HCDN votaciones)"
+    # Solo afirmamos la fuente si el merge realmente actualizo diputados. Antes
+    # esta linea se ejecutaba incondicionalmente: si el matching por nombre
+    # fallaba (o si nomina volvia a pisar data["diputados"] en una corrida
+    # posterior que no repitiera este script), meta.fuente_asistencia quedaba
+    # afirmando una fuente que en realidad no estaba aplicada a ningun
+    # diputado — que es exactamente el bug que se detecto en produccion.
+    if actualizados > 0:
+        data["meta"]["fuente_asistencia"] = "indicadores_votacion.csv (HCDN votaciones)"
+        data["meta"]["fuente_asistencia_actualizados"] = f"{actualizados}/{len(diputados)}"
+    else:
+        data["meta"]["fuente_asistencia"] = None
+        data["meta"]["fuente_asistencia_actualizados"] = "0/0"
+        print("[WARN] Ningun diputado matcheo contra indicadores_votacion.csv — "
+              "no se marca fuente_asistencia para no mentir en meta.")
     data["diputados"] = diputados
 
     with open(JSON_FILE, "w", encoding="utf-8") as f:

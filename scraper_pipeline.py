@@ -235,102 +235,200 @@ def scrape_nomina():
 # ---------------------------------------------------------------------------
 # STEP 2 — Asistencia por diputado
 # ---------------------------------------------------------------------------
-def scrape_asistencia(diputados):
+ASISTENCIA_INDICE_URL = "https://www2.hcdn.gob.ar/secparl/dclp/asistencia.html"
+# Respaldo si no se puede leer el índice: período 2026 y período 2025.
+ASISTENCIA_PDF_RESPALDO = [
+    "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo144/ESTADISTICAS.pdf",
+    "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo%20143/ESTADISTICAS.pdf",
+]
+# Metadatos de la última corrida de asistencia (los copia run_pipeline a data["meta"])
+ASISTENCIA_META = {}
+
+
+def _norm_txt(txt: str) -> str:
+    """Mayúsculas, sin tildes y con espacios simples (para comparar nombres)."""
+    txt = unicodedata.normalize("NFKD", str(txt or "")).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", txt).upper().strip()
+
+
+def _urls_pdf_asistencia() -> list:
+    """URLs del PDF ESTADISTICAS, del período más reciente al más viejo.
+    Se leen del índice de la Dirección de Labor Parlamentaria; si no responde,
+    se usan las de respaldo."""
+    urls = []
+    try:
+        res = requests.get(ASISTENCIA_INDICE_URL, headers=HEADERS, timeout=TIMEOUT, verify=False)
+        res.raise_for_status()
+        candidatos = []
+        for href in re.findall(r'href="([^"]+)"', res.text):
+            if not href.upper().endswith("/ESTADISTICAS.PDF"):
+                continue
+            m = re.search(r"periodo(?:%20|\s)?(\d+)", href, re.I)
+            if m:
+                candidatos.append((int(m.group(1)), urljoin(ASISTENCIA_INDICE_URL, href)))
+        candidatos.sort(reverse=True)
+        urls = [u for _, u in candidatos]
+    except Exception as e:
+        print(f"[WARN] No se pudo leer el índice de asistencia ({e}) — uso URLs de respaldo")
+    return urls + [u for u in ASISTENCIA_PDF_RESPALDO if u not in urls]
+
+
+def _parsear_estadisticas_asistencia(texto: str) -> list:
+    """Filas del PDF ESTADISTICAS de la HCDN.
+
+    El PDF NO trae porcentajes: cada fila es
+        BLOQUE  Apellido, Nombre  P  A  L  M.O.
+    (Presente, Ausente, Licencia, Misión Oficial). Antes se tomaba la última
+    columna (M.O., casi siempre 0) como si fuera el % de asistencia, y por
+    eso todos los diputados quedaban con asistencia 0 %.
+    Devuelve [{"texto": "BLOQUE Apellido, Nombre", "p":.., "a":.., "l":.., "mo":..}]
     """
-    Fuente: PDF de estadisticas de asistencia en www3.hcdn.gob.ar
-    El sitio www2.hcdn.gob.ar/secparl/dclp/asistencia.html lista los PDFs por periodo.
-    Descargamos el PDF del periodo ordinario mas reciente y parseamos con pdfplumber.
+    filas = []
+    for linea in (texto or "").split("\n"):
+        m = re.match(r"^(?P<txt>.*\S)\s+(?P<p>\d+)\s+(?P<a>\d+)\s+(?P<l>\d+)\s+(?P<mo>\d+)\s*$", linea.strip())
+        if m and "," in m.group("txt"):
+            filas.append({"texto": m.group("txt"), "p": int(m.group("p")), "a": int(m.group("a")),
+                          "l": int(m.group("l")), "mo": int(m.group("mo"))})
+    return filas
 
-    El PDF tiene lineas con formato: "APELLIDO, Nombre   distrito   sesiones   presentes   %"
+
+def _buscar_fila_diputado(nombre: str, filas: list):
+    """Busca la fila de un diputado ("Apellido, Nombre") por apellido + primer
+    nombre. Si el apellido es único en el PDF alcanza con el apellido."""
+    if "," not in nombre:
+        return None
+    apellido, nombres = [x.strip() for x in nombre.split(",", 1)]
+    ap = _norm_txt(apellido)
+    primer = _norm_txt(nombres).split(" ")[0] if nombres.strip() else ""
+    patron = re.compile(r"(?:^|\s)" + re.escape(ap) + r"\s*,\s*(?P<resto>.*)$")
+    candidatos = []
+    for f in filas:
+        m = patron.search(_norm_txt(f["texto"]))
+        if m:
+            candidatos.append((f, m.group("resto")))
+    if not candidatos:
+        return None
+    if len(candidatos) == 1:
+        return candidatos[0][0]
+    for f, resto in candidatos:
+        if primer and resto.startswith(primer):
+            return f
+    return None  # apellido repetido y no se pudo desambiguar: mejor sin dato que dato ajeno
+
+
+def scrape_asistencia(diputados, previos=None):
     """
-    print("[STEP 2] Descargando PDF de asistencia (periodo 143 ordinario 2025)...")
+    Fuente: PDF "ESTADISTICAS" de la Dirección de Coordinación de Labor
+    Parlamentaria (HCDN), del período legislativo más reciente publicado.
 
-    # PDF del periodo 143 ordinario 2025 (antes de la renovacion de diciembre 2025)
-    # Es el mas reciente con datos de todo el anio legislativo de los 257 actuales
-    PDF_URL = "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo%20143/ESTADISTICAS.pdf"
+    asistencia_pct = presentes / (presentes + ausentes + licencias + misiones) × 100,
+    el mismo criterio que usa la HCDN en su reporte PORCENTAJE.pdf.
 
+    2026-10-09: reescrito. Antes (1) tomaba la columna M.O. como porcentaje
+    (todos daban 0 %) y (2) estaba fijo en el período 143 (2025), anterior a
+    la renovación de diciembre. Si no se puede descargar ningún PDF, se
+    conservan los valores de la corrida anterior (`previos`) en vez de
+    dejar a todos sin dato.
+    """
+    global ASISTENCIA_META
+    print("[STEP 2] Asistencia (PDF ESTADISTICAS de la HCDN, período más reciente)...")
     try:
         import pdfplumber
     except ImportError:
         print("[WARN] pdfplumber no instalado. Instalar con: pip install pdfplumber")
-        print("       Saltando step de asistencia.")
         return diputados
 
-    try:
-        res = requests.get(PDF_URL, headers=HEADERS, timeout=TIMEOUT, stream=True, verify=False)
-        res.raise_for_status()
-
-        import io
-        pdf_bytes = io.BytesIO(res.content)
-        asistencia_map = {}
-
-        with pdfplumber.open(pdf_bytes) as pdf:
-            for page in pdf.pages:
-                text = page.extract_text() or ""
-                for line in text.split("\n"):
-                    line = line.strip()
-                    if not line:
-                        continue
-                    # Buscar lineas con porcentaje al final: numero con % o numero decimal
-                    parts = line.split()
-                    if len(parts) < 3:
-                        continue
-                    # El porcentaje suele ser el ultimo campo
-                    pct_raw = parts[-1].replace("%", "").replace(",", ".")
-                    try:
-                        pct = float(pct_raw)
-                        if 0 <= pct <= 100:
-                            # El nombre es el inicio de la linea (todo en mayusculas)
-                            nombre_raw = " ".join(parts[:-3]).upper().strip()
-                            if nombre_raw:
-                                asistencia_map[nombre_raw] = pct
-                    except ValueError:
-                        pass
-
-        print(f"[INFO] {len(asistencia_map)} entradas en el PDF de asistencia")
-
-        # Match por apellido (primera palabra antes de la coma)
-        matched = 0
-        for d in diputados:
-            nombre_key = d["nombre"].upper().strip()
-            apellido = nombre_key.split(",")[0].strip()
-
-            # Match exacto primero
-            if nombre_key in asistencia_map:
-                d["asistencia_pct"] = asistencia_map[nombre_key]
-                matched += 1
+    import io
+    filas, fuente, encabezado = [], None, ""
+    for url in _urls_pdf_asistencia():
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=False)
+            if res.status_code != 200 or not res.content.startswith(b"%PDF"):
                 continue
+            with pdfplumber.open(io.BytesIO(res.content)) as pdf:
+                textos = [p.extract_text() or "" for p in pdf.pages]
+            filas = _parsear_estadisticas_asistencia("\n".join(textos))
+            if len(filas) >= 100:  # un PDF válido trae ~257 filas
+                fuente = url
+                encabezado = " ".join(textos[0].split("\n")[1:3]) if textos else ""
+                break
+            print(f"[WARN] {url}: sólo {len(filas)} filas legibles, pruebo el siguiente")
+        except Exception as e:
+            print(f"[WARN] {url}: {e}")
 
-            # Match por apellido parcial
-            for k, v in asistencia_map.items():
-                if apellido and apellido in k:
-                    d["asistencia_pct"] = v
-                    matched += 1
-                    break
-
-        # Calcular NAPE
+    if not fuente:
+        print("[ERROR] No se pudo obtener ningún PDF de asistencia.")
+        conservados = 0
         for d in diputados:
-            if d.get("asistencia_pct") is not None:
-                d["nape"] = round(1 - d["asistencia_pct"] / 100, 4)
+            prev = (previos or {}).get(d.get("nombre"))
+            if prev and prev.get("asistencia_pct") is not None and prev.get("asistencia_detalle"):
+                d["asistencia_pct"] = prev["asistencia_pct"]
+                d["asistencia_detalle"] = prev["asistencia_detalle"]
+                d["nape"] = prev.get("nape")
+                conservados += 1
+        ASISTENCIA_META = {"fuente_asistencia": "sin actualizar hoy (se conservan los valores anteriores)",
+                           "fuente_asistencia_actualizados": f"{conservados}/{len(diputados)}"}
+        return diputados
 
-        print(f"[OK] Asistencia matcheada para {matched}/{len(diputados)} diputados")
+    matched = 0
+    for d in diputados:
+        f = _buscar_fila_diputado(d.get("nombre", ""), filas)
+        if not f:
+            continue
+        total = f["p"] + f["a"] + f["l"] + f["mo"]
+        if total == 0:
+            continue
+        d["asistencia_pct"] = round(f["p"] / total * 100, 1)
+        d["asistencia_detalle"] = {"presentes": f["p"], "ausentes": f["a"], "licencias": f["l"],
+                                   "mision_oficial": f["mo"], "sesiones": total}
+        d["nape"] = round(1 - d["asistencia_pct"] / 100, 4)
+        matched += 1
 
-    except Exception as e:
-        print(f"[ERROR] scrape_asistencia: {e}")
-
+    ASISTENCIA_META = {
+        "fuente_asistencia": fuente,
+        "periodo_asistencia": encabezado,
+        "fuente_asistencia_actualizados": f"{matched}/{len(diputados)}",
+    }
+    print(f"[OK] Asistencia: {len(filas)} filas en el PDF, {matched}/{len(diputados)} diputados matcheados ({fuente})")
     return diputados
 
 
 # ---------------------------------------------------------------------------
 # STEP 3 — Proyectos (SIL / hcdn.gob.ar/proyectos)
 # ---------------------------------------------------------------------------
-def scrape_proyectos(diputados):
+PROYECTOS_META = {}
+
+
+def _clave_autor(nombre: str):
+    """("APELLIDO", "PRIMERNOMBRE") normalizados desde "Apellido, Nombre"."""
+    if "," not in (nombre or ""):
+        return _norm_txt(nombre), ""
+    ap, nom = nombre.split(",", 1)
+    nom = _norm_txt(nom)
+    return _norm_txt(ap), (nom.split(" ")[0] if nom else "")
+
+
+def scrape_proyectos(diputados, previos=None):
     """
-    Fuente: API CKAN de datos.hcdn.gob.ar con paginacion.
-    Resource ID fijo: 22b2d52c-7a0e-426b-ac0a-a3326c388ba6
-    Incluye proyectos del anio actual Y el anterior (el periodo 144 arranca en marzo 2026
-    pero el dataset puede tener datos cargados bajo expedientes -D-2025).
+    Fuente: API CKAN de datos.hcdn.gob.ar (resource 22b2d52c...), proyectos
+    con expediente del año actual y del anterior.
+
+    2026-10-09: corregido.
+      · TIPO es el TIPO de proyecto (LEY / RESOLUCION / DECLARACION), no su
+        estado. Antes se contaba como "aprobado" todo proyecto de ley
+        presentado. Ahora ese conteo va a `proyectos_ley` (y se mantiene en
+        `proyectos_aprobados` sólo por compatibilidad de la API; el dashboard
+        lo rotula "Proyectos de ley").
+      · Cada página se reintenta 3 veces. Si la API igual falla, se conservan
+        los valores de la corrida anterior (`previos`) — antes se caía al SIL,
+        que cuenta distinto, y los totales oscilaban 4.000 ↔ 8.400 por día.
+      · Match por apellido + primer nombre (antes sólo apellido: dos "Ávila"
+        recibían los mismos números).
+      · Paginación con orden fijo (sort=_id) y sin duplicados: sin `sort` la
+        API devuelve las páginas en orden variable y al paginar se salteaban o
+        repetían registros (ej.: Zago, Oscar quedaba con 0 teniendo 2 en 2025).
     """
+    global PROYECTOS_META
     print("[STEP 3] Consultando API CKAN de proyectos parlamentarios...")
     anio = str(datetime.now().year)
     anio_prev = str(int(anio) - 1)
@@ -338,67 +436,88 @@ def scrape_proyectos(diputados):
     RESOURCE_ID = "22b2d52c-7a0e-426b-ac0a-a3326c388ba6"
     API_URL = "https://datos.hcdn.gob.ar/api/3/action/datastore_search"
 
-    proyectos_map = {}
-    offset = 0
-    limit = 1000
-    total_procesados = 0
+    conteo = {}   # (APELLIDO, PRIMERNOMBRE) -> {"presentados", "ley"}
+    offset, limit, total_procesados = 0, 1000, 0
+    vistos = set()  # _id ya contados
 
     try:
         while True:
-            res = requests.get(
-                API_URL,
-                params={"resource_id": RESOURCE_ID, "limit": limit, "offset": offset},
-                headers=HEADERS,
-                timeout=60,
-                verify=False,
-            )
-            res.raise_for_status()
-            data = res.json()
+            data = None
+            for intento in range(3):
+                try:
+                    res = requests.get(API_URL,
+                                       params={"resource_id": RESOURCE_ID, "limit": limit, "offset": offset,
+                                               "sort": "_id asc"},
+                                       headers=HEADERS, timeout=60, verify=False)
+                    res.raise_for_status()
+                    data = res.json()
+                    break
+                except Exception as e:
+                    print(f"[WARN] CKAN offset {offset}, intento {intento + 1}/3: {e}")
+                    time.sleep(10 * (intento + 1))
+            if data is None:
+                raise RuntimeError(f"la API de proyectos no respondió (offset {offset})")
+
             records = data.get("result", {}).get("records", [])
             if not records:
                 break
-
             for row in records:
-                # Campo real: EXP_DIPUTADOS con formato "1234-D-2025"
+                if row.get("_id") in vistos:
+                    continue
+                vistos.add(row.get("_id"))
                 expediente = str(row.get("EXP_DIPUTADOS") or "")
                 if anio not in expediente and anio_prev not in expediente:
                     continue
-
-                # Campo real: AUTOR (un solo autor por fila, no multiples)
-                firmantes_raw = (row.get("AUTOR") or "").upper()
-                estado = (row.get("TIPO") or "").upper()
-                total_procesados += 1
-
-                # AUTOR tiene formato "APELLIDO, NOMBRE" — tomar apellido
-                apellido = firmantes_raw.split(",")[0].strip()
-                if len(apellido) < 3:
+                ap, nom = _clave_autor(row.get("AUTOR") or "")
+                if len(ap) < 3:
                     continue
-                if apellido not in proyectos_map:
-                    proyectos_map[apellido] = {"presentados": 0, "aprobados": 0}
-                proyectos_map[apellido]["presentados"] += 1
-                if any(x in estado for x in ("LEY", "SANCIONADO", "APROBADO")):
-                    proyectos_map[apellido]["aprobados"] += 1
+                total_procesados += 1
+                c = conteo.setdefault((ap, nom), {"presentados": 0, "ley": 0})
+                c["presentados"] += 1
+                if (row.get("TIPO") or "").strip().upper() == "LEY":
+                    c["ley"] += 1
 
-            total_available = data.get("result", {}).get("total", 0)
             offset += limit
-            if offset >= total_available:
+            if offset >= data.get("result", {}).get("total", 0):
                 break
-
-        print(f"[INFO] {total_procesados} proyectos ({anio_prev}-{anio}), {len(proyectos_map)} autores")
-
-        matched = 0
-        for d in diputados:
-            apellido = d["nombre"].split(",")[0].strip().upper()
-            if len(apellido) >= 3 and apellido in proyectos_map:
-                d["proyectos_presentados"] = proyectos_map[apellido]["presentados"]
-                d["proyectos_aprobados"] = proyectos_map[apellido]["aprobados"]
-                matched += 1
-
-        print(f"[OK] Proyectos matcheados para {matched}/{len(diputados)} diputados")
-
     except Exception as e:
         print(f"[ERROR] scrape_proyectos: {e}")
+        conservados = 0
+        for d in diputados:
+            prev = (previos or {}).get(d.get("nombre"))
+            if prev and prev.get("proyectos_fuente") == "CKAN":
+                for k in ("proyectos_presentados", "proyectos_aprobados", "proyectos_ley", "proyectos_fuente"):
+                    d[k] = prev.get(k)
+                conservados += 1
+        PROYECTOS_META = {"fuente_proyectos": "sin actualizar hoy (se conservan los valores anteriores)",
+                          "proyectos_actualizados": f"{conservados}/{len(diputados)}"}
+        return diputados
 
+    por_apellido = {}
+    for (ap, nom), c in conteo.items():
+        por_apellido.setdefault(ap, []).append((nom, c))
+
+    matched = 0
+    for d in diputados:
+        ap, nom = _clave_autor(d.get("nombre", ""))
+        opciones = por_apellido.get(ap, [])
+        c = next((c for n, c in opciones if n == nom), None)
+        if c is None and len(opciones) == 1 and sum(1 for x in diputados if _clave_autor(x.get("nombre", ""))[0] == ap) == 1:
+            c = opciones[0][1]   # apellido único en la Cámara: el nombre puede venir abreviado
+        if c is None:
+            c = {"presentados": 0, "ley": 0}   # la API respondió y no tiene proyectos suyos
+        else:
+            matched += 1
+        d["proyectos_presentados"] = c["presentados"]
+        d["proyectos_ley"] = c["ley"]
+        d["proyectos_aprobados"] = c["ley"]   # compat: mismo valor que proyectos_ley (ver docstring)
+        d["proyectos_fuente"] = "CKAN"
+
+    PROYECTOS_META = {"fuente_proyectos": "datos.hcdn.gob.ar (CKAN)",
+                      "proyectos_periodo": f"expedientes {anio_prev}-{anio}",
+                      "proyectos_actualizados": f"{matched}/{len(diputados)}"}
+    print(f"[INFO] {total_procesados} proyectos ({anio_prev}-{anio}), {len(conteo)} autores")
+    print(f"[OK] Proyectos matcheados para {matched}/{len(diputados)} diputados")
     return diputados
 
 
@@ -614,10 +733,11 @@ def _enriquecer_diputados_con_sil(diputados: list[dict], anio: int = None) -> li
                 d["sil_tasa_dictamen"] = float(sil_map[apellido].get("tasa_dictamen_pct", 0))
 
                 # Si los datos del pipeline (CKAN) son nulos, usar datos SIL
-                if not d.get("proyectos_presentados"):
+                # 2026-10-09: sólo si CKAN no dio dato (None); antes `not` también
+                # pisaba los 0 reales y mezclaba fuentes que cuentan distinto.
+                if d.get("proyectos_presentados") is None:
                     d["proyectos_presentados"] = d["sil_presentados"]
-                if not d.get("proyectos_aprobados"):
-                    d["proyectos_aprobados"] = d["sil_con_dictamen"]
+                    d["proyectos_fuente"] = "SIL"
                 matcheados += 1
 
         print(f"[OK] SIL: datos enriquecidos para {matcheados}/{len(diputados)} diputados")
@@ -668,6 +788,10 @@ def run_pipeline(steps=None):
     all_steps = {"nomina", "asistencia", "proyectos", "presupuesto", "votaciones",
                  "tpmp", "itc"}
     steps = set(steps) if steps else all_steps
+    # Valores de la corrida anterior, por nombre: si una fuente falla hoy se
+    # conservan en vez de dejar a todos sin dato (ver scrape_asistencia/proyectos).
+    previos = {d.get("nombre"): d for d in data.get("diputados", [])}
+    data.setdefault("meta", {})
 
     if "nomina" in steps:
         diputados = scrape_nomina()
@@ -677,12 +801,14 @@ def run_pipeline(steps=None):
         diputados = data.get("diputados", [])
 
     if "asistencia" in steps and diputados:
-        diputados = scrape_asistencia(diputados)
+        diputados = scrape_asistencia(diputados, previos)
         data["diputados"] = diputados
+        data["meta"].update(ASISTENCIA_META)
 
     if "proyectos" in steps and diputados:
-        diputados = scrape_proyectos(diputados)
+        diputados = scrape_proyectos(diputados, previos)
         data["diputados"] = diputados
+        data["meta"].update(PROYECTOS_META)
 
     if "presupuesto" in steps:
         data["presupuesto"] = scrape_presupuesto()

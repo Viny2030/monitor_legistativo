@@ -114,7 +114,7 @@ def explicar_diputado(perfil: dict) -> dict:
 
 - Asistencia: {perfil.get('asistencia_pct', '—')}%
 - Proyectos presentados: {perfil.get('proyectos_presentados', '—')}
-- Proyectos aprobados: {perfil.get('proyectos_aprobados', '—')}
+- Proyectos de ley (tipo LEY, presentados): {perfil.get('proyectos_aprobados', '—')}
 - IQP (Índice de Quórum y Permanencia): {perfil.get('iqp', '—')}
 
 Explicá qué indica este perfil sobre el desempeño legislativo de este diputado/a
@@ -133,8 +133,8 @@ def explicar_bloque(perfil: dict) -> dict:
 - Diputados: {perfil.get('cantidad', '—')} ({perfil.get('mujeres', '—')} mujeres, {perfil.get('pct_mujeres', '—')}%)
 - Asistencia promedio: {perfil.get('asistencia_pct', '—')}%
 - Proyectos presentados: {perfil.get('proyectos_presentados', '—')}
-- Proyectos aprobados: {perfil.get('proyectos_aprobados', '—')}
-- Tasa de aprobación: {perfil.get('tasa_aprobacion', '—')}%
+- Proyectos de ley (tipo LEY, presentados): {perfil.get('proyectos_aprobados', '—')}
+- % de proyectos que son de ley: {perfil.get('tasa_aprobacion', '—')}%
 - IQP promedio: {perfil.get('iqp_promedio', '—')}
 - Distritos representados: {perfil.get('distritos', [])}
 

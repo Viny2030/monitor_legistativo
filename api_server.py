@@ -240,7 +240,7 @@ def get_kpis():
     KPIs globales para el dashboard:
       - NAPE global (% inasistencia promedio)
       - TPMP (tasa proyectos media por diputado)
-      - PDA (porcentaje de diputados con al menos 1 ley aprobada)
+      - PDA (porcentaje de diputados con al menos 1 proyecto de ley presentado)
       - IAP (indice de aprobacion presupuestaria)
       - RLS (ratio legisladores/100k hab)
       - Paridad de genero
@@ -336,9 +336,12 @@ def get_indicadores():
         # Sancionada" (indicador distinto, ya usado con ese id en
         # dashboard/indicadores_diputados.html). Se renombro a "PDA" para que
         # cada id identifique un unico indicador en todo el sitio.
-        {"id": "PDA", "nombre": "Porcentaje de Diputados con Ley Aprobada",
+        # 2026-10-09: proyectos_aprobados cuenta proyectos de TIPO "LEY"
+        # presentados (la API CKAN no informa si se aprobaron), así que el
+        # nombre del indicador se corrige; el id y el cálculo no cambian.
+        {"id": "PDA", "nombre": "Porcentaje de Diputados con Proyecto de Ley presentado",
          "valor": round(cols_n / n * 100, 1) if n else None,
-         "unidad": "% diputados con 1+ ley aprobada", "fuente": "CKAN HCDN / SIL", "version": "1.0"},
+         "unidad": "% diputados con 1+ proyecto de ley", "fuente": "CKAN HCDN", "version": "1.0"},
         {"id": "IAP", "nombre": "Indice de Autonomia Presupuestaria",
          "valor": presupuesto.get("iap"), "unidad": "ratio (0-1)",
          "fuente": presupuesto.get("fuente", "ONP / Presupuesto Abierto"), "version": "1.0"},
@@ -431,6 +434,61 @@ class ExplicarIARequest(BaseModel):
     datos: dict = {}
 
 
+# ── Límites de uso del asistente de IA ───────────────────────────────────────
+# 2026-10-09: /api/ia/explicar era público y sin límite (cada llamada se cobra
+# en la ANTHROPIC_API_KEY del proyecto) y /api/ia/resumen llamaba a Claude en
+# cada visita. Ahora:
+#   · explicar: máx. IA_LIMITE_POR_IP_HORA por IP por hora (default 10) y
+#     IA_LIMITE_DIARIO en total por día (default 200); tipos válidos y datos <= 8 KB.
+#   · resumen: se guarda en memoria y sólo se recalcula cuando cambian los
+#     datos (meta.ultima_actualizacion, una vez por día).
+# Los contadores viven en memoria (se reinician si Railway reinicia la app).
+import threading as _threading
+import time as _time
+from collections import deque as _deque
+from fastapi import Request
+from fastapi.responses import JSONResponse
+
+IA_LIMITE_POR_IP_HORA = int(os.getenv("IA_LIMITE_POR_IP_HORA", "10"))
+IA_LIMITE_DIARIO = int(os.getenv("IA_LIMITE_DIARIO", "200"))
+IA_MAX_BYTES_DATOS = 8_000
+IA_TIPOS_VALIDOS = {"indicador", "diputado", "bloque"}
+
+_ia_lock = _threading.Lock()
+_ia_por_ip = defaultdict(_deque)
+_ia_global = _deque()
+_ia_resumen_cache = {"clave": None, "resultado": None}
+
+
+def _ip_cliente(request: Request) -> str:
+    xff = request.headers.get("x-forwarded-for", "")   # Railway: IP real del visitante
+    return xff.split(",")[0].strip() if xff else (request.client.host if request.client else "?")
+
+
+def _ia_rechazo(motivo: str, status: int) -> JSONResponse:
+    # Mismo formato que agentic_ai._no_disponible → el dashboard lo muestra tal cual
+    return JSONResponse({"disponible": False, "motivo": motivo}, status_code=status)
+
+
+def _ia_registrar(ip: str):
+    """None si la consulta entra en los límites (y la cuenta); si no, el motivo."""
+    ahora = _time.time()
+    with _ia_lock:
+        while _ia_global and ahora - _ia_global[0] > 86_400:
+            _ia_global.popleft()
+        cola = _ia_por_ip[ip]
+        while cola and ahora - cola[0] > 3_600:
+            cola.popleft()
+        if len(_ia_global) >= IA_LIMITE_DIARIO:
+            return "Se alcanzó el límite diario de consultas al asistente de IA. Probá de nuevo mañana."
+        if len(cola) >= IA_LIMITE_POR_IP_HORA:
+            return (f"Alcanzaste el límite de {IA_LIMITE_POR_IP_HORA} consultas por hora "
+                    "al asistente de IA. Probá de nuevo más tarde.")
+        cola.append(ahora)
+        _ia_global.append(ahora)
+    return None
+
+
 @app.get("/api/ia/status")
 def ia_status():
     from agentic_ai import ia_disponible
@@ -438,8 +496,15 @@ def ia_status():
 
 
 @app.post("/api/ia/explicar")
-def ia_explicar(req: ExplicarIARequest):
+def ia_explicar(req: ExplicarIARequest, request: Request):
     from agentic_ai import explicar
+    if req.tipo not in IA_TIPOS_VALIDOS:
+        return _ia_rechazo("Tipo de consulta no válido.", 400)
+    if len(json.dumps(req.datos, ensure_ascii=False)) > IA_MAX_BYTES_DATOS:
+        return _ia_rechazo("Los datos enviados son demasiado grandes.", 413)
+    error = _ia_registrar(_ip_cliente(request))
+    if error:
+        return _ia_rechazo(error, 429)
     return explicar(req.tipo, req.datos)
 
 
@@ -466,7 +531,14 @@ def ia_resumen():
     """
     from agentic_ai import resumen_diario
     data = load_data()
-    return resumen_diario(data)
+    clave = (data.get("meta") or {}).get("ultima_actualizacion")
+    with _ia_lock:
+        if clave and _ia_resumen_cache["clave"] == clave:
+            return _ia_resumen_cache["resultado"]
+    resultado = resumen_diario(data)
+    with _ia_lock:
+        _ia_resumen_cache.update(clave=clave, resultado=resultado)
+    return resultado
 
 
 @app.post("/api/refresh")

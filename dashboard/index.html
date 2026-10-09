@@ -463,7 +463,7 @@ recargarDatos();
       <select id="orden-col" onchange="ordenarTabla(this.value)"
         style="border:1px solid #cbd5e1; border-radius:6px; padding:.35rem .7rem; font-size:.8rem;">
         <option value="presentados">Ordenar por proyectos presentados ↓</option>
-        <option value="aprobados">Ordenar por proyectos aprobados ↓</option>
+        <option value="aprobados">Ordenar por proyectos de ley ↓</option>
         <option value="asistencia">Ordenar por asistencia ↓</option>
         <option value="nombre">Ordenar por Nombre</option>
         <option value="bloque">Ordenar por Bloque</option>
@@ -472,14 +472,15 @@ recargarDatos();
     </div>
   </div>
   <p style="font-size:.75rem; color:#64748b; padding-bottom:.8rem;">
-    Proyectos de ley presentados y aprobados, y asistencia en votaciones nominales, por cada diputado/a,
+    Proyectos presentados (y cuántos son proyectos de ley) y asistencia a sesiones, por cada diputado/a,
     según datos oficiales de la HCDN.
-    <strong>Nota:</strong> "Asistencia" es la participación en votaciones nominales registradas
-    (<code>indicadores_votacion.csv</code>, HCDN votaciones) — mide si el diputado emitió voto en las
-    votaciones registradas, no la presencia física en sesiones completas, que todavía no está disponible
-    de forma confiable por diputado (requeriría integración con el SIL — ver
-    <a href="metodologia_diputados.html" style="color:#0057b7;">metodología</a>). La participación en
-    comisiones tampoco está disponible todavía. Antes esta tabla completaba esos componentes con números
+    <strong>Nota:</strong> "Asistencia" es el porcentaje de sesiones del período legislativo en curso en
+    que el diputado/a estuvo presente (presentes ÷ total de sesiones, incluidas licencias y misiones
+    oficiales), según la estadística oficial de la Dirección de Coordinación de Labor Parlamentaria de la
+    HCDN. "Proyectos presentados" cuenta los expedientes del año en curso y del anterior en que figura como
+    autor/a (datos abiertos HCDN); "Proyectos de ley" son los de tipo LEY entre ellos — la fuente no informa
+    si fueron aprobados (ver <a href="metodologia_diputados.html" style="color:#0057b7;">metodología</a>).
+    La participación en comisiones todavía no está disponible. Antes esta tabla completaba esos componentes con números
     aleatorios para armar un "Índice de Eficiencia (ICE)" que cambiaba en cada recarga — se quitó por no
     ser un dato real; la columna de Asistencia que ves ahora sí sale de un archivo de datos real.
   </p>
@@ -496,8 +497,8 @@ recargarDatos();
             <th style="padding:.6rem .8rem; text-align:left; font-weight:600;">Bloque</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Asistencia</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos presentados</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos aprobados</th>
-            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Tasa de aprobación</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Proyectos de ley</th>
+            <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">% de ley</th>
             <th style="padding:.6rem .8rem; text-align:center; font-weight:600;">Estado</th>
           </tr>
         </thead>

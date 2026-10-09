@@ -13,7 +13,9 @@ jobs:
   actualizar:
     name: Scrape → data/diputados.json → Commit
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 2026-10-09: 20 → 30. El paso de proyectos recorre ~115.000 registros de la
+    # API CKAN con reintentos; la corrida completa tarda ~10 min y la API es lenta.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout

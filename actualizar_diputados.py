@@ -75,15 +75,24 @@ def main():
 
     # Merge
     actualizados = 0
+    pisados_asistencia = False
     for d in diputados:
         nombre_norm = normalizar_nombre(d.get("nombre", ""))
         if nombre_norm in asistencia_norm:
             a = asistencia_norm[nombre_norm]
-            d["asistencia_pct"]        = a["asistencia_pct"]
-            d["proyectos_presentados"] = a["total_votaciones"]
-            d["proyectos_aprobados"]   = a["proyectos_aprobados"]
             d["iqp"]                   = a["iqp"]
             d["bipartisanship"]        = a["bipartisanship"]
+            # 2026-10-09: si scraper_pipeline.py ya cargó asistencia oficial de la
+            # HCDN (asistencia_detalle) y proyectos de CKAN (proyectos_fuente), no
+            # se pisan con el CSV local (datos de votaciones 2024, y además
+            # proyectos_presentados se llenaba con total_votaciones).
+            if d.get("asistencia_detalle"):
+                actualizados += 1
+                continue
+            d["asistencia_pct"]        = a["asistencia_pct"]
+            if not d.get("proyectos_fuente"):
+                d["proyectos_presentados"] = a["total_votaciones"]
+                d["proyectos_aprobados"]   = a["proyectos_aprobados"]
             d["fuente_asistencia"]     = "indicadores_votacion.csv"
             # nape se calculaba antes en scraper_pipeline.py a partir del
             # asistencia_pct viejo (de la fuente en vivo, poco confiable) y
@@ -92,6 +101,7 @@ def main():
             # campos sigan siendo consistentes entre si.
             d["nape"]                  = round(1 - a["asistencia_pct"] / 100, 4)
             actualizados += 1
+            pisados_asistencia = True
 
     print(f"[OK] {actualizados}/{len(diputados)} diputados actualizados con datos reales")
 
@@ -103,14 +113,17 @@ def main():
     # posterior que no repitiera este script), meta.fuente_asistencia quedaba
     # afirmando una fuente que en realidad no estaba aplicada a ningun
     # diputado — que es exactamente el bug que se detecto en produccion.
-    if actualizados > 0:
+    # 2026-10-09: la fuente de asistencia la informa scraper_pipeline.py (PDF
+    # oficial de la HCDN). Este script sólo toca el meta si de verdad pisó la
+    # asistencia con el CSV; antes, sin el CSV (como en GitHub Actions, donde
+    # data/*.csv no se versiona) dejaba fuente_asistencia=None y "0/0" aunque
+    # la asistencia real estuviera cargada.
+    if pisados_asistencia:
         data["meta"]["fuente_asistencia"] = "indicadores_votacion.csv (HCDN votaciones)"
         data["meta"]["fuente_asistencia_actualizados"] = f"{actualizados}/{len(diputados)}"
-    else:
-        data["meta"]["fuente_asistencia"] = None
-        data["meta"]["fuente_asistencia_actualizados"] = "0/0"
+    elif actualizados == 0:
         print("[WARN] Ningun diputado matcheo contra indicadores_votacion.csv — "
-              "no se marca fuente_asistencia para no mentir en meta.")
+              "no se modifica el meta de asistencia.")
     data["diputados"] = diputados
 
     with open(JSON_FILE, "w", encoding="utf-8") as f:

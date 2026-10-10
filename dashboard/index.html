@@ -589,15 +589,51 @@ function renderEvolucion() {
     </svg>`;
 }
 function renderCostoBloques() {
-  const bloques = [
-    { nombre: 'La Libertad Avanza',           bancas: 38 },
-    { nombre: 'Unión por la Patria',           bancas: 99 },
-    { nombre: 'PRO',                           bancas: 37 },
-    { nombre: 'UCR',                           bancas: 34 },
-    { nombre: 'Hacemos Coalición Federal',     bancas: 21 },
-    { nombre: 'Innovación Federal',            bancas: 16 },
-    { nombre: 'Otros / Monobloques',           bancas: 12 },
+  // Composición vigente: se calcula en vivo desde la nómina HCDN que sirve
+  // /api/diputados (actualizada a diario por el pipeline). Si la API no
+  // respondió, se usa la foto de respaldo de data/diputados.json al 09/10/2026.
+  const NOMBRES_BLOQUE = {
+    'LA LIBERTAD AVANZA':         'La Libertad Avanza',
+    'UNIÓN POR LA PATRIA':        'Unión por la Patria',
+    'PROVINCIAS UNIDAS':          'Provincias Unidas',
+    'PRO':                        'PRO',
+    'ARGENTINA FEDERAL':          'Argentina Federal',
+    'UCR - UNIÓN CÍVICA RADICAL': 'UCR',
+  };
+  const BLOQUES_RESPALDO = [
+    { nombre: 'La Libertad Avanza',           bancas: 95 },
+    { nombre: 'Unión por la Patria',           bancas: 92 },
+    { nombre: 'Provincias Unidas',             bancas: 18 },
+    { nombre: 'PRO',                           bancas: 12 },
+    { nombre: 'Argentina Federal',             bancas: 9 },
+    { nombre: 'UCR',                           bancas: 6 },
+    { nombre: 'Otros / Monobloques',           bancas: 25 },
   ];
+  const FECHA_RESPALDO = '09/10/2026';
+  const MAX_BLOQUES = 6;      // + fila "Otros" = 7 filas (una por color)
+  const MIN_BANCAS  = 5;      // bloques más chicos van a "Otros / Monobloques"
+  const enVivo = Array.isArray(DIPUTADOS_DATA) && DIPUTADOS_DATA.length > 0;
+  let bloques = BLOQUES_RESPALDO;
+  if (enVivo) {
+    const conteo = {};
+    DIPUTADOS_DATA.forEach(d => {
+      const k = (d.bloque || 'Sin bloque').trim().toUpperCase();
+      conteo[k] = (conteo[k] || 0) + 1;
+    });
+    const principales = Object.entries(conteo)
+      .sort((a, b) => b[1] - a[1])
+      .filter(([, n]) => n >= MIN_BANCAS)
+      .slice(0, MAX_BLOQUES);
+    bloques = principales.map(([k, n]) => ({
+      nombre: NOMBRES_BLOQUE[k] || k.toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase()),
+      bancas: n,
+    }));
+    const otros = DIPUTADOS_DATA.length - principales.reduce((s, [, n]) => s + n, 0);
+    if (otros > 0) bloques.push({ nombre: 'Otros / Monobloques', bancas: otros });
+  }
+  const fuenteComposicion = enVivo
+    ? 'nómina vigente HCDN (' + DIPUTADOS_DATA.length + ' bancas, datos en vivo)'
+    : 'composición HCDN al ' + FECHA_RESPALDO + ' (respaldo)';
   const totalBancas = bloques.reduce((s, b) => s + b.bancas, 0);
   const pptoTotal   = HISTORICO_PRESUPUESTO.at(-1).total;
   const costoPorBanca = pptoTotal / totalBancas;
@@ -648,7 +684,7 @@ function renderCostoBloques() {
       </tfoot>
     </table>
     <p style="font-size:.68rem; color:#94a3b8; margin-top:.5rem; padding:.3rem .5rem;">
-      * Distribución proporcional al número de bancas. No refleja asignaciones reales por bloque. Fuente: composición HCDN 2024.
+      * Distribución proporcional al número de bancas. No refleja asignaciones reales por bloque. Fuente: ${fuenteComposicion}.
     </p>`;
 }
 let DIPUTADOS_DATA = [];
@@ -682,6 +718,7 @@ async function cargarDiputados() {
     DIPUTADOS_DATA = data.diputados || [];
     ordenarTabla('presentados');
     poblarFiltroBloques(DIPUTADOS_DATA);
+    renderCostoBloques();
   } catch (err) {
     DIPUTADOS_DATA = [];
     document.getElementById('tbody-diputados').innerHTML =

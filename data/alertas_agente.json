@@ -1,20 +1,15 @@
 {
-  "generado_en": "2026-10-09T18:41:02.231084+00:00",
+  "generado_en": "2026-10-10T09:33:39.128735+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-10-09T18:41:02.231084+00:00",
-    "total_hallazgos": 10,
+    "generado_en": "2026-10-10T09:33:39.128735+00:00",
+    "total_hallazgos": 9,
     "por_severidad": {
-      "alta": 1,
+      "alta": 0,
       "media": 2,
       "baja": 7
     },
     "hallazgos": [
-      {
-        "tipo": "delta_asistencia_global",
-        "severidad": "alta",
-        "detalle": "Asistencia promedio global subió 93.9 puntos vs. la corrida anterior (0.0% → 93.9%)."
-      },
       {
         "tipo": "asistencia_critica",
         "severidad": "media",
@@ -74,14 +69,8 @@
     "motivo": "Hallazgos estructurados generados sin problema (no requieren IA); la redacción narrativa está deshabilitada porque no hay ANTHROPIC_API_KEY."
   },
   "alerta": {
-    "requiere_alerta": true,
+    "requiere_alerta": false,
     "criterio": "siempre para eventos puntuales; solo si es nuevo para estados por diputado",
-    "hallazgos_relevantes": [
-      {
-        "tipo": "delta_asistencia_global",
-        "severidad": "alta",
-        "detalle": "Asistencia promedio global subió 93.9 puntos vs. la corrida anterior (0.0% → 93.9%)."
-      }
-    ]
+    "hallazgos_relevantes": []
   }
 }

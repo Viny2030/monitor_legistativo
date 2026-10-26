@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-25T09:30:17.046165+00:00",
+  "generado_en": "2026-10-26T09:41:34.402104+00:00",
   "total_diputados": 257,
   "analisis": {
-    "generado_en": "2026-10-25T09:30:17.046165+00:00",
+    "generado_en": "2026-10-26T09:41:34.402104+00:00",
     "total_hallazgos": 9,
     "por_severidad": {
       "alta": 0,
@@ -13,14 +13,14 @@
       {
         "tipo": "asistencia_critica",
         "severidad": "media",
-        "detalle": "Bonacci, Rocío (LA LIBERTAD AVANZA, SANTA FE): asistencia 42.9%.",
-        "diputado": "Bonacci, Rocío"
+        "detalle": "Bonacci, RocÃ­o (LA LIBERTAD AVANZA, SANTA FE): asistencia 42.9%.",
+        "diputado": "Bonacci, RocÃ­o"
       },
       {
         "tipo": "asistencia_critica",
         "severidad": "media",
-        "detalle": "Gomez, José (UNIÓN POR LA PATRIA, SANTIAGO DEL ESTERO): asistencia 42.9%.",
-        "diputado": "Gomez, José"
+        "detalle": "Gomez, JosÃ© (UNIÃN POR LA PATRIA, SANTIAGO DEL ESTERO): asistencia 42.9%.",
+        "diputado": "Gomez, JosÃ©"
       },
       {
         "tipo": "outlier_estadistico_asistencia",
@@ -31,8 +31,8 @@
       {
         "tipo": "outlier_estadistico_asistencia",
         "severidad": "baja",
-        "detalle": "Bonacci, Rocío: asistencia 42.9%, por debajo del piso estadístico (64.25%) del resto del cuerpo.",
-        "diputado": "Bonacci, Rocío"
+        "detalle": "Bonacci, RocÃ­o: asistencia 42.9%, por debajo del piso estadístico (64.25%) del resto del cuerpo.",
+        "diputado": "Bonacci, RocÃ­o"
       },
       {
         "tipo": "outlier_estadistico_asistencia",
@@ -43,8 +43,8 @@
       {
         "tipo": "outlier_estadistico_asistencia",
         "severidad": "baja",
-        "detalle": "Gomez, José: asistencia 42.9%, por debajo del piso estadístico (64.25%) del resto del cuerpo.",
-        "diputado": "Gomez, José"
+        "detalle": "Gomez, JosÃ©: asistencia 42.9%, por debajo del piso estadístico (64.25%) del resto del cuerpo.",
+        "diputado": "Gomez, JosÃ©"
       },
       {
         "tipo": "outlier_estadistico_asistencia",

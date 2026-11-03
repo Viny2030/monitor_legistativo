@@ -1,12 +1,12 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-11-02T09:25:45.480863",
+    "ultima_actualizacion": "2026-11-03T09:24:05.707470",
     "fuente_asistencia": "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo144/ESTADISTICAS.pdf",
     "fuente_asistencia_actualizados": "257/257",
     "periodo_asistencia": "Período 144 01/03/2026 al 09/09/2026",
-    "fuente_proyectos": "sin actualizar hoy (se conservan los valores anteriores)",
+    "fuente_proyectos": "datos.hcdn.gob.ar (CKAN)",
     "proyectos_periodo": "expedientes 2025-2026",
-    "proyectos_actualizados": "152/257"
+    "proyectos_actualizados": "224/257"
   },
   "diputados": [
     {
@@ -30,7 +30,7 @@
       "nape": 0.286,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 24,
+      "sil_presentados": 94,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -42,8 +42,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20219307757_20251127110110000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 52,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -52,7 +52,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ajmechet, Sabrina",
@@ -75,7 +77,7 @@
       "nape": 0.0,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
+      "sil_presentados": 52,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -87,8 +89,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20223799281_20240129144903000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 15,
+      "proyectos_aprobados": 5,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -97,7 +99,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 5,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Almena, Carlos Alberto",
@@ -120,7 +124,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 14,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -132,8 +136,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23233977519_20231128110506000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -142,7 +146,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Álvarez, Claudio",
@@ -152,8 +158,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20254305759_20251127110943000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -162,7 +168,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Andino, Cristian",
@@ -185,7 +193,7 @@
       "nape": 0.0,
       "proyectos_ley": 39,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 93,
+      "sil_presentados": 151,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -210,7 +218,7 @@
       "nape": 0.143,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -235,7 +243,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 1,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -269,8 +277,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20357318158_20231128095338000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 15,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 34,
+      "proyectos_aprobados": 11,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -280,10 +288,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 15,
+      "proyectos_ley": 11,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 73,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Araujo Hernández, Jorge Neri",
@@ -293,28 +302,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20229561481_20260930112845000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "Ardohain, Martín",
-      "distrito": "LA PAMPA",
-      "bloque": "PRO",
-      "mandato_hasta": "2023-2027",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23202055869_20231218135501000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": 14,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 70,
+      "proyectos_aprobados": 12,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -324,10 +313,33 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 14,
+      "proyectos_ley": 12,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Ardohain, Martín",
+      "distrito": "LA PAMPA",
+      "bloque": "PRO",
+      "mandato_hasta": "2023-2027",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23202055869_20231218135501000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 20,
+      "proyectos_aprobados": 6,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 6,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 38,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Arrieta, Lourdes Micaela",
@@ -350,7 +362,7 @@
       "nape": 0.286,
       "proyectos_ley": 7,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 62,
+      "sil_presentados": 94,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -362,8 +374,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245738723_20231128100717000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 17,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -372,7 +384,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Aveiro, Martín",
@@ -382,8 +396,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20241811612_20231218133854000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 37,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 72,
+      "proyectos_aprobados": 30,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -393,10 +407,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 37,
+      "proyectos_ley": 30,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 128,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Avico, Belén",
@@ -406,8 +421,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27275988877_20260915151232000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -417,10 +432,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 4,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Avila, Jorge Antonio",
@@ -443,7 +459,7 @@
       "nape": 0.286,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
+      "sil_presentados": 39,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -468,7 +484,7 @@
       "nape": 0.429,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
+      "sil_presentados": 39,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -493,7 +509,7 @@
       "nape": 0.143,
       "proyectos_ley": 40,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 68,
+      "sil_presentados": 172,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -518,7 +534,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 2,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -543,7 +559,7 @@
       "nape": 0.143,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 16,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -568,7 +584,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 56,
+      "sil_presentados": 72,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -593,7 +609,7 @@
       "nape": 0.0,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 56,
+      "sil_presentados": 72,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -606,7 +622,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27239991810_20251127111527000_small.png",
       "asistencia_pct": 100.0,
       "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -616,10 +632,8 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Benedit, Beltrán",
@@ -629,8 +643,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20131823666_20231207102136000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 13,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -640,10 +654,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 13,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 19,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Benegas Lynch, Bertie",
@@ -688,7 +703,7 @@
       "nape": 0.0,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 22,
+      "sil_presentados": 30,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -713,7 +728,7 @@
       "nape": 0.0,
       "proyectos_ley": 11,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
+      "sil_presentados": 56,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -725,8 +740,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27396592881_20231128103306000_small.png",
       "asistencia_pct": 42.9,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 3,
@@ -735,7 +750,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.571
+      "nape": 0.571,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 4,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bongiovanni, Alejandro",
@@ -757,7 +777,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bordet, Gustavo",
@@ -780,7 +803,7 @@
       "nape": 0.0,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
+      "sil_presentados": 19,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -805,7 +828,7 @@
       "nape": 0.143,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
+      "sil_presentados": 30,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -830,7 +853,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -855,7 +878,7 @@
       "nape": 0.0,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 23,
+      "sil_presentados": 60,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -867,8 +890,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20229354036_20251127111925000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -878,10 +901,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 1,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Bruno, Eliana",
@@ -904,7 +928,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 6,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -916,8 +940,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20161572749_20231128095743000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 58,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 62,
+      "proyectos_aprobados": 37,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -927,10 +951,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 58,
+      "proyectos_ley": 37,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 79,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Cafiero, Santiago",
@@ -953,7 +978,7 @@
       "nape": 0.143,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 15,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -977,7 +1002,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Campitelli, Celia",
@@ -1000,7 +1028,7 @@
       "nape": 0.143,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
+      "sil_presentados": 30,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1025,7 +1053,7 @@
       "nape": 0.143,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 51,
+      "sil_presentados": 90,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1037,8 +1065,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27357276328_20251127112232000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -1047,7 +1075,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Capozzi, Sergio Eduardo",
@@ -1070,7 +1100,7 @@
       "nape": 0.143,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 20,
+      "sil_presentados": 62,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1095,7 +1125,7 @@
       "nape": 0.0,
       "proyectos_ley": 11,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 29,
+      "sil_presentados": 96,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1120,7 +1150,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1145,7 +1175,7 @@
       "nape": 0.143,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1170,7 +1200,7 @@
       "nape": 0.0,
       "proyectos_ley": 51,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 59,
+      "sil_presentados": 122,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1217,7 +1247,7 @@
       "nape": 0.0,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 49,
+      "sil_presentados": 130,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1264,7 +1294,7 @@
       "nape": 0.429,
       "proyectos_ley": 14,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
+      "sil_presentados": 40,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1289,7 +1319,7 @@
       "nape": 0.143,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1314,7 +1344,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 18,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1361,7 +1391,7 @@
       "nape": 0.286,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
+      "sil_presentados": 17,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1386,7 +1416,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
+      "sil_presentados": 13,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1398,8 +1428,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23113647604_20251126100940000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -1408,7 +1438,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 9,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "de la Sota, Natalia",
@@ -1431,7 +1466,7 @@
       "nape": 0.143,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 27,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1443,28 +1478,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27332948895_20251128092414000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "del Caño, Nicolás",
-      "distrito": "BUENOS AIRES",
-      "bloque": "PTS-FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
-      "mandato_hasta": "2025-2029",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20279217714_20251204140140000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": 29,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1474,10 +1489,36 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 29,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 9,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
+    },
+    {
+      "nombre": "del Caño, Nicolás",
+      "distrito": "BUENOS AIRES",
+      "bloque": "PTS-FRENTE DE IZQUIERDA Y DE TRABAJADORES UNIDAD",
+      "mandato_hasta": "2025-2029",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20279217714_20251204140140000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 60,
+      "proyectos_aprobados": 20,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 20,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 124,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Del Plá, Romina",
@@ -1487,8 +1528,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27226680565_20251127120203000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 66,
+      "proyectos_aprobados": 23,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1497,7 +1538,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 23,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Díaz, Fernanda",
@@ -1507,8 +1550,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27349910298_20251204140349000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 58,
+      "proyectos_aprobados": 4,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1517,7 +1560,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 4,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Diez, Romina",
@@ -1562,7 +1607,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 34,
+      "sil_presentados": 23,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1574,8 +1619,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20291515011_20251128090428000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1584,7 +1629,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Estévez, Gabriela Beatriz",
@@ -1594,8 +1641,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27261225234_20231129151114000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 104,
+      "proyectos_aprobados": 36,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -1604,7 +1651,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 36,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Falcone, Eduardo",
@@ -1627,7 +1676,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1661,8 +1710,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20210031856_20260327084248000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 34,
+      "proyectos_aprobados": 10,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1671,7 +1720,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 10,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Félix, Emir",
@@ -1681,8 +1732,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20168368373_20251204141145000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1691,7 +1742,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Fernández, Jorge",
@@ -1701,8 +1754,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20133010298_20251202143951000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 18,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1711,7 +1764,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Fernández, Elia Marina",
@@ -1721,8 +1776,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27167354918_20251202142545000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1731,7 +1786,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Fernández Molero, Daiana",
@@ -1741,8 +1798,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27319171148_20231128102546000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -1751,7 +1808,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ferrán, Abelardo",
@@ -1761,8 +1820,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20133677586_20251126102235000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -1771,7 +1830,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ferraro, Maximiliano",
@@ -1794,7 +1855,7 @@
       "nape": 0.0,
       "proyectos_ley": 55,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 61,
+      "sil_presentados": 167,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1819,7 +1880,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 13,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1844,7 +1905,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1869,7 +1930,7 @@
       "nape": 0.286,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 10,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1903,8 +1964,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23127596824_20231128101433000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 39,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 71,
+      "proyectos_aprobados": 27,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -1914,10 +1975,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 39,
+      "proyectos_ley": 27,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 149,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Fregonese, Alicia",
@@ -1940,7 +2002,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1965,7 +2027,7 @@
       "nape": 0.0,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 31,
+      "sil_presentados": 109,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -1999,8 +2061,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27318487222_20251215091750000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2010,10 +2072,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 5,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Galmarini, Sebastián",
@@ -2023,8 +2086,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20266508329_20251201142222000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 20,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 19,
+      "proyectos_aprobados": 12,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2034,10 +2097,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 20,
+      "proyectos_ley": 12,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 28,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "García, María Teresa",
@@ -2047,8 +2111,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27122857714_20251126102902000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 22,
+      "proyectos_aprobados": 4,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2057,7 +2121,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 4,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "García, Carlos",
@@ -2067,8 +2133,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20221313837_20231205095639000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2077,7 +2143,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "García, Álvaro",
@@ -2087,8 +2155,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20270878181_20251204142930000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2097,7 +2165,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "García Aresca, Ignacio",
@@ -2107,28 +2177,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20208736338_20251203094634000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 6,
-        "ausentes": 1,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.143
-    },
-    {
-      "nombre": "Garrido, José Luis",
-      "distrito": "SANTA CRUZ",
-      "bloque": "POR SANTA CRUZ",
-      "mandato_hasta": "2023-2027",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20209210739_20240122145422000_small.png",
-      "asistencia_pct": 85.7,
-      "proyectos_presentados": 9,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2138,10 +2188,33 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 9,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Garrido, José Luis",
+      "distrito": "SANTA CRUZ",
+      "bloque": "POR SANTA CRUZ",
+      "mandato_hasta": "2023-2027",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20209210739_20240122145422000_small.png",
+      "asistencia_pct": 85.7,
+      "proyectos_presentados": 17,
+      "proyectos_aprobados": 8,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 6,
+        "ausentes": 1,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.143,
+      "proyectos_ley": 8,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 37,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Giampieri, Antonela",
@@ -2164,7 +2237,7 @@
       "nape": 0.0,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2189,7 +2262,7 @@
       "nape": 0.0,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
+      "sil_presentados": 19,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2214,7 +2287,7 @@
       "nape": 0.0,
       "proyectos_ley": 29,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 36,
+      "sil_presentados": 123,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2239,7 +2312,7 @@
       "nape": 0.0,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 35,
+      "sil_presentados": 80,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2251,8 +2324,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20280759881_20231128111210000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 5,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2262,10 +2335,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 7,
+      "proyectos_ley": 5,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 20,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Goitia, Rosario",
@@ -2297,8 +2371,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20161912078_20231129151752000_small.png",
       "asistencia_pct": 42.9,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 3,
@@ -2307,7 +2381,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.571
+      "nape": 0.571,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Gonzales, Alfredo",
@@ -2339,8 +2418,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242876203_20231128101035000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2349,7 +2428,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "González, Álvaro",
@@ -2359,8 +2440,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20126966505_20231206151116000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2369,7 +2450,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "González, Diógenes Ignacio",
@@ -2379,8 +2462,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20174122777_20251204143840000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 18,
+      "proyectos_aprobados": 7,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2389,7 +2472,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 7,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "González Estevarena, María Luisa",
@@ -2399,8 +2484,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27127995236_20251204143658000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 8,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2409,7 +2494,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Grabois, Juan",
@@ -2432,7 +2519,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 9,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2457,7 +2544,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 2,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2469,8 +2556,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20178882873_20200206125402_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 37,
+      "proyectos_aprobados": 29,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2479,7 +2566,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 29,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Gutiérrez, Carlos",
@@ -2489,8 +2578,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/10821747_20200214145746000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 4,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2499,7 +2588,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 4,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Guzmán, Jairo",
@@ -2509,8 +2600,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20303559680_20251204144249000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2519,7 +2610,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Hadad, Raúl",
@@ -2530,7 +2623,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20323020516_20251126104035000_small.png",
       "asistencia_pct": 85.7,
       "proyectos_presentados": 3,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -2540,10 +2633,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 3,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 7,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Hagman, Itai",
@@ -2566,7 +2660,7 @@
       "nape": 0.143,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 27,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2613,7 +2707,7 @@
       "nape": 0.143,
       "proyectos_ley": 5,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
+      "sil_presentados": 18,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2637,10 +2731,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Huesen, Gerardo",
@@ -2662,10 +2753,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Humenuk, Gladys",
@@ -2697,8 +2785,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27209648909_20231128100843000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 96,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 141,
+      "proyectos_aprobados": 15,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2708,10 +2796,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 96,
+      "proyectos_ley": 15,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 276,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ibañez, María Cecilia",
@@ -2721,8 +2810,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/23171578434_20231129152402000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 11,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 23,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2732,10 +2821,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 11,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 42,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Jaime Quiroga, Carlos Gustavo",
@@ -2758,7 +2848,7 @@
       "nape": 0.0,
       "proyectos_ley": 7,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
+      "sil_presentados": 15,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2783,7 +2873,7 @@
       "nape": 0.0,
       "proyectos_ley": 31,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 100,
+      "sil_presentados": 272,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2795,8 +2885,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20258693109_20231128170631000_small.png",
       "asistencia_pct": 71.4,
-      "proyectos_presentados": 3,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 5,
@@ -2806,10 +2896,11 @@
         "sesiones": 7
       },
       "nape": 0.286,
-      "sil_presentados": 3,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Lanesan Sancho, Moira",
@@ -2832,7 +2923,7 @@
       "nape": 0.143,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 26,
+      "sil_presentados": 44,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2844,8 +2935,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20225959111_20251204145542000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2854,7 +2945,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Leiva, Aldo",
@@ -2877,7 +2973,7 @@
       "nape": 0.143,
       "proyectos_ley": 11,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
+      "sil_presentados": 35,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2902,7 +2998,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2914,8 +3010,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20217318670_20251204145720000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -2924,7 +3020,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Llano, Mercedes",
@@ -2947,7 +3045,7 @@
       "nape": 0.0,
       "proyectos_ley": 12,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
+      "sil_presentados": 39,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -2994,7 +3092,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
+      "sil_presentados": 2,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3006,8 +3104,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27277083561_20251126105452000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 5,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3016,7 +3114,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 5,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "López Pasquali, Cecilia",
@@ -3026,8 +3126,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27057991025_20251204150040000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 11,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -3036,7 +3136,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Lousteau, Martín",
@@ -3046,8 +3148,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20219540125_20251125150757000_small.png",
       "asistencia_pct": 71.4,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 5,
@@ -3056,7 +3158,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.286
+      "nape": 0.286,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Luque, Juan Pablo",
@@ -3079,7 +3183,7 @@
       "nape": 0.143,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 24,
+      "sil_presentados": 37,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3104,7 +3208,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 6,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3129,7 +3233,7 @@
       "nape": 0.0,
       "proyectos_ley": 16,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 43,
+      "sil_presentados": 94,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3154,7 +3258,7 @@
       "nape": 0.143,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
+      "sil_presentados": 9,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3179,7 +3283,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
+      "sil_presentados": 11,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3191,8 +3295,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27201070746_20251126110014000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 48,
+      "proyectos_aprobados": 33,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -3201,7 +3305,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 33,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Marino, Juan",
@@ -3224,7 +3330,7 @@
       "nape": 0.0,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
+      "sil_presentados": 88,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3236,8 +3342,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242395752_20200206125405_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 26,
+      "proyectos_aprobados": 6,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3246,7 +3352,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 6,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Martínez, Álvaro",
@@ -3256,8 +3364,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20326276287_20251201145432000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 9,
+      "proyectos_aprobados": 8,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3266,7 +3374,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 8,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Massot, Nicolás",
@@ -3276,8 +3386,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20310895955_20231128100601000_small.png",
       "asistencia_pct": 71.4,
-      "proyectos_presentados": 15,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 10,
+      "proyectos_aprobados": 7,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 5,
@@ -3287,10 +3397,11 @@
         "sesiones": 7
       },
       "nape": 0.286,
-      "sil_presentados": 15,
+      "proyectos_ley": 7,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 16,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Matzkin, Martín",
@@ -3300,8 +3411,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20237375263_20260811103038000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 3,
@@ -3311,10 +3422,8 @@
         "sesiones": 3
       },
       "nape": 0.0,
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Maureira, Karina",
@@ -3337,7 +3446,7 @@
       "nape": 0.0,
       "proyectos_ley": 7,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 17,
+      "sil_presentados": 18,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3349,8 +3458,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20202980210_20231128104924000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3360,10 +3469,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 1,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Medina, Gladys",
@@ -3386,7 +3496,7 @@
       "nape": 0.0,
       "proyectos_ley": 11,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 26,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3398,8 +3508,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20245792906_20231207105307000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3408,7 +3518,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Metral Asensio, Julieta",
@@ -3456,7 +3571,7 @@
       "nape": 0.0,
       "proyectos_ley": 18,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
+      "sil_presentados": 41,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3468,8 +3583,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27241001070_20251126111348000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 5,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3479,10 +3594,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 5,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 10,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Molina, Juan Carlos",
@@ -3505,7 +3621,7 @@
       "nape": 0.0,
       "proyectos_ley": 17,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 36,
+      "sil_presentados": 77,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3530,7 +3646,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 3,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3542,8 +3658,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20253485478_20231128101340000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 1,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 5,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -3553,10 +3669,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 1,
+      "proyectos_ley": 5,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 16,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Mondaca, Soledad",
@@ -3578,7 +3695,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Monguillot, Fernando",
@@ -3601,7 +3721,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3626,7 +3746,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 22,
+      "sil_presentados": 80,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3651,7 +3771,7 @@
       "nape": 0.0,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 22,
+      "sil_presentados": 80,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3663,8 +3783,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27239191288_20231128101806000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 156,
+      "proyectos_aprobados": 26,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -3673,7 +3793,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 26,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Morchio, Francisco",
@@ -3696,7 +3818,7 @@
       "nape": 0.0,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
+      "sil_presentados": 72,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3721,7 +3843,7 @@
       "nape": 0.143,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 20,
+      "sil_presentados": 66,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3746,7 +3868,7 @@
       "nape": 0.0,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 13,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3771,7 +3893,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 29,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3796,7 +3918,7 @@
       "nape": 0.0,
       "proyectos_ley": 0,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3808,8 +3930,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27348606684_20251127141340000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3819,10 +3941,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 2,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Neder, Estela Mary",
@@ -3845,7 +3968,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
+      "sil_presentados": 33,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3870,7 +3993,7 @@
       "nape": 0.143,
       "proyectos_ley": 5,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3894,7 +4017,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Nóblega, Sebastián",
@@ -3904,8 +4030,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20303646362_20231130151045000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 69,
+      "proyectos_aprobados": 23,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3914,7 +4040,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 23,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Noguera, Javier",
@@ -3937,7 +4065,7 @@
       "nape": 0.286,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 13,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -3949,8 +4077,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242920644_20200206125307_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3959,7 +4087,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ojeda, Joaquín",
@@ -3970,7 +4103,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20358926933_20251126131046000_small.png",
       "asistencia_pct": 100.0,
       "proyectos_presentados": 1,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -3980,10 +4113,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 1,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Olmos, Kelly",
@@ -4006,7 +4140,7 @@
       "nape": 0.0,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
+      "sil_presentados": 86,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4018,8 +4152,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27065013253_20200206125406_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 59,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 88,
+      "proyectos_aprobados": 25,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4029,10 +4163,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 59,
+      "proyectos_ley": 25,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 171,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Outes, Pablo",
@@ -4055,7 +4190,7 @@
       "nape": 0.286,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
+      "sil_presentados": 15,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4080,7 +4215,7 @@
       "nape": 0.429,
       "proyectos_ley": 169,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 86,
+      "sil_presentados": 501,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4105,7 +4240,7 @@
       "nape": 0.143,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 28,
+      "sil_presentados": 16,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4117,8 +4252,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27177269323_20251127141926000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 8,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 4,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4128,10 +4263,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 8,
+      "proyectos_ley": 4,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 19,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Pareja, Sebastián",
@@ -4141,8 +4277,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20249630161_20251127082608000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4152,10 +4288,8 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Parola, María Graciela",
@@ -4166,7 +4300,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27267107721_20200206125405_small.png",
       "asistencia_pct": 85.7,
       "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4176,10 +4310,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 2,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 3,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Patiño Brizuela, Marcos",
@@ -4189,8 +4324,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20187947740_20251126134524000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4199,7 +4334,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pauli, Santiago",
@@ -4222,7 +4359,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4234,8 +4371,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20265696725_20231206151402000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 395,
+      "proyectos_aprobados": 88,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4244,7 +4381,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 88,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pedrali, Gabriela",
@@ -4267,7 +4406,7 @@
       "nape": 0.143,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
+      "sil_presentados": 81,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4279,28 +4418,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20423258609_20251211134659000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "Pelli, Federico Agustín",
-      "distrito": "TUCUMAN",
-      "bloque": "LA LIBERTAD AVANZA",
-      "mandato_hasta": "2025-2029",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20318128031_20251126135026000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": 4,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4310,10 +4429,33 @@
         "sesiones": 7
       },
       "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Pelli, Federico Agustín",
+      "distrito": "TUCUMAN",
+      "bloque": "LA LIBERTAD AVANZA",
+      "mandato_hasta": "2025-2029",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20318128031_20251126135026000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 3,
+      "proyectos_aprobados": 1,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
       "sil_presentados": 4,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Peluc, José",
@@ -4323,8 +4465,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20229030680_20231128104116000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4333,7 +4475,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Penacca, Paula Andrea",
@@ -4356,7 +4500,7 @@
       "nape": 0.143,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
+      "sil_presentados": 21,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4381,7 +4525,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4393,8 +4537,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27276017328_20251215093643000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4403,7 +4547,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Picat, Luis Albino",
@@ -4435,8 +4584,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20084824403_20231207101138000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 14,
+      "proyectos_aprobados": 9,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4446,10 +4595,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 7,
+      "proyectos_ley": 9,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 29,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Picón Martínez, Nancy Viviana",
@@ -4459,8 +4609,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27251183207_20231129153354000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 81,
+      "proyectos_aprobados": 64,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4469,7 +4619,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 64,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pietragalla Corti, Horacio",
@@ -4492,7 +4644,7 @@
       "nape": 0.0,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 17,
+      "sil_presentados": 31,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4517,7 +4669,7 @@
       "nape": 0.143,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 45,
+      "sil_presentados": 101,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4529,8 +4681,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27329016817_20240220173740000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4539,7 +4691,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 3,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Potenza, Luciana",
@@ -4562,7 +4719,7 @@
       "nape": 0.143,
       "proyectos_ley": 7,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 7,
+      "sil_presentados": 12,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4587,7 +4744,7 @@
       "nape": 0.0,
       "proyectos_ley": 66,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 115,
+      "sil_presentados": 520,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4611,7 +4768,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 5,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Rauschenberger, Ariel",
@@ -4634,7 +4794,7 @@
       "nape": 0.143,
       "proyectos_ley": 7,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 28,
+      "sil_presentados": 76,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4668,8 +4828,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27280877188_20231206151457000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4678,7 +4838,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 1,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Reichardt, Karen",
@@ -4701,7 +4866,7 @@
       "nape": 0.0,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
+      "sil_presentados": 7,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4714,7 +4879,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20328293162_20251126141016000_small.png",
       "asistencia_pct": 100.0,
       "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4724,10 +4889,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 2,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ritondo, Cristian A.",
@@ -4750,7 +4916,7 @@
       "nape": 0.0,
       "proyectos_ley": 20,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
+      "sil_presentados": 65,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4775,7 +4941,7 @@
       "nape": 0.286,
       "proyectos_ley": 4,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
+      "sil_presentados": 8,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4800,7 +4966,7 @@
       "nape": 0.0,
       "proyectos_ley": 5,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 33,
+      "sil_presentados": 38,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4824,7 +4990,10 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 2,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Rodríguez, Miguel",
@@ -4834,48 +5003,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20327299264_20251126142417000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "Rodríguez Machado, Laura Elena",
-      "distrito": "CORDOBA",
-      "bloque": "LA LIBERTAD AVANZA",
-      "mandato_hasta": "2025-2029",
-      "genero": "F",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27148917987_20251201132523000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "Rossi, Agustín Oscar",
-      "distrito": "SANTA FE",
-      "bloque": "UNIÓN POR LA PATRIA",
-      "mandato_hasta": "2025-2029",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20136518772_20251204154656000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": 44,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 7,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4885,10 +5014,55 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 44,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Rodríguez Machado, Laura Elena",
+      "distrito": "CORDOBA",
+      "bloque": "LA LIBERTAD AVANZA",
+      "mandato_hasta": "2025-2029",
+      "genero": "F",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27148917987_20251201132523000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 5,
+      "proyectos_aprobados": 2,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Rossi, Agustín Oscar",
+      "distrito": "SANTA FE",
+      "bloque": "UNIÓN POR LA PATRIA",
+      "mandato_hasta": "2025-2029",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20136518772_20251204154656000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 48,
+      "proyectos_aprobados": 12,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 12,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 76,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Ruíz, Yamila",
@@ -4898,8 +5072,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27364093786_20231206151604000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 216,
+      "proyectos_aprobados": 21,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -4908,7 +5082,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 21,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Salzmann, Marina Dorotea",
@@ -4931,7 +5107,7 @@
       "nape": 0.0,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 18,
+      "sil_presentados": 31,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4943,8 +5119,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20304639335_20251204154911000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 22,
+      "proyectos_aprobados": 10,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4953,7 +5129,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 10,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Sand, Nancy",
@@ -4976,7 +5154,7 @@
       "nape": 0.143,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 40,
+      "sil_presentados": 110,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -4988,8 +5166,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27273796229_20231128102511000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 4,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -4998,7 +5176,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Santurio, Santiago",
@@ -5021,7 +5201,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
+      "sil_presentados": 5,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5046,7 +5226,7 @@
       "nape": 0.143,
       "proyectos_ley": 9,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 80,
+      "sil_presentados": 159,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5071,7 +5251,7 @@
       "nape": 0.143,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5083,8 +5263,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20169551139_20251126151156000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 8,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 6,
+      "proyectos_aprobados": 3,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5094,10 +5274,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 8,
+      "proyectos_ley": 3,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 10,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Selva, Sabrina",
@@ -5120,7 +5301,7 @@
       "nape": 0.0,
       "proyectos_ley": 12,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 50,
+      "sil_presentados": 118,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5145,7 +5326,7 @@
       "nape": 0.0,
       "proyectos_ley": 5,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 27,
+      "sil_presentados": 29,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5170,7 +5351,7 @@
       "nape": 0.143,
       "proyectos_ley": 18,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
+      "sil_presentados": 65,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5242,7 +5423,7 @@
       "nape": 0.143,
       "proyectos_ley": 14,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 17,
+      "sil_presentados": 88,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5267,7 +5448,7 @@
       "nape": 0.0,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 14,
+      "sil_presentados": 30,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5317,7 +5498,7 @@
       "nape": 0.0,
       "proyectos_ley": 8,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 32,
+      "sil_presentados": 60,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5329,8 +5510,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20250816031_20251202135647000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 20,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 21,
+      "proyectos_aprobados": 2,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -5340,10 +5521,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 20,
+      "proyectos_ley": 2,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 30,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Todero, Pablo",
@@ -5366,7 +5548,7 @@
       "nape": 0.143,
       "proyectos_ley": 13,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
+      "sil_presentados": 73,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5391,7 +5573,7 @@
       "nape": 0.143,
       "proyectos_ley": 32,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 61,
+      "sil_presentados": 140,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5425,8 +5607,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20255454995_20251201151659000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 17,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 1,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5436,10 +5618,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 17,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 25,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Torres, Alejandra",
@@ -5462,7 +5645,7 @@
       "nape": 0.143,
       "proyectos_ley": 9,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 17,
+      "sil_presentados": 25,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5474,8 +5657,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20129790351_20240202135114000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 2,
+      "proyectos_aprobados": 1,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5484,7 +5667,12 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 1,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Tournier, José Federico",
@@ -5495,7 +5683,7 @@
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20244166246_20260827093141000_small.png",
       "asistencia_pct": 100.0,
       "proyectos_presentados": 2,
-      "proyectos_aprobados": null,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5505,10 +5693,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 2,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 4,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Treffinger, César",
@@ -5518,28 +5707,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20242671652_20231206151800000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
-      "iqp": null,
-      "asistencia_detalle": {
-        "presentes": 7,
-        "ausentes": 0,
-        "licencias": 0,
-        "mision_oficial": 0,
-        "sesiones": 7
-      },
-      "nape": 0.0
-    },
-    {
-      "nombre": "Trotta, Nicolás Alfredo",
-      "distrito": "BUENOS AIRES",
-      "bloque": "UNIÓN POR LA PATRIA",
-      "mandato_hasta": "2025-2029",
-      "genero": "M",
-      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20249577163_20251126094055000_small.png",
-      "asistencia_pct": 100.0,
-      "proyectos_presentados": 37,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5549,10 +5718,33 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 37,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
+    },
+    {
+      "nombre": "Trotta, Nicolás Alfredo",
+      "distrito": "BUENOS AIRES",
+      "bloque": "UNIÓN POR LA PATRIA",
+      "mandato_hasta": "2025-2029",
+      "genero": "M",
+      "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20249577163_20251126094055000_small.png",
+      "asistencia_pct": 100.0,
+      "proyectos_presentados": 40,
+      "proyectos_aprobados": 9,
+      "iqp": null,
+      "asistencia_detalle": {
+        "presentes": 7,
+        "ausentes": 0,
+        "licencias": 0,
+        "mision_oficial": 0,
+        "sesiones": 7
+      },
+      "nape": 0.0,
+      "proyectos_ley": 9,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 70,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Urien, Hernán",
@@ -5562,8 +5754,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20341556253_20251126154824000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 0,
+      "proyectos_aprobados": 0,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5572,7 +5764,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 0,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Valdés, Eduardo Félix",
@@ -5582,8 +5776,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20116408997_20231205095438000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 96,
+      "proyectos_aprobados": 18,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5592,7 +5786,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 18,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Vancsik, Daniel",
@@ -5615,7 +5811,7 @@
       "nape": 0.0,
       "proyectos_ley": 1,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 41,
+      "sil_presentados": 51,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5627,8 +5823,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27120466483_20231128103226000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 12,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -5637,7 +5833,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 12,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Vega, Yolanda",
@@ -5660,7 +5858,7 @@
       "nape": 0.143,
       "proyectos_ley": 31,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 44,
+      "sil_presentados": 104,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5672,8 +5870,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27204775708_20251127075732000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 16,
+      "proyectos_aprobados": 7,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -5682,7 +5880,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.143
+      "nape": 0.143,
+      "proyectos_ley": 7,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Vera, Andrea Fernanda",
@@ -5727,7 +5927,7 @@
       "nape": 0.0,
       "proyectos_ley": 6,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
+      "sil_presentados": 11,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5752,7 +5952,7 @@
       "nape": 0.0,
       "proyectos_ley": 2,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
+      "sil_presentados": 15,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5799,7 +5999,7 @@
       "nape": 0.143,
       "proyectos_ley": 14,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
+      "sil_presentados": 46,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5824,7 +6024,7 @@
       "nape": 0.143,
       "proyectos_ley": 39,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
+      "sil_presentados": 120,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5836,8 +6036,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20176149923_20231128100642000_small.png",
       "asistencia_pct": 85.7,
-      "proyectos_presentados": 25,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 44,
+      "proyectos_aprobados": 10,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 6,
@@ -5847,10 +6047,11 @@
         "sesiones": 7
       },
       "nape": 0.143,
-      "sil_presentados": 25,
+      "proyectos_ley": 10,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 89,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Yeza, Martín",
@@ -5860,8 +6061,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20319778110_20231128103139000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 6,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 14,
+      "proyectos_aprobados": 11,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5871,10 +6072,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 6,
+      "proyectos_ley": 11,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 35,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zago, Oscar",
@@ -5896,7 +6098,10 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN"
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 6,
+      "sil_con_dictamen": 0,
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zapata, Carlos Raúl",
@@ -5906,8 +6111,8 @@
       "genero": "M",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/20127901628_20251127080650000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": 7,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 12,
+      "proyectos_aprobados": 5,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5917,10 +6122,11 @@
         "sesiones": 7
       },
       "nape": 0.0,
-      "sil_presentados": 7,
+      "proyectos_ley": 5,
+      "proyectos_fuente": "CKAN",
+      "sil_presentados": 20,
       "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0,
-      "proyectos_fuente": "SIL"
+      "sil_tasa_dictamen": 0.0
     },
     {
       "nombre": "Zaracho, Natalia",
@@ -5943,7 +6149,7 @@
       "nape": 0.0,
       "proyectos_ley": 10,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
+      "sil_presentados": 38,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     },
@@ -5955,8 +6161,8 @@
       "genero": "F",
       "foto_url": "https://parlamentaria.hcdn.gob.ar/image/27213201617_20251127081237000_small.png",
       "asistencia_pct": 100.0,
-      "proyectos_presentados": null,
-      "proyectos_aprobados": null,
+      "proyectos_presentados": 57,
+      "proyectos_aprobados": 10,
       "iqp": null,
       "asistencia_detalle": {
         "presentes": 7,
@@ -5965,7 +6171,9 @@
         "mision_oficial": 0,
         "sesiones": 7
       },
-      "nape": 0.0
+      "nape": 0.0,
+      "proyectos_ley": 10,
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Zulli, Christian Alejandro",
@@ -5988,7 +6196,7 @@
       "nape": 0.286,
       "proyectos_ley": 3,
       "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
+      "sil_presentados": 28,
       "sil_con_dictamen": 0,
       "sil_tasa_dictamen": 0.0
     }
@@ -6013,7 +6221,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-11-02T09:21:57.852449"
+    "timestamp": "2026-11-03T09:19:38.828549"
   },
   "itc": {
     "id": "ITC",
@@ -6031,7 +6239,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-11-02T09:25:45.364628",
+    "timestamp": "2026-11-03T09:24:05.593323",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }

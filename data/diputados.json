@@ -1,12 +1,12 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-11-03T09:24:05.707470",
+    "ultima_actualizacion": "2026-11-04T09:28:31.575475",
     "fuente_asistencia": "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo144/ESTADISTICAS.pdf",
     "fuente_asistencia_actualizados": "257/257",
     "periodo_asistencia": "Período 144 01/03/2026 al 09/09/2026",
-    "fuente_proyectos": "datos.hcdn.gob.ar (CKAN)",
+    "fuente_proyectos": "sin actualizar hoy (se conservan los valores anteriores)",
     "proyectos_periodo": "expedientes 2025-2026",
-    "proyectos_actualizados": "224/257"
+    "proyectos_actualizados": "257/257"
   },
   "diputados": [
     {
@@ -29,10 +29,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 94,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Agüero, Guillermo César",
@@ -76,10 +73,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 52,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Alí, Ernesto \"Pipi\"",
@@ -123,10 +117,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 14,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Almirón, Lisandro",
@@ -192,10 +183,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 39,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 151,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Andrade, Javier",
@@ -217,10 +205,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Andreussi, Barbara",
@@ -242,10 +227,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ansaloni, Pablo",
@@ -289,10 +271,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 73,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Araujo Hernández, Jorge Neri",
@@ -336,10 +315,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 38,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Arrieta, Lourdes Micaela",
@@ -361,10 +337,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 94,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Arrúa, Alberto",
@@ -408,10 +381,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 30,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 128,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Avico, Belén",
@@ -433,10 +403,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Avila, Jorge Antonio",
@@ -458,10 +425,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 39,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Avila, Fernanda",
@@ -483,10 +447,7 @@
       },
       "nape": 0.429,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 39,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Banfi, Karina",
@@ -508,10 +469,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 40,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 172,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Barbur, Marcelo",
@@ -533,10 +491,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Basterra, Luis Eugenio",
@@ -558,10 +513,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Basualdo, Atilio",
@@ -583,10 +535,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 72,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Basualdo, Carolina",
@@ -608,10 +557,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 72,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Becerra, Mónica",
@@ -655,10 +601,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 19,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Benegas Lynch, Bertie",
@@ -702,10 +645,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Biella, Bernardo",
@@ -727,10 +667,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 56,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bonacci, Rocío",
@@ -752,10 +689,7 @@
       },
       "nape": 0.571,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bongiovanni, Alejandro",
@@ -777,10 +711,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bordet, Gustavo",
@@ -802,10 +733,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 19,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Borgatta, Alejandrina",
@@ -827,10 +755,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bornoroni, Gabriel",
@@ -852,10 +777,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bregman, Myriam",
@@ -877,10 +799,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 60,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Brizuela, Adrián",
@@ -902,10 +821,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Bruno, Eliana",
@@ -927,10 +843,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Brügge, Juan Fernando",
@@ -952,10 +865,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 37,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 79,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Cafiero, Santiago",
@@ -977,10 +887,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Campero, Mariano",
@@ -1002,10 +909,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Campitelli, Celia",
@@ -1027,10 +931,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Campo, Julieta Marisol",
@@ -1052,10 +953,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 90,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Cámpora, Lucía",
@@ -1099,10 +997,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 62,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Carignano, Florencia",
@@ -1124,10 +1019,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 96,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Carrancio, Alejandro",
@@ -1149,10 +1041,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Casas, Sergio Guillermo",
@@ -1174,10 +1063,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Castagneto, Carlos Daniel",
@@ -1199,10 +1085,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 51,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 122,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Castelnuovo, Giselle",
@@ -1246,10 +1129,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 130,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Chiconi, Abel",
@@ -1293,10 +1173,7 @@
       },
       "nape": 0.429,
       "proyectos_ley": 14,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 40,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Cisneros, Carlos",
@@ -1318,10 +1195,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Coletta, Mariela",
@@ -1343,10 +1217,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 18,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Correa Llano, Facundo",
@@ -1390,10 +1261,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 17,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "de Andreis, Fernando",
@@ -1415,10 +1283,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 13,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "de la Rosa, María Graciela",
@@ -1440,10 +1305,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "de la Sota, Natalia",
@@ -1465,10 +1327,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 27,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "De Sensi, María Florencia",
@@ -1490,10 +1349,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "del Caño, Nicolás",
@@ -1515,10 +1371,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 124,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Del Plá, Romina",
@@ -1606,10 +1459,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 23,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Emma, Nicolás",
@@ -1675,10 +1525,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Fargosi, Alejandro",
@@ -1854,10 +1701,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 55,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 167,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ferreyra, Alida",
@@ -1879,10 +1723,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 13,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Figliuolo, Sergio",
@@ -1904,10 +1745,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Finocchiaro, Alejandro",
@@ -1929,10 +1767,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Flores, Maria Gabriela",
@@ -1976,10 +1811,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 27,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 149,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Fregonese, Alicia",
@@ -2001,10 +1833,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Freites, Andrea",
@@ -2026,10 +1855,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 109,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Frias, Maira",
@@ -2073,10 +1899,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Galmarini, Sebastián",
@@ -2098,10 +1921,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 12,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 28,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "García, María Teresa",
@@ -2211,10 +2031,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 37,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Giampieri, Antonela",
@@ -2236,10 +2053,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Giordano, Juan Carlos",
@@ -2261,10 +2075,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 19,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Giudici, Silvana",
@@ -2286,10 +2097,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 29,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 123,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Giuliano, Diego A.",
@@ -2311,10 +2119,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 80,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Glinski, José",
@@ -2336,10 +2141,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 20,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Goitia, Rosario",
@@ -2383,10 +2185,7 @@
       },
       "nape": 0.571,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Gonzales, Alfredo",
@@ -2518,10 +2317,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Gruber, Maura",
@@ -2543,10 +2339,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Gutiérrez, Ramiro",
@@ -2634,10 +2427,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 7,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Hagman, Itai",
@@ -2659,10 +2449,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 27,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Hartfield, Diego",
@@ -2706,10 +2493,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 18,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Holzman, Patricia",
@@ -2797,10 +2581,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 15,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 276,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ibañez, María Cecilia",
@@ -2822,10 +2603,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 42,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Jaime Quiroga, Carlos Gustavo",
@@ -2847,10 +2625,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Juliano, Pablo",
@@ -2872,10 +2647,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 31,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 272,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Kirchner, Máximo Carlos",
@@ -2897,10 +2669,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Lanesan Sancho, Moira",
@@ -2922,10 +2691,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 44,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Laumann, Andrés Ariel",
@@ -2947,10 +2713,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Leiva, Aldo",
@@ -2972,10 +2735,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 35,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Lemoine, Lilia",
@@ -2997,10 +2757,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Leone, Andrés",
@@ -3044,10 +2801,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 12,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 39,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Lluch, Enrique",
@@ -3091,10 +2845,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "López, Jimena",
@@ -3182,10 +2933,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 37,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Macyszyn, Lorena",
@@ -3207,10 +2955,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Mango, Marcelo",
@@ -3232,10 +2977,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 16,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 94,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Manrique, Mario",
@@ -3257,10 +2999,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 9,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Marclay, Marianela",
@@ -3282,10 +3021,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Marín, Varinia Lis",
@@ -3329,10 +3065,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 88,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Martínez, Germán Pedro",
@@ -3398,10 +3131,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Matzkin, Martín",
@@ -3445,10 +3175,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 18,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Mayoraz, Nicolás",
@@ -3470,10 +3197,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Medina, Gladys",
@@ -3495,10 +3219,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 26,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Menem, Martín",
@@ -3520,10 +3241,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Metral Asensio, Julieta",
@@ -3545,10 +3263,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Michel, Guillermo",
@@ -3570,10 +3285,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 18,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 41,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Miño, Fernanda",
@@ -3595,10 +3307,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Molina, Juan Carlos",
@@ -3620,10 +3329,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 17,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 77,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Molinuevo, Soledad",
@@ -3645,10 +3351,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Molle, Matías",
@@ -3670,10 +3373,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Mondaca, Soledad",
@@ -3695,10 +3395,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Monguillot, Fernando",
@@ -3720,10 +3417,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Montenegro, Juan Pablo",
@@ -3745,10 +3439,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 80,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Montenegro, Guillermo",
@@ -3770,10 +3461,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 80,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Monzón, Roxana",
@@ -3817,10 +3505,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 72,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Moreau, Cecilia",
@@ -3842,10 +3527,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 66,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Moreno Ovalle, Julio",
@@ -3867,10 +3549,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 13,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Moyano, Hugo Antonio",
@@ -3892,10 +3571,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 29,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Mukdise, Jorge",
@@ -3917,10 +3593,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Muñoz, Gabriela Luciana",
@@ -3942,10 +3615,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Neder, Estela Mary",
@@ -3967,10 +3637,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 33,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Nieri, Lisandro",
@@ -3992,10 +3659,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Niveyro, Miriam",
@@ -4017,10 +3681,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Nóblega, Sebastián",
@@ -4064,10 +3725,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 13,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Nuñez, José",
@@ -4089,10 +3747,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ojeda, Joaquín",
@@ -4114,10 +3769,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Olmos, Kelly",
@@ -4139,10 +3791,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 86,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Osuna, Blanca Inés",
@@ -4164,10 +3813,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 25,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 171,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Outes, Pablo",
@@ -4189,10 +3835,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pagano, Marcela Marina",
@@ -4214,10 +3857,7 @@
       },
       "nape": 0.429,
       "proyectos_ley": 169,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 501,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Palazzo, Sergio Omar",
@@ -4239,10 +3879,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 16,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Palladino, Claudia María",
@@ -4264,10 +3901,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 19,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pareja, Sebastián",
@@ -4311,10 +3945,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Patiño Brizuela, Marcos",
@@ -4358,10 +3989,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Paulón, Esteban",
@@ -4405,10 +4033,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 81,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pellegrini, Agustín",
@@ -4452,10 +4077,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Peluc, José",
@@ -4499,10 +4121,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 21,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Petri, Luis",
@@ -4524,10 +4143,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Petrovich, María Lorena",
@@ -4549,10 +4165,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Picat, Luis Albino",
@@ -4596,10 +4209,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 9,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 29,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Picón Martínez, Nancy Viviana",
@@ -4643,10 +4253,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 31,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Pokoik, Lorena",
@@ -4668,10 +4275,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 101,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ponce, María Celeste",
@@ -4693,10 +4297,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Potenza, Luciana",
@@ -4718,10 +4319,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 12,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Propato, Agustina Lucrecia",
@@ -4743,10 +4341,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 66,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 520,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Quintar, Manuel",
@@ -4768,10 +4363,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Rauschenberger, Ariel",
@@ -4793,10 +4385,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 7,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 76,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ravera, Valentina",
@@ -4840,10 +4429,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 1,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Reichardt, Karen",
@@ -4865,10 +4451,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 7,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Riesco, Gastón",
@@ -4890,10 +4473,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ritondo, Cristian A.",
@@ -4915,10 +4495,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 20,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 65,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Rizzotti, Jorge",
@@ -4940,10 +4517,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 4,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 8,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Roberto, Santiago Luis",
@@ -4965,10 +4539,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 38,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Roca, Gonzalo",
@@ -4990,10 +4561,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 2,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Rodríguez, Miguel",
@@ -5059,10 +4627,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 12,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 76,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Ruíz, Yamila",
@@ -5106,10 +4671,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 31,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Sánchez Wrba, Javier",
@@ -5153,10 +4715,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 110,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Santillán Juárez Brahim, Juliana",
@@ -5200,10 +4759,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 5,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Scaglia, Gisela",
@@ -5225,10 +4781,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 9,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 159,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Schiaretti, Juan",
@@ -5250,10 +4803,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Schneider, Darío",
@@ -5275,10 +4825,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 10,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Selva, Sabrina",
@@ -5300,10 +4847,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 12,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 118,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Serquis, Adriana Cristina",
@@ -5325,10 +4869,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 29,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Siley, Vanesa Raquel",
@@ -5350,10 +4891,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 18,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 65,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Snopek, Guillermo",
@@ -5375,10 +4913,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 9,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 26,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Soldano, Laura",
@@ -5422,10 +4957,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 14,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 88,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Taiana, Jorge",
@@ -5447,10 +4979,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tailhade, Rodolfo",
@@ -5472,10 +5001,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 3,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tepp, Caren",
@@ -5497,10 +5023,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 8,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 60,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tita, Paulo Agustín",
@@ -5522,10 +5045,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 30,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Todero, Pablo",
@@ -5547,10 +5067,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 13,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 73,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tolosa Paz, Victoria",
@@ -5572,10 +5089,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 32,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 140,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tomassoni, Yamile",
@@ -5619,10 +5133,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Torres, Alejandra",
@@ -5644,10 +5155,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 9,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 25,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tortoriello, Aníbal",
@@ -5669,10 +5177,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Tournier, José Federico",
@@ -5694,10 +5199,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 0,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 4,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Treffinger, César",
@@ -5741,10 +5243,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 9,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 70,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Urien, Hernán",
@@ -5810,10 +5309,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 1,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 51,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Vásquez, Patricia",
@@ -5857,10 +5353,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 31,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 104,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Velázquez, M. Elena",
@@ -5926,10 +5419,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 6,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 11,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Villaverde, Lorena",
@@ -5951,10 +5441,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 15,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Visconti, Gino",
@@ -5998,10 +5485,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 14,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 46,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Yasky, Hugo",
@@ -6023,10 +5507,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 39,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 120,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Yedlin, Pablo Raúl",
@@ -6048,10 +5529,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 89,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Yeza, Martín",
@@ -6073,10 +5551,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 11,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 35,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Zago, Oscar",
@@ -6098,10 +5573,7 @@
       },
       "nape": 0.143,
       "proyectos_ley": 2,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 6,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Zapata, Carlos Raúl",
@@ -6123,10 +5595,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 5,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 20,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Zaracho, Natalia",
@@ -6148,10 +5617,7 @@
       },
       "nape": 0.0,
       "proyectos_ley": 10,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 38,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     },
     {
       "nombre": "Zigarán, María Inés",
@@ -6195,10 +5661,7 @@
       },
       "nape": 0.286,
       "proyectos_ley": 3,
-      "proyectos_fuente": "CKAN",
-      "sil_presentados": 28,
-      "sil_con_dictamen": 0,
-      "sil_tasa_dictamen": 0.0
+      "proyectos_fuente": "CKAN"
     }
   ],
   "presupuesto": {
@@ -6221,7 +5684,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-11-03T09:19:38.828549"
+    "timestamp": "2026-11-04T09:15:44.142200"
   },
   "itc": {
     "id": "ITC",
@@ -6239,7 +5702,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-11-03T09:24:05.593323",
+    "timestamp": "2026-11-04T09:28:31.461281",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }

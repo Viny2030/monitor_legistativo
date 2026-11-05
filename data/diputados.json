@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-11-04T09:28:31.575475",
+    "ultima_actualizacion": "2026-11-05T09:29:18.156865",
     "fuente_asistencia": "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo144/ESTADISTICAS.pdf",
     "fuente_asistencia_actualizados": "257/257",
     "periodo_asistencia": "Período 144 01/03/2026 al 09/09/2026",
@@ -5684,7 +5684,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-11-04T09:15:44.142200"
+    "timestamp": "2026-11-05T09:16:11.175061"
   },
   "itc": {
     "id": "ITC",
@@ -5702,7 +5702,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-11-04T09:28:31.461281",
+    "timestamp": "2026-11-05T09:29:18.064538",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>User Manual – Legislative Monitor, Argentine Chamber of Deputies</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 1rem; line-height: 1.65; background: #f0f2f5; color: #1a1a2e; }
+header { background: linear-gradient(135deg, #0A2463 0%, #1a3a7c 50%, #061440 100%); color: #fff; padding: 1.4rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+header .escudo { font-size: 2.4rem; }
+header h1 { font-size: 1.35rem; font-weight: 700; }
+header p { font-size: .875rem; opacity: .85; margin-top: .2rem; }
+header nav { margin-left: auto; display: flex; gap: .5rem; flex-wrap: wrap; }
+header nav a { color: #fff; text-decoration: none; background: rgba(255,255,255,.18); padding: .4rem 1rem; border-radius: 20px; font-size: .82rem; font-weight: 600; }
+header nav a:hover { background: rgba(255,255,255,.35); }
+header nav a.active { background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.6); }
+.nav-interna { position: sticky; top: 0; z-index: 100; background: #0A2463; display: flex; flex-wrap: wrap; border-bottom: 3px solid #C9A84C; }
+.nav-interna a { color: rgba(255,255,255,.75); text-decoration: none; padding: .55rem 1.1rem; font-size: .8rem; font-weight: 600; border-right: 1px solid rgba(255,255,255,.1); white-space: nowrap; }
+.nav-interna a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.nav-interna a.activo { background: rgba(255,255,255,.18); color: #fff; border-bottom: 3px solid #C9A84C; }
+.disclaimer { background: #fffbeb; border-left: 4px solid #C9A84C; padding: .75rem 1.5rem; font-size: .78rem; color: #5a4a00; border-bottom: 1px solid #f0e0a0; }
+.container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+.seccion { margin-bottom: 2.5rem; }
+.seccion h2 { font-size: 1.1rem; font-weight: 800; color: #0A2463; padding-bottom: .5rem; border-bottom: 3px solid #d0daf0; margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem; }
+.panel { background: #fff; border-radius: 10px; border: 1px solid #dde2ec; padding: 1.25rem 1.4rem; margin-bottom: 1rem; }
+.panel h3 { font-size: .95rem; font-weight: 700; color: #334155; margin-bottom: .6rem; }
+.panel p { font-size: .85rem; color: #475569; margin-bottom: .5rem; line-height: 1.65; }
+.panel p:last-child { margin-bottom: 0; }
+
+/* Tabla de navegación */
+.nav-tabla { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.nav-tabla th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .5rem .8rem; text-align: left; border-bottom: 2px solid #c5d0e8; }
+.nav-tabla td { padding: .5rem .8rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+.nav-tabla tr:last-child td { border-bottom: none; }
+.nav-tabla tr:nth-child(even) { background: #fafbff; }
+.nav-tabla a { color: #0A2463; font-weight: 600; text-decoration: none; }
+.nav-tabla a:hover { text-decoration: underline; }
+
+/* Indicadores tabla */
+.ind-tabla { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.ind-tabla th { background: #eef2fb; color: #0A2463; font-weight: 700; padding: .45rem .7rem; text-align: left; border-bottom: 2px solid #c5d0e8; }
+.ind-tabla td { padding: .45rem .7rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; line-height: 1.5; }
+.ind-tabla tr:last-child td { border-bottom: none; }
+.ind-tabla tr:nth-child(even) { background: #fafbff; }
+
+/* Badges */
+.badge-act { display: inline-block; background: #dcfce7; color: #15803d; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+.badge-est { display: inline-block; background: #fef3c7; color: #92400e; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+.badge-v2  { display: inline-block; background: #fdf4ff; color: #7c3aed; border-radius: 4px; padding: .1rem .45rem; font-size: .68rem; font-weight: 700; }
+
+/* Steps */
+.steps { counter-reset: step; }
+.step { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+.step-num { background: #0A2463; color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .82rem; font-weight: 800; flex-shrink: 0; margin-top: .1rem; }
+.step-body { flex: 1; font-size: .85rem; color: #334155; }
+.step-body strong { color: #0A2463; }
+
+/* Tip box */
+.tip { background: #f0f9ff; border-left: 4px solid #0891b2; border-radius: 0 8px 8px 0; padding: .75rem 1rem; font-size: .82rem; color: #0c4a6e; margin: .75rem 0; }
+.warn { background: #fffbeb; border-left: 4px solid #C9A84C; border-radius: 0 8px 8px 0; padding: .75rem 1rem; font-size: .82rem; color: #78350f; margin: .75rem 0; }
+
+/* Código */
+.code { background: #1e293b; color: #93c5fd; border-radius: 6px; padding: .6rem 1rem; font-family: 'Courier New', monospace; font-size: .8rem; margin: .6rem 0; border-left: 3px solid #C9A84C; overflow-x: auto; }
+
+/* Glosario */
+.glos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media(max-width:640px){ .glos-grid { grid-template-columns: 1fr; } }
+.glos-item { background: #fff; border-radius: 8px; border: 1px solid #dde2ec; padding: .7rem .9rem; }
+.glos-term { font-size: .8rem; font-weight: 800; color: #0A2463; font-family: monospace; }
+.glos-def  { font-size: .76rem; color: #475569; margin-top: .15rem; }
+
+/* Contacto */
+.autor-card { background: #fff; border-radius: 12px; border: 1px solid #dde2ec; padding: 1.25rem 1.4rem; display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap; }
+.autor-foto { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg,#0A2463,#1a3a7c); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; color: #fff; border: 3px solid #C9A84C; overflow: hidden; }
+.autor-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.autor-info { flex: 1; min-width: 180px; }
+.autor-info h3 { font-size: .95rem; font-weight: 800; color: #0A2463; margin-bottom: .2rem; }
+.autor-mail { display: inline-flex; align-items: center; gap: .3rem; background: #f0f4ff; border: 1px solid #c5d0e8; border-radius: 6px; padding: .25rem .65rem; font-size: .76rem; color: #0A2463; font-weight: 600; text-decoration: none; margin: .2rem .2rem 0 0; }
+.autor-mail:hover { background: #0A2463; color: #fff; }
+
+footer { text-align: center; padding: 1.25rem; font-size: .75rem; color: #94a3b8; border-top: 1px solid #dde2ec; margin-top: 2rem; }
+footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
+.panel code, .ind-tabla code, .tip code, .step-body code { font-family: "Courier New", monospace; background: #eef2fb; color: #0A2463; padding: 0 .3rem; border-radius: 3px; font-size: .78rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="escudo">🏛️</span>
+  <div>
+    <h1>Legislative Monitor · User Manual</h1>
+    <p>Complete user guide · Version 1.1 · November 2026</p>
+  </div>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="indicadores_diputados.html">🏛️ Roster</a>
+    <a href="indicadores2_diputados.html">📊 Indicators</a>
+    <a href="nomina_detalle_diputados.html">👥 Detail</a>
+    <a href="metodologia_diputados.html">📚 Methodology</a>
+    <a href="manual_usuario_en.html" class="active">📖 Manual</a>
+    <a href="manual_usuario.html">🌐 Español</a>
+  </nav>
+</header>
+
+<div class="nav-interna">
+  <a href="#intro" class="activo">📖 Introduction</a>
+  <a href="#navegacion">🗺️ Navigation</a>
+  <a href="#indicadores">📐 Indicators</a>
+  <a href="#diputado">👤 Data per deputy</a>
+  <a href="#ia">🤖 Explain with AI</a>
+  <a href="#actualizar">🔄 Updates</a>
+  <a href="#api">🔌 API</a>
+  <a href="#limitaciones">⚠️ Limitations</a>
+  <a href="#glosario">📖 Glossary</a>
+  <a href="#contacto">👤 Contact</a>
+</div>
+
+<div class="disclaimer">
+  ⚠️ <strong>Note:</strong> This is an experimental, academic tool. The data comes from official public sources of the Argentine State. The results are algorithmic indicators — they imply no value judgment or finding of responsibility.
+</div>
+
+<div class="container">
+
+  <!-- INTRODUCTION -->
+  <div class="seccion" id="intro" style="margin-top:1.5rem">
+    <h2>📖 What is the Legislative Monitor?</h2>
+    <div class="panel">
+      <p>The <strong>Legislative Monitor — Chamber of Deputies</strong> is an open-source analysis tool that measures the composition and performance of the <strong>257 deputies</strong> of the Argentine Nation. It organizes <strong>12 indicators in 4 dimensions</strong> (Costs and Inputs, Process Efficiency, Performance and Quality, and Transparency and Data), adds composition indicators for the Chamber and a profile with data on each deputy.</p>
+      <p>The site runs on its <strong>own server</strong> (FastAPI), which serves the pages and an API with the data. The data is updated <strong>automatically, every day</strong>, by a process that queries the official sources (see <a href="#actualizar">Updates</a>).</p>
+      <p>The pages themselves are in Spanish; this manual uses the on-screen Spanish labels, with their English meaning, so you can find each item.</p>
+    </div>
+    <div class="panel" style="background:linear-gradient(135deg,#f0f4ff,#fff8e8);border-left:4px solid #0A2463">
+      <h3>🎯 Goal</h3>
+      <p>To promote <strong>legislative transparency</strong> and informed debate about the composition and functioning of the Chamber of Deputies, by putting official data in an accessible format for citizens, journalists and researchers.</p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="seccion" id="navegacion">
+    <h2>🗺️ How to navigate the site</h2>
+
+    <div class="panel">
+      <h3>Monitor pages</h3>
+      <table class="nav-tabla">
+        <thead><tr><th>Page</th><th>Content</th><th>When to use it</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="index.html">🏠 Home (Inicio)</a></td>
+            <td>The 12 indicators by dimension, with their status and the live value when the API computes it. 🤖 Explicar con IA (Explain with AI) and ↻ Actualizar (Refresh) buttons</td>
+            <td>To see at a glance where the Chamber stands today</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores_diputados.html">🏛️ Roster (Nómina)</a></td>
+            <td>Composition by bloc and district, blocs with the most and fewest seats, the 4 dimensions with methodological notes, composition indicators and the full roster with a search box</td>
+            <td>To explore the Chamber's composition and read each indicator in detail</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores2_diputados.html">📊 Indicators (Indicadores)</a></td>
+            <td>Composition by bloc and district with representation bars, bloc rankings and composition formulas</td>
+            <td>To quickly see how seats are distributed and how fragmented the Chamber is</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores_bloques_diputados.html">🔬 By Bloc (Por Bloque)</a></td>
+            <td>Comparative table with every indicator by bloc (sortable), rankings by indicator and chamber-level indicators</td>
+            <td>To compare blocs with each other</td>
+          </tr>
+          <tr>
+            <td><a href="nomina_detalle_diputados.html">👥 Detail (Detalle)</a></td>
+            <td>One profile per deputy with attendance, bills and participation in votes (see <a href="#diputado">Data per deputy</a>). Card or list view</td>
+            <td>To look up a deputy or filter by bloc, district and term</td>
+          </tr>
+          <tr>
+            <td><a href="comparativa_diputados.html">🌐 Comparison (Comparativa)</a></td>
+            <td>Costs in US dollars, Deputies vs. Senate comparison, legislative quality indicators, comparison with lower chambers of other countries and conclusions</td>
+            <td>To put the figures in context</td>
+          </tr>
+          <tr>
+            <td><a href="indicadores.html">📊 Indicators &amp; Bibliography</a></td>
+            <td>Reference of the indicators with their bibliography</td>
+            <td>To cite or dig into the academic sources</td>
+          </tr>
+          <tr>
+            <td><a href="metodologia_diputados.html">📚 Methodology (Metodología)</a></td>
+            <td>Institutional framework, formulas for the 4 dimensions, interpretation thresholds, glossary, sources, bibliography and technical notes</td>
+            <td>To understand how each indicator is calculated</td>
+          </tr>
+          <tr>
+            <td><a href="manual_usuario_en.html">📖 Manual</a></td>
+            <td>This guide (also <a href="manual_usuario.html">in Spanish</a>)</td>
+            <td>To learn how to use the monitor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Moving between pages</h3>
+      <p>The pages share a <strong>navigation header</strong> (top right) and an <strong>inner bar</strong> (sticky, in blue) with quick links to each page's sections.</p>
+      <div class="tip">💡 On a phone, the header and the inner bar wrap into several rows when the buttons do not fit.</div>
+    </div>
+
+    <div class="panel">
+      <h3>Search boxes and filters</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Roster search</strong> — on the Roster page, type a name, bloc or district to filter the 257 deputies in real time.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Detail filters</strong> — on the Detail page, combine the search box with the bloc, district and term selectors.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Sorting the bloc table</strong> — on the By Bloc page, click a column header to sort from highest to lowest or the other way round.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Card / list view</strong> — on the Detail page, switch between visual cards and the compact table with the ▦/☰ button.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICATORS -->
+  <div class="seccion" id="indicadores">
+    <h2>📐 How to read the indicators</h2>
+
+    <div class="panel">
+      <h3>Status of each indicator</h3>
+      <p>Each indicator shows a label with its status:</p>
+      <p><span class="badge-act">✓ Activo</span> (active) computed from official sources &nbsp;
+         <span class="badge-est">⚠ Estimación / auditoría</span> (estimate / audit) approximate or reference value &nbsp;
+         <span class="badge-v2">🔜 Planificado v2.0</span> (planned) not computed yet</p>
+      <div class="tip">💡 On the Home page, when the API computes an indicator the <strong>live value</strong> is shown; otherwise the <strong>reference value</strong> (the latest published annual figure). Today the API computes NAPE, TPMP, ITC, PDA and IAP live.</div>
+    </div>
+
+    <div class="panel">
+      <h3>Dimension I — Costs and Inputs</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name and formula</th><th>Status</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CRC</strong></td><td>Cost per citizen<br><code>HCDN budget / Population</code></td><td><span class="badge-act">✓ 2025 reference</span></td><td>How much it costs each inhabitant to run the Chamber per year. 2025 reference: ARS 4,818 per inhabitant.</td></tr>
+          <tr><td><strong>RPS</strong></td><td>Staff professionalization<br><code>Permanent staff / Total employees × 100</code></td><td><span class="badge-act">✓ 2025 reference</span></td><td>What share of staff are career employees. 2025 reference: 57.5% of 4,551 employees; the rest are advisers to blocs, deputies and committees.</td></tr>
+          <tr><td><strong>IAP</strong></td><td>Budget autonomy<br><code>Executed budget / Approved budget</code></td><td><span class="badge-est">⚠ estimate</span></td><td>The closer to 1, the more of its own budget the Chamber executes. The live value uses historical execution from the Congressional Budget Office (OPC; 2024, 95.1%) until actual execution is published.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimension II — Process Efficiency</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name and formula</th><th>Status</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>TPMP</strong></td><td>Bill maturation time<br><code>Σ(Committee report date − Filing date) / bills</code></td><td><span class="badge-est">⚠ reference</span></td><td>Days from a bill's filing until the committee reports on it. Fewer days = more agility. Until committee report dates from the SIL are available, a reference value is shown (105 days, historical range 30–180).</td></tr>
+          <tr><td><strong>ITC</strong></td><td>Committee work<br><code>Committee hours / Plenary hours</code></td><td><span class="badge-est">⚠ reference</span></td><td>Committee hours per hour of plenary session. Higher = more technical work before debate. Until committee minutes are available, the historical reference value is shown (~3.5×).</td></tr>
+          <tr><td><strong>NAPE</strong></td><td>Effective attendance and presence</td><td><span class="badge-act">✓ active</span></td><td>It has two readings, depending on where you look:<br>• <strong>2025 reference value (0.27):</strong> share of deputies with perfect attendance.<br>• <strong>Live value on the Home page:</strong> <em>average absence</em> = 1 − average attendance, using the current-period attendance published by the HCDN. A value of 0.06 means that, on average, each deputy missed 6% of sessions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimension III — Performance and Quality</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name and formula</th><th>Status</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>COLS</strong></td><td>Cost per law<br><code>HCDN budget / Laws passed</code></td><td><span class="badge-act">✓ 2025 reference</span></td><td>How much each law passed costs. More laws = lower cost per law. 2025 reference: ARS 17,421 million per law (13 laws in the year, the lowest in a decade).</td></tr>
+          <tr><td><strong>RLS</strong></td><td>Substantive legislation<br><code>Substantive laws / Total laws × 100</code></td><td><span class="badge-act">✓ 2025 reference</span></td><td>What share of laws is real public policy rather than declarative or ceremonial. 2025 reference: 72.7% (8 of 11 ordinary laws).</td></tr>
+          <tr><td><strong>ECO</strong></td><td>Oversight effectiveness<br><code>Oversight actions / AGN irregularities</code></td><td><span class="badge-est">⚠ estimate</span></td><td>What share of reports by the National Audit Office (AGN) led to legislative action. Historically below 5%.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Dimension IV — Transparency and Data</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name and formula</th><th>Status</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>IAD</strong></td><td>Document accessibility<br><code>1–5 scale by publication speed</code></td><td><span class="badge-act">✓ active</span></td><td>1 = published after more than 30 days, 5 = within 24 hours. Current value 3/5: verbatim transcripts in 24–48 h (level 4), the Session Journal up to 2 months (level 2), no structured open data.</td></tr>
+          <tr><td><strong>TVD</strong></td><td>Data accuracy<br><code>Correct records / 257 × 100</code></td><td><span class="badge-est">⚠ audit</span></td><td>Accuracy of the captured data against the official source (~97%). The remaining error comes from name variants and bloc changes.</td></tr>
+          <tr><td><strong>IPCV</strong></td><td>Citizen participation<br><code>Interactions / Visits</code></td><td><span class="badge-v2">🔜 v2.0</span></td><td>Planned for an interactive citizen module.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Other live indicators</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PDA</strong></td><td>Deputies who filed a bill</td><td>Percentage of deputies who filed at least one bill of type "law" (2025-2026 files, HCDN open data portal).</td></tr>
+          <tr><td><strong>Paridad</strong></td><td>Gender composition</td><td>Number and percentage of serving female and male deputies.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Composition indicators (recomputed automatically)</h3>
+      <table class="ind-tabla">
+        <thead><tr><th>Code</th><th>Name</th><th>How to read it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>NEP</strong></td><td>Effective Number of Parties</td><td>How many "effective" blocs there are, weighted by size. Below 2.5 = low fragmentation · 2.5–4 = moderate · above 4 = high.</td></tr>
+          <tr><td><strong>IF</strong></td><td>Fragmentation Index (Rae)</td><td>From 0 (a single bloc) to 1 (maximum dispersion). Complements NEP.</td></tr>
+          <tr><td><strong>IRB</strong></td><td>Biennial Renewal Rate</td><td>Share of seats renewed in the latest election. The Constitution provides for ~50% every 2 years (art. 50).</td></tr>
+          <tr><td><strong>IRG</strong></td><td>Geographic Representation</td><td>Above 1 = over-represented district · below 1 = under-represented. The minimum of 5 seats per district favors small provinces.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DATA PER DEPUTY -->
+  <div class="seccion" id="diputado">
+    <h2>👤 Data per deputy</h2>
+    <div class="panel">
+      <p>The <strong>Detail</strong> page shows a profile per deputy with this data:</p>
+      <table class="ind-tabla">
+        <thead><tr><th>Data</th><th>What it is</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bloc, district, term</strong></td><td>Official composition and end date of the term</td><td>HCDN</td></tr>
+          <tr><td><strong>Attendance %</strong></td><td>Percentage of sessions attended in the current period</td><td>HCDN attendance statistics (period PDF)</td></tr>
+          <tr><td><strong>Bills filed</strong></td><td>Files in which the deputy appears as author (2025-2026)</td><td>HCDN open data portal (CKAN)</td></tr>
+          <tr><td><strong>Law bills</strong></td><td>Of those, the ones of type "law". <em>It does not say whether they passed</em>: the source does not report the outcome</td><td>HCDN open data portal (CKAN)</td></tr>
+          <tr><td><strong>IQP</strong></td><td>Participation in roll-call votes = votes cast / votes called</td><td>HCDN roll-call votes — currently no data (<code>—</code>) until the HCDN publishes an updated dataset</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- AI -->
+  <div class="seccion" id="ia">
+    <h2>🤖 The “Explicar con IA” (Explain with AI) button</h2>
+    <div class="panel">
+      <p>Several pages have a <strong>🤖 Explicar con IA</strong> button. It sends the data shown in that section to a language model (Claude) and displays a plain-language explanation.</p>
+      <div class="warn">⚠️ The explanation is an automatically generated reading aid: it may contain errors and does not replace the methodology. Usage is capped to control cost.</div>
+    </div>
+  </div>
+
+  <!-- UPDATES -->
+  <div class="seccion" id="actualizar">
+    <h2>🔄 How the data is updated</h2>
+
+    <div class="panel">
+      <h3>Automatic daily update</h3>
+      <p>Every day at <strong>09:00 UTC (06:00 Argentina time)</strong> a GitHub Actions process runs these steps and publishes the new data to the repository:</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Full pipeline</strong> (<code>scraper_pipeline.py</code>): roster, photos, attendance, bills, budget, votes, TPMP and ITC. It produces <code>data/diputados.json</code>, which is what the API reads.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Enrichment</strong> with the voting indicators (<code>actualizar_diputados.py</code>).</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Monitoring agent</strong>: looks for anomalies in the new data.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Commit and publication</strong> of the updated data.</div></div>
+      </div>
+      <div class="tip">💡 If a source does not respond on a given day, the <strong>previous values are kept</strong> and the API says so (for example, “sin actualizar hoy” — not updated today). The date of the last update is shown in <code>/health</code> and in the <code>/api/kpis</code> metadata.</div>
+    </div>
+
+    <div class="panel">
+      <h3>How often each data point changes at the source</h3>
+      <table class="nav-tabla">
+        <thead><tr><th>Data</th><th>Frequency</th><th>Trigger</th></tr></thead>
+        <tbody>
+          <tr><td>Roster of deputies</td><td>Every two years</td><td>December renewal (odd years)</td></tr>
+          <tr><td>Bloc changes</td><td>Monthly</td><td>Members joining or leaving, bloc mergers</td></tr>
+          <tr><td>Attendance</td><td>During the period</td><td>HCDN publishes the period's statistics</td></tr>
+          <tr><td>Bills</td><td>Daily</td><td>New files on the open data portal</td></tr>
+          <tr><td>CRC / COLS (budget)</td><td>Yearly</td><td>Budget approval and the year-end execution report (Cuenta de Inversión)</td></tr>
+          <tr><td>RLS / ECO</td><td>Yearly</td><td>End-of-year legislative review</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>Running it on your own computer</h3>
+      <div class="code">git clone https://github.com/Viny2030/monitor_legistativo.git<br>pip install -r requirements.txt<br>python scraper_pipeline.py &nbsp;&nbsp;# produces data/diputados.json<br>python api_server.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# serves the site at http://localhost:8000</div>
+    </div>
+  </div>
+
+  <!-- API -->
+  <div class="seccion" id="api">
+    <h2>🔌 Data API</h2>
+    <div class="panel">
+      <p>The same data shown on the site can be queried as JSON:</p>
+      <table class="nav-tabla">
+        <thead><tr><th>Endpoint</th><th>Returns</th></tr></thead>
+        <tbody>
+          <tr><td><code>GET /health</code></td><td>Service status and date of the last update</td></tr>
+          <tr><td><code>GET /api/diputados</code></td><td>The 257 deputies with all their data</td></tr>
+          <tr><td><code>GET /api/diputados/{nombre}</code></td><td>Search by name</td></tr>
+          <tr><td><code>GET /api/diputados/{nombre}/asistencia</code></td><td>A deputy's attendance</td></tr>
+          <tr><td><code>GET /api/diputados/{nombre}/proyectos</code></td><td>A deputy's bills</td></tr>
+          <tr><td><code>GET /api/bloques</code></td><td>Summary by bloc</td></tr>
+          <tr><td><code>GET /api/kpis</code></td><td>General indicators, gender parity and source metadata</td></tr>
+          <tr><td><code>GET /api/indicadores</code></td><td>Indicators computed live (NAPE, TPMP, ITC, PDA, IAP)</td></tr>
+          <tr><td><code>GET /api/indicadores/tpmp</code> · <code>/itc</code></td><td>Detail of TPMP and ITC</td></tr>
+          <tr><td><code>GET /api/presupuesto</code></td><td>Budget data and IAP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LIMITATIONS -->
+  <div class="seccion" id="limitaciones">
+    <h2>⚠️ Limitations</h2>
+    <div class="panel">
+      <h3>Data that is not real yet</h3>
+      <table class="nav-tabla">
+        <thead><tr><th>Indicator</th><th>What is missing</th></tr></thead>
+        <tbody>
+          <tr><td>TPMP — Bill maturation</td><td>Filing and committee report dates from the SIL</td></tr>
+          <tr><td>ITC — Committee work</td><td>Committee meeting minutes</td></tr>
+          <tr><td>IQP — Participation in votes</td><td>Updated HCDN roll-call vote dataset</td></tr>
+          <tr><td>IAP — Budget autonomy</td><td>Actual budget execution for the year (2024 is used today)</td></tr>
+          <tr><td>ECO — Oversight effectiveness</td><td>Follow-up of AGN reports and the Joint Accounts Review Committee</td></tr>
+          <tr><td>IPCV — Citizen participation</td><td>Interactive citizen module</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h3>Methodological limitations</h3>
+      <p><strong>Annual reference values:</strong> CRC, RPS, COLS, RLS, IAD and TVD are annual (2025) figures. They do not change with the daily update until the next year's figure is loaded.</p>
+      <p><strong>NEP:</strong> treats each bloc separately, without considering affinities or coalitions. A high NEP does not necessarily mean majorities are hard to build.</p>
+      <p><strong>Attendance:</strong> measures presence at sessions, not at each vote. A deputy can be recorded as present and still have left before voting.</p>
+      <p><strong>Bills:</strong> filed bills are counted; the source does not report which ones passed.</p>
+      <p><strong>RLS:</strong> the substantive/declarative classification is the monitor's own and may differ from others.</p>
+      <p><strong>Blocs:</strong> the official HCDN name at the time of the query is used; blocs may be renamed, merge or split.</p>
+    </div>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="seccion" id="glosario">
+    <h2>📖 Quick glossary</h2>
+    <div class="glos-grid">
+      <div class="glos-item"><div class="glos-term">NEP</div><div class="glos-def">Effective Number of Parties — how many "effective" blocs there are, weighted by size.</div></div>
+      <div class="glos-item"><div class="glos-term">IF</div><div class="glos-def">Rae Fragmentation Index — dispersion of power among blocs (0 to 1).</div></div>
+      <div class="glos-item"><div class="glos-term">IRB</div><div class="glos-def">Biennial Renewal Rate — percentage of seats renewed in the latest election.</div></div>
+      <div class="glos-item"><div class="glos-term">IRG</div><div class="glos-def">Geographic Representation Index — over/under-representation of each district.</div></div>
+      <div class="glos-item"><div class="glos-term">CRC</div><div class="glos-def">Representation Cost per Citizen — HCDN budget divided by population.</div></div>
+      <div class="glos-item"><div class="glos-term">RPS</div><div class="glos-def">Staff Professionalization Ratio — permanent staff over total employees.</div></div>
+      <div class="glos-item"><div class="glos-term">IAP</div><div class="glos-def">Budget Autonomy Index — executed over approved budget.</div></div>
+      <div class="glos-item"><div class="glos-term">TPMP</div><div class="glos-def">Average Bill Maturation Time — days between filing and committee report.</div></div>
+      <div class="glos-item"><div class="glos-term">ITC</div><div class="glos-def">Committee Work Index — committee hours per plenary hour.</div></div>
+      <div class="glos-item"><div class="glos-term">NAPE</div><div class="glos-def">Effective Attendance and Presence Level — see the Dimension II table.</div></div>
+      <div class="glos-item"><div class="glos-term">COLS</div><div class="glos-def">Operating Cost per Law Passed — budget divided by laws passed.</div></div>
+      <div class="glos-item"><div class="glos-term">RLS</div><div class="glos-def">Substantive Legislation Ratio — % of public-policy laws over the total.</div></div>
+      <div class="glos-item"><div class="glos-term">ECO</div><div class="glos-def">Oversight Effectiveness — % of AGN audits with legislative follow-up.</div></div>
+      <div class="glos-item"><div class="glos-term">IAD</div><div class="glos-def">Document Accessibility Index — publication speed (1–5 scale).</div></div>
+      <div class="glos-item"><div class="glos-term">TVD</div><div class="glos-def">Data Accuracy Rate — accuracy of the data captured by the monitor.</div></div>
+      <div class="glos-item"><div class="glos-term">IPCV</div><div class="glos-def">Virtual Citizen Participation Index — planned for v2.0.</div></div>
+      <div class="glos-item"><div class="glos-term">PDA</div><div class="glos-def">% of deputies with at least one law bill filed.</div></div>
+      <div class="glos-item"><div class="glos-term">IQP</div><div class="glos-def">Participation in roll-call votes — votes cast over votes called.</div></div>
+      <div class="glos-item"><div class="glos-term">SIL</div><div class="glos-def">Legislative Information System — official database of bills and votes.</div></div>
+      <div class="glos-item"><div class="glos-term">OPC</div><div class="glos-def">Congressional Budget Office — technical budget monitoring.</div></div>
+      <div class="glos-item"><div class="glos-term">HCDN</div><div class="glos-def">Honorable Chamber of Deputies of the Nation.</div></div>
+      <div class="glos-item"><div class="glos-term">AGN</div><div class="glos-def">National Audit Office — external auditor of the national public sector.</div></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="seccion" id="contacto">
+    <h2>👤 Author and contact</h2>
+    <div class="autor-card">
+      <div class="autor-foto">
+        <img src="foto.jpg" alt="Vicente H. Monteverde"
+             onerror="this.style.display='none';this.parentElement.textContent='👤'">
+      </div>
+      <div class="autor-info">
+        <h3>Vicente Humberto Monteverde, Ph.D.</h3>
+        <p style="font-size:.82rem;color:#475569;font-style:italic;margin-bottom:.5rem">Doctor of Economic Sciences · Researcher in political economy and corruption phenomena</p>
+        <p style="font-size:.8rem;color:#334155;margin-bottom:.6rem">Author of the theory of <strong>Regressive Income Transfer</strong> and developer of the XAI algorithm applied to public procurement analysis. Publications in the <em>Journal of Financial Crime</em> (Emerald Publishing). Advisor on transparency and algorithmic auditing of public spending.</p>
+        <div>
+          <a class="autor-mail" href="mailto:vhmonte@retina.ar">✉️ vhmonte@retina.ar</a>
+          <a class="autor-mail" href="mailto:viny01958@gmail.com">✉️ viny01958@gmail.com</a>
+          <a class="autor-mail" href="https://github.com/Viny2030/monitor_legistativo" target="_blank">💻 GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Legislative Monitor — Chamber of Deputies · Version 1.1 · November 2026<br>
+  <a href="indicadores_diputados.html">🏛️ Roster</a> ·
+  <a href="indicadores2_diputados.html">📊 Indicators</a> ·
+  <a href="nomina_detalle_diputados.html">👥 Detail</a> ·
+  <a href="metodologia_diputados.html">📚 Methodology</a> ·
+  <a href="manual_usuario.html">🌐 Español</a> ·
+  <a href="https://github.com/Viny2030/monitor_legistativo" target="_blank">GitHub</a> ·
+  Data: <a href="https://www.diputados.gov.ar" target="_blank">diputados.gov.ar</a>
+</footer>
+
+</body>
+</html>

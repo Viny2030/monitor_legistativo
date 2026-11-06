@@ -522,62 +522,116 @@ def scrape_proyectos(diputados, previos=None):
 
 
 # ---------------------------------------------------------------------------
-# STEP 4 — Ejecucion presupuestaria (Presupuesto Abierto API REST)
+# STEP 4 — Ejecucion presupuestaria (Presupuesto Abierto — dgsiaf-repo)
 # ---------------------------------------------------------------------------
+PRESUPUESTO_URL = "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/{anio}/credito-anual-{anio}.zip"
+SAF_HCDN = "313"  # Honorable Cámara de Diputados de la Nación (jurisdicción 01)
+
+
+def _num_presu(v) -> float:
+    try:
+        return float(str(v).strip().replace(",", ".") or 0)
+    except ValueError:
+        return 0.0
+
+
+def _credito_hcdn(anio: int) -> dict | None:
+    """Suma, para el SAF 313 (HCDN), el crédito presupuestado, vigente y
+    devengado del archivo anual de Presupuesto Abierto (millones de pesos).
+    Es el mismo archivo que usa el Monitor de Ajuste y se baja sin token."""
+    import csv, io, zipfile
+    url = PRESUPUESTO_URL.format(anio=anio)
+    res = requests.get(url, headers=HEADERS, timeout=300)
+    if res.status_code != 200:
+        print(f"[WARN] {url}: HTTP {res.status_code}")
+        return None
+    z = zipfile.ZipFile(io.BytesIO(res.content))
+    nombre = next(n for n in z.namelist() if n.lower().endswith(".csv"))
+    texto = io.TextIOWrapper(z.open(nombre), encoding="cp1252", errors="replace", newline="")
+    lector = csv.reader(texto)
+    cab = [c.replace("﻿", "").replace("ï»¿", "").strip() for c in next(lector)]
+    i = {c: n for n, c in enumerate(cab)}
+    pres = vig = dev = 0.0
+    corte = ""
+    filas = 0
+    for fila in lector:
+        if fila[i["jurisdiccion_id"]].strip() != "1" or fila[i["servicio_id"]].strip() != SAF_HCDN:
+            continue
+        filas += 1
+        pres += _num_presu(fila[i["credito_presupuestado"]])
+        vig += _num_presu(fila[i["credito_vigente"]])
+        dev += _num_presu(fila[i["credito_devengado"]])
+        corte = fila[i["ultima_actualizacion_fecha"]] if "ultima_actualizacion_fecha" in i else corte
+    if not filas or vig <= 0:
+        print(f"[WARN] {url}: sin filas del SAF {SAF_HCDN}")
+        return None
+    m = re.search(r"(\d{1,2} \w+ \d{4})", corte)
+    return {"anio": anio, "fuente": url, "filas": filas, "corte": m.group(1) if m else corte.strip(),
+            "credito_presupuestado_m": round(pres, 1), "credito_vigente_m": round(vig, 1),
+            "devengado_m": round(dev, 1)}
+
+
 def scrape_presupuesto():
     """
-    Fuente: API de ejecucion presupuestaria de la ONP (Oficina Nacional de Presupuesto).
-    URL: https://www.economia.gob.ar/onp/ejecucion/
-    Endpoint de datos abiertos que devuelve ejecucion por jurisdiccion en JSON.
-    Jurisdiccion 01 = Poder Legislativo / Congreso de la Nacion.
+    Fuente: Presupuesto Abierto (Secretaría de Hacienda), archivo anual
+    credito-anual-{anio}.zip, SAF 313 = Honorable Cámara de Diputados.
 
-    Alternativa: presupuestoabierto.gob.ar tiene CSV descargables por anio.
+    * Ejercicio en curso: crédito presupuestado, vigente y devengado al último
+      corte publicado (millones de pesos). Sirve para CRC/COLS y para ver la
+      ejecución del año, que es parcial hasta el cierre.
+    * IAP = devengado / crédito vigente del ÚLTIMO EJERCICIO CERRADO (año
+      anterior): mitad de año el cociente del año en curso es parcial y no es
+      comparable.
+
+    Antes este paso buscaba CSV en presupuestoabierto.gob.ar que ya no existen
+    y siempre terminaba en el valor fijo de la OPC 2024 (IAP 0,951).
     """
-    print("[STEP 4] Consultando ejecucion presupuestaria (ONP)...")
+    print("[STEP 4] Ejecucion presupuestaria HCDN (Presupuesto Abierto, SAF 313)...")
     anio = datetime.now().year
+    actual = cerrado = None
+    try:
+        actual = _credito_hcdn(anio)
+    except Exception as e:
+        print(f"[WARN] presupuesto {anio}: {e}")
+    try:
+        cerrado = _credito_hcdn(anio - 1)
+    except Exception as e:
+        print(f"[WARN] presupuesto {anio - 1}: {e}")
 
-    # La ONP publica archivos CSV de ejecucion presupuestaria en datos abiertos
-    # URL del CSV de ejecucion anual (estructura: jurisdiccion, credito, devengado)
-    # Nota: para 2025/2026 Argentina prorrogo el presupuesto 2023 (Dec. 88/2023)
-    CSV_URLS = [
-        f"https://www.presupuestoabierto.gob.ar/datasets/credito_jurisdiccion_{anio}.csv",
-        f"https://www.presupuestoabierto.gob.ar/datasets/credito_{anio}.csv",
-        # El archivo de ejecucion historica consolidada
-        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.1/download/presupuesto-nacionale-gasto-por-finalidad-funcion-desde-1963.csv",
-    ]
+    if actual or cerrado:
+        out = {"ejercicio": anio, "fuente": "Presupuesto Abierto — credito-anual (SAF 313, HCDN)"}
+        if actual:
+            out.update({
+                "credito_presupuestado_m": actual["credito_presupuestado_m"],
+                "credito_vigente_m": actual["credito_vigente_m"],
+                "devengado_m": actual["devengado_m"],
+                "ejecucion_al_corte": round(actual["devengado_m"] / actual["credito_vigente_m"], 4),
+                "corte": actual["corte"],
+            })
+        if cerrado:
+            out.update({
+                "iap": round(cerrado["devengado_m"] / cerrado["credito_vigente_m"], 4),
+                "iap_ejercicio": cerrado["anio"],
+                "iap_credito_vigente_m": cerrado["credito_vigente_m"],
+                "iap_devengado_m": cerrado["devengado_m"],
+            })
+        else:
+            out.update({"iap": 0.951, "iap_ejercicio": 2024,
+                        "nota": "IAP: no se pudo leer el ejercicio cerrado; valor histórico OPC 2024"})
+        print(f"[OK] HCDN {anio}: vigente {out.get('credito_vigente_m')} M · devengado {out.get('devengado_m')} M "
+              f"(corte {out.get('corte')}) · IAP {out.get('iap_ejercicio')} = {out['iap']}")
+        return out
 
-    import csv, io
-    for url in CSV_URLS:
-        try:
-            res = requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=False)
-            if res.status_code != 200:
-                continue
-            content = res.content.decode("utf-8", errors="replace")
-            reader = csv.DictReader(io.StringIO(content))
-            credito = devengado = 0.0
-            for row in reader:
-                jur = str(row.get("jurisdiccion") or row.get("cod_jurisdiccion") or "")
-                desc = (row.get("desc_jurisdiccion") or row.get("jurisdiccion_desc") or "").upper()
-                if jur.strip() == "01" or "LEGISLATIVO" in desc or "CONGRESO" in desc:
-                    credito += float(str(row.get("credito_vigente") or row.get("credito") or "0").replace(",", ".") or 0)
-                    devengado += float(str(row.get("devengado") or row.get("ejecutado") or "0").replace(",", ".") or 0)
-            if credito > 0:
-                iap = round(devengado / credito, 4)
-                print(f"[OK] IAP={iap} (credito={credito/1e9:.1f}B, devengado={devengado/1e9:.1f}B ARS)")
-                return {"ejercicio": anio, "fuente": url, "credito_vigente_m": round(credito/1e6, 2), "devengado_m": round(devengado/1e6, 2), "iap": iap}
-        except Exception as e:
-            print(f"[WARN] {url[:70]}: {e}")
-
-    # Fallback estatico con datos reales del IAP historico del Congreso
-    # Fuente: OPC informes trimestrales 2024 — IAP del Legislativo ~0.951
-    print("[WARN] CSV de presupuesto no disponible — usando valor historico de referencia")
+    # Fallback estatico: IAP historico del Congreso (OPC informes trimestrales 2024)
+    print("[WARN] Presupuesto Abierto no disponible — usando valor historico de referencia")
     return {
         "ejercicio": anio,
         "fuente": "historico OPC 2024",
-        "nota": "IAP estimado en base a ejecucion 2024 (95.1%). Actualizar con datos de opc.gob.ar",
+        "nota": "IAP estimado en base a ejecucion 2024 (95.1%). Presupuesto Abierto no respondió.",
         "credito_vigente_m": None,
         "devengado_m": None,
-        "iap": 0.951
+        "iap": 0.951,
+        "iap_ejercicio": 2024,
     }
 
 

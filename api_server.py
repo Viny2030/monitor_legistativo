@@ -344,7 +344,9 @@ def get_indicadores():
          "unidad": "% diputados con 1+ proyecto de ley", "fuente": "CKAN HCDN", "version": "1.0"},
         {"id": "IAP", "nombre": "Indice de Autonomia Presupuestaria",
          "valor": presupuesto.get("iap"), "unidad": "ratio (0-1)",
-         "fuente": presupuesto.get("fuente", "ONP / Presupuesto Abierto"), "version": "1.0"},
+         "fuente": presupuesto.get("fuente", "ONP / Presupuesto Abierto")
+                   + (f" · ejercicio {presupuesto['iap_ejercicio']}" if presupuesto.get("iap_ejercicio") else ""),
+         "version": "1.0"},
     ]
     return {"version_api": "1.1", "total": len(indicadores), "indicadores": indicadores,
             "meta": data.get("meta", {})}

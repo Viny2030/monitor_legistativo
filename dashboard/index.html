@@ -263,7 +263,13 @@ const REF = {
   IAP:  { dim:'I',   nombre:'Índice de Autonomía Presupuestaria',          formula:'IAP = Presupuesto ejecutado / Presupuesto aprobado',    unidad:'ratio (0–1)',              valor_ref: 0.95,        estado_ref:'estimacion',  interpretacion:'Capacidad del Congreso de ejecutar su propio presupuesto sin interferencia del Ejecutivo.' },
   TPMP: { dim:'II',  nombre:'Tiempo Promedio de Maduración de Proyectos',  formula:'TPMP = Σ(Fecha dictamen − Fecha ingreso) / proyectos',  unidad:'días',                     valor_ref: 105,         estado_ref:'estimacion',  interpretacion:'Días transcurridos desde que un proyecto ingresa hasta que sale dictaminado de comisión.' },
   ITC:  { dim:'II',  nombre:'Índice de Trabajo en Comisiones',             formula:'ITC = Horas de comisión / Horas de pleno',              unidad:'ratio',                    valor_ref: 3.5,         estado_ref:'estimacion',  interpretacion:'Proporción del tiempo dedicado a reuniones técnicas frente al debate en sesiones plenarias.' },
-  NAPE: { dim:'II',  nombre:'Nivel de Asistencia y Permanencia Efectiva',  formula:'NAPE = Diputados con asistencia perfecta / 257',        unidad:'ratio (0–1)',              valor_ref: 0.27,        estado_ref:'activo',      interpretacion:'Compromiso y presencia efectiva de los legisladores en las sesiones del período ordinario.' },
+  NAPE: { dim:'II',  nombre:'Nivel de Asistencia y Permanencia Efectiva',  formula:'NAPE = Diputados con asistencia perfecta / 257',        unidad:'ratio (0–1)',              valor_ref: 0.27,        estado_ref:'activo',      interpretacion:'Compromiso y presencia efectiva de los legisladores en las sesiones del período ordinario.',
+          // El valor EN VIVO de /api/indicadores no es la proporción con asistencia
+          // perfecta (referencia 2025) sino la inasistencia promedio: 1 − asistencia
+          // promedio. Es la misma definición que usan el campo nape de cada diputado
+          // y el Monitor IRI, por eso se corrige la etiqueta y no el dato.
+          formula_live:'NAPE = 1 − asistencia promedio (inasistencia promedio del período)',
+          interpretacion_live:'Proporción promedio de sesiones a las que faltó cada diputado en el período en curso: 0,06 = faltó en promedio al 6% de las sesiones. Menor es mejor. No es comparable con la referencia 2025 (27% de diputados con asistencia perfecta).' },
   COLS: { dim:'III', nombre:'Costo Operativo por Ley Sancionada',          formula:'COLS = Presupuesto HCDN / Leyes sancionadas',           unidad:'$ ARS / ley',              valor_ref: 17421000000, estado_ref:'activo',      interpretacion:'Valor que representa para el Estado la producción de una norma jurídica.' },
   RLS:  { dim:'III', nombre:'Ratio de Legislación Sustantiva',             formula:'RLS = (Leyes sustantivas / Leyes totales) × 100',       unidad:'%',                        valor_ref: 72.7,        estado_ref:'activo',      interpretacion:'Porcentaje de leyes de política pública real vs. declarativas o protocolares.' },
   ECO:  { dim:'III', nombre:'Efectividad del Control (Oversight)',         formula:'ECO = Acciones de control / Irregularidades AGN',       unidad:'%',                        valor_ref: 5,           estado_ref:'estimacion',  interpretacion:'Porcentaje de informes de auditoría de la AGN que derivaron en acciones legislativas o sanciones.' },
@@ -353,7 +359,13 @@ function renderCard(id, live) {
   const info = ESTADO_INFO[estadoKey] || ESTADO_INFO.estimacion;
   const iaBoxId = `ia-box-${id}`;
   const iaBtnId = `ia-btn-${id}`;
-  window.IA_DATOS[iaBoxId] = live || { id, nombre, valor, unidad };
+  // Si el dato en vivo tiene su propia definición, se la mandamos a la IA para
+  // que no lo explique con la fórmula de referencia.
+  const formula = tieneLive && ref.formula_live ? ref.formula_live : ref.formula;
+  const interpretacion = tieneLive && ref.interpretacion_live ? ref.interpretacion_live : ref.interpretacion;
+  window.IA_DATOS[iaBoxId] = live
+    ? (ref.formula_live ? { ...live, formula, interpretacion } : live)
+    : { id, nombre, valor, unidad };
   return `
     <div class="card ${info.card}">
       <div class="card-header">
@@ -362,8 +374,8 @@ function renderCard(id, live) {
       </div>
       <div class="card-value">${formatearValor(valor, unidad)}</div>
       <div class="card-unit">${unidad}</div>
-      ${coincide && ref.formula ? `<div class="card-formula">${ref.formula}</div>` : ''}
-      ${coincide && ref.interpretacion ? `<div class="card-interp">${ref.interpretacion}</div>` : ''}
+      ${coincide && formula ? `<div class="card-formula">${formula}</div>` : ''}
+      ${coincide && interpretacion ? `<div class="card-interp">${interpretacion}</div>` : ''}
       ${!coincide ? `<div class="card-interp" style="color:#b45309;">⚠ Definición del servidor distinta de la de referencia — se muestra el dato tal como lo envía la API.</div>` : ''}
       <span class="estado-badge ${info.cls}">${info.badge}</span>
       ${tieneLive && live.fuente ? `<div style="font-size:.68rem;color:#94a3b8;margin-top:.4rem;">📄 ${live.fuente}</div>` : ''}

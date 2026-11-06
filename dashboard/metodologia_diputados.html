@@ -210,9 +210,12 @@ footer a { color: #0A2463; text-decoration: none; font-weight: 600; }
           <span class="ind-badge" style="background:#16a34a">6 · NAPE</span>
           <span class="ind-nombre">Nivel de Asistencia y Permanencia Efectiva</span>
         </div>
-        <p class="ind-desc">Porcentaje de legisladores presentes en cada votación nominal realizada. Indicador de compromiso y presencia efectiva en el trabajo parlamentario.</p>
+        <p class="ind-desc">Indicador de compromiso y presencia efectiva en las sesiones. El monitor lo calcula con las estadísticas de asistencia que publica la HCDN para el período en curso: es la <strong>inasistencia promedio</strong>, es decir, la proporción promedio de sesiones a las que faltó cada diputado. Menor es mejor. Es el valor en vivo de la página de Inicio, el de la API y el que usa el Monitor IRI.</p>
         <div class="formula-box">
-          <span class="var">NAPE</span> <span class="op">=</span> ( <span class="var">Votos_Emitidos</span> <span class="op">/</span> <span class="var">Escaños_Totales</span> ) <span class="op">×</span> <span class="num">100</span><br>
+          <span class="var">NAPE</span> <span class="op">=</span> <span class="num">1</span> <span class="op">−</span> ( Σ <span class="var">Asistencia_%<sub>i</sub></span> <span class="op">/</span> <span class="var">Diputados_con_dato</span> ) <span class="op">/</span> <span class="num">100</span><br>
+          <span class="comm">-- Ej.: asistencia promedio 94% → NAPE = 0,06</span><br>
+          <span class="comm">-- Referencia anual 2025 (otra medida, no comparable): Diputados_con_asistencia_perfecta / 257 = 27%</span><br>
+          <span class="comm">-- La presencia en cada votación nominal (Votos_Emitidos / Votaciones_Convocadas) es el indicador IQP de la ficha de cada diputado</span><br>
           <span class="comm">-- Ref.: IPU Self-Assessment Toolkit, Pregunta 5.1 sobre reporte de desempeño</span>
         </div>
       </div>

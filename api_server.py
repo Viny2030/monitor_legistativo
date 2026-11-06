@@ -158,6 +158,54 @@ def root():
     return RedirectResponse(url="/dashboard/")
 
 
+@app.get("/api/frescura")
+def get_frescura():
+    """Ficha de frescura (formato común del ecosistema, ver frescura.py): de
+    dónde sale cada dato, qué período cubre, cuándo se cargó y si está atrasado
+    por una falla técnica o porque la fuente no publicó nada nuevo."""
+    from frescura import evaluar, fecha_es
+    try:
+        data = load_data()
+    except HTTPException:
+        data = {}
+    meta = data.get("meta", {}) or {}
+    presu = data.get("presupuesto", {}) or {}
+    carga = meta.get("ultima_actualizacion")
+    items = [
+        {"id": "nomina", "dato": "Nómina, bloques y distritos", "fuente": "HCDN (diputados.gob.ar)",
+         "periodo": "composición vigente", "periodo_fin": carga, "ultima_carga": carga,
+         "frecuencia": "diaria", "max_dias_carga": 3, "max_dias_periodo": 3},
+        {"id": "asistencia", "dato": "Asistencia por diputado (NAPE)", "fuente": "HCDN — estadísticas de asistencia (PDF)",
+         "fuente_url": meta.get("fuente_asistencia"), "periodo": meta.get("periodo_asistencia"),
+         "periodo_fin": fecha_es((meta.get("periodo_asistencia") or "").split(" al ")[-1]) if meta.get("periodo_asistencia") else None,
+         "ultima_carga": carga, "frecuencia": "diaria (la HCDN publica por período)",
+         "max_dias_carga": 3, "max_dias_periodo": 120},
+        {"id": "proyectos", "dato": "Proyectos presentados (PDA)", "fuente": "HCDN — portal de datos (CKAN)",
+         "periodo": meta.get("proyectos_periodo"), "ultima_carga": carga, "frecuencia": "diaria",
+         "max_dias_carga": 3, "nota": meta.get("fuente_proyectos")},
+    ]
+    if presu.get("corte"):
+        items.append({"id": "presupuesto", "dato": "Presupuesto HCDN (crédito y devengado)",
+                      "fuente": "Presupuesto Abierto — SAF 313", "periodo": f"ejercicio {presu.get('ejercicio')} al {presu['corte']}",
+                      "periodo_fin": fecha_es(presu["corte"]), "ultima_carga": carga, "frecuencia": "diaria (la fuente publica cortes periódicos)",
+                      "max_dias_carga": 3, "max_dias_periodo": 45})
+    else:
+        items.append({"id": "presupuesto", "dato": "Presupuesto HCDN / IAP", "fuente": presu.get("fuente", "sin dato"),
+                      "periodo": f"IAP ejercicio {presu.get('iap_ejercicio', 2024)}",
+                      "periodo_fin": f"{presu.get('iap_ejercicio', 2024)}-12-31", "ultima_carga": carga,
+                      "frecuencia": "anual", "max_dias_carga": 3, "max_dias_periodo": 545,
+                      "nota": presu.get("nota")})
+    if presu.get("iap_ejercicio"):
+        items.append({"id": "iap", "dato": "Autonomía presupuestaria (IAP)", "fuente": "Presupuesto Abierto — SAF 313",
+                      "periodo": f"ejercicio {presu['iap_ejercicio']} cerrado", "periodo_fin": f"{presu['iap_ejercicio']}-12-31",
+                      "ultima_carga": carga, "frecuencia": "anual", "max_dias_carga": 3, "max_dias_periodo": 545})
+    items.append({"id": "referencias_2025", "dato": "Indicadores anuales de referencia (CRC, RPS, COLS, RLS, IAD, TVD)",
+                  "fuente": "HCDN Transparencia · Directorio Legislativo · Reglamento HCDN", "periodo": "año 2025",
+                  "periodo_fin": "2025-12-31", "ultima_carga": None, "frecuencia": "anual (carga manual)",
+                  "max_dias_periodo": 545, "nota": "Valores fijos en el HTML: se actualizan a mano cuando se publica el balance anual."})
+    return evaluar("legislativo", items)
+
+
 @app.get("/health")
 def health():
     try:

@@ -206,6 +206,52 @@ def get_frescura():
     return evaluar("legislativo", items)
 
 
+# ---------------------------------------------------------------------------
+# Red de coincidencia de votos (grafo de información, dashboard/red_votos.html)
+# ---------------------------------------------------------------------------
+_RED_CACHE = None
+
+
+def _actas_diputados(anio: int) -> list:
+    import requests
+    r = requests.get(f"https://api.argentinadatos.com/v1/diputados/actas/{anio}", timeout=60,
+                     headers={"User-Agent": "MonitorLegislativo/1.0 (github.com/Viny2030)",
+                              "Accept": "application/json"})
+    r.raise_for_status()
+    return [{v["diputado"]: v.get("tipoVoto") for v in a.get("votos") or [] if v.get("diputado")}
+            for a in r.json() if str(a.get("votacion", "")).upper() == "NOMINAL" and a.get("votos")]
+
+
+def _armar_red_diputados(k: int) -> dict:
+    from red_votos import construir_red, normalizar_nombre
+    anio = datetime.now().year
+    votaciones, periodo = _actas_diputados(anio), str(anio)
+    if len(votaciones) < 20:  # principio de año: se suma el anterior
+        votaciones, periodo = _actas_diputados(anio - 1) + votaciones, f"{anio - 1}-{anio}"
+    try:
+        nomina = load_data().get("diputados", [])
+    except HTTPException:
+        nomina = []
+    bloques = {normalizar_nombre(d.get("nombre")): d.get("bloque") or "" for d in nomina if d.get("nombre")}
+    return construir_red(votaciones, bloques, k=k, periodo=periodo,
+                         fuente="ArgentinaDatos — actas nominales de la Cámara de Diputados")
+
+
+@app.get("/api/red-votos")
+def red_votos(k: int = 3):
+    """Red de coincidencia de votos entre diputados: cada uno unido a sus k colegas
+    que más veces votaron igual en las votaciones nominales del año."""
+    global _RED_CACHE
+    from red_votos import Cache
+    k = max(1, min(int(k), 8))
+    if _RED_CACHE is None:
+        _RED_CACHE = Cache()
+    try:
+        return _RED_CACHE.obtener((k, datetime.now().date()), lambda: _armar_red_diputados(k))
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"No se pudieron leer las actas de Diputados: {e}")
+
+
 @app.get("/health")
 def health():
     try:

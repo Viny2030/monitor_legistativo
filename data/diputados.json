@@ -1,6 +1,6 @@
 {
   "meta": {
-    "ultima_actualizacion": "2026-11-08T09:27:05.035547",
+    "ultima_actualizacion": "2026-11-09T09:31:39.911694",
     "fuente_asistencia": "https://www3.hcdn.gob.ar/dependencias/dclp/asistencia/periodo144/ESTADISTICAS.pdf",
     "fuente_asistencia_actualizados": "257/257",
     "periodo_asistencia": "Período 144 01/03/2026 al 09/09/2026",
@@ -5669,9 +5669,9 @@
     "fuente": "Presupuesto Abierto — credito-anual (SAF 313, HCDN)",
     "credito_presupuestado_m": 219790.6,
     "credito_vigente_m": 277815.0,
-    "devengado_m": 216485.9,
-    "ejecucion_al_corte": 0.7792,
-    "corte": "04 Noviembre 2026",
+    "devengado_m": 216992.5,
+    "ejecucion_al_corte": 0.7811,
+    "corte": "06 Noviembre 2026",
     "iap": 0.9972,
     "iap_ejercicio": 2025,
     "iap_credito_vigente_m": 217102.4,
@@ -5689,7 +5689,7 @@
     "nota": "Dato de referencia. Razón: DataFrame vacío o sin columnas de fecha",
     "advertencia": "⚠️ Requiere conexión al SIL para valor real",
     "anio": 2026,
-    "timestamp": "2026-11-08T09:13:39.514139"
+    "timestamp": "2026-11-09T09:18:51.769159"
   },
   "itc": {
     "id": "ITC",
@@ -5707,7 +5707,7 @@
     "anio": 2026,
     "fuente": "estimación histórica MEL-TP",
     "nota": "Valor de referencia (ITC histórico ~3.5×). Solo se obtuvieron 0 reuniones en 2026.",
-    "timestamp": "2026-11-08T09:27:04.944710",
+    "timestamp": "2026-11-09T09:31:39.819460",
     "interpretacion": "ITC=3.50× → el trabajo técnico en comisiones supera al debate plenario.",
     "advertencia": "⚠️ Valor de referencia. Conectar actas HCDN para dato real."
   }
